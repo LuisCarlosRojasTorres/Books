@@ -1,0 +1,3 @@
+> Aqui eu boto codigo e texto de repos que nao tenho accesso, só pra salvar. Ai quando tiver accesso mando
+> pra o repositorio correspondente...
+
