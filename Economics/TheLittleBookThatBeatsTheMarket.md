@@ -84,6 +84,15 @@ making safe and reliable investment profits. But there's still a problem here:
 
 ##  5. <a name='Chapter05'></a>Chapter 05
 
+Two tips to buy shares:
+1. ***would you prefer that the earnings yield calculated using last year’s earnings was 10 percent, 20 percent, or 30 percent?** 
+   - You would rather have a higher earnings yield than a lower one; you would rather the business earn more relative to the price you are paying than less
+2. **which sounds better—a business that earns a 50 percent return on capital or one that earns a 2.5 percent return on capital?**
+   - You would rather own a business that earns a high return on capital than one that earns a low return on capital.
+  
+If something that cost `x`, earns `y` the last year. That means that it earns `y` per year from an initial investment of only `x`. This is a `y/x*100` in percentage, called as `y/x*100 percent return on capital`.
+
+
 ##  6. <a name='Chapter06'></a>Chapter 06
 
 ##  7. <a name='Chapter07'></a>Chapter 07
