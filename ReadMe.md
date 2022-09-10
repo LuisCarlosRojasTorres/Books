@@ -2,7 +2,12 @@
 - [Dummy](/dummy.md)
 
 ### Computer Science
+- [Object-Oriented Design](/ComputerScience/ObjectOrientedDesign.md)
+- 
 #### Cpp
+- [The C++ Workshop](/Economics/TheLittleBookThatBeatsTheMarket.md)
+
+#### Economics
 - [The C++ Workshop](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
 
 ### Filosofía 
