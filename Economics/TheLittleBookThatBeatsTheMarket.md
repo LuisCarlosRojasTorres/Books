@@ -56,6 +56,32 @@
 
 ##  4. <a name='Chapter04'></a>Chapter 04
 
+- FIGURING OUT WHAT A BUSINESS is worth isn’t easy
+- I then point out that that’s a pretty wide range of prices for shares and a pretty short period of time for them to change so much. Looking at the price for shares over a two-to three-year period would give us an even wider range.
+- How can this be? These are big, well-known companies. Each of these companies has divided its ownership into millions (and sometimes billions) of equal shares.
+- The trading back and forth of these ownership shares takes place in a number of locations and over computer networks. These ownership shares are referred to as **shares of stock**, and collectively, this buying and selling activity is referred to as the **stock market**.
+- Can a company that large be worth $30 billion one day and then a few months later be worth $60 billion? Are they selling twice as many cars, making twice as much money, or doing something drastically different in their business to justify such a large change in value?
+  - No! It makes no sense that the values of most companies swing wildly from high to low, or low to high, during the course of each and every year. On the other hand, it seems pretty clear that the prices of the shares in most companies swing around wildly each and every year. All you have to do is look in the newspaper to see that that’s true.
+
+- SO...**Why do the prices of all these businesses move around so much
+each year if the values of their businesses can’t possibly change that much?**
+  - SHORT ANSWER: Who knows and who cares?
+  - The truth is that I don’t really have to know why people are willing to buy and sell shares of most companies at wildly different prices over very short periods of time. **I just have to know that they do!**
+
+- AN APPLICATION EXAMPLE: If, according to the daily newspaper, General
+Motors is selling for 37 per share, you have three choices: You can buy shares in General Motors for 37 each, you can sell your shares in General Motors and receive 37 each, or you can do nothing. 
+  - If you think GM is really worth 70 per share, then you might consider $37 a
+ridiculously low price and decide to buy some shares. 
+  - If you think GM is really worth only 30 or 35 per share (and you happen to own some shares), you might decide to sell to “Mr. Market” at 37. 
+  - If you think each share of General Motors is worth between 40 and 45 per share, you may decide to do nothing. At 37 per share, the price is not at a big enough discount for you to buy, nor is 37 a generous enough offer tomake you want to sell.
+- Buying shares of a company only when they trade at a large discount to true value is called as **investing with a margin of safety** . 
+  - The difference between your estimated value per share of, say, 70 and the purchase price of your shares of perhaps 37 would represent a *margin of safety for your investment*.
+- Always using the margin of safety principle when deciding whether to purchase shares of a business from a crazy partner like *Mr. Market* was the secret to
+making safe and reliable investment profits. But there's still a problem here:
+  - First, how are you supposed to know what a business is worth?
+  - Second, f you could figure out a fair price or price range for the business, how would you know whether you were right, or even close to right?
+  - Third, aren’t there tons of smart, hardworking people trying to figure out all this stuff, too? Wouldn’t these people scoop up all of the obvious bargains before you got there? How can you compete with them?
+
 ##  5. <a name='Chapter05'></a>Chapter 05
 
 ##  6. <a name='Chapter06'></a>Chapter 06

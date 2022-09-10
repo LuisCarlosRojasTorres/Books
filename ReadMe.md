@@ -5,7 +5,7 @@
 - [Object-Oriented Design](/ComputerScience/ObjectOrientedDesign.md)
 - 
 #### Cpp
-- [The C++ Workshop](/Economics/TheLittleBookThatBeatsTheMarket.md)
+- [The little book that STILL beats the market](/Economics/TheLittleBookThatBeatsTheMarket.md)
 
 #### Economics
 - [The C++ Workshop](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
