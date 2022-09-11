@@ -92,8 +92,16 @@ Two tips to buy shares:
   
 If something that cost `x`, earns `y` the last year. That means that it earns `y` per year from an initial investment of only `x`. This is a `y/x*100` in percentage, called as `y/x*100 percent return on capital`.
 
+If you just stick to buying good companies (ones that have a high return on capital) and to buying those companies only at bargain prices (at prices that give you a high earnings yield), you can end up systematically buying many of the good companies that crazy Mr. Market has decided to literally give away.
 
 ##  6. <a name='Chapter06'></a>Chapter 06
+If one could buy a group of 20 or 30 companies that were cheap enough to meet the strict requirements of his formula, without doing any further analysis, the “results should be quite satisfactory.
+
+The magic formula process:
+1. Get a list of the companies available for trading.
+2. Sort the list in decreasing order based on their **return on capital**. Set a ranking for the result.
+3. Sort the list in decreasing order based on their **earnings yield**. Set a ranking for the result. 
+4. Combine the rankings. The formula looks for the companies that have the best combination of those two factors.
 
 ##  7. <a name='Chapter07'></a>Chapter 07
 
