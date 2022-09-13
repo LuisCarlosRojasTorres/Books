@@ -103,6 +103,9 @@ The magic formula process:
 3. Sort the list in decreasing order based on their **earnings yield**. Set a ranking for the result. 
 4. Combine the rankings. The formula looks for the companies that have the best combination of those two factors.
 
+List of brazilian companies, bassed on Magic Formula:
+https://quantbrasil.com.br/magic-formula
+
 ##  7. <a name='Chapter07'></a>Chapter 07
 
 ##  8. <a name='Chapter08'></a>Chapter 08
