@@ -1,13 +1,15 @@
 - []()
 - 
 # 2014
-- [Herb Sutter "Back to the Basics! Essentials of Modern C++ Style"](https://www.youtube.com/watch?v=xnqTKD8uD64&ab_channel=CppCon)
 - [Andrei Alexandrescu "Optimization Tips - Mo' Hustle Mo' Problems"](https://www.youtube.com/watch?v=Qq_WaiwzOtI&ab_channel=CppCon)
-- [Mike Acton "Data-Oriented Design and C++"](https://www.youtube.com/watch?v=rX0ItVEVjHc&t=259s&ab_channel=CppCon)
+- [Bill Emshoff "Using C++ on Mission and Safety Critical Platforms"](https://www.youtube.com/watch?v=sRe77Mdna0Y&ab_channel=CppCon)
 - [Chandler Carruth "Efficiency with Algorithms, Performance with Data Structures"](https://www.youtube.com/watch?v=fHNmRkzxHWs&ab_channel=CppCon)
+- [Herb Sutter "Back to the Basics! Essentials of Modern C++ Style"](https://www.youtube.com/watch?v=xnqTKD8uD64&ab_channel=CppCon)
+- [Mike Acton "Data-Oriented Design and C++"](https://www.youtube.com/watch?v=rX0ItVEVjHc&t=259s&ab_channel=CppCon)
+
 ## 2015
-- [Herb Sutter "Writing Good C++14... By Default"](https://www.youtube.com/watch?v=hEx5DNLWGgA&ab_channel=CppCon)
 - [Bjarne Stroustrup “Writing Good C++14”](https://www.youtube.com/watch?v=1OEu9C51K2A&t=36s&ab_channel=CppCon)
+- [Herb Sutter "Writing Good C++14... By Default"](https://www.youtube.com/watch?v=hEx5DNLWGgA&ab_channel=CppCon)
 - [Zach Laine "Writing Great Libraries: 89 Easy Steps"](https://www.youtube.com/watch?v=hcHUZE6buzE&ab_channel=CppCon)
 
 ## 2016
