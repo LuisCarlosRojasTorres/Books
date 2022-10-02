@@ -65,7 +65,7 @@ For a controller `ControllerName01` a view shall be created in `/View/Controller
 
 ``` cs 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index"; // This is a dictionary!!!
 }
 
 <h2>Index</h2>
@@ -76,3 +76,57 @@ To see this view navigate to `localhost:{PORT}/ControllerName01`:
 - So the `Index` method is called (automatically), which calls the `View()` method.
 - The `View()` method calls the `default` view, which has the same name as the **action method**, `Index.cshtml` in this case (from `/View/ControllerName01/Index.cshtml`).
 
+On the other hand `Views/Shared/_Layout.cshtml` : 
+- Specifies the layout of the site in one place.
+- Apply layout to many pages
+- All the code in `_Layout.cshtml` is shared to all the `cshtml` files. `@RenderBody()` is a placeholder where the specific `cshtml` is rendered inside.
+
+There is also the file `_ViewStart.cshtml` sets the layout for all the pages.
+
+### Passing Data from the Controller to the View
+- Controller actions are invoked in response to an incoming URL request. So a controller class is where the code is written that handles the incoming browser requests. 
+- The controller retrieves data from a data source and decides what type of response to send back to the browser. 
+- View templates can be used from a controller to generate and format an HTML response to the browser.
+
+- A controller can use a view template. So the view template generates a dynamic response (which is passed from the controoller to generate the response)
+- To do this, the controller puts the data to a `ViewData` dictionary, then the view template can access to it.
+
+- As an example the `IActionResult WhichIsBigger` is implemented:
+  - It sets the `ViewData` dictionary with the biggest and lowest values for  two given numbers.
+  - A  view template is created `Views/HelloWorld/WhichIsBigger.cshtml`
+
+``` cs 
+// Code in Controller
+public IActionResult WhichIsBigger(int value1 = 1, int value2 = 2)
+{
+    if (value1 > value2)
+    { 
+        ViewData["biggest"] = value1;
+        ViewData["lowest"] = value2;
+    }
+    else {
+        ViewData["biggest"] = value2;
+        ViewData["lowest"] = value1;
+    }
+        return View();
+}
+
+// Code in View
+@{
+    ViewData["Title"] = "Passing Data";
+}
+
+<title>@ViewData["Title"] </title>
+
+@if ((int)ViewData["biggest"] == (int)ViewData["lowest"])
+{
+    <h2> Empate </h2>
+}
+else
+{
+    <h2> The biggest number is @ViewData["biggest"] </h2>
+    <h2> The lowest number is @ViewData["lowest"] </h2>
+}
+```
+
+- This is nice but the better way is using `Model Approach`.  
