@@ -130,3 +130,5 @@ else
 ```
 
 - This is nice but the better way is using `Model Approach`.  
+
+### Adding a Model
