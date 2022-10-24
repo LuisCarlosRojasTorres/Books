@@ -5,6 +5,7 @@
 Three principles of component cohesion:
 
 ### REP: The Reuse/Release Equivalence Principle
+
 `The granule of reuse is tha granule of release.`
 - Software components shall be tracket through a release number and process. This is important to: 
   - verify compatibility.
@@ -23,5 +24,15 @@ Three principles of component cohesion:
 ### CRP: The Common Reuse Principle
 
 `Don’t force users of a component to depend on things they don’t need.`
+
+- Classes and modules that tend to be reused together belong in the
+same component.
+- So, classes that have lots of dependencies (tightly coupled) of each other belong to the same component.
+- When a component depends on another, be sure that it depends on every class in that component.
+- For example, if lets say `Component A` uses **ONE** function from `Component B`(which has 50 functions):
+  - `B` is a dependency of `A`, Even if `A` only used **ONE** function !!
+  - Everytime `B` is changed and compiled, `A` shall be recompiled, revalidated and redeployed (even if the function which `A` uses was not modified.)
+  - On the other hand, if components are well-separated a minimum number of components will be affected for each time that a dependency change.
+
 
 ## Ch14 - Component Coupling
