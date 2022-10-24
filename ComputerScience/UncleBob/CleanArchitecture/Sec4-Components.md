@@ -14,10 +14,11 @@ Three principles of component cohesion:
 
 ### CCP: The Common Closure Principle
 
-`Gather into components those classes that change for the same reasons and at
-the same times. Separate into different components those classes that change at
-different times and for different reasons`
+`classes that change for the same reasons and at the same times = same component`
 
+- In general **maintainability** is more important than **reusability** (how many times you will reuse a component vs how many minor versons you will release of that sw?)
+- So, if a requirement changes, there is a good chance that a minimal number of software components will change. This minimizes the workload related to releasing, revalidating, and redeploying the software.
+- For example, three classes that calculate trigonometric functions for a given angle in radians. If the algorithm to calculate the radian into to the return value of the functions change, all those functions also changes. So they shall go to the same module. Even if a requirements changes affecting the trigonometric functions, only onw component will be affected (because all they belong to the same component).
 
 ### CRP: The Common Reuse Principle
 
