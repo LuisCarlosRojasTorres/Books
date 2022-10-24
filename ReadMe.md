@@ -2,13 +2,18 @@
 - [Dummy](/dummy.md)
 
 ### Computer Science
-- [Object-Oriented Design](/ComputerScience/ObjectOrientedDesign.md)
-- 
-#### Cpp
-- [The little book that STILL beats the market](/Economics/TheLittleBookThatBeatsTheMarket.md)
+
+- [AspNetCore](/ComputerScience/ASPNetCore/CH01.md)
+- [The C++ Workshop](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
+- [UA Object-Oriented Design](/ComputerScience/ObjectOrientedDesign.md)
+- [UA Design Patterns](/ComputerScience/ObjectOrientedDesign.md)
+- [UncleBob - Clean Architecture](/ComputerScience/UncleBob/CleanArchitecture/Sec4-Components.md)
 
 #### Economics
-- [The C++ Workshop](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
+
+- [The little book that STILL beats the market](/Economics/TheLittleBookThatBeatsTheMarket.md)
+
+
 
 ### Filosofía 
 
