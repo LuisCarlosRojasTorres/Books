@@ -34,5 +34,6 @@ same component.
   - Everytime `B` is changed and compiled, `A` shall be recompiled, revalidated and redeployed (even if the function which `A` uses was not modified.)
   - On the other hand, if components are well-separated a minimum number of components will be affected for each time that a dependency change.
 
+### The Tension Diagram for Component Cohesion
 
 ## Ch14 - Component Coupling
