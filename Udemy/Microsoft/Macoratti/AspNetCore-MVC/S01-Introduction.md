@@ -1,0 +1,1 @@
+The `Startup.cs` can exist in `ASP.NET Core6`.
