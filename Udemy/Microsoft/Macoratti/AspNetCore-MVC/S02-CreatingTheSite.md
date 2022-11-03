@@ -86,7 +86,7 @@ public class Program
 ## V011 - Project Structure
 - It shows all the folder and files of the project.
 
-# V014 - Creating a Carrousel
+## V014 - Creating a Carrousel
 A carrousel is inserted in a partial view i.e a view that can be used by another.
 1. In `wwwroot`, create a new folder `images`.
 2. Add the images that ou want to use in the folder `images`
