@@ -131,11 +131,132 @@ services.AddDbContext<AppDbContext>(options=>
   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 ```
 
-## V019 - Mounting SQL Server
-
+## V019 - Mounting a ConnectionString on SQL Server
+In this project Database and its tables will be created automatically using `Migrations`. To do this we need:
+- Environment Configuration (previous video)
+- Define a ConnectionString local instance on SQL server.
+  - A Connection String is an expression that contains the parameters needed to establish a connection between an app and the DB Server.
+  - Its configuration includes:
+    - Server instance
+    - DBname
+    - Authentication details, and other configs
+  - Examples:
+    - By Authentication:
+      - SQL Server Authentication: `Server=ServerName;Database=DatabaseName;User Id=UserName;Password=UserPassword` (who the F will use its password in the code?)
+      - Windows Authentication(recommended): `Server=ServerName;Database=DatabaseName;Trusted_Connection=True` (uses your Windows account)
+    - By Instance:
+      - LocalDB: `Server=(localdb)\MineInstance;IntegratedSecurity=True`
+      - SQL Express(recommended): `Data Source=nome_server//sqlexpress;InitialCatalog=Database1;IntegratedSecurity=True`
+  - To get the `Server` and `Instance`: In `SQL Server 2019 Configuration Manager` then `Serviços do SQL Server/SQL Server(SQLEXPRESS)`. In its `Right-Click/Properties/Serviço` you can get both, the server(host) and instance(nome).
+  - 
 ## V020 - Data Annotations
+- They are attributes that can ve applied to classes and its fields. 
+  - To define:
+    -  `validation rules` to the `model`
+    -  how interfaces shall show this data
+  - To specify reltionships between entities in the `model`
+  - To OVERWRITE EF-Core conventions.
+- `Data annotations` are available in>:
+  - `System.ComponentModel.DataAnnotations`
+  - `System.ComponentModel.DataAnnotations.Schema`
+ - You can use it in:
+  - Front-End:
+    - `Validation Attributes`: to set validation rules in views e.g. email, data validation.
+    - `Exibition Attributes`: how model attributes will be showed.
+  - Back-End: 
+    - `Data Modelling Attributes`: To specify the format of the fields in a table. The relationship between classes.
+
+### Validation rules in View
+- Define attributes to the fields of the classes which belong to the `Model`
+- Once the validation rules were set in this class, it will be applied in anywhere the class is used.
+- This validation is applied in the `Model` and not in the View
+- Main attributes:
+  - Required: Property shall be filled with data and do not accept `null` values.
+  - Range: sets valid interval value to the field
+  - EmailAddress:
+  - Phone: Validates telephone format
+  - MinLenght:
+  - MaxLenght:
+  - StringLenght:
+  - RegularExpression:
+  - Display: Specifies how fields are showed and formatted in View.
+  - DisplayFormat: Applies a given format to a property that will be showed in View
+- Available at `System.ComponentModel.DataAnnotations`
+- Example:
+
+``` cs
+public class Lanche
+{
+  public int LancheId {get; set;}
+
+  [Required]
+  [Display(Name = "Name of Lanche")]
+  public string Nome { get; set;}
+
+  [Required]
+  [Display(Name = "Description of Lanche")]
+  [MinLength(20)]
+  [MaxLength(200)]
+  public string Description { get; set;}
+}
+```
+
+It is possible to use the `ErrorMessage = "message"` property to improve the data annotations validation. Then if it fails it will show the "message".
+
+``` cs
+public class Lanche
+{
+  public int LancheId {get; set;}
+  
+  [Required (ErrorMessage="Name is required")]
+  [Display(Name = "Name of Lanche")]
+  public string Nome { get; set;}
+
+  [Required (ErrorMessage="Description is required")]
+  [Display(Name = "Description of Lanche")]
+  [MinLength(20, ErrorMessage="Description shall be more than {1} characters")]
+  [MaxLength(200, ErrorMessage="Description shall be less than {1} characters")]
+  public string Description { get; set;}
+}
+```
+
+### Data Modelling Attributes
+
+- Main attributes:
+  - `Key(*)`: Identifies a property as a primary key in the table.
+  - `Table`: Defines the name of the table where the class will be mapped.
+  - `Column`: Sets a column to mapped property.
+  - `DataType(*)`: sets an additional data type to a property.
+  - `ForeignKey`: Set a property as a foreign key.
+  - `NotMapped`: To exclude from mapping.
+- Available at: `System.ComponentModel.DataAnnotations.Schema`
+- Example:
+
+``` cs
+[Table("Lanches")] // Lanche class will be mapped to "Lanches" Table
+public class Lanche
+{
+  [Key]
+  public int LancheId {get; set;}
+
+  [Required]
+  [Display(Name = "Name of Lanche")]
+  public string Nome { get; set;}
+
+  [Required]
+  [Display(Name = "Description of Lanche")]
+  [MinLength(20)]
+  [MaxLength(200)]
+  public string Description { get; set;}
+
+  [NotMapped] // DateOfCreation will not mapped to Table
+  public DateTime DateOfCreation { get; set;}
+}
+```
 
 ## V021 - EF Core Migrations
+
+
 
 ## V022 - Data Annotations Atributes
 
