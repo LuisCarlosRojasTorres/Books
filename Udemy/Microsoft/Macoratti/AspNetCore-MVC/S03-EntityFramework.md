@@ -256,7 +256,26 @@ public class Lanche
 
 ## V021 - EF Core Migrations
 
+- Enables the database incremental updating to synchronize it with the project data model (preserving the existing data).
+- Main tasks:
+  - Updates db
+  - Customize `Migration` code
+  - Remove a `Migration`
+  - Revert a `Migration`
+  - Generate SQL scripts
+  - Apply `Migration` at runtime
 
+### Requirement
+- [ ] Install the Entity Framework Core Tools (V018)
+- [ ] Define a `Model` i.e classes with properties
+- [ ] A Context class which inherits from `DbContext` and its `DbSets` to map entities
+- [ ] Define a `connectionString` in `appsettings.json`
+- [ ] Register the contexr as a service in `ConfigureServices` using `AddDbContext`
+- [ ] Define the DB provider and the `conectionString` used
+
+### How can be used
+- Visual Studio: In `Package Manager Console`
+- VS Code: In `NET CLI`
 
 ## V022 - Data Annotations Atributes
 
