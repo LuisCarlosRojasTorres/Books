@@ -65,12 +65,33 @@ same component.
 ##  3. <a name='Ch14-ComponentCoupling'></a>Ch14 - Component Coupling
 
 ###  3.1. <a name='TheAcyclicDependenciesPrinciple'></a>The Acyclic Dependencies Principle
-- The compilation process is bottom up:
-  - First `Component B` is compiled.
-  - Second `Component D` and `Component C`
-![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14a.png)
+> No cycles are allowed in the Component Dependency Graph
+> 
+#### Introduction
+- This is a dependency grapgh `Component A` classes use `Component B` classes i.e. `Component B` is a dependency of `Component A`.
+![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH140.png)
 
+#### An Acyclic Dependency Graph
+- It is a `directed graph` where the Components are the `nodes` and the dependency relationship are the `directed edges`.
+- It has NO CYCLES (is a `directed acyclic graph` or `DAG`) i.e. Choosing one Component and following the dependency relationships its impossible to return to that Component. 
+- The following dependency graph will help to make some observations:
+![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14a.png)
+  - If `Component B` has a new version, only `Component B` and `Component C` will be affected (i.e. the Components that have `Component B` as a dependency). 
+  - So the devs in charge of those Component should decide when the integration (with the new version of `Component B`) will happen.
+  - If `Component Main` has a new version, no Componentes will be affected.
+  - If a possible new version of `Component A` have to be tested, It only needs to build the `Component A` with the versions of `Component D` and `Component B` that are currently using.
+  - The compilation process is bottom up. i.e. First `Component B` is compiled.Then `Component D` and `Component C`. Later `Component A` and finally `Component Main`. (We know the build order of this SW because, we understand its dependencies)
+
+#### The Dependency Cycle
+- If a new Component `Component E` is release and has `Component D` as a dependency and `Component B` as a dependent, we have a `dependency cycle` (showed in **red** in the graph bellow). Some obersavations can be made:
 ![Dependency Cycle](/ComputerScience/UncleBob/CleanArchitecture/CH14b.png)
+  -  If a new version of `Component E` have to be release, it shall be compatible with `Component E`, but now also with `Component B`. This makes the release more difficult.
+  - `Component B`, `Component D` and `Component E` become **one larger Component**. If any of this Components is modified it will affect the others.
+    - If `Component E` have to be tested, it shall be build and intetegrated with `Component D` and `Component B`
+- Cycles make it very difficult to isolate Components. So Unit testing and releasing become very difficult and error propne.
+- The build order is difficult to obtain (because the cycle).
+
+#### Breaking the Cycle
 
 ![How to break a Cycle](/ComputerScience/UncleBob/CleanArchitecture/CH14c.png)
 
