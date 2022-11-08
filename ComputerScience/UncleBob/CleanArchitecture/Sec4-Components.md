@@ -65,6 +65,14 @@ same component.
 ##  3. <a name='Ch14-ComponentCoupling'></a>Ch14 - Component Coupling
 
 ###  3.1. <a name='TheAcyclicDependenciesPrinciple'></a>The Acyclic Dependencies Principle
+- The compilation process is bottom up:
+  - First `Component B` is compiled.
+  - Second `Component D` and `Component C`
+![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14a.png)
+
+![Dependency Cycle](/ComputerScience/UncleBob/CleanArchitecture/CH14b.png)
+
+![How to break a Cycle](/ComputerScience/UncleBob/CleanArchitecture/CH14c.png)
 
 ###  3.2. <a name='Top-DownDesign'></a>Top-Down Design
 
