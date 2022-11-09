@@ -78,7 +78,8 @@ same component.
 
 ####  3.1.1. <a name='Introduction'></a>Introduction
 - This is a dependency grapgh `Component A` classes use `Component B` classes i.e. `Component B` is a dependency of `Component A`.
-![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH140.png)
+- 
+![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14.png)
 
 ####  3.1.2. <a name='AnAcyclicDependencyGraph'></a>An Acyclic Dependency Graph
 - It is a `directed graph` where the Components are the `nodes` and the dependency relationship are the `directed edges`.
@@ -226,11 +227,11 @@ The measure of abstractness of a Component is measured as:
 
 #### Stability (I) vs Abstracness (A)
 
-![I vs A](/ComputerScience/UncleBob/CleanArchitecture/CH14j.png)
+![I vs A](/ComputerScience/UncleBob/CleanArchitecture/CH14j.PNG)
 
 - Maximum maximum stability and abstracness are at (0,1)
 - Minimum maximum stability and concreteness are at (1,0)
 
-![Main Sequence and Components](/ComputerScience/UncleBob/CleanArchitecture/CH14k.png)
+![Main Sequence and Components](/ComputerScience/UncleBob/CleanArchitecture/CH14k.PNG)
 
-![D: Distance](/ComputerScience/UncleBob/CleanArchitecture/CH14l.png)
+![D: Distance](/ComputerScience/UncleBob/CleanArchitecture/CH14l.PNG)
