@@ -7,7 +7,11 @@
 - [The C++ Workshop](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
 - [UA Object-Oriented Design](/ComputerScience/ObjectOrientedDesign.md)
 - [UA Design Patterns](/ComputerScience/ObjectOrientedDesign.md)
+- [UncleBob - Clean Agile](/ComputerScience/UncleBob/CleanAgile/Sec01.md)
 - [UncleBob - Clean Architecture](/ComputerScience/UncleBob/CleanArchitecture/Sec4-Components.md)
+- [UncleBob - Clean Code](/ComputerScience/UncleBob/CleanCode/Sec01.md)
+- [UncleBob - Clean Coder](/ComputerScience/UncleBob/CleanCoder/Sec01.md)
+
 
 #### Economics
 

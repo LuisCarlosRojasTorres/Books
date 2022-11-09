@@ -6,14 +6,16 @@
 	* 2.3. [CRP: The Common Reuse Principle](#CRP:TheCommonReusePrinciple)
 	* 2.4. [The Tension Diagram for Component Cohesion](#TheTensionDiagramforComponentCohesion)
 * 3. [Ch14 - Component Coupling](#Ch14-ComponentCoupling)
-	* 3.1. [The Acyclic Dependencies Principle](#TheAcyclicDependenciesPrinciple)
+	* 3.1. [The Acyclic Dependencies Principle (ADP)](#TheAcyclicDependenciesPrincipleADP)
 		* 3.1.1. [Introduction](#Introduction)
 		* 3.1.2. [An Acyclic Dependency Graph](#AnAcyclicDependencyGraph)
 		* 3.1.3. [The Dependency Cycle](#TheDependencyCycle)
 		* 3.1.4. [Breaking the Cycle](#BreakingtheCycle)
 	* 3.2. [Top-Down Design](#Top-DownDesign)
-	* 3.3. [The Stable Dependencies Principle](#TheStableDependenciesPrinciple)
-	* 3.4. [The Stable Abstraction Principle](#TheStableAbstractionPrinciple)
+	* 3.3. [The Stable Dependencies Principle (SDP)](#TheStableDependenciesPrincipleSDP)
+		* 3.3.1. [Introduction](#Introduction-1)
+		* 3.3.2. [An application problem](#Anapplicationproblem)
+	* 3.4. [The Stable Abstraction Principle (SAP)](#TheStableAbstractionPrincipleSAP)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -70,9 +72,9 @@ same component.
   
 ##  3. <a name='Ch14-ComponentCoupling'></a>Ch14 - Component Coupling
 
-###  3.1. <a name='TheAcyclicDependenciesPrinciple'></a>The Acyclic Dependencies Principle
+###  3.1. <a name='TheAcyclicDependenciesPrincipleADP'></a>The Acyclic Dependencies Principle (ADP)
 > No cycles are allowed in the Component Dependency Graph
-> 
+
 ####  3.1.1. <a name='Introduction'></a>Introduction
 - This is a dependency grapgh `Component A` classes use `Component B` classes i.e. `Component B` is a dependency of `Component A`.
 ![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH140.png)
@@ -89,7 +91,7 @@ same component.
   - The compilation process is bottom up. i.e. First `Component B` is compiled.Then `Component D` and `Component C`. Later `Component A` and finally `Component Main`. (We know the build order of this SW because, we understand its dependencies)
 
 ####  3.1.3. <a name='TheDependencyCycle'></a>The Dependency Cycle
-- If a new Component `Component E` is release and has `Component D` as a dependency and `Component B` as a dependent, we have a `dependency cycle` (showed in **red** in the graph bellow). Some obersavations can be made:
+- If a new Component `Component E` is released and has `Component D` as a dependency and `Component B` as a dependent, we have a `dependency cycle` (showed in **red** in the graph bellow). Some obersavations can be made:
 ![Dependency Cycle](/ComputerScience/UncleBob/CleanArchitecture/CH14b.png)
   -  If a new version of `Component E` have to be release, it shall be compatible with `Component E`, but now also with `Component B`. This makes the release more difficult.
   - `Component B`, `Component D` and `Component E` become **one larger Component**. If any of this Components is modified it will affect the others.
@@ -122,13 +124,73 @@ class ClassD1{
   - The `Class` in `Component B` (which was used) now imnplements the `Interface` from `Component D`.
   - To use this new structure `dependency injection` is used.
 
-The problem (in red) and the solution can be see it praphically in the Figure below:
+The problem (in red) and the solution can be see it graphically in the Figure below:
 
 ![How to break a Cycle](/ComputerScience/UncleBob/CleanArchitecture/CH14c.png)
 
 ###  3.2. <a name='Top-DownDesign'></a>Top-Down Design
 
-###  3.3. <a name='TheStableDependenciesPrinciple'></a>The Stable Dependencies Principle
+###  3.3. <a name='TheStableDependenciesPrincipleSDP'></a>The Stable Dependencies Principle (SDP)
 
-###  3.4. <a name='TheStableAbstractionPrinciple'></a>The Stable Abstraction Principle
+> The dependencies of Component shall have less or equal *INSTABILITY* (I) than the Component.
+
+or in other words
+
+> The Instability decreases in the direction of dependency.
+
+####  3.3.1. <a name='Introduction-1'></a>Introduction
+
+- Stability is the difficulty to change.
+- To make a Component **STABLE** many Components shall depend on it (i.e. because it requires a lot of work to implemment the changes to all its dependent Components).
+- An example of **STABLE** Component is presented below:
+  - **RESPONSIBLE**: Three Components depend on it, so it has THREE good reasons to not be modified. It is said *This Component is **RESPONSIBLE** for these three Components*
+  - **INDEPENDENT**: That Component has no dependencies, so it has no external influences to force a change.
+![A STABLE Component](/ComputerScience/UncleBob/CleanArchitecture/CH14d.png)
+
+- An example of a very **UNSTABLE** Component is presented as follows:
+  - **IRRESPONSIBLE**: No Component has this Component as dependency.
+  - **DEPENDENT**: The Component has three dependencies, so has three external sources that can force change.
+![An UNSTABLE Component](/ComputerScience/UncleBob/CleanArchitecture/CH14e.png)
+
+#### Stability Metrics
+Instability is defined as:
+> I = Fan-Out / (Fan-In + Fan-Out) 
+>
+> Where:
+> - Fan-In: Incoming dependencies i.e. the number of classes outside this Component which depend on classes of this Component.
+> - Fan-Out: Outgoing dependencies i.e. The number of classes inside this Componen which depend on classes outside this Component.
+
+- The range of Instability metric is `[0,1]`:
+  - `I = 0` : means maximum stability i.e. The Component has no dependencies
+  - `I = 1` : menas maximum instability i.e. The Component is not a dependency for other Components.
+- The Instability calculation is easier if the source code has **one class for each file**.
+
+**NOTES**:
+- Not all Components shall to be **STABLE**.
+  - Business rules or things that are not probable to change shall be implemented as `STABLE Components`
+  - UI and things that are very probable to change shall be implemented as `UNSTABLE Components`
+- When drawing a `dependency graph`, It is recomended to put unstable Components at the top of the diagram. So, any arrow that points up is violating the `Stable Dependency Principle`
+
+####  3.3.2. <a name='Anapplicationproblem'></a>An application problem
+- Lets say we have three Components ideally configured, and its `dependency graph` is a follows: 
+![Solution procedure](/ComputerScience/UncleBob/CleanArchitecture/CH14f.png)
+
+- But for some reason, a new Component which is less **STABLE** (I!=0) is added and used as a dependency (red color in Figure below) by the former **STABLE** Component. 
+![Solution procedure](/ComputerScience/UncleBob/CleanArchitecture/CH14g.png)
+
+- This clearly violates SDP, because No Component shall have a dependency with more Instability metric value. In other words, if the Component has `I=0` its dependency shall also has `I=0`.  So **How can this problem be solved?**
+
+- The solution is also found in `DIP - Dependency Inversion Principle`:
+  - Create a new Component which implements an `Interface`.
+  - In the Dependent Component: the class (which uses the Class from the dependency) now uses that `Interface`
+  - In the Dependency Component: the used class now implements that `Interface` 
+  - The initial configuration is presented in **red** and the solution in **green** in the following Figure.
+
+![Solution procedure](/ComputerScience/UncleBob/CleanArchitecture/CH14h.png)
+
+- Once solved, the solution can be added to the original dependency graph   as presented below:
+![Solution presented](/ComputerScience/UncleBob/CleanArchitecture/CH14i.png)
+
+
+###  3.4. <a name='TheStableAbstractionPrincipleSAP'></a>The Stable Abstraction Principle (SAP)
 
