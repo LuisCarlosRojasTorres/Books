@@ -153,7 +153,7 @@ or in other words
   - **DEPENDENT**: The Component has three dependencies, so has three external sources that can force change.
 ![An UNSTABLE Component](/ComputerScience/UncleBob/CleanArchitecture/CH14e.png)
 
-####  3.3.2. <a name='StabilityMetrics'></a>Stability Metrics
+####  3.3.2. <a name='StabilityMetrics'></a>Stability Metrics (I)
 Instability is defined as:
 > I = Fan-Out / (Fan-In + Fan-Out) 
 >
@@ -200,10 +200,37 @@ NOTE:
 
 > A Component shall be as ABSTRACT as it is STABLE
 
+or
+
+> Dependencies run in the direction of abstraction
+
+or 
+
+> **STABLE COMPONENTS** should also be `abstract` so that its stability does not prevent it from being extended.
+> **UNSTABLE COMPONENTS** should be `concrete` sot that its instability allows it to be modified.
+
 #### Introduction
 - High-level policies and Business Rules shall be placed into **STABLE** Components (`I = 0`)
 - Volatile parts, e.g. UI shall be placed into **UNSTABLE** Components (`I = 1`)
 - **HOWEVER:** if we put Business Rules into stable components. it will be difficul to change (stiffenning the Architecture), **they need to be flexible enough to withstand change**.
 - **SOLUTION:** Based on the `OCP` i.e (Create classes that are flexible enough to be extended withouth requiring modification) the **MOST STABLE** Components shall have **ABSTRACT CLASSES**
-#### Abstractness metric
 
+#### Abstractness metric (A)
+The measure of abstractness of a Component is measured as:
+> A = Na / Nc
+>
+> Where:
+> - Na: Number of `interfaces` and `abstract classes` in the Component.
+> - Nc: Number of `classes`in the Component.
+
+
+#### Stability (I) vs Abstracness (A)
+
+![I vs A](/ComputerScience/UncleBob/CleanArchitecture/CH14j.png)
+
+- Maximum maximum stability and abstracness are at (0,1)
+- Minimum maximum stability and concreteness are at (1,0)
+
+![Main Sequence and Components](/ComputerScience/UncleBob/CleanArchitecture/CH14k.png)
+
+![D: Distance](/ComputerScience/UncleBob/CleanArchitecture/CH14l.png)
