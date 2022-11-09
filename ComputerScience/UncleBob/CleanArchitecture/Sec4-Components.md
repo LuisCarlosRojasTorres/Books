@@ -1,9 +1,9 @@
 <!-- vscode-markdown-toc -->
 * 1. [Ch12 - Components](#Ch12-Components)
 * 2. [Ch13 - Component Cohesion](#Ch13-ComponentCohesion)
-	* 2.1. [REP: The Reuse/Release Equivalence Principle](#REP:TheReuseReleaseEquivalencePrinciple)
-	* 2.2. [CCP: The Common Closure Principle](#CCP:TheCommonClosurePrinciple)
-	* 2.3. [CRP: The Common Reuse Principle](#CRP:TheCommonReusePrinciple)
+	* 2.1. [REP - The Reuse/Release Equivalence Principle](#REP-TheReuseReleaseEquivalencePrinciple)
+	* 2.2. [CCP - The Common Closure Principle](#CCP-TheCommonClosurePrinciple)
+	* 2.3. [CRP - The Common Reuse Principle](#CRP-TheCommonReusePrinciple)
 	* 2.4. [The Tension Diagram for Component Cohesion](#TheTensionDiagramforComponentCohesion)
 * 3. [Ch14 - Component Coupling](#Ch14-ComponentCoupling)
 	* 3.1. [The Acyclic Dependencies Principle (ADP)](#TheAcyclicDependenciesPrincipleADP)
@@ -14,9 +14,12 @@
 	* 3.2. [Top-Down Design](#Top-DownDesign)
 	* 3.3. [The Stable Dependencies Principle (SDP)](#TheStableDependenciesPrincipleSDP)
 		* 3.3.1. [Introduction](#Introduction-1)
-		* 3.3.2. [Stability Metrics](#StabilityMetrics)
+		* 3.3.2. [Stability Metrics (I)](#StabilityMetricsI)
 		* 3.3.3. [An application problem](#Anapplicationproblem)
 	* 3.4. [The Stable Abstraction Principle (SAP)](#TheStableAbstractionPrincipleSAP)
+		* 3.4.1. [Introduction](#Introduction-1)
+		* 3.4.2. [Abstractness metric (A)](#AbstractnessmetricA)
+		* 3.4.3. [Stability (I) vs Abstracness (A)](#StabilityIvsAbstracnessA)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -30,7 +33,7 @@
 ##  2. <a name='Ch13-ComponentCohesion'></a>Ch13 - Component Cohesion
 Three principles of component cohesion:
 
-###  2.1. <a name='REP:TheReuseReleaseEquivalencePrinciple'></a>REP - The Reuse/Release Equivalence Principle
+###  2.1. <a name='REP-TheReuseReleaseEquivalencePrinciple'></a>REP - The Reuse/Release Equivalence Principle
 
 `The granule of reuse is tha granule of release.`
 - Software components shall be tracket through a release number and process. This is important to: 
@@ -39,7 +42,7 @@ Three principles of component cohesion:
   - document and notify the changes between versions.
   - create a cohesive group of classes and modules into a component.
 
-###  2.2. <a name='CCP:TheCommonClosurePrinciple'></a>CCP - The Common Closure Principle
+###  2.2. <a name='CCP-TheCommonClosurePrinciple'></a>CCP - The Common Closure Principle
 
 `classes that change for the same reasons and at the same times = same component`
 
@@ -47,7 +50,7 @@ Three principles of component cohesion:
 - So, if a requirement changes, there is a good chance that a minimal number of software components will change. This minimizes the workload related to releasing, revalidating, and redeploying the software.
 - For example, three classes that calculate trigonometric functions for a given angle in radians. If the algorithm to calculate the radian into to the return value of the functions change, all those functions also changes. So they shall go to the same module. Even if a requirements changes affecting the trigonometric functions, only onw component will be affected (because all they belong to the same component).
 
-###  2.3. <a name='CRP:TheCommonReusePrinciple'></a>CRP - The Common Reuse Principle
+###  2.3. <a name='CRP-TheCommonReusePrinciple'></a>CRP - The Common Reuse Principle
 
 `Don’t force users of a component to depend on things they don’t need.`
 
@@ -154,7 +157,7 @@ or in other words
   - **DEPENDENT**: The Component has three dependencies, so has three external sources that can force change.
 ![An UNSTABLE Component](/ComputerScience/UncleBob/CleanArchitecture/CH14e.png)
 
-####  3.3.2. <a name='StabilityMetrics'></a>Stability Metrics (I)
+####  3.3.2. <a name='StabilityMetricsI'></a>Stability Metrics (I)
 Instability is defined as:
 > I = Fan-Out / (Fan-In + Fan-Out) 
 >
@@ -210,13 +213,13 @@ or
 > **STABLE COMPONENTS** should also be `abstract` so that its stability does not prevent it from being extended.
 > **UNSTABLE COMPONENTS** should be `concrete` so that its instability allows it to be modified.
 
-#### Introduction
+####  3.4.1. <a name='Introduction-1'></a>Introduction
 - High-level policies and Business Rules shall be placed into **STABLE** Components (`I = 0`)
 - Volatile parts, e.g. UI shall be placed into **UNSTABLE** Components (`I = 1`)
 - **HOWEVER:** if we put Business Rules into stable components. it will be difficul to change (stiffenning the Architecture), **they need to be flexible enough to withstand change**.
 - **SOLUTION:** Based on the `OCP` i.e (Create classes that are flexible enough to be extended withouth requiring modification) the **MOST STABLE** Components shall have **ABSTRACT CLASSES**
 
-#### Abstractness metric (A)
+####  3.4.2. <a name='AbstractnessmetricA'></a>Abstractness metric (A)
 The measure of abstractness of a Component is measured as:
 > A = Na / Nc
 >
@@ -225,7 +228,7 @@ The measure of abstractness of a Component is measured as:
 > - Nc: Number of `classes`in the Component.
 
 
-#### Stability (I) vs Abstracness (A)
+####  3.4.3. <a name='StabilityIvsAbstracnessA'></a>Stability (I) vs Abstracness (A)
 
 ![I vs A](/ComputerScience/UncleBob/CleanArchitecture/CH14j.PNG)
 
