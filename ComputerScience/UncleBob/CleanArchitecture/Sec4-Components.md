@@ -30,7 +30,7 @@
 ##  2. <a name='Ch13-ComponentCohesion'></a>Ch13 - Component Cohesion
 Three principles of component cohesion:
 
-###  2.1. <a name='REP:TheReuseReleaseEquivalencePrinciple'></a>REP: The Reuse/Release Equivalence Principle
+###  2.1. <a name='REP:TheReuseReleaseEquivalencePrinciple'></a>REP - The Reuse/Release Equivalence Principle
 
 `The granule of reuse is tha granule of release.`
 - Software components shall be tracket through a release number and process. This is important to: 
@@ -39,7 +39,7 @@ Three principles of component cohesion:
   - document and notify the changes between versions.
   - create a cohesive group of classes and modules into a component.
 
-###  2.2. <a name='CCP:TheCommonClosurePrinciple'></a>CCP: The Common Closure Principle
+###  2.2. <a name='CCP:TheCommonClosurePrinciple'></a>CCP - The Common Closure Principle
 
 `classes that change for the same reasons and at the same times = same component`
 
@@ -47,7 +47,7 @@ Three principles of component cohesion:
 - So, if a requirement changes, there is a good chance that a minimal number of software components will change. This minimizes the workload related to releasing, revalidating, and redeploying the software.
 - For example, three classes that calculate trigonometric functions for a given angle in radians. If the algorithm to calculate the radian into to the return value of the functions change, all those functions also changes. So they shall go to the same module. Even if a requirements changes affecting the trigonometric functions, only onw component will be affected (because all they belong to the same component).
 
-###  2.3. <a name='CRP:TheCommonReusePrinciple'></a>CRP: The Common Reuse Principle
+###  2.3. <a name='CRP:TheCommonReusePrinciple'></a>CRP - The Common Reuse Principle
 
 `Don’t force users of a component to depend on things they don’t need.`
 
@@ -78,7 +78,7 @@ same component.
 
 ####  3.1.1. <a name='Introduction'></a>Introduction
 - This is a dependency grapgh `Component A` classes use `Component B` classes i.e. `Component B` is a dependency of `Component A`.
-- 
+  
 ![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14.png)
 
 ####  3.1.2. <a name='AnAcyclicDependencyGraph'></a>An Acyclic Dependency Graph
@@ -208,7 +208,7 @@ or
 or 
 
 > **STABLE COMPONENTS** should also be `abstract` so that its stability does not prevent it from being extended.
-> **UNSTABLE COMPONENTS** should be `concrete` sot that its instability allows it to be modified.
+> **UNSTABLE COMPONENTS** should be `concrete` so that its instability allows it to be modified.
 
 #### Introduction
 - High-level policies and Business Rules shall be placed into **STABLE** Components (`I = 0`)
