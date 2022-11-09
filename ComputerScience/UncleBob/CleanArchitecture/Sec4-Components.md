@@ -14,7 +14,8 @@
 	* 3.2. [Top-Down Design](#Top-DownDesign)
 	* 3.3. [The Stable Dependencies Principle (SDP)](#TheStableDependenciesPrincipleSDP)
 		* 3.3.1. [Introduction](#Introduction-1)
-		* 3.3.2. [An application problem](#Anapplicationproblem)
+		* 3.3.2. [Stability Metrics](#StabilityMetrics)
+		* 3.3.3. [An application problem](#Anapplicationproblem)
 	* 3.4. [The Stable Abstraction Principle (SAP)](#TheStableAbstractionPrincipleSAP)
 
 <!-- vscode-markdown-toc-config
@@ -152,7 +153,7 @@ or in other words
   - **DEPENDENT**: The Component has three dependencies, so has three external sources that can force change.
 ![An UNSTABLE Component](/ComputerScience/UncleBob/CleanArchitecture/CH14e.png)
 
-#### Stability Metrics
+####  3.3.2. <a name='StabilityMetrics'></a>Stability Metrics
 Instability is defined as:
 > I = Fan-Out / (Fan-In + Fan-Out) 
 >
@@ -171,7 +172,7 @@ Instability is defined as:
   - UI and things that are very probable to change shall be implemented as `UNSTABLE Components`
 - When drawing a `dependency graph`, It is recomended to put unstable Components at the top of the diagram. So, any arrow that points up is violating the `Stable Dependency Principle`
 
-####  3.3.2. <a name='Anapplicationproblem'></a>An application problem
+####  3.3.3. <a name='Anapplicationproblem'></a>An application problem
 - Lets say we have three Components ideally configured, and its `dependency graph` is a follows: 
 ![Solution procedure](/ComputerScience/UncleBob/CleanArchitecture/CH14f.png)
 
@@ -191,6 +192,18 @@ Instability is defined as:
 - Once solved, the solution can be added to the original dependency graph   as presented below:
 ![Solution presented](/ComputerScience/UncleBob/CleanArchitecture/CH14i.png)
 
+NOTE:
+- The new Component only has an `Interface` (which has no implementation), `abstract Components` are very stable and ideal dependencies for less stable Components.
+
 
 ###  3.4. <a name='TheStableAbstractionPrincipleSAP'></a>The Stable Abstraction Principle (SAP)
+
+> A Component shall be as ABSTRACT as it is STABLE
+
+#### Introduction
+- High-level policies and Business Rules shall be placed into **STABLE** Components (`I = 0`)
+- Volatile parts, e.g. UI shall be placed into **UNSTABLE** Components (`I = 1`)
+- **HOWEVER:** if we put Business Rules into stable components. it will be difficul to change (stiffenning the Architecture), **they need to be flexible enough to withstand change**.
+- **SOLUTION:** Based on the `OCP` i.e (Create classes that are flexible enough to be extended withouth requiring modification) the **MOST STABLE** Components shall have **ABSTRACT CLASSES**
+#### Abstractness metric
 
