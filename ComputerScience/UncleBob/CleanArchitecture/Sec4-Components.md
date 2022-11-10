@@ -232,9 +232,27 @@ The measure of abstractness of a Component is measured as:
 
 ![I vs A](/ComputerScience/UncleBob/CleanArchitecture/CH14j.PNG)
 
+Where:
 - Maximum maximum stability and abstracness are at (0,1)
 - Minimum maximum stability and concreteness are at (1,0)
 
+However three regions can be identified:
+- **The Zone of Pain**: Where highly stable and concrete Components are located. These kind of Components are undesirable because they are too rigid too modify. So, these comopnents are painful when they are volatile otherwise are harmless.
+- **The Zone of Uselessness**: Where Components which are maximally abstract and have no dependents. So, they are abstract classes that no one ever implemented.
+- **The Main Sequence**: Components that are not too **abstract** for its stability and not too **unstable** for its abstracness. In general, Components shall be on or close to this region.
+
+#### Distance (D) from the Main Sequence
+> `D = | A + I - 1 | `
+> 
+> Where:
+>  `D = 0`: Component is directly on the main sequence.
+>  `D = 1`: Component is at the maximum distance from the main sequence.
+
+- So, if we define a thereshold (e.g. `0.1`) for `D`. We can use it as a reference, then if a Component has higher `D` this Component shall be **restructured**
+- It is presented below an I vs A graph were parallel lines (to the main sequence) are included to represent `standard deviation (Z)`  
+
 ![Main Sequence and Components](/ComputerScience/UncleBob/CleanArchitecture/CH14k.PNG)
 
-![D: Distance](/ComputerScience/UncleBob/CleanArchitecture/CH14l.PNG)
+The `Distance (D)` can also be ploted in `Number of Release vs Distance graphs`. So it can be observed the evolution of the Component per release.
+
+![D: Distance per release](/ComputerScience/UncleBob/CleanArchitecture/CH14l.PNG)
