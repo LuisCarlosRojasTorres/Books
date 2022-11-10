@@ -1,0 +1,4 @@
+- [Section 3 - Design Principles (in progress)](/ComputerScience/UncleBob/CleanArchitecture/Sec3-DesignPrinciples.md)
+- [Section 4 - Design Principles](/ComputerScience/UncleBob/CleanArchitecture/Sec4-DesignPrinciples.md)
+- [Section 5 - Architecture (in progress)](/ComputerScience/UncleBob/CleanArchitecture/Sec5-Architecture.md)
+- [Section 5 - Details (in progress)](/ComputerScience/UncleBob/CleanArchitecture/Sec5-Architecture.md)
