@@ -6,6 +6,7 @@
 	* 3.2. [Nodes](#Nodes)
 	* 3.3. [The scene tree](#Thescenetree)
 	* 3.4. [Signals](#Signals)
+* 4. [The Editor of Godot](#TheEditorofGodot)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -40,3 +41,5 @@ A game is a `tree` of `nodes` that you group together into `scenes`. These notes
 ###  3.4. <a name='Signals'></a>Signals
 - `nodes` emits `signals` when some event occurs.
 - `signals` permits `nodes` communication
+
+##  4. <a name='TheEditorofGodot'></a>The Editor of Godot
