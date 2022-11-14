@@ -12,6 +12,8 @@
 	* 2.3. [Scene instances as a design language](#Sceneinstancesasadesignlanguage)
 * 3. [Scripting languages](#Scriptinglanguages)
 * 4. [Creating your first scripts](#Creatingyourfirstscripts)
+	* 4.1. [Creating a new script](#Creatinganewscript)
+	* 4.2. [Hello world script](#Helloworldscript)
 * 5. [Listening to player input](#Listeningtoplayerinput)
 * 6. [Using Signals](#UsingSignals)
 
@@ -93,7 +95,10 @@
 ##  3. <a name='Scriptinglanguages'></a>Scripting languages
 
 
-### Creating a new script
+
+
+##  4. <a name='Creatingyourfirstscripts'></a>Creating your first scripts
+###  4.1. <a name='Creatinganewscript'></a>Creating a new script
 To attach a new `script` to a `node`:
 
 1. In left panel `right click` and `Attach Script`
@@ -102,7 +107,7 @@ To attach a new `script` to a `node`:
 
 Note: you can acces to documentation of specific words with `Ctrl+click`.
 
-### Hello world script
+###  4.2. <a name='Helloworldscript'></a>Hello world script
 
 - `func`:
   - `_init()`: class constructor
@@ -129,11 +134,34 @@ func _process(delta):
 
     position += velocity * delta
 ```
-##  4. <a name='Creatingyourfirstscripts'></a>Creating your first scripts
-
 
 ##  5. <a name='Listeningtoplayerinput'></a>Listening to player input
 
+There are two ways to process player's input in godot:
+1. `InputEvents`: To react to events i.e `space` for jump.
+2. `Input` singleton: To check inputs every frame.
+
+An example for the second case is presented below:
+
+``` console
+
+func _process(delta):
+	
+	var direction = 0
+	if Input.is_action_pressed("ui_left"):
+		direction = -1
+	if Input.is_action_pressed("ui_right"):
+		direction = 1
+	
+	rotation += angular_speed * direction * delta
+	# TO move when pressing "up" 
+	var velocity = Vector2.ZERO
+	if Input.is_action_pressed("ui_up"):
+		velocity = Vector2.UP.rotated(rotation)*speed
+		
+	position += velocity*delta
+
+```
 
 ##  6. <a name='UsingSignals'></a>Using Signals
 
