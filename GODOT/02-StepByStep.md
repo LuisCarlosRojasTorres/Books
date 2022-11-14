@@ -170,13 +170,63 @@ func _process(delta):
 
 ##  6. <a name='UsingSignals'></a>Using Signals
 
-###  6.1. <a name='Scenesetup'></a>Scene setup
-
+- `signals` are messages that `nodes` **emit** when something specific happens to them.
+- Then, `nodes` connected to that `signal` react and call functions.
+- `signals` limits coupling and keeps the code flexible.
+  
 ###  6.2. <a name='Connectingasignalintheeditor'></a>Connecting a `signal` in the editor
+
+- Select a `node`
+- In the right panel, in `Node` tab, there are a list of `Signals`:
+- In case of a `Button node`...
+  - Click on `pressed()`, then the `Connect a Signal to a Method` panel appear:
+    - Select the `node` that will receive the `signal`
+    - the `receiver method` name is created by default
+      - `receiver method`: function that godot calls when a `node` `emits` the `signal`.
+    - Click on `connect`
+  - The function is created in the `script` of the `node` that reacts.
+
 
 ###  6.3. <a name='Connectingasignalviacode'></a>Connecting a `signal` via code
 
-###  6.4. <a name='Completescript'></a>Complete script
+- It is possible to connect signals via code instead of using the editor.
+- Important when you create `nodes` or instantiate `scenes` inside of a script.
+- The mechanics of `signals` is pretty similar to Qt mechanism.
+- The `connect` functions should be created once the node is fully instantiated, one way to do this is implementing the `_ready()` (a built-in rfunction which is called automatically by godot when a node is fully instantiated).
+- To select the relative node it is used `Node.get_node("nameOfRelativeNode")` (which search into the childrens of the node and get the node by its name)
+- Then to connect function of the children node is called with the following parrameters:
+  - `node.connect("nomeOfSignalFunction", self, "nomeOfReactionFunction")`
+    - `node`: the node that will emit the signal
+    - `"nomeOfSignalFunction"`: the name of the signal 
+    - `self`: means that the reactive node that will react is the node where this script is attached.
+    - `"nomeOfReactionFunction"`: the function of the reactive node which will be called by the `signal`.
+- A little example is presented below
+
+``` console
+extends Sprite
+
+var speed = 400
+var angular_speed = PI
+
+
+func _ready():
+    var timer = get_node("Timer") # gettting the node
+    timer.connect("timeout", self, "_on_Timer_timeout") #Connection
+
+
+func _process(delta):
+    rotation += angular_speed * delta
+    var velocity = Vector2.UP.rotated(rotation) * speed
+    position += velocity * delta
+
+
+func _on_Button_pressed():
+    set_process(not is_processing())
+
+
+func _on_Timer_timeout():
+    visible = not visible
+```
 
 ###  6.5. <a name='Customsignals'></a>Custom signals
 
