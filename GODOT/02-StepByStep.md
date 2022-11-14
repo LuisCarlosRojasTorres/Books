@@ -93,6 +93,42 @@
 ##  3. <a name='Scriptinglanguages'></a>Scripting languages
 
 
+### Creating a new script
+To attach a new `script` to a `node`:
+
+1. In left panel `right click` and `Attach Script`
+2. In `Attach Node Script` panel, `Template: Empty` 
+3. Click in `Create button`
+
+Note: you can acces to documentation of specific words with `Ctrl+click`.
+
+### Hello world script
+
+- `func`:
+  - `_init()`: class constructor
+  - `_process()`: updates position and rotation every frame. Godot uses the variable `delta` (the delta time since the last frame) as an argument.
+    - `rotation`: an scalar defined as `theta = theta + angular_velocity * delta_time`
+    - `position`: a 2d vector, defined as `position = position + velocity * delta_time`
+    - `position`: a 2d vector
+
+- Examples of the functions are presented below:
+  
+``` console
+extends Sprite 
+
+func _init():
+  print("pass")
+
+var speed = 400
+var angular_speed = PI
+
+func _process(delta):
+    rotation += angular_speed * delta
+
+    var velocity = Vector2.UP.rotated(rotation) * speed
+
+    position += velocity * delta
+```
 ##  4. <a name='Creatingyourfirstscripts'></a>Creating your first scripts
 
 
