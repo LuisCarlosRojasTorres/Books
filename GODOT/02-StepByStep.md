@@ -230,3 +230,12 @@ func _on_Timer_timeout():
 
 ###  6.5. <a name='Customsignals'></a>Custom signals
 
+- To create custom signals, you shall declare it in the script after the `extends` statement:
+
+``` console
+extends Node2D
+signal signalText #HERE!
+```
+- Its nomenclature is `signal action_verb_in_past`
+- Once created, it appears in `node` tab of the right pannel.
+- Then, to `emit` it, you shall to use the `emit_signal("signalText")`
