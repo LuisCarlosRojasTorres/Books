@@ -16,6 +16,11 @@
 	* 4.2. [Hello world script](#Helloworldscript)
 * 5. [Listening to player input](#Listeningtoplayerinput)
 * 6. [Using Signals](#UsingSignals)
+	* 6.1. [Scene setup](#Scenesetup)
+	* 6.2. [Connecting a `signal` in the editor](#Connectingasignalintheeditor)
+	* 6.3. [Connecting a `signal` via code](#Connectingasignalviacode)
+	* 6.4. [Complete script](#Completescript)
+	* 6.5. [Custom signals](#Customsignals)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -164,4 +169,14 @@ func _process(delta):
 ```
 
 ##  6. <a name='UsingSignals'></a>Using Signals
+
+###  6.1. <a name='Scenesetup'></a>Scene setup
+
+###  6.2. <a name='Connectingasignalintheeditor'></a>Connecting a `signal` in the editor
+
+###  6.3. <a name='Connectingasignalviacode'></a>Connecting a `signal` via code
+
+###  6.4. <a name='Completescript'></a>Complete script
+
+###  6.5. <a name='Customsignals'></a>Custom signals
 
