@@ -108,7 +108,15 @@ Which attributes functions shall have to be easy to read and understand?
   - For more than two or three arguments, check if they can be wraped into an object. e.g., From `drawCircle(double x, doubley, double radius)` to `drawCircle(Point center, double radius)`
 - **Argument lists:** i.e. functions with a variable number of arguments
   - If the variable arguments are treated identically, then they are equivalente to a single argument of type `List`.
-- 
+- **Output Arguments:**
+  - should be avoided. If your function must change the state of something, have it change the state of its owning object.
+- **Command-Query Separation:**
+  - Functions shall either **do something** or **answer something**, but not both. e.g. `bool setName(String attribute, String value)`.
+  - So, separate the command from the query so that the ambiguity cannot occur.
+- **Prefer Exceptions to Returning Error Codes:**
+  - todo
+- **DRY**
+  - todo
 
 
 
