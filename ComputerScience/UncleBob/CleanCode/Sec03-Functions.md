@@ -8,6 +8,7 @@
 * 7. [Command-Query Separation:](#Command-QuerySeparation:)
 * 8. [DRY](#DRY)
 * 9. [ONNE-ONE rule](#ONNE-ONErule)
+* 10. [Process to write clean functions](#Processtowritecleanfunctions)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -148,6 +149,11 @@ Which attributes functions shall have to be easy to read and understand?
   - However, only in larger functions that rules provide significant benefit.
     - For small functions, multiple `return`, `breaks` or `continue` statements does no harm and can be more expressive.
 
+##  10. <a name='Processtowritecleanfunctions'></a>Process to write clean functions
+1. Write it for first time. so it can be long and complicated
+2. Have unit test that cover every line of the function.
+3. Refine the code, spliiting out the functions, change names, eliminate duplication. BUT, keeping the test PASSING.
+4. you get clean functions.
 
 
 
