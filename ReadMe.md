@@ -19,8 +19,6 @@
 
 - [The little book that STILL beats the market](/Economics/TheLittleBookThatBeatsTheMarket.md)
 
-
-
 ### Filosofía 
 
 - [A Arte da Guerra - SUN TZU](/Filosofia/a_arte_da_guerra.md)
