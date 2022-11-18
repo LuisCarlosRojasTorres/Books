@@ -29,14 +29,14 @@
 ###  1.1. <a name='LegalComments'></a>Legal Comments
 - It refers to a standard licence or other external document rather than putting all the terms and conditions into the comment.
 
-###  1.2. <a name='Informative'></a>Informative
+###  1.2. <a name='Informative'></a>Informative Comments
 
-###  1.3. <a name='Explanation'></a>Explanation
+###  1.3. <a name='Explanation'></a>Explanation Comments
 
-###  1.4. <a name='Clarification'></a>Clarification
+###  1.4. <a name='Clarification'></a>Clarification Comments
 
-###  1.5. <a name='WarningofConsequences'></a>Warning of Consequences
+###  1.5. <a name='WarningofConsequences'></a>Warning of Consequences Comments
 
-###  1.6. <a name='TODO'></a>TODO
-
-###  1.7. <a name='Amplification'></a>Amplification
+###  1.6. <a name='TODO'></a>TODO Comments
+ 
+###  1.7. <a name='Amplification'></a>Amplification Comments
