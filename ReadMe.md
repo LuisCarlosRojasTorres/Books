@@ -4,6 +4,8 @@
 ### Computer Science
 
 - [AspNetCore](/ComputerScience/ASPNetCore/CH01.md)
+- [Microsoft - NET Core](/ComputerScience/Microsoft/NetCore/home.md)
+- [Microsoft - ASPNET Core](/ComputerScience/Microsoft/ASPNetCore/CH01.md)
 - [The C++ Workshop](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
 - [UA Object-Oriented Design](/ComputerScience/ObjectOrientedDesign.md)
 - [UA Design Patterns](/ComputerScience/ObjectOrientedDesign.md)
