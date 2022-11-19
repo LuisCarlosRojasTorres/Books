@@ -30,9 +30,18 @@
 - It refers to a standard licence or other external document rather than putting all the terms and conditions into the comment.
 
 ###  1.2. <a name='Informative'></a>Informative Comments
-
+- Explain the parts of the code which needs additional knowledge to understand. E.g. Regex, mathematical formulas
+  
 ###  1.3. <a name='Explanation'></a>Explanation Comments
+- Provides the intent behind a decision in the code.
 
+``` cpp
+// Euler method only for testing integration
+void EulerImplicitMethod(...)
+
+// RK4 method an easy but accurate method! 
+void RungeKutta4Method(...)
+```
 ###  1.4. <a name='Clarification'></a>Clarification Comments
 
 ###  1.5. <a name='WarningofConsequences'></a>Warning of Consequences Comments
