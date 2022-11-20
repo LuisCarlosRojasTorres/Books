@@ -43,9 +43,45 @@ void EulerImplicitMethod(...)
 void RungeKutta4Method(...)
 ```
 ###  1.4. <a name='Clarification'></a>Clarification Comments
-
+- To translate the meaning of some obscure `argument` or `return` value (part of the standard library or in code that you cannot alter!!)into something readable.
+- RISKY!!!
+  - There is a risk that the clarifying comment is incorrect.
+  
 ###  1.5. <a name='WarningofConsequences'></a>Warning of Consequences Comments
+- To warn other programmers about certain consequences.
+
+``` cpp
+// This test takes almost two hours two finish
+// Dont run unless you have some time to kill
+void _testWithRealBigFile(){...}
+```
+
+- To warn why some code is implemented in that way, a which consequences will raise if is modified.
+
+``` cpp
+static SimpleDateFormat makeStandardHttpDateFormat(){
+	//SimpleDateFormat is not thread safe,
+	//so we need to create each instance independently.
+	SimpleDateFormat df = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
+	df.setTimeZone(TimeZone.getTimeZone("GMT"));
+	return df;
+}
+```
 
 ###  1.6. <a name='TODO'></a>TODO Comments
- 
+- TODOs are jobs that the programmer thinks should be done, but for some reason can’t do at the moment. Once it is implemented , it shall be deleted.
+- It might be:
+  - A reminder to delete a deprecated feature 
+  - a plea for someone else to look at a problem 
+  - a request for someone else to think of a better name 
+  - a reminder to make a change that is dependent on a planned event.
+- It is no excuse do leave **bad code** in the system.
+
+
 ###  1.7. <a name='Amplification'></a>Amplification Comments
+- Amplify the importance of something that may otherwise seem inconsequential.
+  
+``` cpp
+	// Thi is SO important to accelerate the results and increase accuracy!
+	DataPreProcessing();
+```
