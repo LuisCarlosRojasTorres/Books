@@ -1,3 +1,5 @@
+> TODO: CleanCode - Sec02 Naming Conventions
+
 ## Livros:
 - [Dummy](/dummy.md)
 
