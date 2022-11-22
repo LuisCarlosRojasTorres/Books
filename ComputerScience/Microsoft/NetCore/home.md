@@ -1,22 +1,23 @@
 <!-- vscode-markdown-toc -->
 * 1. [References](#References)
-* 2. [Variables and Statements](#VariablesandStatements)
-* 3. [Functions](#Functions)
-* 4. [Classes](#Classes)
-* 5. [Inheritance, Polymorphism and Interfaces](#InheritancePolymorphismandInterfaces)
-* 6. [Collections](#Collections)
-* 7. [Multitasking and Asynchronous operations](#MultitaskingandAsynchronousoperations)
-* 8. [Packaging and distribution](#Packaginganddistribution)
-* 9. [Files](#Files)
-* 10. [EF Core](#EFCore)
-* 11. [Linq](#Linq)
-* 12. [Performance](#Performance)
-* 13. [Microservices Theory](#MicroservicesTheory)
-* 14. [Razor Pages](#RazorPages)
-* 15. [MVC](#MVC)
-* 16. [API](#API)
-* 17. [WebApp](#WebApp)
-* 18. [Deploy on Cloud](#DeployonCloud)
+* 2. [Net Core Concepts And Definitions](#NetCoreConceptsAndDefinitions)
+* 3. [Variables and Statements](#VariablesandStatements)
+* 4. [Functions](#Functions)
+* 5. [Classes](#Classes)
+* 6. [Inheritance, Polymorphism and Interfaces](#InheritancePolymorphismandInterfaces)
+* 7. [Collections](#Collections)
+* 8. [Multitasking and Asynchronous operations](#MultitaskingandAsynchronousoperations)
+* 9. [Packaging and distribution](#Packaginganddistribution)
+* 10. [Files](#Files)
+* 11. [EF Core](#EFCore)
+* 12. [Linq](#Linq)
+* 13. [Performance](#Performance)
+* 14. [Microservices Theory](#MicroservicesTheory)
+* 15. [Razor Pages](#RazorPages)
+* 16. [MVC](#MVC)
+* 17. [API](#API)
+* 18. [WebApp](#WebApp)
+* 19. [Deploy on Cloud](#DeployonCloud)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -33,60 +34,65 @@
 [5] - Microsoft - Programming ASPNETCore
 [6] - ASPNETCore5 and React
 
-##  2. <a name='VariablesandStatements'></a>Variables and Statements
+
+##  2. <a name='NetCoreConceptsAndDefinitions'></a>Net Core Concepts And Definitions
+[1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/NetCoreConceptsAndDefinitions.md)
+
+##  3. <a name='VariablesandStatements'></a>Variables and Statements
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/VariablesAndStatements.md)
 
-##  3. <a name='Functions'></a>Functions
+##  4. <a name='Functions'></a>Functions
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Functions.md)
 
-##  4. <a name='Classes'></a>Classes
+##  5. <a name='Classes'></a>Classes
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Classes.md)
 
-##  5. <a name='InheritancePolymorphismandInterfaces'></a>Inheritance, Polymorphism and Interfaces
+##  6. <a name='InheritancePolymorphismandInterfaces'></a>Inheritance, Polymorphism and Interfaces
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Inheritance-polymorphism-and-Interfaces.md)
 
-##  6. <a name='Collections'></a>Collections 
+##  7. <a name='Collections'></a>Collections 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Collections.md)
 
-##  7. <a name='MultitaskingandAsynchronousoperations'></a>Multitasking and Asynchronous operations
+##  8. <a name='MultitaskingandAsynchronousoperations'></a>Multitasking and Asynchronous operations
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Multitasking.md)
 
-##  8. <a name='Packaginganddistribution'></a>Packaging and distribution
+##  9. <a name='Packaginganddistribution'></a>Packaging and distribution
 [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Packaging-and-Distribution.md)
 
-##  9. <a name='Files'></a>Files
+##  10. <a name='Files'></a>Files
 [2]
 
-##  10. <a name='EFCore'></a>EF Core
+##  11. <a name='EFCore'></a>EF Core
 [2]
 
-##  11. <a name='Linq'></a>Linq
+##  12. <a name='Linq'></a>Linq
 [1] [2]
 
-##  12. <a name='Performance'></a>Performance
+##  13. <a name='Performance'></a>Performance
 [2]
 
-##  13. <a name='MicroservicesTheory'></a>Microservices Theory
+##  14. <a name='MicroservicesTheory'></a>Microservices Theory
 [3] [4]
 
-##  14. <a name='RazorPages'></a>Razor Pages
+##  15. <a name='RazorPages'></a>Razor Pages
 [2]
 
-##  15. <a name='MVC'></a>MVC
+##  16. <a name='MVC'></a>MVC
 [2] [5]
 
-##  16. <a name='API'></a>API
+##  17. <a name='API'></a>API
 [1] [2] [4] [5]
 
-##  17. <a name='WebApp'></a>WebApp
+##  18. <a name='WebApp'></a>WebApp
 [5] [6]
 
-##  18. <a name='DeployonCloud'></a>Deploy on Cloud
+##  19. <a name='DeployonCloud'></a>Deploy on Cloud
 [4] [6]
