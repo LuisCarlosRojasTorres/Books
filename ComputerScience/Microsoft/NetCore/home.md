@@ -1,6 +1,6 @@
 <!-- vscode-markdown-toc -->
 * 1. [References](#References)
-* 2. [Net Core Concepts And Definitions](#NetCoreConceptsAndDefinitions)
+* 2. [ Concepts And Definitions](#ConceptsAndDefinitions)
 * 3. [Variables and Statements](#VariablesandStatements)
 * 4. [Functions](#Functions)
 * 5. [Classes](#Classes)
@@ -35,9 +35,9 @@
 [6] - ASPNETCore5 and React
 
 
-##  2. <a name='NetCoreConceptsAndDefinitions'></a>Net Core Concepts And Definitions
+##  2. <a name='ConceptsAndDefinitions'></a> Concepts And Definitions
 [1] [2]
-[LINK](/ComputerScience/Microsoft/NetCore/NetCoreConceptsAndDefinitions.md)
+[LINK](/ComputerScience/Microsoft/NetCore/ConceptsAndDefinitions.md)
 
 ##  3. <a name='VariablesandStatements'></a>Variables and Statements
 [1] [2]
