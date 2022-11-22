@@ -35,35 +35,58 @@
 
 ##  2. <a name='VariablesandStatements'></a>Variables and Statements
 [1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/VariablesAndStatements.md)
+
 ##  3. <a name='Functions'></a>Functions
 [1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/Functions.md)
+
 ##  4. <a name='Classes'></a>Classes
 [1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/Classes.md)
+
 ##  5. <a name='InheritancePolymorphismandInterfaces'></a>Inheritance, Polymorphism and Interfaces
 [1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/Inheritance-polymorphism-and-Interfaces.md)
+
 ##  6. <a name='Collections'></a>Collections 
 [1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/Collections.md)
+
 ##  7. <a name='MultitaskingandAsynchronousoperations'></a>Multitasking and Asynchronous operations
 [1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/Multitasking.md)
+
 ##  8. <a name='Packaginganddistribution'></a>Packaging and distribution
 [2]
+[LINK](/ComputerScience/Microsoft/NetCore/Packaging-and-Distribution.md)
+
 ##  9. <a name='Files'></a>Files
 [2]
+
 ##  10. <a name='EFCore'></a>EF Core
 [2]
+
 ##  11. <a name='Linq'></a>Linq
 [1] [2]
+
 ##  12. <a name='Performance'></a>Performance
 [2]
+
 ##  13. <a name='MicroservicesTheory'></a>Microservices Theory
 [3] [4]
+
 ##  14. <a name='RazorPages'></a>Razor Pages
 [2]
+
 ##  15. <a name='MVC'></a>MVC
 [2] [5]
+
 ##  16. <a name='API'></a>API
 [1] [2] [4] [5]
+
 ##  17. <a name='WebApp'></a>WebApp
 [5] [6]
+
 ##  18. <a name='DeployonCloud'></a>Deploy on Cloud
 [4] [6]
