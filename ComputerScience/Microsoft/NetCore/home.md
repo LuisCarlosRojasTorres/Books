@@ -43,13 +43,13 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/VariablesAndStatements.md)
 
-##  4. <a name='Functions'></a>Functions
-[1] [2]
-[LINK](/ComputerScience/Microsoft/NetCore/Functions.md)
-
-##  5. <a name='Methods'></a>Methods
+##  4. <a name='Functions'></a>Methods
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Methods.md)
+
+##  5. <a name='Methods'></a>Classes
+[1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/Classes.md)
 
 ##  6. <a name='InheritancePolymorphismandInterfaces'></a>Inheritance, Polymorphism and Interfaces
 [1] [2]
