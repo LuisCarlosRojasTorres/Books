@@ -43,3 +43,16 @@ int height = 172;
 |`char`| Single character| 16|`char age = '3';`| 
 |`bool`| Boolean| 8|`bool isOld = false;`| 
 
+## String interpolation
+- It is more efficient and replaces the operand `+` for `string concatenaton`.
+- The symbol `$` at the start of the string indicates that:
+  - It is an interpolated string
+  - The expression between `{ }` should be evaluated and the result substituted in their place.
+
+``` cs
+Console.WriteLine("Nome: " + user.Name.Text + "Age: " + user.age.Text);
+
+Console.WriteLine($"Nome: {userName.Text}, Age: {user.age.Text}");
+
+```
+
