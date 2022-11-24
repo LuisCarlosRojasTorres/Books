@@ -2,8 +2,8 @@
 * 1. [References](#References)
 * 2. [ Concepts And Definitions](#ConceptsAndDefinitions)
 * 3. [Variables and Statements](#VariablesandStatements)
-* 4. [Functions](#Functions)
-* 5. [Methods](#Methods)
+* 4. [Methods](#Methods)
+* 5. [Classes](#Classes)
 * 6. [Inheritance, Polymorphism and Interfaces](#InheritancePolymorphismandInterfaces)
 * 7. [Collections](#Collections)
 * 8. [Multitasking and Asynchronous operations](#MultitaskingandAsynchronousoperations)
@@ -43,11 +43,11 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/VariablesAndStatements.md)
 
-##  4. <a name='Functions'></a>Methods
+##  4. <a name='Methods'></a>Methods
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Methods.md)
 
-##  5. <a name='Methods'></a>Classes
+##  5. <a name='Classes'></a>Classes
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Classes.md)
 
