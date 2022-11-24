@@ -15,17 +15,96 @@
 <!-- /vscode-markdown-toc -->
 
 ##  1. <a name='CreatingMethods'></a>Creating Methods
+- A `method` is a named sequence of statements.
+- Its name should be a meaningful identifier that indicates its overall purpose.
 
 ###  1.1. <a name='Methoddeclaration'></a>Method declaration
+- Its syntax is presented below:
+
+``` cs
+returnType NameOfTheMethod  (parameterType1 parameter1, ...){
+	// Body of the method
+}
+```
+
+- If the method does not return a value, its `returnType` is `void`.
+- If the method return a value, its `returnType` shall be the variable type that `returns`.
+
+``` cs 
+int Test(int a, int b) { //returnType is int
+    return a + b; // returns an int
+}
+```
 
 ###  1.2. <a name='Expression-bodiedmethods'></a>Expression-bodied methods
+- For methods that:
+  - are very simple
+  - performing a single task
+  - or returning the results of a calculation without involving any additional logic.
+- They can still take parameters and return values.
+
+``` cs 
+- Its syntax is presented below:
+
+``` cs
+returnType NameOfTheMethod  (parameterType1 parameter1, ...){
+	// Body of the method
+}
+```
+
+- If the method does not return a value, its `returnType` is `void`.
+- If the method return a value, its `returnType` shall be the variable type that `returns`.
+
+``` cs 
+// Common method
+int Test(int a, int b) {
+    return a + b; 
+}
+// expression bodied method
+int Test(int a, int b) => a + b;
+```
+
+- Differences:
+  - The use of `=>` operator to reference the expression that forms the body of the method.
+  - Absence of `return` a statement.
+  - NO DIFFERENCE in functionality, is merely a syntactic convenience.
 
 ##  2. <a name='UnderstandingScope'></a>Understanding Scope
-
-###  2.1. <a name='LocalScope'></a>Local Scope
-
-###  2.2. <a name='Overloadingmethods'></a>Overloading methods
+- The scope of a variable is simply the region of the program in which that variable is usable.
+- The `{ }` that form the body of a method define the scope of the method.
+  - Any variables declared inside the body are scoped to the method; they disappear when the method ends and can be accessed only by the code running in that method i.e., `local variables`.
 
 ##  3. <a name='Nestingmethods'></a>Nesting methods
+- When you want to break a large method into smaller pieces.
+  - Each piece can b implemented as a `helper` method.
+  - Its `helper` methods has `local scope`, so it only be called inside the larger method.
+    - This prevents `helper` methods to be called accidentally. 
 
+``` cs
+int Test3(int a, int b, int c)
+{
+    int Test2(int a, int b) { //helper method
+        return a + b;
+    }
+
+    //return a + b + c;
+    return Test2(a, Test2(b, c));
+}
+
+Console.WriteLine(Test3(4, 5, 6));
+```
+
+## Recursive Methods 
+
+``` cs
+long Factorial(int value)
+{    
+	if(value == 1 && value > 0){
+		return 1;
+	}
+	else{
+		return value*Factorial(value-1);
+	}    
+}
+```
 ##  4. <a name='Optionalparametersandnamedarguments'></a>Optional parameters and named arguments
