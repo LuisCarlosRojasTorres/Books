@@ -6,18 +6,19 @@
 * 5. [Classes](#Classes)
 * 6. [Inheritance, Polymorphism and Interfaces](#InheritancePolymorphismandInterfaces)
 * 7. [Collections](#Collections)
-* 8. [Multitasking and Asynchronous operations](#MultitaskingandAsynchronousoperations)
-* 9. [Packaging and distribution](#Packaginganddistribution)
-* 10. [Files](#Files)
-* 11. [EF Core](#EFCore)
-* 12. [Linq](#Linq)
-* 13. [Performance](#Performance)
-* 14. [Microservices Theory](#MicroservicesTheory)
-* 15. [Razor Pages](#RazorPages)
-* 16. [MVC](#MVC)
-* 17. [API](#API)
-* 18. [WebApp](#WebApp)
-* 19. [Deploy on Cloud](#DeployonCloud)
+* 8. [Decoupling Application Logic and Handling Events](#DecouplingApplicationLogicandHandlingEvents)
+* 9. [Multitasking and Asynchronous operations](#MultitaskingandAsynchronousoperations)
+* 10. [Packaging and distribution](#Packaginganddistribution)
+* 11. [Files](#Files)
+* 12. [EF Core](#EFCore)
+* 13. [Linq](#Linq)
+* 14. [Performance](#Performance)
+* 15. [Microservices Theory](#MicroservicesTheory)
+* 16. [Razor Pages](#RazorPages)
+* 17. [MVC](#MVC)
+* 18. [API](#API)
+* 19. [WebApp](#WebApp)
+* 20. [Deploy on Cloud](#DeployonCloud)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -59,40 +60,44 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Collections.md)
 
-##  8. <a name='MultitaskingandAsynchronousoperations'></a>Multitasking and Asynchronous operations
+##  8. <a name='DecouplingApplicationLogicandHandlingEvents'></a>Decoupling Application Logic and Handling Events
+[1]  
+[LINK](/ComputerScience/Microsoft/NetCore/DecouplingApplicationLogic.md)
+
+##  9. <a name='MultitaskingandAsynchronousoperations'></a>Multitasking and Asynchronous operations
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Multitasking.md)
 
-##  9. <a name='Packaginganddistribution'></a>Packaging and distribution
+##  10. <a name='Packaginganddistribution'></a>Packaging and distribution
 [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Packaging-and-Distribution.md)
 
-##  10. <a name='Files'></a>Files
+##  11. <a name='Files'></a>Files
 [2]
 
-##  11. <a name='EFCore'></a>EF Core
+##  12. <a name='EFCore'></a>EF Core
 [2]
 
-##  12. <a name='Linq'></a>Linq
+##  13. <a name='Linq'></a>Linq
 [1] [2]
 
-##  13. <a name='Performance'></a>Performance
+##  14. <a name='Performance'></a>Performance
 [2]
 
-##  14. <a name='MicroservicesTheory'></a>Microservices Theory
+##  15. <a name='MicroservicesTheory'></a>Microservices Theory
 [3] [4]
 
-##  15. <a name='RazorPages'></a>Razor Pages
+##  16. <a name='RazorPages'></a>Razor Pages
 [2]
 
-##  16. <a name='MVC'></a>MVC
+##  17. <a name='MVC'></a>MVC
 [2] [5]
 
-##  17. <a name='API'></a>API
+##  18. <a name='API'></a>API
 [1] [2] [4] [5]
 
-##  18. <a name='WebApp'></a>WebApp
+##  19. <a name='WebApp'></a>WebApp
 [5] [6]
 
-##  19. <a name='DeployonCloud'></a>Deploy on Cloud
+##  20. <a name='DeployonCloud'></a>Deploy on Cloud
 [4] [6]
