@@ -108,3 +108,32 @@ long Factorial(int value)
 }
 ```
 ##  4. <a name='Optionalparametersandnamedarguments'></a>Optional parameters and named arguments
+- Parameters with `=` are called `optional parameters` e.g., `int a = 3`.
+- if no value is given to `optional parameters`, it will take the values defined in the method definition
+- You shall specify all mandatory parameters before any `optional parameters`.
+- Two examples of methods with `optional parameters` are presented below.
+
+``` cs
+int Test2(int a, int b=5, int c=7)
+{
+    return a + (b * c);
+}
+
+int Test3(int a=3, int b=5, int c=7)
+{
+    return a + (b * c);
+}
+```
+- Example of methods callings with `optional parameters`
+``` cs
+Console.WriteLine(Test3()); //a=3, b=5, c=7 result 38
+Console.WriteLine(Test3(11)); //a=11, b=5, c=7 result 46
+Console.WriteLine(Test3(11,13)); //a=11, b=5, c=7 result 102
+``` 
+
+- Example of methods callings with `named arguments`
+``` cs
+//named arguments
+Console.WriteLine(Test3(b: 3)); //a=3,b=3,c=7 returns 24
+Console.WriteLine(Test3(c: 11)); //a=3,b=5,c=11 returns 58
+``` 
