@@ -83,9 +83,11 @@ class Controller
 
 ###  1.4. <a name='Declaringandusingadelegate'></a>Declaring and using a delegate
 - The previous code was only for learning purposes.
-- To effectively implements `delegate` it is necessary to provide complete encapsularion by implementing separate `Add` and `Remove` methods.
-  - `Add`: `public void Add(exampleOfDelegate methodToBeReferenced)` => this.delegateInstance += methodToBeReferenced;
-  - `Remove`: `public void Remove(exampleOfDelegate methodToBeReferenced)` => this.delegateInstance -= methodToBeReferenced;
+- To effectively implements `delegate` it is necessary to provide complete encapsulation by implementing separate `Add` and `Remove` methods.
+  - Steps:
+    1. Set the delegate type as `public`: `delegate void exampleOfDelegate()`
+    2. `Add`: `public void Add(exampleOfDelegate methodToBeReferenced)` => this.delegateInstance += methodToBeReferenced;
+    3. `Remove`: `public void Remove(exampleOfDelegate methodToBeReferenced)` => this.delegateInstance -= methodToBeReferenced;
 
 ``` cs
 namespace DelegatesTest
@@ -116,7 +118,7 @@ namespace DelegatesTest
 	
 	internal class DelegateController
     {
-        delegate void exampleOfDelegate(); // Delegate Declaration
+        public delegate void exampleOfDelegate(); // Step1: Set the delegate type as `public`
         private exampleOfDelegate delegateInstance; // Delegate instantiation
 
         
@@ -124,7 +126,9 @@ namespace DelegatesTest
         {            
         }
 
+		//Step2
 		public void Add(exampleOfDelegate methodToBeReferenced) => this.delegateInstance += methodToBeReferenced;
+		//Step3
 		public void Remove(exampleOfDelegate methodToBeReferenced) => this.delegateInstance -= methodToBeReferenced;
 
 
@@ -136,7 +140,26 @@ namespace DelegatesTest
 }
 ```
 
-- PENDING!!!
+- With this, the next step is to use the `delegate` in the main program:
+
+``` cs 
+Object1 obj1 = new Object1();
+Object2 obj2 = new Object2();
+Object3 obj3 = new Object3();
+
+DelegateController c = new DelegateController();
+
+Console.WriteLine("Lets Add some references to methods!!");
+c.Add(obj1.Method1);
+c.Add(obj2.Method2);
+c.Add(obj3.Method3);
+c.DelegateMethodsCaller();
+
+Console.WriteLine("Lets Remove some references to methods!!");
+
+c.Remove(obj2.Method2);
+c.DelegateMethodsCaller();
+```
 ##  2. <a name='LambdaexpressionsandDelegates'></a>Lambda expressions and Delegates
 
 ###  2.1. <a name='Creatingamethodadapter'></a>Creating a method adapter
