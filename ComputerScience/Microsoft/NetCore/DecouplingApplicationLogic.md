@@ -20,7 +20,30 @@
 
 ##  1. <a name='UnderstandingDelegates'></a>Understanding Delegates
 
+- A `delegate` is an `object` that refers to a method.
+- It fully decouples the application logic in your methods from the application that invoke them.
+- A `delegate` "delegates" processing to the referenced method when they are invoked.
+- The method refered by a `delegate` can be changed to run a different method each time it executes.
+- A `delegate` can refer more than one method at a time. So, when you invoke it all methods to which it refers will run.
+- It refers only to methods that matches its signature.
+- It can't be invoked if it refer to a invalid method.
+
+- Some `Collections` e.g., `List<T>`, let you to implement some of its methods (e.g. , `Find` or `Exists`) because they had no idea about what should actually constitute a match in the application.
+  - You can implement it using a `predicate` i.e, a `delegate` that returns a `boolean` value. 
+
+Note: The `Func<T,...,TResult>` and `Action<T,...>` delegate types
+- `Func<T1,T2,...,TResult>`: takes the `T` parametrs and returns a `TResult` value
+  - `T1`, `T2`, `...`: are the type of the parameters passed to the `delegate`
+  - `TResult`: determined by the context in which the `delegate`  is used
+- `Action<T,...>`: performs an action instead of returning a value.
 ###  1.1. <a name='Theautomatedfactoryscenario'></a>The automated factory scenario
+
+#### Steps to create a delegate
+- Select methods with same shape (same `return `type and parameters)
+- Declare the `delegate`
+- Create an instance of it
+- Refer it to a method by using the `+=` operator. (This is tipically done in class constructors).
+
 
 ###  1.2. <a name='Implementingthefactorycontrolsystemwithoutusingdelegates'></a>Implementing the factory control system without using delegates
 
