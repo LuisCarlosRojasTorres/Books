@@ -42,8 +42,6 @@ int Test(int a, int b) { //returnType is int
   - performing a single task
   - or returning the results of a calculation without involving any additional logic.
 - They can still take parameters and return values.
-
-``` cs 
 - Its syntax is presented below:
 
 ``` cs

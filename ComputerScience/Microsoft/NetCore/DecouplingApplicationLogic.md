@@ -36,6 +36,7 @@ Note: The `Func<T,...,TResult>` and `Action<T,...>` delegate types
   - `T1`, `T2`, `...`: are the type of the parameters passed to the `delegate`
   - `TResult`: determined by the context in which the `delegate`  is used
 - `Action<T,...>`: performs an action instead of returning a value.
+
 ###  1.1. <a name='Theautomatedfactoryscenario'></a>The automated factory scenario
 
 #### Steps to create a delegate
@@ -43,14 +44,99 @@ Note: The `Func<T,...,TResult>` and `Action<T,...>` delegate types
 - Declare the `delegate`
 - Create an instance of it
 - Refer it to a method by using the `+=` operator. (This is tipically done in class constructors).
+- For example:
+  - We have the following objects and its methods:
+    - `obj1` with `method1`
+    - `obj2` with `method2`
+    - `obj3` with `method3`
+  - The code below shows how to create a delegate which includes all this methods to its reference
+  - The method `DelegateMethodsCaller()` invokes the delegate which call its referenced methods.
+  - If the method that the delegate refers has parameters It should be included in `this.delegateInstance()`
+- Trying to invoke a delegate that is uninitialized and does not refer to any method, throws a `NullReferenceException` error.
+  
+``` cs 
+class Controller
+{
+	delegate void exampleOfDelegate(); //Declaration
+	private exampleOfDelegate delegateInstance;
 
+	public Controller()
+	{
+		// Adding method1 to delegate references
+		this.delegateInstance += obj1.method1;
+		this.delegateInstance += obj2.method2;
+		this.delegateInstance += obj3.method3;
 
-###  1.2. <a name='Implementingthefactorycontrolsystemwithoutusingdelegates'></a>Implementing the factory control system without using delegates
+		// Alternative form (too much!)
+		this.delegateInstance = new exampleOfDelegate(obj1.method1);
+	}
 
-###  1.3. <a name='Implementingthefactorybyusingadelegate'></a>Implementing the factory by using a delegate
+	public DelegateMethodsCaller()
+	{
+		// This method INVOKES the delegate
+		this.delegateInstance();
+	}
+}
+```
+- **IMPORTANT**: The `DelegateMethodsCaller` does not need to know how many objects there are nor its methods.
+- You can remove a methods from a `delegate` using the `-=` operator
 
 ###  1.4. <a name='Declaringandusingadelegate'></a>Declaring and using a delegate
+- The previous code was only for learning purposes.
+- To effectively implements `delegate` it is necessary to provide complete encapsularion by implementing separate `Add` and `Remove` methods.
+  - `Add`: `public void Add(exampleOfDelegate methodToBeReferenced)` => this.delegateInstance += methodToBeReferenced;
+  - `Remove`: `public void Remove(exampleOfDelegate methodToBeReferenced)` => this.delegateInstance -= methodToBeReferenced;
 
+``` cs
+namespace DelegatesTest
+{
+    internal class Object1
+    {
+        public void Method1() 
+        {
+            Console.WriteLine("Object1 method1 called");
+        }
+    }
+	
+	internal class Object2
+    {
+        public void Method2()
+        {
+            Console.WriteLine("Object2 method2 called");
+        }
+    }
+	
+	internal class Object3
+    {
+        public void Method3()
+        {
+            Console.WriteLine("Object3 method3 called");
+        }
+    }
+	
+	internal class DelegateController
+    {
+        delegate void exampleOfDelegate(); // Delegate Declaration
+        private exampleOfDelegate delegateInstance; // Delegate instantiation
+
+        
+        public DelegateController()
+        {            
+        }
+
+		public void Add(exampleOfDelegate methodToBeReferenced) => this.delegateInstance += methodToBeReferenced;
+		public void Remove(exampleOfDelegate methodToBeReferenced) => this.delegateInstance -= methodToBeReferenced;
+
+
+        public void DelegateMethodsCaller()
+        {
+            this.delegateInstance();
+        }
+    }
+}
+```
+
+- PENDING!!!
 ##  2. <a name='LambdaexpressionsandDelegates'></a>Lambda expressions and Delegates
 
 ###  2.1. <a name='Creatingamethodadapter'></a>Creating a method adapter
