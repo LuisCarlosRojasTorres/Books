@@ -147,29 +147,163 @@ Object1 obj1 = new Object1();
 Object2 obj2 = new Object2();
 Object3 obj3 = new Object3();
 
+DelegateController delegateObj = new DelegateController();
+
+Console.WriteLine("Lets Add some references to methods!!");
+delegateObj.Add(obj1.Method1);
+delegateObj.Add(obj2.Method2);
+delegateObj.Add(obj3.Method3);
+delegateObj.DelegateMethodsCaller();
+
+Console.WriteLine("Lets Remove some references to methods!!");
+
+delegateObj.Remove(obj2.Method2);
+delegateObj.DelegateMethodsCaller();
+```
+
+##  2. <a name='LambdaexpressionsandDelegates'></a>Lambda expressions and Delegates
+Until now:
+- All methods that the `delegate` reference:
+  -  has the same signature i.e., `void MethodName(void)`.
+  -  Belong to an object i.e., `Object1`, `Object2` and `Object3`.
+
+So, **What happen if one of the methods has a different signature, lets say `void MethodName (int)` ??**
+
+###  2.1. <a name='Creatingamethodadapter'></a>Creating a method adapter
+- One solution is to create an `adapter method` to wrap any method which is different to `delegate` signature:
+- So, for a method `obj1.Method1(int var)`, the code below is implemented:
+
+``` cs 
+// Conventional wrapper
+void Wrapper()
+{
+	obj1.Method1(someValue);
+}
+
+//Then
+delegateObj.Add(Wrapper);
+```
+
+- An alternative way is using `lambda` methods
+``` cs 
+// lambda wrapper
+delegateObj.Add(()=> obj1.Method1(someValue));
+```
+
+##  3. <a name='EnablingnotificationsbyusingEvents'></a>Enabling notifications by using Events
+- You can invoke the `delegate` explicitly.
+- But, I would be better to have the `delegate` **run automatically when something significant happens**
+- `events` are use to define and trap significant actions and arrange for a `delegate` to be called to handle the situation.
+
+###  3.1. <a name='Declaringanevent'></a>Declaring an event
+- `events` are declared in classes intended to act as a `event sources`
+  - `event source`: is a class that monitors its environment and raises an `event` when something significant happens.
+- An `event` maintains a list of methods to call when it is raised.
+  - These methods a.k.a. `subscribers` are called to handle the `event` and take the necessary corrective actions.
+- To declare `events` the type used shall be a `delegate` type. It is presented an example of how to an `event` to invoke the `exampleOfDelegate`
+
+``` cs 
+public delegate void exampleOfDelegate(); // Step1: Set the delegate type as `public`
+
+public event exampleOfDelegate eventName;
+```
+###  3.2. <a name='Subscribingtoanevent'></a>Subscribing to an event
+- You can `Add` and `Remove` methods to an `event`, this is called as `subscribing` and `unsubscribing` respectively.
+
+``` cs 
+internal class DelegateController
+{
+    public delegate void exampleOfDelegate(); // Delegate Declaration
+    event exampleOfDelegate eventName;
+                
+    public void Add(exampleOfDelegate methodToBeReferenced) => this.eventName += methodToBeReferenced;
+    public void Remove(exampleOfDelegate methodToBeReferenced) => this.eventName -= methodToBeReferenced;
+}
+```
+
+###  3.4. <a name='Raisinganevent'></a>Raising an event
+- An `event` is raised by callin it like a method.
+- When an `event` is raised, all the attached delegates are called in sequence.
+  - `events` have a built-in security feature. They can only raised by methods in the class that define it.
+  - Otherwise, you have a compiler error.
+- Because an `event` is implicitly null it is necessary to perform a `null check`
+
+``` cs 
+internal class DelegateController
+{
+    public delegate void exampleOfDelegate(); // Delegate Declaration
+    event exampleOfDelegate eventName;
+                
+    public void Add(exampleOfDelegate methodToBeReferenced) => this.eventName += methodToBeReferenced;
+    public void Remove(exampleOfDelegate methodToBeReferenced) => this.eventName -= methodToBeReferenced;
+
+	private void Notify()
+	{
+		if(this.eventName != null) // null check
+		{
+			this.eventName(); // raised like a method call
+		}
+	}
+}
+```
+
+- A code in the main program is presented below which reference some methods to the `event` and then raise it.
+
+``` cs
+Object1 obj1 = new Object1();
+Object2 obj2 = new Object2();
+Object3 obj3 = new Object3();
+
 DelegateController c = new DelegateController();
 
 Console.WriteLine("Lets Add some references to methods!!");
 c.Add(obj1.Method1);
 c.Add(obj2.Method2);
 c.Add(obj3.Method3);
-c.DelegateMethodsCaller();
 
-Console.WriteLine("Lets Remove some references to methods!!");
-
-c.Remove(obj2.Method2);
-c.DelegateMethodsCaller();
+// A dummy implementation to raise the EVENT
+for (int i = 0; i < 100; i++)
+{
+    if (i % 17 == 0) {
+        Console.WriteLine($"i = {i}");
+        c.Notify();
+    }
+}
 ```
-##  2. <a name='LambdaexpressionsandDelegates'></a>Lambda expressions and Delegates
 
-###  2.1. <a name='Creatingamethodadapter'></a>Creating a method adapter
+- The output is include:
 
-##  3. <a name='EnablingnotificationsbyusingEvents'></a>Enabling notifications by using Events
+``` console
+Lets Add some references to methods!!
+i = 0
+EventNotify!!!
+Object1 method1 called
+Object2 method2 called
+Object3 method3 called
+i = 17
+EventNotify!!!
+Object1 method1 called
+Object2 method2 called
+Object3 method3 called
+i = 34
+EventNotify!!!
+Object1 method1 called
+Object2 method2 called
+Object3 method3 called
+i = 51
+EventNotify!!!
+Object1 method1 called
+Object2 method2 called
+Object3 method3 called
+i = 68
+EventNotify!!!
+Object1 method1 called
+Object2 method2 called
+Object3 method3 called
+i = 85
+EventNotify!!!
+Object1 method1 called
+Object2 method2 called
+Object3 method3 called
 
-###  3.1. <a name='Declaringanevent'></a>Declaring an event
-
-###  3.2. <a name='Subscribingtoanevent'></a>Subscribing to an event
-
-###  3.3. <a name='Unsuscribingfromanevent'></a>Unsuscribing from an event
-
-###  3.4. <a name='Raisinganevent'></a>Raising an event
+```
