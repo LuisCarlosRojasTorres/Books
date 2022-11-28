@@ -1,11 +1,27 @@
+<!-- vscode-markdown-toc -->
+* 1. [Why?](#Why)
+* 2. [Implementing multitasking](#Implementingmultitasking)
+	* 2.1. [Tasks, threads and the ThreadPool](#TasksthreadsandtheThreadPool)
+	* 2.2. [Creating, running, and using controlling tasks](#Creatingrunningandusingcontrollingtasks)
+		* 2.2.1. [Creating without parameters](#Creatingwithoutparameters)
+		* 2.2.2. [Creating with parameters](#Creatingwithparameters)
+		* 2.2.3. [Creating and Running a Task](#CreatingandRunningaTask)
+		* 2.2.4. [Assigning more than one task](#Assigningmorethanonetask)
+		* 2.2.5. [Synchronize tasks](#Synchronizetasks)
+* 3. [Cancelling tasks and handling exceptions](#Cancellingtasksandhandlingexceptions)
 
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
 
-## Why?
+##  1. <a name='Why'></a>Why?
 Two reasons:
 - To Improve responsiveness: Do many things simultanously.
 - To Improve scalability: Decompose a process to be performed in parallel and run concurrently.
 
-## Implementing multitasking 
+##  2. <a name='Implementingmultitasking'></a>Implementing multitasking 
 - Multitasking is the ability to do many things at the same time.
 - Requires some considerations:
   - Design: 
@@ -18,7 +34,7 @@ Two reasons:
 - The **Design** part for multitasking is fundamental, otherwise it does not matter how many processor cores you use, the application will not run faster than it would on a single-core machine.
 - The `Task` class and a collection of associated types in the `System.Threading.Tasks` namespace solve the **Language issues**
 
-### Tasks, threads and the ThreadPool
+###  2.1. <a name='TasksthreadsandtheThreadPool'></a>Tasks, threads and the ThreadPool
 - `Task` is an abstraction of a concurrent operation (it runs a block of code).
   - Internally are implemented using `threads` and the `ThreadPool` class.
 - It provides a powerfull abstraction for threading with whhich you can distinguish between:
@@ -29,9 +45,9 @@ Two reasons:
   
 So, all you have to do in you code is divide, or partition, your application into `tasks` that can be run in parallel.
 
-### Creating, running, and using controlling tasks
+###  2.2. <a name='Creatingrunningandusingcontrollingtasks'></a>Creating, running, and using controlling tasks
 
-#### Creating without parameters
+####  2.2.1. <a name='Creatingwithoutparameters'></a>Creating without parameters
 - The `Task` constructor is `overloaded` but all versions require an `Action delegate` ([link](/ComputerScience/Microsoft/NetCore/DecouplingApplicationLogic.md#1-understanding-delegates)).
 - The `Task object` invokes its delegate when it is scheduled to run.
 - To start the `Task` use the `.Start()` method
@@ -46,7 +62,7 @@ private void doWork()
 
 task.Start();
 ```
-#### Creating with parameters
+####  2.2.2. <a name='Creatingwithparameters'></a>Creating with parameters
 - It is possible using a delegate that take an `object` parameter, i.e., `Action<object>`
 
 ``` cs
@@ -64,7 +80,7 @@ private void doWorkWithObject(object o)
 ```
 
 
-#### Creating and Running a Task
+####  2.2.3. <a name='CreatingandRunningaTask'></a>Creating and Running a Task
 - `Task` class provides the static `Run` method to set an `Action delegates` and start immediately.
   - It returns a reference to the `Task` object.
 
@@ -72,7 +88,7 @@ private void doWorkWithObject(object o)
 Task task = Task.Run(()=> doWork);
 ```
 
-#### Assigning more than one task
+####  2.2.4. <a name='Assigningmorethanonetask'></a>Assigning more than one task
 - Once a task finishes, another task can be scheduled immediately to continue.
   - This is possible using the `ContinueWith` method.
     1. The `Action` performed by the task object completes
@@ -100,7 +116,7 @@ private void method2()
   - `NotOnRanToCompletion`: continuation should only run only if the previous action does not complete successfully (canceled or throw an exception).
     - `OnlyOnRanToCompletion`: continuation should only run only if the previous action complete successfully.
 
-#### Synchronize tasks
+####  2.2.5. <a name='Synchronizetasks'></a>Synchronize tasks
 - The `task` class provides the `Wait` method, which implements a simple task coordination mechanism.
   - It suspends execution of the current thread until the specified task completes.
   - An example is presented below:
@@ -125,4 +141,5 @@ task.WaitAll(task1, task2);
 //or
 task.WaitAny(task1, task2);
 ```
-## Cancelling tasks and handling exceptions
+##  3. <a name='Cancellingtasksandhandlingexceptions'></a>Cancelling tasks and handling exceptions
+
