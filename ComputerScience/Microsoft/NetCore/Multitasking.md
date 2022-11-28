@@ -8,6 +8,11 @@
 		* 2.2.3. [Creating and Running a Task](#CreatingandRunningaTask)
 		* 2.2.4. [Assigning more than one task](#Assigningmorethanonetask)
 		* 2.2.5. [Synchronize tasks](#Synchronizetasks)
+	* 2.3. [Abstracting tasks by using the `Parallel` class](#AbstractingtasksbyusingtheParallelclass)
+		* 2.3.1. [`Parallel.For`](#Parallel.For)
+		* 2.3.2. [`Parallel.ForEach<T>`](#Parallel.ForEachT)
+		* 2.3.3. [`Parallel.Invoke`](#Parallel.Invoke)
+	* 2.4. [Recomendatiosn for `Parallel` class use](#RecomendatiosnforParallelclassuse)
 * 3. [Cancelling tasks and handling exceptions](#Cancellingtasksandhandlingexceptions)
 
 <!-- vscode-markdown-toc-config
@@ -141,5 +146,60 @@ task.WaitAll(task1, task2);
 //or
 task.WaitAny(task1, task2);
 ```
+
+###  2.3. <a name='AbstractingtasksbyusingtheParallelclass'></a>Abstracting tasks by using the `Parallel` class
+- the `Parallel` class:
+  - Parallelize some common programming constructs without having to redesign an application.
+  - Internally, creates its own `Task` objects, synchronize them automatically when they have completed.
+  - It provides a small a set of static methods that you can use to indicade that code should be run in parallel if possible.
+
+####  2.3.1. <a name='Parallel.For'></a>`Parallel.For`
+- Loop in which iterations can run in parallel by using `tasks`.
+- Specify:
+  - `int startValue`
+  - `int endValue`
+  - Reference to `Method(int i)` that takes an interger parameter
+- The method is executed for every value between the startValue and one below the endValue specified, and the parameter of the method is populated with an integer that specifies the current value.
+- Recommended for **outer loops**
+``` cs 
+Parallel.For(startValue, endValue, Method);
+
+private void Method(int i)
+{
+    // Perform loop processing
+}
+```
+####  2.3.2. <a name='Parallel.ForEachT'></a>`Parallel.ForEach<T>`
+- Specify:
+  - A collection that implements the `IEnumerable<T>` generic interface
+  - Reference to a method that takes a single parameter of type `T`
+
+####  2.3.3. <a name='Parallel.Invoke'></a>`Parallel.Invoke`
+- It executes a set of parameterless method calls as parallel tasks.
+- Specify:
+  - List of delegated methods calls (or lambda expressions)
+    - These methods has no parameters and do not `return` values.
+
+``` cs
+Method1();
+Method2();
+Method3();
+
+Parallel.Invoke(Method1, Method2, Method3);
+```
+
+###  2.4. <a name='RecomendatiosnforParallelclassuse'></a>Recomendatiosn for `Parallel` class use
+- `Parallel` class parallelize CPU-bound, independend areas of code.
+- If the methods are not CPU-bonded, parallelizing it might not improve performance
+- Parallel operation should be independent (`thread-safe`)
+- General rules:
+  - `Parallel.For` and `Parallel.ForEach`:
+    - Each iteration of the loop is independent
+  - `Parallel.Invoke`:
+    - Methods called are independent and application does not depend on them being run in a particular sequence.
+    - For computational intensive operations
+
+
 ##  3. <a name='Cancellingtasksandhandlingexceptions'></a>Cancelling tasks and handling exceptions
+
 
