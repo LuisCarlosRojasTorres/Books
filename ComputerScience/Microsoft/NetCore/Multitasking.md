@@ -14,6 +14,8 @@
 		* 2.3.3. [`Parallel.Invoke`](#Parallel.Invoke)
 	* 2.4. [Recomendatiosn for `Parallel` class use](#RecomendatiosnforParallelclassuse)
 * 3. [Cancelling tasks and handling exceptions](#Cancellingtasksandhandlingexceptions)
+	* 3.1. [Cancelling a `Parallel.For` and a `Parallel.ForEach` loop](#CancellingaParallel.ForandaParallel.ForEachloop)
+	* 3.2. [Handling task exceptions by using the `AggregateException` class](#HandlingtaskexceptionsbyusingtheAggregateExceptionclass)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -202,4 +204,131 @@ Parallel.Invoke(Method1, Method2, Method3);
 
 ##  3. <a name='Cancellingtasksandhandlingexceptions'></a>Cancelling tasks and handling exceptions
 
+- The `Task` class implements a `cooperative cancellation` strategy, which consist in:
+  - Enable a task to select a convenient point to stop
+  - Enable to undo any work that has performed before the cancellation if necessary.
+  - A `cancellation token`, i.e., a structure that represents a request to cancle one or more tasks.
+    - The method that a task runs should include a `System.Threading.CancellationToken` parameter.
+    - To cancel the task sets the Boolean `IsCancellationRequested` to `true`
+      - The method can query this property at various points during its processing. So if the property is true the method can undo any changes if necessary and then finish.
+      - THe method should examine the `cancellation token` in a task frequently. At least every `10 ms`.
+- It provides a **high degree of control** over the cancellation processing
+- Multiple tasks can be cancelled by the same `cancellation token`
+- Steps:
+  1. Create a `System.Threading.CancellationTokenSource` object.
+  2. Obtain a `CancellationToken` querying the `Token` property of previous object
+  3. Pass the `CancellationToken` object as a parameter to any methods started by tasks that the software creates and runs.
+  4. If the software needs to cancel the tasks: 
+     1. Call the `Cancel` method of the `CancellationTokenSource` object. This method sets the `IsCancellationRequested` property of the `CancellationTokenSouce` passed to all the tasks.
+     2. The method that is run by the task, queries the `IsCancellationRequested` property. If the property is `true` the method terminates.
 
+``` cs
+//Step1
+CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+//Step2
+CancellationToken cancellationToken = cancellationTokenSource.Token; 
+//Step3
+Task myTask = Task.Run(()=> Method(cancellationToken));
+
+//...
+if(someConditionToCancelTheTask)
+{
+    //Step4.1
+    cancellationTokenSource.Cancel();
+}
+
+
+//Method run by the task
+private void Method(CancellationToken token)
+{
+    //...
+    if(token.IsCancellationRequested)
+    {
+        //Tidy up and Terminates the method
+        return
+    }
+    //...
+}
+```
+
+###  3.1. <a name='CancellingaParallel.ForandaParallel.ForEachloop'></a>Cancelling a `Parallel.For` and a `Parallel.ForEach` loop
+- Steps:
+  1. Pass a `ParallelLoopState` parameter to the method that is run by the `task`.
+  2. Set a condition to stop.
+     1. Call the `Stop` method of the `ParallelLoopState` parameter.
+  
+``` cs
+Parallel.For(0,100,Method);
+
+//Step1
+private void Method(int i, ParallelLoopState p)
+{
+    //Step2
+    if(...) 
+    {
+        //Step2.1
+        p.Stop();
+    }
+}
+```
+
+###  3.2. <a name='HandlingtaskexceptionsbyusingtheAggregateExceptionclass'></a>Handling task exceptions by using the `AggregateException` class
+- When a task is using `Task.Wait` methods, any exception thrown by the methods that tasks are running are grouped together into a `AggregateException` exception.
+  - `AggregateException` acts as a wrapper for a collection of exceptions.
+- To `catch` the specific exception, `AggregateException` provides the `Handle` method.
+  - The `Handle` method takes a `Func<Exception, bool>` delegate which refereces a method that takes an `Exception` object as its parameter and returns a `bool`.
+  - When `Handle` is called, the `referencedMethod` runs for each exception in the collection in the `AggregateException` object.
+    - If the `referencedMethod` handles the exception, it returns `true`. Otherwise returns `false`
+    - Any unhandled exception are bundled together into a new `AggregateException` exception, and this exception is thrown.
+- A code example is presented below:
+
+``` cs
+try
+{
+    Task task1 = Task.Run(...);
+    Task task2 = Task.Run(...);
+    Task.WaitAll(task1,task2);    
+}
+catch (AggregateException ae)
+{
+    ae.Handle(referencedMethod)
+}
+
+private bool referencedMethod(Exception e)
+{
+    if(e is DivideByZeroException)
+    {
+        displayErrorMessage("Division by zero ocurred");
+        return true;
+    }
+    if(e is IndexOutOfRangeException)
+    {
+        displayErrorMessage("Array of Index out of bounds");
+        return true;
+    }
+    return false;
+}
+```
+
+### Using continuations with canceled and faulted tasks
+- To perform additional work when a task is canceled or raises an unhandled exception.
+- Steps:
+  1.  Use the `ContinueWith` 
+      1.  Reference a method for the `cancellationWork`
+      2.  Use appropriate `TaskContinuationOptions`. e.g., `OnlyOnCanceled`
+
+``` cs
+Task task = new Task(method1);
+//Step1
+task.ContinueWith(cancellationWork, TaskContinuationOptions.OnlyOnCanceled);
+task.Start();
+
+private void method1()
+{
+
+}
+private void cancellationWork(Task task)
+{
+        
+}
+```
