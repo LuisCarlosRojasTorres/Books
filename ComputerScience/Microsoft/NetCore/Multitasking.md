@@ -25,8 +25,8 @@
 
 ##  1. <a name='Why'></a>Why?
 Two reasons:
-- To Improve responsiveness: Do many things simultanously.
-- To Improve scalability: Decompose a process to be performed in parallel and run concurrently.
+- To Improve responsiveness: Do many things simultanously. `Tasks` achieve this!
+- To Improve scalability: Decompose a process to be performed in parallel and run concurrently. `Asynchronous operations` achieve this!
 
 ##  2. <a name='Implementingmultitasking'></a>Implementing multitasking 
 - Multitasking is the ability to do many things at the same time.
