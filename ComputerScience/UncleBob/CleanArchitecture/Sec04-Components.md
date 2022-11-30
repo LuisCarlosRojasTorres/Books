@@ -80,7 +80,7 @@ same component.
 > No cycles are allowed in the Component Dependency Graph
 
 ####  3.1.1. <a name='Introduction'></a>Introduction
-- This is a dependency grapgh `Component A` classes use `Component B` classes i.e. `Component B` is a dependency of `Component A`.
+- This is a dependency graph `Component A` classes use `Component B` classes i.e. `Component B` is a dependency of `Component A`.
   
 ![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14.png)
 
@@ -89,7 +89,7 @@ same component.
 - It has NO CYCLES (is a `directed acyclic graph` or `DAG`) i.e. Choosing one Component and following the dependency relationships its impossible to return to that Component. 
 - The following dependency graph will help to make some observations:
 ![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14a.png)
-  - If `Component B` has a new version, only `Component B` and `Component C` will be affected (i.e. the Components that have `Component B` as a dependency). 
+  - If `Component B` has a new version, only `Component D` and `Component C` will be affected (i.e. the Components that have `Component B` as a dependency). 
   - So the devs in charge of those Component should decide when the integration (with the new version of `Component B`) will happen.
   - If `Component Main` has a new version, no Componentes will be affected.
   - If a possible new version of `Component A` have to be tested, It only needs to build the `Component A` with the versions of `Component D` and `Component B` that are currently using.
@@ -98,7 +98,7 @@ same component.
 ####  3.1.3. <a name='TheDependencyCycle'></a>The Dependency Cycle
 - If a new Component `Component E` is released and has `Component D` as a dependency and `Component B` as a dependent, we have a `dependency cycle` (showed in **red** in the graph bellow). Some obersavations can be made:
 ![Dependency Cycle](/ComputerScience/UncleBob/CleanArchitecture/CH14b.png)
-  -  If a new version of `Component E` have to be release, it shall be compatible with `Component E`, but now also with `Component B`. This makes the release more difficult.
+  -  If a new version of `Component C` have to be release, it shall be compatible with `Component B`, but now also with `Component E` and with `Component D`. This makes the release more difficult.
   - `Component B`, `Component D` and `Component E` become **one larger Component**. If any of this Components is modified it will affect the others.
     - If `Component E` have to be tested, it shall be build and intetegrated with `Component D` and `Component B`
 - Cycles make it very difficult to isolate Components. So Unit testing and releasing become very difficult and error propne.
