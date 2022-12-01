@@ -110,9 +110,11 @@ private async Task method1()
     
     await t1;
     await t2;
+  // No return statement is required!
 }
 ```
-
+- NOTE1: No `return` statements is required in the `async Task` method.
+- NOTE2: If you don't include an `await` statement in an `async` method, the method is simply a reference `Task`  thet performs the code in the body of the method. So, ***IT DOES NOT ACTUALLY RUN ASYNCHRONOUSLY**
 
 
 ###  2.3. <a name='DefiningAsynchronousmethodsthatreturnvalues'></a>Defining Asynchronous methods that return values
