@@ -162,8 +162,21 @@ int add(int a, int b)
 }
 ```
 
-
 ###  2.4. <a name='Asynchronousmethodsgotchas'></a>Asynchronous methods gotchas
+
+- An `async method` does not mean that it runs asynchronously.
+  - It means that the metof can contain statements that **may** run asynchronously
+- The `await` operator is different from the `Wait` method of a `Task`
+  - `Wait` method always blocks the current thread.
+    - Also, it does not allow to reuse the thread until the task completes.
+- The `await` operator indicates that a method should be run by a separate taks.
+  - So, its calling code is suspended until the method call completes.
+    - The thread used by the calling code is release and can be reused. So:
+      1. So, if the thread that is running the UI calls an async method, 
+      2. it enters to its statemens until it fins an `await`
+      3. Then is release from the `async methods` and 
+      4. is reused by the UI.
+
 
 ###  2.5. <a name='Tasksmemoryallocationandefficiency'></a>Tasks, memory allocation and efficiency
 
