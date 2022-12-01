@@ -118,6 +118,50 @@ private async Task method1()
 
 
 ###  2.3. <a name='DefiningAsynchronousmethodsthatreturnvalues'></a>Defining Asynchronous methods that return values
+- The primary difference is that the code that you execute should return a value.
+- It shall be used `Task<TResult>` 
+- To `return` a value use the `Return` property of the `Task<TResult>`.
+  - If the task has not finished running the method and the result is not yet available, the `Result` property **block the caller**.
+- An example is presented below:
+
+``` cs 
+Task<int> task2 = Task.Run(() => add(8,4));
+int result  = task2.Result;
+Console.WriteLine(result);
+
+int add(int a, int b)
+{
+    return a+b;
+}
+```
+
+- `Task<TResult>` is also the basis of the mechanism for defining asynchronous methods that return values.
+  - If an asynchronous method actually generates a result, it should return a `Task<TResult>`
+- An **Asynchronous** version of the previous code is presented below:
+  - To invoke an asynchronous method that returns a value it shall be used `await` otherwise it is a compiler error.
+    - In the comments it is presented an alternativeway to invoke the method!
+
+``` cs
+int result = await addAsync(7, 3); // invokes the asynchronous method using await
+Console.WriteLine($"Result: {result}");
+
+//Alternative way...
+//Console.WriteLine($"Result: {addAsync(7, 3)}"); it will print the Task id
+//Console.WriteLine($"Result: {await addAsync(7, 3)}"); it waits until the task return a value and prints it
+
+async Task<int> addAsync(int a, int b)
+{
+    Task<int> t = Task.Run(() => add(a, b));
+    await t; //Returns a Task<int>
+    return t.Result; //Return an int 
+}
+
+int add(int a, int b)
+{
+    return a + b;
+}
+```
+
 
 ###  2.4. <a name='Asynchronousmethodsgotchas'></a>Asynchronous methods gotchas
 
