@@ -227,7 +227,20 @@ class Math
 ```
 
 ###  3.3. <a name='Understandingstaticclasses'></a>Understanding static classes
-
+- A `static` class 
+  - can contain only static members.
+  -  holds utility methods and fields.
+  -  cannot contain any instance data or methods.
+  -  
 ###  3.4. <a name='Staticusingclasses'></a>Static `using` classes
+- When you use a `static` method, you must specify the class to which belongs.
+  - `static using` statements enable you to bring a class into scope and omit the class name when accessing static members.
+
+``` cs
+using static System.Console;
+
+WriteLine("Hola Rufo");
+WriteLine("Withouth the using static, it will be Console.WriteLine(Hola Rufo)");
+```
 
 ##  4. <a name='Anonymousclasses'></a>Anonymous classes
