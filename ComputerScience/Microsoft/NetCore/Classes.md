@@ -244,3 +244,14 @@ WriteLine("Withouth the using static, it will be Console.WriteLine(Hola Rufo)");
 ```
 
 ##  4. <a name='Anonymousclasses'></a>Anonymous classes
+- It does not have a name.
+  - Useful when using `query expressions`
+- It is created using:
+  -  `new` keyword
+  -  pair of braces defining the fields and values that you want the class to contain.
+
+``` cs
+myAnonymousObj = new {Name = "Rufo", Age = 10};
+
+Console.WriteLine($"Name: {myAnonymousObj.Name} Age: {myAnonymousObj.Age}");
+```
