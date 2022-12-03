@@ -147,6 +147,7 @@ partial class Circle
   - `private` works at the class level and not at the object level.
   - Two objects that are instances of the same class can access each other's private date, 
     - but objects that are instances of another class cannot.
+  - Prefixing a variable with `this` means *the field in this object*.
 
 ###  2.4. <a name='Deconstructionanobject'></a>Deconstruction an object
 - A `deconstructor` enables you to examine an object and extract the values of its fields.
@@ -170,10 +171,60 @@ class Point
 }
 ```
 ##  3. <a name='Understandingstaticmethodsanddata'></a>Understanding static methods and data
+- Not all methods naturally belong to an instance of a class.
+- If you declare a method or a field as `static`, you can call the method or access the dield by using the name of the class.
+- No instance is required.
+
+``` cs
+class Math
+{
+	public static double Sqrt(double d)
+	{
+		//...
+	}
+	//...
+}
+```
 
 ###  3.1. <a name='Creatingasharedfield'></a>Creating a shared field
+- A single instance of a field that is shared among all objects created from a single class.
+- In the example below:
+  - The static field `NumCircles`  in the `Circle` class is incremented by the `Circle` constructor every time a new `Circle` object is created.
+  - All `Circle` objects share the same instance of the `NumCircles` field.
+  - DO NOT USE `this.` because `NumNircles` does not belong to a specific object. 
+
+``` cs
+class Circle
+{
+	private int radius;
+	public static int NumOfCircles = 0;
+	public Circle()
+	{
+		radius = 0;
+		NumOfCircles++; // DO NOT USE THIS.
+		//...
+	}
+	//...
+	public Circle(int initialRadius)
+	{
+		radius = initialRadius;
+		NumOfCircles++; // DO NOT USE THIS.
+		//...
+	}
+}
+```
 
 ###  3.2. <a name='Creatingastaticfieldbyusingtheconstkeyword'></a>Creating a static field by using the `const` keyword
+- Prefixing the class field with the `const` keyword, you can declare that a field is `static` **but that its value can never change**.
+
+``` cs
+class Math
+{
+	//...
+	public const double PI = 3.141592;
+	//...
+}
+```
 
 ###  3.3. <a name='Understandingstaticclasses'></a>Understanding static classes
 
