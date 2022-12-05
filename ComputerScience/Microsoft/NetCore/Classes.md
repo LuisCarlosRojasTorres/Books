@@ -240,7 +240,7 @@ class Math
 using static System.Console;
 
 WriteLine("Hola Rufo");
-WriteLine("Withouth the using static, it will be Console.WriteLine(Hola Rufo)");
+WriteLine("Without the using static, it will be Console.WriteLine(Hola Rufo)");
 ```
 
 ##  4. <a name='Anonymousclasses'></a>Anonymous classes
