@@ -31,13 +31,90 @@
 ###  2.1. <a name='Thenull-conditionaloperator'></a>The `null`-conditional operator
 
 ###  2.2. <a name='Usingnullabletypes'></a>Using nullable types
+- The `null` value is useful for reference type. `null` is itself a reference
+- To apply `null` to value types you need to assign it into `nullable`
+  - To do this, append a `?` in the value type, as the example.
+  - `nullable` types can be evaluated in conditionals as `if( i == null)`
+- You cannot use a `nullable` variable as a parameter to a method.
+
+
+``` cs
+int? i = null; // nullable type
+
+if(i != null)
+{
+	//...
+}
+```
+
+- `nullable` types has 2 properties:
+  -  `.HasValue` : a boolean that returns if a value was assigned.
+  -  `.Value` : (read only) returns its value assigned.
+
+``` cs
+int? i = null;
+
+if(!i.HasValue)
+{
+	Console.WriteLine("No value in variable. 28 is set by default");
+	i = 28;
+}
+else
+{
+	Console.WriteLine($"value: {i.Value}");
+}
+```
+
 
 ##  3. <a name='Usingrefandoutparameters'></a>Using `ref` and `out` parameters
 
 ###  3.1. <a name='Creatingrefparameters'></a>Creating `ref` parameters
+- It passes a reference to tha actual argument rather than a copy of the argument.
+- Using `ref` anything, anything you do to the parameter you also do to the original argument because the parameter and the argument both reference the same data.
 
+
+``` cs
+int i = 3;
+
+void changeByReference(ref int i)
+{
+    Console.WriteLine($" - i: {i}");
+    i = 99;
+    Console.WriteLine($" - i changed: {i}");
+}
+
+changeByReference(ref i);
+Console.WriteLine($" - i out of function: {i}"); // it shall print 99
+```
+- The output is presented below:
+
+``` console
+ - i: 3
+ - i changed: 99
+ - i out of function: 99
+```
 
 ###  3.2. <a name='Creatingoutparameters'></a>Creating `out` parameters
+- When you pass an `out` parameter to a method, the method MUST assign a value to it before it finishes or returns.
+
+``` cs
+int i; //uninitilized variable
+
+void changeByOut(out int i)
+{
+    i = 99;
+    Console.WriteLine($" - i changed: {i}");
+}
+
+changeByOut(out i);
+Console.WriteLine($" - i out of function: {i}");
+```
+- The output is presented below:
+  
+``` console
+ - i changed: 99
+ - i out of function: 99
+```
 
 ##  4. <a name='StackandHeap'></a>`Stack` and `Heap`
 
