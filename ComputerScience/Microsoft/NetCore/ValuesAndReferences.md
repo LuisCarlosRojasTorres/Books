@@ -27,8 +27,33 @@
 ###  1.1. <a name='Copyingreferencetyoesanddataprivacy'></a>Copying reference tyoes and data privacy 
 
 ##  2. <a name='Understandingnullvaluesandnullabletypes'></a>Understanding `null` values and nullable types
+- Look at the following example:
+  - A Circle `c1` is created
+  - Then `c2` is created.
+  - But `c1` is assigned to `c2`
+  - Now, no object references to `c1`!
+``` cs
+Circle c1 = new Circle(30);
+Circle c2 = new Circle(45);
+
+c2 = c1; 
+```
+- When nothing refers an object the runtime can reclaim the memory by performing an operation known as `garbage collection`.
+- `garbage collection` is potencially time-consuming operation.
+  - Do not create objects that are never used because doing so is a waste of time and resources.
+
 
 ###  2.1. <a name='Thenull-conditionaloperator'></a>The `null`-conditional operator
+- It is applied appending a `?` in the name of the object and before the method call. e.g. `obj?.Method()`
+  - It ignores the statement if the variable is null.
+
+``` cs
+// Object instantiated as null
+Circle c = null;
+// Null-conditional operator
+// This will print: "The area of circle c is " because c is null
+Console.WriteLine($"The area of circle c is {c?.Area}")
+```
 
 ###  2.2. <a name='Usingnullabletypes'></a>Using nullable types
 - The `null` value is useful for reference type. `null` is itself a reference
