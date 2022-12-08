@@ -77,6 +77,7 @@ class Circle
 }
 ```
 
+NOTE: If you create two objects of the same class, they can each access the private data of the other within the code for that class.
 
 ##  2. <a name='Understandingnullvaluesandnullabletypes'></a>Understanding `null` values and nullable types
 - Look at the following example:
