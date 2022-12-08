@@ -196,6 +196,22 @@ Console.WriteLine($" - i out of function: {i}");
 
 ##  4. <a name='StackandHeap'></a>`Stack` and `Heap`
 
+- **Stack**:
+  - All value types are created on the `stack`
+  - It is organized like a **stack of boxes** piled on top of one another.
+  - When a method is called:
+    - Each parameter is placed in a box that is placed on top of the stack.
+  - When a method finishes, the boxes are removed from the stack
+- **Heap**:
+  - All reference types (objects) are created on the `Heap`
+    - HOWEVER, the reference to the object is stored in a loval variable on the `stack`
+  - It is organized as a large group of boxes around a room.
+  - WHen an object is created:
+    - The runtime selects a box and allocates it to the object.
+    - The runtime also keeps track of the number of references to each box. If no variable is reference it, the runtime marks the box as `not in use`.
+
+### Using it
+
 ##  5. <a name='TheSystem.Objectclass'></a>The `System.Object` class
 
 ##  6. <a name='Boxing'></a>Boxing
