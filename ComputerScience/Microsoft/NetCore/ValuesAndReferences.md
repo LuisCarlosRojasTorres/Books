@@ -1,6 +1,6 @@
 <!-- vscode-markdown-toc -->
 * 1. [Copying value type variables and classes](#Copyingvaluetypevariablesandclasses)
-	* 1.1. [Copying reference tyoes and data privacy](#Copyingreferencetyoesanddataprivacy)
+	* 1.1. [Copying reference types and data privacy](#Copyingreferencetypesanddataprivacy)
 * 2. [Understanding `null` values and nullable types](#Understandingnullvaluesandnullabletypes)
 	* 2.1. [The `null`-conditional operator](#Thenull-conditionaloperator)
 	* 2.2. [Using nullable types](#Usingnullabletypes)
@@ -23,8 +23,60 @@
 <!-- /vscode-markdown-toc -->
 
 ##  1. <a name='Copyingvaluetypevariablesandclasses'></a>Copying value type variables and classes
+- Value types:
+  - This includes the `int`, `float`, `double` and `char`
+  - Fixed size
+  - Once declared, the compiler generates code that allocates a block of memory to hold a corresponding value. So:
+    - `int i` the compiler allocates 4 bytes of memory (32 bits) to hold the integer value.
+    - `i = 42` copies `42` to the address of `i`
+- Reference type:
+  - A `class` is a `reference type`, 
+  - `reference types` hold references to blocks of memory
+  - When declared, the compiler ***does not** generate code that allocates a block of memory to hold the `reference`
+  - Instead, it assigns a small piede of memory that can potentially hold the address of (or a reference to) another block of memory containing the `object`
+  - The memory for the actual `object` is allocated only when the `new` keyword is used to create the `object`
+- The `string` type is actually a `class`
+  - There is no standaed size  for a `string`
+    - Allocating memory for a `string` dynamically when the program runs is far more efficient that doing so statically at compile time.
 
-###  1.1. <a name='Copyingreferencetyoesanddataprivacy'></a>Copying reference tyoes and data privacy 
+- Look at the following code:
+	- The value held by `c` is the address of a `Circle` object in memory.
+	- When  `refToC` is created, `c`   is assigned to it.
+    	- So now, `refToC` have a copy of the same address as `c`
+  	- In resume, there is only one `Circle` object, and both `refToC` and `c` now refer to it.
+
+
+``` cs
+Circle c = new Circle(42);
+Circle refToC = c;
+```
+
+###  1.1. <a name='Copyingreferencetypesanddataprivacy'></a>Copying reference types and data privacy 
+- From the previous section it was clear that:
+  - `c2 = c1`, actually copy the reference of `c1` to the `c2`. So, both `c1` and `c2` refers to the same `object`.
+- To actually copy the fields of the objects:
+  - Create a new instance of the class
+  - Then copy the data **field by field**
+- Alternativately, a `Clone` method can be implemented in the `class`:
+  - A `Clone` method returns another instance of the same class but populated with the same data.
+    - This is easy if all the fields are values.
+    - If some of its fields are reference types these fields shall have its own `Clone` method. This is called as `deep copy`
+      - If the method only copy the references of the field it is called as `shallow copy`.
+
+``` cs
+class Circle
+{
+	private int radius;
+	//...
+	public Circle Clone()
+	{
+		Circle clone = new Circle();
+		clone.radius = this.radius;
+		return clone;
+	}
+}
+```
+
 
 ##  2. <a name='Understandingnullvaluesandnullabletypes'></a>Understanding `null` values and nullable types
 - Look at the following example:
