@@ -210,7 +210,7 @@ Console.WriteLine($" - i out of function: {i}");
     - The runtime selects a box and allocates it to the object.
     - The runtime also keeps track of the number of references to each box. If no variable is reference it, the runtime marks the box as `not in use`.
 
-### Using it
+### Using the stack and the heap
 
 ##  5. <a name='TheSystem.Objectclass'></a>The `System.Object` class
 
