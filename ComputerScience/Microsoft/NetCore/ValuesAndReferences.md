@@ -213,6 +213,22 @@ Console.WriteLine($" - i out of function: {i}");
 ### Using the stack and the heap
 
 ##  5. <a name='TheSystem.Objectclass'></a>The `System.Object` class
+- All classes are specialized types of `System.Object`.
+- It can be used to **create a variable that can refer to any reference type**.
+- It has the `object` keyword as an alias for `System.Object`
+- Look at the following example:
+
+``` cs
+// Created a variable in the STACK that stores an address to a reference type Circle
+Circle c;    
+// Created an object in the HEAP and assigned its reference to the variable c 
+c = new Circle(42); 
+// Created a variable in the STACK that stores an address to any reference type
+object o;
+// reference oc is assigned to c
+c = o;
+// now c and o which are in the STACK points to the same Circle object
+```
 
 ##  6. <a name='Boxing'></a>Boxing
 
