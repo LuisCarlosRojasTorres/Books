@@ -282,9 +282,41 @@ NOTE:
 - `boxing` and  `unboxing` are expensive operations.
 - 
 ##  8. <a name='Castingdatasafely'></a>Casting data safely
+- When using a `cast`, you are saying that "in you opinion": *the date referenced by an object has a specific type* ant *that it is safe to reference the object by using that type*. So, the `C#` compiler will not check that this is the case, but the runtime will.
+- `C#` provides the `is` and `as` operators that help to perform casting:
 
 ###  8.1. <a name='isoperator'></a>`is` operator
+- It verifies that the type of an object is what you expect it to be.
+- It takes two operands `ReferenceToAnObject is NameOfTheType`.
+  - If the type of the `ReferenceToAnObject` has the `NameOfTheType` type, returns `true`
+  - Otherwise, `false`
+``` cs
+Circle c = new Circle(48);
+object obj = c;
+
+if(obj is Circle)
+{
+  // This cast is safe because it is executed only if obj is a Circle 
+  Circle temp = (Circle) obj;
+}
+```
+- A shorter form of the preceding code is:
+``` cs
+Circle c = new Circle(48);
+object obj = c;
+
+if(obj is Circle temp)
+{
+  // code using temp
+}
+```
+Where:
+- The `is` operator creates a new reference variable (called `temp`), and assigns it a reference to the `Circle` object.
+
 
 ###  8.2. <a name='asoperator'></a>`as` operator
 
+``` cs
+
+```
 ###  8.3. <a name='switchstatementrevisited'></a>`switch` statement revisited
