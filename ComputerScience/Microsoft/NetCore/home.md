@@ -52,15 +52,15 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Methods.md)
 
-##  5. <a name='ExceptionHandling'></a>Exception Handling 
+##  5. <a name='ExceptionHandling'></a>Exception Handling (DONE)
 [1]  
 [LINK](/ComputerScience/Microsoft/NetCore/ExceptionHandling.md)
 
-##  6. <a name='Classes'></a>Classes
+##  6. <a name='Classes'></a>Classes (DONE)
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Classes.md)
 
-##  7. <a name='ValuesandReferences'></a>Values and References
+##  7. <a name='ValuesandReferences'></a>Values and References (DONE)
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/ValuesAndReferences.md)
 
