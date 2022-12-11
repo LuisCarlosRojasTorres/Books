@@ -8,6 +8,7 @@
 	* 3.1. [Creating `ref` parameters](#Creatingrefparameters)
 	* 3.2. [Creating `out` parameters](#Creatingoutparameters)
 * 4. [`Stack` and `Heap`](#StackandHeap)
+	* 4.1. [Using the stack and the heap](#Usingthestackandtheheap)
 * 5. [The `System.Object` class](#TheSystem.Objectclass)
 * 6. [Boxing](#Boxing)
 * 7. [Unboxing](#Unboxing)
@@ -210,8 +211,21 @@ Console.WriteLine($" - i out of function: {i}");
     - The runtime selects a box and allocates it to the object.
     - The runtime also keeps track of the number of references to each box. If no variable is reference it, the runtime marks the box as `not in use`.
 
-### Using the stack and the heap
+###  4.1. <a name='Usingthestackandtheheap'></a>Using the stack and the heap
+- The example below explains how the memory is managed:
+  1. When the method is called, `parameter` is stored in the `STACK`
+  2. Then a variable `c` is created in the `STACK` to store the address of a `Circle` reference type.
+  3. The `Circle` reference type es created in the `HEAP` (using the `new` keyword) and then its address is stored (referenced)
 
+
+``` cs
+void Method(int parameter)
+{
+  Circle c;
+  c = new Circle(parameter);
+  //..
+}
+```
 ##  5. <a name='TheSystem.Objectclass'></a>The `System.Object` class
 - All classes are specialized types of `System.Object`.
 - It can be used to **create a variable that can refer to any reference type**.
