@@ -265,7 +265,22 @@ What happened here?
 
 
 ##  7. <a name='Unboxing'></a>Unboxing
+- To obtain the value of the `boxed` copy, you must use what is known as a `cast`.
+  - A `cast` checks if convert an item of one type to another is safe before actually making the copy.
+  - You shall prefix the `object` variable with the name of the type in parentheses.
 
+``` cs 
+int i = 48;
+object o = i; 
+i = (int) o; //casting statement
+```
+- In the casting statement, 
+  - If the `o` really does refer to a boxed `int` the cast succeds.
+  - Otherwise, there is a type mismatch, causin the cast to fail. This throws an `InvalidCastException` exception at runtime.
+
+NOTE: 
+- `boxing` and  `unboxing` are expensive operations.
+- 
 ##  8. <a name='Castingdatasafely'></a>Casting data safely
 
 ###  8.1. <a name='isoperator'></a>`is` operator
