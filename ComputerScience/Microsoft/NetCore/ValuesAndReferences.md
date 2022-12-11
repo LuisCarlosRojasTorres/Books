@@ -226,6 +226,7 @@ void Method(int parameter)
   //..
 }
 ```
+
 ##  5. <a name='TheSystem.Objectclass'></a>The `System.Object` class
 - All classes are specialized types of `System.Object`.
 - It can be used to **create a variable that can refer to any reference type**.
@@ -245,6 +246,23 @@ c = o;
 ```
 
 ##  6. <a name='Boxing'></a>Boxing
+- Boxing: the automatic copying of an item from the `stack` to the `heap`.
+- An `object` type variable can also refer to a `value` type.
+- Look at the example below:
+
+``` cs
+int i = 48;
+object o = i;
+```
+
+What happened here?
+- The variable `i` is created on the `stack` and the value `48` is assigned.
+- `o` stores the address of any reference type which by definition is on the `heap`
+- BUT `i` is on the `stack`... SO:
+  - The runtime allocates a piece of memory on the `heap`. 
+  - Copies the value of `i` to this piece of memory.
+  - Then assigned the address of this piece of memory to the `o` variable.
+
 
 ##  7. <a name='Unboxing'></a>Unboxing
 
