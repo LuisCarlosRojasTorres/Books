@@ -315,8 +315,25 @@ Where:
 
 
 ###  8.2. <a name='asoperator'></a>`as` operator
+- The `as` operator, attempts to cast the object to the specified type.
+  - If cast is successful, the cast result is returned 
+  - Otherwise, returns `null`
+
 
 ``` cs
+Circle c = new Circle(48);
+object obj = c;
 
+/*
+It tries to perform: (Circle) o 
+ If it is possible returns the address of the reference type
+ Otherwise returns null
+*/
+Circle temp = o as Circle; 
+
+if(temp != null)
+{
+  // Cast was successful
+}
 ```
 ###  8.3. <a name='switchstatementrevisited'></a>`switch` statement revisited
