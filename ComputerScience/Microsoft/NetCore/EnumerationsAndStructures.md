@@ -164,5 +164,17 @@ class Example
 }
 ```
 ###  2.4. <a name='Understandingstructureinitialization'></a>Understanding structure initialization
+- Default constructor, sets all the values to `0`;
+
+``` cs
+StructureExample structureExample = new StructureExample(); // default constructor
+```
+- Structure created, its fields are unitialized!
+
+``` cs
+StructureExample structureExample; // fields are unitialized
+```
+- Remember: **Custom constructors shall initialize all the fields!!**
+
 
 ###  2.5. <a name='Copyingstructurevariables'></a>Copying structure variables
