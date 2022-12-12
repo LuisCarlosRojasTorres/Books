@@ -138,7 +138,31 @@ struct StructureExample
 
 
 ###  2.3. <a name='Declaringstructurevariables'></a>Declaring `structure` variables
+- Once declared an `struct` can be used as any value variable type.
 
+``` cs
+struct StructureExample
+{
+	private int var1, var2;
+	// ...
+	public StructureExample( int var1, int var2)
+	{
+		this.var1 = var1;
+		this.var2 = var2;
+	}
+	// ...
+}
+
+class Example
+{
+	private StructureExample structureExample; // structure field
+
+	public void Method(StructureExample structureParameter) // structure as a parameter
+	{
+		StructureExample structureLocal; // structure as a Local variable
+	}
+}
+```
 ###  2.4. <a name='Understandingstructureinitialization'></a>Understanding structure initialization
 
 ###  2.5. <a name='Copyingstructurevariables'></a>Copying structure variables
