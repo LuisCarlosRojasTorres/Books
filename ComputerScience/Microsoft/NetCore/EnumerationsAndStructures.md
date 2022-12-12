@@ -178,3 +178,14 @@ StructureExample structureExample; // fields are unitialized
 
 
 ###  2.5. <a name='Copyingstructurevariables'></a>Copying structure variables
+- It is possible to initialize or assign one structure variable to another structure variable. But, **Only if the structure variable to copy is completely initialize**.
+
+``` cs
+StructureExample structureExample = new StructureExample(); // initialize
+StructureExample dummy = structureExample;
+```
+
+``` cs
+StructureExample structureExample; // not initialize, Compile-time error!
+StructureExample dummy = structureExample;
+```
