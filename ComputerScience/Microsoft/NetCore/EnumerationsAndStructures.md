@@ -96,8 +96,39 @@ enum EnumVariable : byte{ tag1, tag2 = tag5, tag3, tag4};
 ```
 
 ##  2. <a name='Structures'></a>Structures
+- `classes` are reference types, i.e; created on hte `HEAP`
+  - If the `class` contains so little data, managing the `HEAP` is an **OVERHEAD**
+  - In this case is better to define the type as a `structure`. 
+- An `structure` is a `value` type.
+  - So, it is created on the `STACK`
+  - It has its own `fields`, `methods`, `constructors`
+
+NOTE:
+- The primitive numeric types `int`, `long` and `float` are aliases for the structures `System.Int32`, `System.Int64` and `System.Single`.
+
 
 ###  2.1. <a name='Declaring-1'></a>Declaring
+- It is similar to `class` 
+``` cs
+struct StructureExample
+{
+	private int var1, var2;
+	// ...
+	public StructureExample( int var1, int var2)
+	{
+		this.var1 = var1;
+		this.var2 = var2;
+	}
+}
+```
+- When you copy a `value` type variable: you get two copies of the value.
+  - Use `structures`:
+    - To implements simple concepts whose main feature is their value rather than the functionality.
+
+
+- When you copy a `reference` type variable: you get two references to the same object.
+  - Use `classes` for more complex data that is too big to copy efficiently.
+
 
 ###  2.2. <a name='Differencesbetweenstructuresandclasses'></a>Differences between `structures` and `classes`
 
