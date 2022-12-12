@@ -108,7 +108,7 @@ NOTE:
 
 
 ###  2.1. <a name='Declaring-1'></a>Declaring
-- It is similar to `class` 
+- Its syntax is similar to `class` 
 ``` cs
 struct StructureExample
 {
@@ -131,6 +131,11 @@ struct StructureExample
 
 
 ###  2.2. <a name='Differencesbetweenstructuresandclasses'></a>Differences between `structures` and `classes`
+- You cannnot declare a default constructor.
+  - The compiler implemments it by itself, so you do not need to. Otherwise, `compile-error`
+- If a non-defult constructor is provided. It shall initialize all the fields of the `structure`. Otherwise, `compile-error`
+- You cannot initialize instance fields in their declaration. Otherwise, `compile-error`
+
 
 ###  2.3. <a name='Declaringstructurevariables'></a>Declaring `structure` variables
 
