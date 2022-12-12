@@ -17,16 +17,83 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
+ - This chapter has the purpose to show: **HOW TO CREATE YOUR OWN VALUE TYPES**
+- `C#` supports two kinds of value types: `enumerations` and `structures`
 
 ##  1. <a name='Enumerations'></a>Enumerations
 
 ###  1.1. <a name='Declaring'></a>Declaring
+- Its values are limited to a set of symbolic names.
+- It is declared outside the class
 
 ###  1.2. <a name='Using'></a>Using
+``` cs
+// enum declaration
+enum EnumVariable{ tag1, tag2, tag3, tag4};
+class Example
+{
+    // field example
+    private EnumVariable enumField;
+    // method parameter example
+    public void Method(EnumVariable enumParameter)
+    {
+        // local variable example
+        EnumVariable enumLocal;
+    }
+}
+```
+
+- Before you can read the value of an `enumeration` variable, it must be assigned a value.
+
+``` cs
+EnumVariable enumVariable = EnumVariable.tag1; // Values are scoped
+Console.WriteLine(enumVariable); // This prints "tag1"
+```
+
+- Its values are scoped by its `enumeration` type, i.e.; `EnumVariable.tag1`
+- It can be explicitly converted to `string` calling the `.ToString()` method.
 
 ###  1.3. <a name='Literalvalues'></a>Literal values
+- It associates an integer value with each element of the enumeration.
+- It starts at `0` for the first element and goes up in steps of `1`.
 
+``` cs
+enum EnumVariable{ tag1, tag2, tag3, tag4};
+// its similar to
+enum EnumVariable{ tag1 = 0, tag2, tag3, tag4};
+```
+
+- To print the literal value you shall to `cast` explicitly to `int`. For example:
+
+``` cs
+EnumVariable enumVariable = EnumVariable.tag1; // Values are scoped
+Console.WriteLine((int)enumVariable); // This prints "0"
+```
+
+- It can be set any constant integer for the initial value in an `enumeration`
+
+``` cs
+enum EnumVariable{ tag1 = 55, tag2, tag3, tag4};
+// its similar to
+enum EnumVariable{ tag1 = 55, tag2 = 56, tag3 = 57, tag4 = 58};
+```
+
+- It is possible to give more than one enumeration literal the same underlying value.
+
+``` cs
+enum EnumVariable{ tag1, tag2 = tag5, tag3, tag4};
+```
 ###  1.4. <a name='Underlyingtype'></a>Underlying type
+- From the previous subsection, the `enumerations literals` use `integer` values. But,
+- It is possibleto base an `enumeration` on any of the eight `integer` types:
+  - i.e., `byte`, `sbyte`, `short`, `ushort`, `int`, `uint`, `long` and `ulong`.
+  - This is done to **save memory**. e.g.; `byte` occupies less memory than `int` but only have a maximum of `256` literals (starting from `0`).
+- An example is presented below:
+
+
+``` cs
+enum EnumVariable : byte{ tag1, tag2 = tag5, tag3, tag4};
+```
 
 ##  2. <a name='Structures'></a>Structures
 

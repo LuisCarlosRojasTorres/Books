@@ -8,22 +8,25 @@
 * 7. [Values and References (DONE)](#ValuesandReferencesDONE)
 * 8. [Enumerations and Structures](#EnumerationsandStructures)
 * 9. [Inheritance, Polymorphism and Interfaces](#InheritancePolymorphismandInterfaces)
-* 10. [Collections](#Collections)
-* 11. [Generics](#Generics)
-* 12. [Decoupling Application Logic and Handling Events (DONE)](#DecouplingApplicationLogicandHandlingEventsDONE)
-* 13. [Multitasking](#Multitasking)
-* 14. [Asynchronous Operations](#AsynchronousOperations)
-* 15. [Packaging and distribution](#Packaginganddistribution)
-* 16. [Files](#Files)
-* 17. [EF Core](#EFCore)
-* 18. [Linq](#Linq)
-* 19. [Performance](#Performance)
-* 20. [Microservices Theory](#MicroservicesTheory)
-* 21. [Razor Pages](#RazorPages)
-* 22. [MVC](#MVC)
-* 23. [API](#API)
-* 24. [WebApp](#WebApp)
-* 25. [Deploy on Cloud](#DeployonCloud)
+* 10. [Properties to access fields](#Propertiestoaccessfields)
+* 11. [Using `garbage collection` and resource management](#Usinggarbagecollectionandresourcemanagement)
+* 12. [Handling binary data and using indexers](#Handlingbinarydataandusingindexers)
+* 13. [Collections](#Collections)
+* 14. [Generics](#Generics)
+* 15. [Decoupling Application Logic and Handling Events (DONE)](#DecouplingApplicationLogicandHandlingEventsDONE)
+* 16. [Multitasking](#Multitasking)
+* 17. [Asynchronous Operations](#AsynchronousOperations)
+* 18. [Packaging and distribution](#Packaginganddistribution)
+* 19. [Files](#Files)
+* 20. [EF Core](#EFCore)
+* 21. [Linq](#Linq)
+* 22. [Performance](#Performance)
+* 23. [Microservices Theory](#MicroservicesTheory)
+* 24. [Razor Pages](#RazorPages)
+* 25. [MVC](#MVC)
+* 26. [API](#API)
+* 27. [WebApp](#WebApp)
+* 28. [Deploy on Cloud](#DeployonCloud)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -73,56 +76,69 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Inheritance-polymorphism-and-Interfaces.md)
 
-##  10. <a name='Collections'></a>Collections 
+##  10. <a name='Propertiestoaccessfields'></a>Properties to access fields
+[1]  
+
+##  11. <a name='Usinggarbagecollectionandresourcemanagement'></a>Using `garbage collection` and resource management
+[1] 
+
+##  12. <a name='Handlingbinarydataandusingindexers'></a>Handling binary data and using indexers
+[1] 
+
+##  13. <a name='Collections'></a>Collections 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Collections.md)
 
-##  11. <a name='Generics'></a>Generics
+##  14. <a name='Generics'></a>Generics
 [1]  
-[LINK](/ComputerScience/Microsoft/NetCore/Generics.md)  
+[LINK](/ComputerScience/Microsoft/NetCore/Generics.md) 
 
-##  12. <a name='DecouplingApplicationLogicandHandlingEventsDONE'></a>Decoupling Application Logic and Handling Events (DONE)
+
+
+
+
+##  15. <a name='DecouplingApplicationLogicandHandlingEventsDONE'></a>Decoupling Application Logic and Handling Events (DONE)
 [1]  
 [LINK](/ComputerScience/Microsoft/NetCore/DecouplingApplicationLogic.md)
 
-##  13. <a name='Multitasking'></a>Multitasking 
+##  16. <a name='Multitasking'></a>Multitasking 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Multitasking.md)
 
-##  14. <a name='AsynchronousOperations'></a>Asynchronous Operations
+##  17. <a name='AsynchronousOperations'></a>Asynchronous Operations
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/AsynchronousOperations.md)
 
-##  15. <a name='Packaginganddistribution'></a>Packaging and distribution
+##  18. <a name='Packaginganddistribution'></a>Packaging and distribution
 [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Packaging-and-Distribution.md)
 
-##  16. <a name='Files'></a>Files
+##  19. <a name='Files'></a>Files
 [2]
 
-##  17. <a name='EFCore'></a>EF Core
+##  20. <a name='EFCore'></a>EF Core
 [2]
 
-##  18. <a name='Linq'></a>Linq
+##  21. <a name='Linq'></a>Linq
 [1] [2]
 
-##  19. <a name='Performance'></a>Performance
+##  22. <a name='Performance'></a>Performance
 [2]
 
-##  20. <a name='MicroservicesTheory'></a>Microservices Theory
+##  23. <a name='MicroservicesTheory'></a>Microservices Theory
 [3] [4]
 
-##  21. <a name='RazorPages'></a>Razor Pages
+##  24. <a name='RazorPages'></a>Razor Pages
 [2]
 
-##  22. <a name='MVC'></a>MVC
+##  25. <a name='MVC'></a>MVC
 [2] [5]
 
-##  23. <a name='API'></a>API
+##  26. <a name='API'></a>API
 [1] [2] [4] [5]
 
-##  24. <a name='WebApp'></a>WebApp
+##  27. <a name='WebApp'></a>WebApp
 [5] [6]
 
-##  25. <a name='DeployonCloud'></a>Deploy on Cloud
+##  28. <a name='DeployonCloud'></a>Deploy on Cloud
 [4] [6]
