@@ -27,14 +27,94 @@
 
 
 ##  1. <a name='Inheritance'></a>Inheritance
+- It is a tool to avoid repetition when defining different classes that have some features in common and are quite clearly related to one another.
+
 
 ###  1.1. <a name='Usinginheritance'></a>Using inheritance
+- A `class` is not allowd to derive from two or more classes.
+- The `derived-class` inherits from the `base-class`.
+  - The methods in the `base-class` become part of the `derived-class`.
+- The `derived-class` can also be used as a `base-class` to create a `derived` subclass. 
+  - unless the `sealed` keyword is used.
+- In `C#` inheritance is always implicitly `public`.
+- Al this is presented in the example below:
+
+
+``` cs
+class DerivedClass : BaseClass
+{
+    //...
+}
+// Then 
+class DerivedSubClass : DerivedClass
+{
+    //...
+}
+```
 
 ####  1.1.1. <a name='TheSystem.Objectclassrevisited'></a>The `System.Object` class revisited
+- All classes implicitly derive from `System.Object`
+- So both implementations are similar as presented below:
 
+``` cs
+class ClassExample // inherits from System.Object implicitly
+{
+	// implementation
+}
+
+class ClassExample : System.Object
+{
+	// implementation
+}
+```
 ####  1.1.2. <a name='Callingbase-classconstructors'></a>Calling `base-class` constructors
+- The `derived-class` automaticaaly contains all the methods and fields from the `base-class`.
+- It is a good practice for the constructor of a class to call the constructor of its `base-class`.
+  - This is achieved using the `base` keyword.
+  - If the `base-class` constructor is not explicitly called in a `derived-class` constructor, the compiler inserts a call to the `default` `base-class` constructor i.e., `base()`. This is showed below:
+
+``` cs
+class DerivedClassExample
+{
+	public DerivedClassExample(derivedClassParameters)
+	{
+		// default base constructor implicitly called
+	}		
+}
+
+class DerivedClassExample
+{
+	public DerivedClassExample(derivedClassParameters) : base() 
+	{
+		// default base constructor explicitly called
+	}
+}
+```
+- A general call for a `base-class` contructor is showed below:
+
+
+``` cs
+class BaseClassExample
+{
+	public BaseClass(baseClassParameters)
+	{
+		//...
+	}
+}
+
+class DerivedClassExample
+{
+	public DerivedClassExample(derivedClassParameters)
+		: base(baseClassParameters)
+	{
+		//...
+	}
+}
+```
 
 ####  1.1.3. <a name='Assigningclasses'></a>Assigning classes
+
+
 
 ####  1.1.4. <a name='Declaringnewmethods'></a>Declaring new methods
 
