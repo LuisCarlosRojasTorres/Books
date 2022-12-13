@@ -1,6 +1,6 @@
 <!-- vscode-markdown-toc -->
 * 1. [Inheritance](#Inheritance)
-	* 1.1. [Using `interfaces`](#Usinginterfaces)
+	* 1.1. [Using inheritance](#Usinginheritance)
 		* 1.1.1. [The `System.Object` class revisited](#TheSystem.Objectclassrevisited)
 		* 1.1.2. [Calling `base-class` constructors](#Callingbase-classconstructors)
 		* 1.1.3. [Assigning classes](#Assigningclasses)
@@ -28,7 +28,7 @@
 
 ##  1. <a name='Inheritance'></a>Inheritance
 
-###  1.1. <a name='Usinginterfaces'></a>Using inheritance
+###  1.1. <a name='Usinginheritance'></a>Using inheritance
 
 ####  1.1.1. <a name='TheSystem.Objectclassrevisited'></a>The `System.Object` class revisited
 
