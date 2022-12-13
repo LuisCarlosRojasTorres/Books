@@ -28,7 +28,7 @@
 
 ##  1. <a name='Inheritance'></a>Inheritance
 
-###  1.1. <a name='Usinginterfaces'></a>Using `interfaces`
+###  1.1. <a name='Usinginterfaces'></a>Using inheritance
 
 ####  1.1.1. <a name='TheSystem.Objectclassrevisited'></a>The `System.Object` class revisited
 
