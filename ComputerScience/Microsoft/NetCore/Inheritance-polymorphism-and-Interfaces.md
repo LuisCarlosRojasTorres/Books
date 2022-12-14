@@ -114,7 +114,35 @@ class DerivedClassExample
 
 ####  1.1.3. <a name='Assigningclasses'></a>Assigning classes
 
+- It is possible to refer to an object from a variable of a different type as long as the type used in a `class` that is higher up the inheritance hierarchy.
+	- i.e., A `derived-class` to a `base-class`.
 
+``` cs
+DerivedClassExample derivedClass = new DerivedClassExample();
+BaseClassExample baseClass = derivedClass;
+```
+
+- It is also possible to do the inverse i.e, a `base-class` to a `derived-class`. 
+  - This has an **important limitation**: It can only access to methods and fields that are defined by the `base-class`
+  - Any additional method defined in the `derived-class` are not visible.
+
+
+``` cs
+BaseClassExample baseClass = new BaseClassExample();
+DerivedClassExample derivedClass = baseClass;
+```
+
+- A `based-class` can be assigned to a `derived-class`. 
+  - This can be helped using the `as` operator.
+  - So this returns null in case that `base-class` is not a `DerivedClassExample` type.
+
+``` cs
+DerivedClassExample derivedClass = new DerivedClassExample();
+BaseClassExample baseClass = derivedClass;
+
+// ...
+DerivedClassExample derivedClass2 = baseClass as DerivedClassExample;
+```
 
 ####  1.1.4. <a name='Declaringnewmethods'></a>Declaring new methods
 
