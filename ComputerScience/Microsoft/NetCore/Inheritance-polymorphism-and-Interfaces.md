@@ -145,9 +145,66 @@ DerivedClassExample derivedClass2 = baseClass as DerivedClassExample;
 ```
 
 ####  1.1.4. <a name='Declaringnewmethods'></a>Declaring new methods
+- If a `base-class` and a `derived-class` happen to declare two methods that have the same signature, you will receive a warning when you compile the application.
+  - Method signature: This refers to the name of the method and the number and types of its parameters, **but not its return type**
+    - So, if two methods have the same name and that take the same list of parameters, they hace the same **signature**
+- A method in the `derived-class` hides a method in the `base-class` that has the same signature.
+  - It also generates a `warning` telling that the method of `base-class` is hidden.
+
+``` cs
+class BaseClass
+{
+    public returnType1 SomeMethod(parameters)
+	{
+		//...
+	}
+}
+// Then 
+class DerivedClass : BaseClass
+{
+    public returnType2 SomeMethod(parameters)
+	{
+		// This method has the same signature as its base class, 
+		// the COMPILER WILL GENERATE A WARNING FOR THIS
+	}
+}
+```
+- To eliminate this `warning` use the `new` keyword. This is obviously not recommended!
+``` cs
+class BaseClass
+{
+    public returnType1 SomeMethod(parameters)
+	{
+		//...
+	}
+}
+// Then 
+class DerivedClass : BaseClass
+{
+    new public returnType2 SomeMethod(parameters)
+	{
+		// This method has the same signature as its base class, 
+		// the COMPILER WILL GENERATE A WARNING FOR THIS
+	}
+}
+```
 
 ####  1.1.5. <a name='Declaringvirtualmethods'></a>Declaring `virtual` methods
+- A method that is intended to be overridden is called a `virtual` method.
+  - `override`:
+    - It is a mechanism for providing different implementations of the same method, but in a class-specific manner
+    - It is a useful programming concept
+  - `hide`:
+    - It replaces one method with another
+    - It is often an error.
+- The use of `virtual` keyword is presented below:
 
+``` cs
+public/private virtual returnType nameOfMethod()
+{
+	///
+}
+```
 ####  1.1.6. <a name='Declaringoverridemethods'></a>Declaring `override` methods
 
 ####  1.1.7. <a name='Understandingextensionmethods'></a>Understanding extension methods
