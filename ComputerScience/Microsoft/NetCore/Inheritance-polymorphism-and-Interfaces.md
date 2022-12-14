@@ -200,13 +200,27 @@ class DerivedClass : BaseClass
 - The use of `virtual` keyword is presented below:
 
 ``` cs
-public/private virtual returnType nameOfMethod()
+public/private virtual returnType NameOfMethod(parameters)
 {
-	///
+	// virtual method in base-class
 }
 ```
-####  1.1.6. <a name='Declaringoverridemethods'></a>Declaring `override` methods
 
+####  1.1.6. <a name='Declaringoverridemethods'></a>Declaring `override` methods
+- To declare another implementation of the `virtual base-class` method, the `override` method shall be used.
+- To call the `base-class` version of the method, the `base.NameOfMethod` shall be called.
+- This is presented in the following code:
+
+
+``` cs
+public/private override returnType NameOfMethod(parameters)
+{
+	// override method in derived-class
+	// to call the base-class version of the method
+	// base.Name
+	base.NameOfMethod(parameters);
+}
+```
 ####  1.1.7. <a name='Understandingextensionmethods'></a>Understanding extension methods
 
 ###  1.2. <a name='Creatingextensionmethods'></a>Creating extension methods
