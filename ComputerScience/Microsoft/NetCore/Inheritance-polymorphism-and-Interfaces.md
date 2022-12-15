@@ -7,7 +7,7 @@
 		* 1.1.4. [Declaring new methods](#Declaringnewmethods)
 		* 1.1.5. [Declaring `virtual` methods](#Declaringvirtualmethods)
 		* 1.1.6. [Declaring `override` methods](#Declaringoverridemethods)
-		* 1.1.7. [Understanding extension methods](#Understandingextensionmethods)
+		* 1.1.7. [Understanding `protected` access](#Understandingprotectedaccess)
 	* 1.2. [Creating extension methods](#Creatingextensionmethods)
 * 2. [Interfaces](#Interfaces)
 	* 2.1. [Understanding `interfaces`](#Understandinginterfaces)
@@ -232,7 +232,17 @@ Rules:
 - An `override` method is implicitly `virtual` and can itself be overriden in a further `derived` class.
 - If the `override` keyword is not used, the method will be `hide` instead of `override`
 
-####  1.1.7. <a name='Understandingextensionmethods'></a>Understanding extension methods
+####  1.1.7. <a name='Understandingprotectedaccess'></a>Understanding `protected` access
+- It is useful that only the `derive-class` has access to some `base-class` methods. This is achieved using the `protected` access.
+- It works like this:
+  - If a class `A` is derived from another class `B`:
+    - It can access the `protected` class members of class `B`
+       So, for class `A` a `protected` member of class `B` is effectively `public`
+  - If a class `A` is not derived from another class `B`:
+    - It cannot access the `protected` class members of class `B`
+      - So, for class `A` a `protected` member of class `B` is effectively `private`
+- It is possible to access a `protected base-class` member, not only in a `derived-class` but also in classes derived from the `derived-class`.
+
 
 ###  1.2. <a name='Creatingextensionmethods'></a>Creating extension methods
 
