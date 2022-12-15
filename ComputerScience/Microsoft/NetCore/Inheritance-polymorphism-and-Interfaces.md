@@ -271,10 +271,25 @@ class1.ExtentionMethod(); // 4
 ```
 
 ##  2. <a name='Interfaces'></a>Interfaces 
-
+- It does not contain any code or data.
+- It let you to separate the names and signatures of the methods of a class from implementation.
 ###  2.1. <a name='Understandinginterfaces'></a>Understanding `interfaces`
 
 ####  2.1.1. <a name='Defining'></a>Defining
+- An `interface` is syntactically similar to defining a `class`
+- It uses the `interface` keyword
+- It never specifies access modifiers i.e.; no `private` , `public` or `protected`
+- As a suggestion its name should begin with `I` letter e.g, `INameOfInterface`
+- Again, its methods have no implementation
+  - It cannot contain any data/fields.
+- An example is presented below:
+
+``` cs
+interface INameOfInterface
+{
+	returnType NameOfMethod(parameters);
+}
+```
 
 ####  2.1.2. <a name='Implementing'></a>Implementing
 
@@ -285,5 +300,6 @@ class1.ExtentionMethod(); // 4
 ####  2.1.5. <a name='interfacesrestrictions'></a>`interfaces` restrictions
 
 ##  3. <a name='abstractclasses'></a>`abstract` classes
-
+- It can contain code and data.
+  - Avoid `code repetition` between classes that implement `interfaces`
 ###  3.1. <a name='abstractmethods'></a>`abstract` methods
