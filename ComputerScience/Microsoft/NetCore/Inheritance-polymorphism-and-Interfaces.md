@@ -147,7 +147,7 @@ DerivedClassExample derivedClass2 = baseClass as DerivedClassExample;
 ####  1.1.4. <a name='Declaringnewmethods'></a>Declaring new methods
 - If a `base-class` and a `derived-class` happen to declare two methods that have the same signature, you will receive a warning when you compile the application.
   - Method signature: This refers to the name of the method and the number and types of its parameters, **but not its return type**
-    - So, if two methods have the same name and that take the same list of parameters, they hace the same **signature**
+    - So, if two methods have the same name and that take the same list of parameters, they have the same **signature**
 - A method in the `derived-class` hides a method in the `base-class` that has the same signature.
   - It also generates a `warning` telling that the method of `base-class` is hidden.
 
@@ -221,6 +221,17 @@ public/private override returnType NameOfMethod(parameters)
 	base.NameOfMethod(parameters);
 }
 ```
+
+Rules:
+- A `virtual` method cannot be `private`.
+- A `override` method cannot be `private`. Moreover a `class` cannot change the protection level of a method that inherits
+  - `protected` level can be used.
+- Both methods shall have the same `signature` (i.e., same name, number and type of parameters) 
+  - They also shall `return` the same type
+- Only `virtual` methods can be `override`. Otherwise, you get a `compile-error`
+- An `override` method is implicitly `virtual` and can itself be overriden in a further `derived` class.
+- If the `override` keyword is not used, the method will be `hide` instead of `override`
+
 ####  1.1.7. <a name='Understandingextensionmethods'></a>Understanding extension methods
 
 ###  1.2. <a name='Creatingextensionmethods'></a>Creating extension methods
