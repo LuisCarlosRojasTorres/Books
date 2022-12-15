@@ -245,6 +245,30 @@ Rules:
 
 
 ###  1.2. <a name='Creatingextensionmethods'></a>Creating extension methods
+- It quickly extend a type whithout affecting existing code.
+- To extent a `class` or `structure` method with additional `static` methods.
+  1. Create a `static class`
+  2. Create a `static` method.
+      1. Its parameter shall have `this + NameOfClass + nameOfVariable`
+  3. Implement the method.
+  4. To use it, use the `.` operator plus the `ExtentionMethod`
+``` cs
+// Class1.cs
+internal class Class1
+{
+    //...
+}
+// Class2.cs
+internal static class Class2 //1
+{
+    public static void ExtentionMethod(this Class1 t) { // 2 and 2.1
+        // 3
+    }
+}
+// Program.cs
+Class1 class1 = new Class1();
+class1.ExtentionMethod(); // 4
+```
 
 ##  2. <a name='Interfaces'></a>Interfaces 
 

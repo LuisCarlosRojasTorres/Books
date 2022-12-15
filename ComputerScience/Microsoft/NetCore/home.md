@@ -68,7 +68,7 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/ValuesAndReferences.md)
 
-##  8. <a name='EnumerationsandStructures'></a>Enumerations and Structures
+##  8. <a name='EnumerationsandStructures'></a>Enumerations and Structures (DONE)
 [1]
 [LINK](/ComputerScience/Microsoft/NetCore/EnumerationsAndStructures.md)
 
