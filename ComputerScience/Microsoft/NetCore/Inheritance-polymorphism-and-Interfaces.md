@@ -337,8 +337,26 @@ class NameOfDerivedClass : NameOfBaseClass, NameOfInterface
   - A class which inherits from interface A. It shall implement all the metods in `interface A` and `interface B`.
   
 ####  2.1.3. <a name='Referencingaclassthroughitsinterface'></a>Referencing a `class` through its `interface`
+- An object can be referenced to a variable defined as an `interface` that the object's `class` implements.
+- This let you to defined methods that can take different types as parameters, as long as the types implements a specified `interfaces`.
+
+``` cs
+void Method(IExampleOfInterface exampleOfInterface);
+```
+
+- It is possible to verify if an object is an instance of a `class` that implements a specific `interface` by using the `is` operator.
+	- However, if an `object` is referenced through an `interface`, only the methods that are visible through the `interface` can be called.
+
+
+``` cs
+if(object1 is IExampleOfInterface)
+{
+	IExampleOfInterface exampleOfInterface = object1;
+}
+```
 
 ####  2.1.4. <a name='Workingwithmultipleinterfaces'></a>Working with multiple `interfaces`
+
 
 ####  2.1.5. <a name='interfacesrestrictions'></a>`interfaces` restrictions
 
