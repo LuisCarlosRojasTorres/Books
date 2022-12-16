@@ -292,7 +292,50 @@ interface INameOfInterface
 ```
 
 ####  2.1.2. <a name='Implementing'></a>Implementing
+- `class` or `struct` which inherits from an `interface` shall implements all the methods declared in the `interface`
+- The syntaxis is similar to `class inheritance`
 
+``` cs
+// INameOfInterface.cs
+interface INameOfInterface
+{
+	returnType NameOfMethod(parameters);
+}
+// NameOfClass.cs
+class NameOfClass : INameOfInterface
+{
+	returnType NameOfMethod(parameters)
+	{
+		// implementation of method
+	}
+}
+```
+
+- **Rules:**
+  - Method names and return types match exactly.
+    - Any `parameter` shall match exactly
+  - All methods of the interface should not have an access qualifier.
+- If a `class` inherits from another `class` and an `interface` at same time. The `base-class` shall be specified first then the `interface`.
+- This is presented below:
+
+``` cs
+interface NameOfInterface
+{
+	//...
+}
+class NameOfBaseClass
+{
+	//...
+}
+class NameOfDerivedClass : NameOfBaseClass, NameOfInterface
+{
+	//...
+}
+```
+
+- `interface extention`: An `interface A` which inherits from an `interface B`. 
+  - A class which inherits from interface A. It shall implement all the metods in `interface A` and `interface B`.
+  
 ####  2.1.3. <a name='Referencingaclassthroughitsinterface'></a>Referencing a `class` through its `interface`
 
 ####  2.1.4. <a name='Workingwithmultipleinterfaces'></a>Working with multiple `interfaces`
