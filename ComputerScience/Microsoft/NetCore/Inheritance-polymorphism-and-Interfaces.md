@@ -425,9 +425,17 @@ Interface2 interface2 = dummy as IInterface2;
 
 interface1.Method(); 
 interface2.Method();
-}
 ```
 ####  2.1.5. <a name='interfacesrestrictions'></a>`interfaces` restrictions
+- It is impossible to define any `field` in an `interface`, not even `static fields`.
+  - `field`: an implementation detail of a class or structure.
+- It is impossible to define a `constructor` in an `interface`
+- It is impossible to define a `destructor` in an `interface`
+- It is impossible to specify `access modifiers` for any methods.
+  - All methods in an `interface` are implicitly `public`
+- It is impossible to nest any type (e.g., `enum`, `struct`, `classes` or `interfaces`) inside an interface
+- An interface cannot inherit from a `structure` or a `class`
+
 
 ##  3. <a name='abstractclasses'></a>`abstract` classes
 - It can contain code and data.
