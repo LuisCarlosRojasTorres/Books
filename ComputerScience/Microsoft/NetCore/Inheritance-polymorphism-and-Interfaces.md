@@ -17,7 +17,7 @@
 		* 2.1.4. [Working with multiple `interfaces`](#Workingwithmultipleinterfaces)
 		* 2.1.5. [`interfaces` restrictions](#interfacesrestrictions)
 * 3. [`abstract` classes](#abstractclasses)
-	* 3.1. [`abstract` methods](#abstractmethods)
+* 4. [`sealed` classes](#sealedclasses)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -440,4 +440,21 @@ interface2.Method();
 ##  3. <a name='abstractclasses'></a>`abstract` classes
 - It can contain code and data.
   - Avoid `code repetition` between classes that implement `interfaces`
-###  3.1. <a name='abstractmethods'></a>`abstract` methods
+- It cannot be instantiated
+- It uses the `abstract` keyword
+- It can contain `abstract methods`
+  - They cannot be `private`
+  - These are similar to `virtual methods` but do not have implementation.
+  - A `derived-class` shall `override` these methods.
+- An example is presented below:
+
+``` cs
+abstract class ExampleOfClass
+{
+	public abstract void Method(parameters); //No implementation	
+}
+
+```
+
+
+##  4. <a name='sealedclasses'></a>`sealed` classes
