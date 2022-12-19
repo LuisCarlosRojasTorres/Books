@@ -380,7 +380,53 @@ class ExampleOfClass : BaseClass01, IInterface01, IIInterface02
 }
 
 ```
+**Explicit implementation of Interfaces**
+- When an class inherits from more than `interfaces`, it is probable that two or more `interfaces` could have a method with same name.
+  - To explicitly implement each of the methods, the name of the `interface` shall have to be included.
+    - This is achieved with the `.` operator e.g., `NameOfInterface.NameOfMethod`
+- An example of this is presented below:
 
+
+``` cs
+interface IInterface01
+{
+	void Method(parameters){}
+}
+interface IInterface02
+{
+	void Method(parameters){}
+}
+
+class ExampleOfClass : IInterface01, IIInterface02
+{
+	//Explicit implementation
+	void IInterface01.Method(parameters) // 
+	{
+		//...
+	}
+	//Explicit implementation
+	void IInterface02.Method(parameters){
+		//...
+	}
+}
+```
+
+Notes:
+- It is recommended to explicitly implement interfaces when possible.
+- TO ACCESS to these methods, the object has to be referenced to an appropiate `interface`.
+  - An example of this is presented below:
+
+``` cs
+//Program.vs
+ExampleOfClass dummy = new ExampleOfClass();
+
+Interface1 interface1 = dummy as IInterface1; 
+Interface2 interface2 = dummy as IInterface2;
+
+interface1.Method(); 
+interface2.Method();
+}
+```
 ####  2.1.5. <a name='interfacesrestrictions'></a>`interfaces` restrictions
 
 ##  3. <a name='abstractclasses'></a>`abstract` classes
