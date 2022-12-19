@@ -44,31 +44,31 @@
 [6] - ASPNETCore5 and React
 
 
-##  2. <a name='ConceptsAndDefinitionsDONE'></a> Concepts And Definitions (DONE)
+##  2. <a name='ConceptsAndDefinitionsDONE'></a> Concepts And Definitions 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/ConceptsAndDefinitions.md)
 
-##  3. <a name='VariablesandStatementsDONE'></a>Variables and Statements (DONE)
+##  3. <a name='VariablesandStatementsDONE'></a>Variables and Statements 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/VariablesAndStatements.md)
 
-##  4. <a name='MethodsDONE'></a>Methods (DONE)
+##  4. <a name='MethodsDONE'></a>Methods 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Methods.md)
 
-##  5. <a name='ExceptionHandlingDONE'></a>Exception Handling (DONE)
+##  5. <a name='ExceptionHandlingDONE'></a>Exception Handling
 [1]  
 [LINK](/ComputerScience/Microsoft/NetCore/ExceptionHandling.md)
 
-##  6. <a name='ClassesDONE'></a>Classes (DONE)
+##  6. <a name='ClassesDONE'></a>Classes
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Classes.md)
 
-##  7. <a name='ValuesandReferencesDONE'></a>Values and References (DONE)
+##  7. <a name='ValuesandReferencesDONE'></a>Values and References
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/ValuesAndReferences.md)
 
-##  8. <a name='EnumerationsandStructures'></a>Enumerations and Structures (DONE)
+##  8. <a name='EnumerationsandStructures'></a>Enumerations and Structures
 [1]
 [LINK](/ComputerScience/Microsoft/NetCore/EnumerationsAndStructures.md)
 
@@ -76,28 +76,24 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Inheritance-polymorphism-and-Interfaces.md)
 
-##  10. <a name='Propertiestoaccessfields'></a>Properties to access fields
+##  10. <a name='Propertiestoaccessfields'></a>Properties to access fields (PENDING)
 [1]  
 
-##  11. <a name='Usinggarbagecollectionandresourcemanagement'></a>Using `garbage collection` and resource management
+##  11. <a name='Usinggarbagecollectionandresourcemanagement'></a>Using `garbage collection` and resource management (PENDING)
 [1] 
 
-##  12. <a name='Handlingbinarydataandusingindexers'></a>Handling binary data and using indexers
+##  12. <a name='Handlingbinarydataandusingindexers'></a>Handling binary data and using indexers (PENDING)
 [1] 
 
-##  13. <a name='Collections'></a>Collections 
+##  13. <a name='Collections'></a>Collections (PENDING)
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Collections.md)
 
-##  14. <a name='Generics'></a>Generics
+##  14. <a name='Generics'></a>Generics (PENDING)
 [1]  
 [LINK](/ComputerScience/Microsoft/NetCore/Generics.md) 
 
-
-
-
-
-##  15. <a name='DecouplingApplicationLogicandHandlingEventsDONE'></a>Decoupling Application Logic and Handling Events (DONE)
+##  15. <a name='DecouplingApplicationLogicandHandlingEventsDONE'></a>Decoupling Application Logic and Handling Events
 [1]  
 [LINK](/ComputerScience/Microsoft/NetCore/DecouplingApplicationLogic.md)
 
@@ -105,40 +101,40 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Multitasking.md)
 
-##  17. <a name='AsynchronousOperations'></a>Asynchronous Operations
+##  17. <a name='AsynchronousOperations'></a>Asynchronous Operations (PENDING)
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/AsynchronousOperations.md)
 
-##  18. <a name='Packaginganddistribution'></a>Packaging and distribution
+##  18. <a name='Packaginganddistribution'></a>Packaging and distribution (PENDING)
 [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Packaging-and-Distribution.md)
 
-##  19. <a name='Files'></a>Files
+##  19. <a name='Files'></a>Files (PENDING)
 [2]
 
-##  20. <a name='EFCore'></a>EF Core
+##  20. <a name='EFCore'></a>EF Core (PENDING)
 [2]
 
-##  21. <a name='Linq'></a>Linq
+##  21. <a name='Linq'></a>Linq (PENDING)
 [1] [2]
 
-##  22. <a name='Performance'></a>Performance
+##  22. <a name='Performance'></a>Performance (PENDING)
 [2]
 
-##  23. <a name='MicroservicesTheory'></a>Microservices Theory
+##  23. <a name='MicroservicesTheory'></a>Microservices Theory (PENDING)
 [3] [4]
 
-##  24. <a name='RazorPages'></a>Razor Pages
+##  24. <a name='RazorPages'></a>Razor Pages (PENDING)
 [2]
 
-##  25. <a name='MVC'></a>MVC
+##  25. <a name='MVC'></a>MVC (PENDING)
 [2] [5]
 
-##  26. <a name='API'></a>API
+##  26. <a name='API'></a>API (PENDING)
 [1] [2] [4] [5]
 
-##  27. <a name='WebApp'></a>WebApp
+##  27. <a name='WebApp'></a>WebApp (PENDING)
 [5] [6]
 
-##  28. <a name='DeployonCloud'></a>Deploy on Cloud
+##  28. <a name='DeployonCloud'></a>Deploy on Cloud (PENDING)
 [4] [6]
