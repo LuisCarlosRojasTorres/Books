@@ -453,8 +453,24 @@ abstract class ExampleOfClass
 {
 	public abstract void Method(parameters); //No implementation	
 }
+```
+##  4. <a name='sealedclasses'></a>`sealed` classes
 
+- To prevent a `class` from being used as a `base-class`
+  - If any class tries to use a `sealed class ` as a `bass-class`, it will generate a `compile-error`
+- The `sealed` keyword is used as follows:
+``` cs
+sealed class ExampleOfClass : IInterface1, IInterface2
+{
+
+}
 ```
 
-
-##  4. <a name='sealedclasses'></a>`sealed` classes
+### `sealed` methods
+- It declares an individual method (in an `unsealed` class) as `sealed`.
+- Only methods declared with the `override` keyword can be `sealed`.
+- So, the keywords used in this section can be understood as follows:
+  - `interface`: introduces the name of a method
+  - `virtual`: first implementation of the method
+  - `override`: another implementation of the method
+  - `sealed`: last implementation of the method
