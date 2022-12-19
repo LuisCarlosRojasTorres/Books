@@ -356,7 +356,30 @@ if(object1 is IExampleOfInterface)
 ```
 
 ####  2.1.4. <a name='Workingwithmultipleinterfaces'></a>Working with multiple `interfaces`
+- A class can implement many `interfaces`
+  - There is no a specific ordeed to declare the `interfaces` 
+    - However, if it is also implementing a `class`, the `className` shall go first.
 
+``` cs
+interface IInterface01
+{
+
+}
+interface IInterface02
+{
+
+}
+class BaseClass01
+{
+
+}
+
+class ExampleOfClass : BaseClass01, IInterface01, IIInterface02
+{
+	//Implementation goes here
+}
+
+```
 
 ####  2.1.5. <a name='interfacesrestrictions'></a>`interfaces` restrictions
 
