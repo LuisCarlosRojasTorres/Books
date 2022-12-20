@@ -123,6 +123,7 @@
 
 ##  23. <a name='MicroservicesTheory'></a>Microservices Theory (PENDING)
 [3] [4]
+[LINK](/ComputerScience/Microsoft/NetCore/MicroservicesTheory.md)
 
 ##  24. <a name='RazorPages'></a>Razor Pages (PENDING)
 [2]
