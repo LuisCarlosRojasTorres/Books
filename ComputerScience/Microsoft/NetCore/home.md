@@ -1,32 +1,34 @@
 <!-- vscode-markdown-toc -->
 * 1. [References](#References)
-* 2. [ Concepts And Definitions (DONE)](#ConceptsAndDefinitionsDONE)
-* 3. [Variables and Statements (DONE)](#VariablesandStatementsDONE)
-* 4. [Methods (DONE)](#MethodsDONE)
-* 5. [Exception Handling (DONE)](#ExceptionHandlingDONE)
-* 6. [Classes (DONE)](#ClassesDONE)
-* 7. [Values and References (DONE)](#ValuesandReferencesDONE)
+* 2. [ Concepts And Definitions](#ConceptsAndDefinitions)
+* 3. [Variables and Statements](#VariablesandStatements)
+* 4. [Methods](#Methods)
+* 5. [Exception Handling](#ExceptionHandling)
+* 6. [Classes](#Classes)
+* 7. [Values and References](#ValuesandReferences)
 * 8. [Enumerations and Structures](#EnumerationsandStructures)
 * 9. [Inheritance, Polymorphism and Interfaces](#InheritancePolymorphismandInterfaces)
-* 10. [Properties to access fields](#Propertiestoaccessfields)
-* 11. [Using `garbage collection` and resource management](#Usinggarbagecollectionandresourcemanagement)
-* 12. [Handling binary data and using indexers](#Handlingbinarydataandusingindexers)
-* 13. [Collections](#Collections)
-* 14. [Generics](#Generics)
-* 15. [Decoupling Application Logic and Handling Events (DONE)](#DecouplingApplicationLogicandHandlingEventsDONE)
+* 10. [Properties to access fields (PENDING)](#PropertiestoaccessfieldsPENDING)
+* 11. [Using `garbage collection` and resource management (PENDING)](#UsinggarbagecollectionandresourcemanagementPENDING)
+* 12. [Handling binary data and using indexers (PENDING)](#HandlingbinarydataandusingindexersPENDING)
+* 13. [Collections (PENDING)](#CollectionsPENDING)
+* 14. [Generics (PENDING)](#GenericsPENDING)
+* 15. [Decoupling Application Logic and Handling Events](#DecouplingApplicationLogicandHandlingEvents)
 * 16. [Multitasking](#Multitasking)
-* 17. [Asynchronous Operations](#AsynchronousOperations)
-* 18. [Packaging and distribution](#Packaginganddistribution)
-* 19. [Files](#Files)
-* 20. [EF Core](#EFCore)
-* 21. [Linq](#Linq)
-* 22. [Performance](#Performance)
-* 23. [Microservices Theory](#MicroservicesTheory)
-* 24. [Razor Pages](#RazorPages)
-* 25. [MVC](#MVC)
-* 26. [API](#API)
-* 27. [WebApp](#WebApp)
-* 28. [Deploy on Cloud](#DeployonCloud)
+* 17. [Asynchronous Operations (PENDING)](#AsynchronousOperationsPENDING)
+* 18. [Libraries](#Libraries)
+* 19. [Testing](#Testing)
+* 20. [Packaging and distribution (PENDING)](#PackaginganddistributionPENDING)
+* 21. [Files (PENDING)](#FilesPENDING)
+* 22. [EF Core (PENDING)](#EFCorePENDING)
+* 23. [Linq (PENDING)](#LinqPENDING)
+* 24. [Performance (PENDING)](#PerformancePENDING)
+* 25. [Microservices Theory (PENDING)](#MicroservicesTheoryPENDING)
+* 26. [Razor Pages (PENDING)](#RazorPagesPENDING)
+* 27. [MVC (PENDING)](#MVCPENDING)
+* 28. [API (PENDING)](#APIPENDING)
+* 29. [WebApp (PENDING)](#WebAppPENDING)
+* 30. [Deploy on Cloud (PENDING)](#DeployonCloudPENDING)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -44,27 +46,27 @@
 [6] - ASPNETCore5 and React
 
 
-##  2. <a name='ConceptsAndDefinitionsDONE'></a> Concepts And Definitions 
+##  2. <a name='ConceptsAndDefinitions'></a> Concepts And Definitions 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/ConceptsAndDefinitions.md)
 
-##  3. <a name='VariablesandStatementsDONE'></a>Variables and Statements 
+##  3. <a name='VariablesandStatements'></a>Variables and Statements 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/VariablesAndStatements.md)
 
-##  4. <a name='MethodsDONE'></a>Methods 
+##  4. <a name='Methods'></a>Methods 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Methods.md)
 
-##  5. <a name='ExceptionHandlingDONE'></a>Exception Handling
+##  5. <a name='ExceptionHandling'></a>Exception Handling
 [1]  
 [LINK](/ComputerScience/Microsoft/NetCore/ExceptionHandling.md)
 
-##  6. <a name='ClassesDONE'></a>Classes
+##  6. <a name='Classes'></a>Classes
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Classes.md)
 
-##  7. <a name='ValuesandReferencesDONE'></a>Values and References
+##  7. <a name='ValuesandReferences'></a>Values and References
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/ValuesAndReferences.md)
 
@@ -72,28 +74,28 @@
 [1]
 [LINK](/ComputerScience/Microsoft/NetCore/EnumerationsAndStructures.md)
 
-##  9. <a name='InheritancePolymorphismandInterfaces'></a>Inheritance, Polymorphism and Interfaces
+##  9. <a name='InheritancePolymorphismandInterfaces'></a>Inheritance, Polymorphism and Interfaces 
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Inheritance-polymorphism-and-Interfaces.md)
 
-##  10. <a name='Propertiestoaccessfields'></a>Properties to access fields (PENDING)
+##  10. <a name='PropertiestoaccessfieldsPENDING'></a>Properties to access fields (PENDING)
 [1]  
 
-##  11. <a name='Usinggarbagecollectionandresourcemanagement'></a>Using `garbage collection` and resource management (PENDING)
+##  11. <a name='UsinggarbagecollectionandresourcemanagementPENDING'></a>Using `garbage collection` and resource management (PENDING)
 [1] 
 
-##  12. <a name='Handlingbinarydataandusingindexers'></a>Handling binary data and using indexers (PENDING)
+##  12. <a name='HandlingbinarydataandusingindexersPENDING'></a>Handling binary data and using indexers (PENDING)
 [1] 
 
-##  13. <a name='Collections'></a>Collections (PENDING)
+##  13. <a name='CollectionsPENDING'></a>Collections (PENDING)
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Collections.md)
 
-##  14. <a name='Generics'></a>Generics (PENDING)
+##  14. <a name='GenericsPENDING'></a>Generics (PENDING)
 [1]  
 [LINK](/ComputerScience/Microsoft/NetCore/Generics.md) 
 
-##  15. <a name='DecouplingApplicationLogicandHandlingEventsDONE'></a>Decoupling Application Logic and Handling Events
+##  15. <a name='DecouplingApplicationLogicandHandlingEvents'></a>Decoupling Application Logic and Handling Events
 [1]  
 [LINK](/ComputerScience/Microsoft/NetCore/DecouplingApplicationLogic.md)
 
@@ -101,41 +103,49 @@
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Multitasking.md)
 
-##  17. <a name='AsynchronousOperations'></a>Asynchronous Operations (PENDING)
+##  17. <a name='AsynchronousOperationsPENDING'></a>Asynchronous Operations (PENDING)
 [1] [2]
 [LINK](/ComputerScience/Microsoft/NetCore/AsynchronousOperations.md)
 
-##  18. <a name='Packaginganddistribution'></a>Packaging and distribution (PENDING)
+##  18. <a name='Libraries'></a>Libraries  
+[2]  
+[LINK](/ComputerScience/Microsoft/NetCore/Libraries.md)  
+
+##  19. <a name='Testing'></a>Testing
+[2]
+[LINK](/ComputerScience/Microsoft/NetCore/Testing.md)  
+
+##  20. <a name='PackaginganddistributionPENDING'></a>Packaging and distribution (PENDING)
 [2]
 [LINK](/ComputerScience/Microsoft/NetCore/Packaging-and-Distribution.md)
 
-##  19. <a name='Files'></a>Files (PENDING)
+##  21. <a name='FilesPENDING'></a>Files (PENDING)
 [2]
 
-##  20. <a name='EFCore'></a>EF Core (PENDING)
+##  22. <a name='EFCorePENDING'></a>EF Core (PENDING)
 [2]
 
-##  21. <a name='Linq'></a>Linq (PENDING)
+##  23. <a name='LinqPENDING'></a>Linq (PENDING)
 [1] [2]
 
-##  22. <a name='Performance'></a>Performance (PENDING)
+##  24. <a name='PerformancePENDING'></a>Performance (PENDING)
 [2]
 
-##  23. <a name='MicroservicesTheory'></a>Microservices Theory (PENDING)
+##  25. <a name='MicroservicesTheoryPENDING'></a>Microservices Theory (PENDING)
 [3] [4]
 [LINK](/ComputerScience/Microsoft/NetCore/MicroservicesTheory.md)
 
-##  24. <a name='RazorPages'></a>Razor Pages (PENDING)
+##  26. <a name='RazorPagesPENDING'></a>Razor Pages (PENDING)
 [2]
 
-##  25. <a name='MVC'></a>MVC (PENDING)
+##  27. <a name='MVCPENDING'></a>MVC (PENDING)
 [2] [5]
 
-##  26. <a name='API'></a>API (PENDING)
+##  28. <a name='APIPENDING'></a>API (PENDING)
 [1] [2] [4] [5]
 
-##  27. <a name='WebApp'></a>WebApp (PENDING)
+##  29. <a name='WebAppPENDING'></a>WebApp (PENDING)
 [5] [6]
 
-##  28. <a name='DeployonCloud'></a>Deploy on Cloud (PENDING)
+##  30. <a name='DeployonCloudPENDING'></a>Deploy on Cloud (PENDING)
 [4] [6]
