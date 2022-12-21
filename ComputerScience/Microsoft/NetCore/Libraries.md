@@ -51,8 +51,13 @@ namespace ClassLibraryExample
 
 1. Create a new project
 2. In the `solution project`, right-click on `Dependencies`
-3. Select the `class library` project, and ok.
-4. Now you can use the library!
+3. Click on `Add a project reference`
+4. Select the `class library` project, and ok.
+5. Now you can use the library!
+6. **BUT** in order to run this project:
+   1. Right-Click on the projects name
+   2. Click on `Set as Startup Project`
+7. Now, the project can run
 
 An example is presented below!
 
@@ -68,3 +73,16 @@ rufo.PrintInfo();
 ```
 
 ##  3. <a name='Referencingadll'></a>Referencing a `dll`
+
+1. Create a new project
+2. In the `solution project`, right-click on `Dependencies`
+3. Click on `Add a project reference`
+4. Select the `Browse` in the sidebar
+   1. Click on the `Browse` button,
+   2. Search for the `dll` that you want
+   3. Click on OK
+5. Now you can use the library!
+6. **BUT** in order to run this project:
+   1. Right-Click on the projects name
+   2. Click on `Set as Startup Project`
+7. Now, the project can run
