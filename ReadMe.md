@@ -5,14 +5,27 @@
 
 ### Computer Science
 
+#### Software Architecture
+
+- [Fundamentals of SW Architecture](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
+
+
+#### Cpp  
+
+- [The C++ Workshop](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
+
+#### Microsoft  
+
 - [AspNetCore](/ComputerScience/ASPNetCore/CH01.md)
 - [Microsoft - NET Core](/ComputerScience/Microsoft/NetCore/home.md)
 - [Microsoft - ASPNET Core](/ComputerScience/Microsoft/ASPNetCore/CH01.md)
-- [The C++ Workshop](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
+
+#### Theory  
+
 - [UA Object-Oriented Design](/ComputerScience/ObjectOrientedDesign.md)
 - [UA Design Patterns](/ComputerScience/ObjectOrientedDesign.md)
 
-#### Uncle Bob
+#### Uncle Bob  
 
 - [UncleBob - Clean Agile](/ComputerScience/UncleBob/CleanAgile/Sec00-Index.md)
 - [UncleBob - Clean Architecture](/ComputerScience/UncleBob/CleanArchitecture/Sec00-Index.md)
