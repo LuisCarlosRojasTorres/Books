@@ -7,8 +7,8 @@
 
 #### Software Architecture
 
-- [Fundamentals of SW Architecture](/ComputerScience/Cplusplus/CppWorkShop/Index.md)
-
+- [Fundamentals of SW Architecture](/ComputerScience/SW-Architecture/FundamentalsOfSWArch/00-Home.md)
+- [SW Architecture in Practice](/ComputerScience/SW-Architecture/SWArchInPractice/00-Home.md)
 
 #### Cpp  
 
