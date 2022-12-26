@@ -23,6 +23,20 @@
 <!-- /vscode-markdown-toc -->
 ##  1. <a name='DefiningSoftwareArchitecture'></a>Defining Software Architecture
 
+ 
+``` console
+Software Architecture = Structure Of the Software       + 
+                        Architecture Characteristics    + 
+                        Architecture Decisions          + 
+                        Design patterns
+```
+- Software Architecture consist of 4 topics:
+  - **Structure of the Software**: This is the Architecture pattern of the Software.
+  - **Architecture Characteristics**: The non-functional of the software, i.e., they do not require knowledge about the functionality of the software, however they are required in order to work properly. 
+    - Testability, Elasticity, Performance Scalability, etc are Architecture Characteristics.
+  - **Architecture Decisions**: It definnes the rules and constraints of how the software shall be constructed and what is and what is not allowed (e.g., Which layers can access to DB).
+  - **Design Principles**: Defines guidelines to allow the developer to choose the most appropriate technique/framework/etc.
+
 ##  2. <a name='ExpectationsofanArchitecture'></a>Expectations of an Architecture
 
 ###  2.1. <a name='MakeArchitectureDecisions'></a>Make Architecture Decisions
