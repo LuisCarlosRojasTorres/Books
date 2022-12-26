@@ -39,21 +39,18 @@ Software Architecture = Structure Of the Software       +
 
 ##  2. <a name='ExpectationsofanArchitecture'></a>Expectations of an Architecture
 
-###  2.1. <a name='MakeArchitectureDecisions'></a>Make Architecture Decisions
+- This role can range from **expert programmer** up to **defining the strategic technical direction for the company**.
+- There are **eight core expectations** on Software Architect:
+  1.  **Make architecture decisions**: Define the architecture decisions and design principles used to *guide* (not specify) technology decisions within the team the deparment, or accross the enterprise.
+      -  It is possible to make a technical decision in order to preserve architectural characteristics.
+  2.  **Continually analyze the architecture** and current technology environment and then recommend solutions for improvement.
+  3.  **Keep current with the latest trends**
+  4.  **Ensure compliance with decisions**
+  5.  **Diverse exposure and experience**
+  6.  **Have business domain knowledge**
+  7.  **Possess interpersonal skills**
+  8.  **Understand and navigate politics**
 
-###  2.2. <a name='ContinuallyAnalyzetheArchitecture'></a>Continually Analyze the Architecture
-
-###  2.3. <a name='Keepcurrentwithlatesttrends'></a>Keep current with latest trends
-
-###  2.4. <a name='EnsureCompliancewithDecisions'></a>Ensure Compliance with Decisions
-
-###  2.5. <a name='DiverseExposureandExperience'></a>Diverse Exposure and Experience
-
-###  2.6. <a name='HaveBusinessDomainKnowledge'></a>Have Business Domain Knowledge
-
-###  2.7. <a name='PossessInterpersonalSkills'></a>Possess Interpersonal Skills
-
-###  2.8. <a name='UnderstandandNavigatePolitics'></a>Understand and Navigate Politics
 
 ##  3. <a name='Intersectionsbetween'></a>Intersections between
 
