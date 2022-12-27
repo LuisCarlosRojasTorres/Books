@@ -44,22 +44,13 @@ Software Architecture = Structure Of the Software       +
   1.  **Make architecture decisions**: Define the architecture decisions and design principles used to *guide* (not specify) technology decisions within the team the deparment, or accross the enterprise.
       -  It is possible to make a technical decision in order to preserve architectural characteristics.
   2.  **Continually analyze the architecture** and current technology environment and then recommend solutions for improvement.
-  3.  **Keep current with the latest trends**
-  4.  **Ensure compliance with decisions**
-  5.  **Diverse exposure and experience**
-  6.  **Have business domain knowledge**
-  7.  **Possess interpersonal skills**
-  8.  **Understand and navigate politics**
+  3.  **Keep current with the latest trends and technologies** this helps the architect to be prepared for the future and make correct decisions.
+  4.  **Ensure compliance with decisions**: He continually verifies that development teams are following the *architecture decisions* and *design principles* defined and documented.
+  5.  **Diverse exposure and experience to different technologies**: At least be familiar with a variety of technologies. Focus on tecnichal breadth than tecnical dept.
+  6.  **Have business domain knowledge of the problem space**: (e.g., To be SW Architec in a FinTech you shall know abouts finances) Without this knowledege, it is impossible to communicate with stakeholders which generate a lost in credibility. 
+  7.  **Possess interpersonal skills**: To lead the development team through the implementations of the architecture.
+  8.  **Understand and navigate politics**: Understand the political climate of the company.
+      - Almost every decision an Architect maked will be challenged. This is because the increased cost or increased effort (time) involved.
+      - An Architect shall justify and fight for almost every one of these decisions.
 
 
-##  3. <a name='Intersectionsbetween'></a>Intersections between
-
-###  3.1. <a name='SWArchitectureandEngineeringPractices'></a>SW Architecture and Engineering Practices
-
-###  3.2. <a name='SWArchitectureandOperationsDevOps'></a>SW Architecture and Operations/DevOps
-
-###  3.3. <a name='SWArchitectureandProcess'></a>SW Architecture and Process
-
-###  3.4. <a name='SWArchitectureandData'></a>SW Architecture and Data
-
-##  4. <a name='LawsofSoftwareArchitecture'></a>Laws of Software Architecture
