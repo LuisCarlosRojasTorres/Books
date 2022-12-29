@@ -18,7 +18,8 @@
 - *Stuff you know*:
 - *Stuff you know you don't know*:
 - *Stuff you don't know you don't know*:
-- 
+
+![Technical Breadth](uploads/CH02-001.png)  
 ##  3. <a name='AnalyzingTrade-Offs'></a>Analyzing Trade-Offs
 
 
