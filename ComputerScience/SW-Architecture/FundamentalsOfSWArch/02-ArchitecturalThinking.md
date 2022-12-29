@@ -31,8 +31,25 @@
 
 ##  3. <a name='AnalyzingTrade-Offs'></a>Analyzing Trade-Offs
 
+> "Architecture is the stuff you can't Google" - Mark Richards
+
+- The famous answer to every question in sw architecture is `it depends`
+  - It depends on: deployment environment, business drivers, company culture, budgets, timeframes etc...
 
 ##  4. <a name='UnderstandingBusinessDrivers'></a>Understanding Business Drivers
 
+- To think like an architect it is mandatory to:
+  - understand the business drivers that are required for the success of the software
+  - traslate those reqs into *Architecture Characteristics* (i.e., performance, elasticity etc.)
+- Perform the aforementioned tasks requires:
+  - some level of business domain knowledge
+  - healthy and collaborative relationships with stakeholders
+
+> The chapters:
+> CH04 Defining Architecture Characteristics
+> CH05 Indentifying Architecture Characteristics
+> CH06 Measuring Architecture Characteristics
+>
+> Bring useful information about this topic!
 
 ##  5. <a name='BalancingArchitectureandHands-OnCoding'></a>Balancing Architecture and Hands-On Coding
