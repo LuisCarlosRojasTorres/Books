@@ -35,6 +35,9 @@
 
 - The famous answer to every question in sw architecture is `it depends`
   - It depends on: deployment environment, business drivers, company culture, budgets, timeframes etc...
+- Thinking architecturally is looking at the benefits of a given solution, but also analyzing the negatives or trade-offs.
+  - All om software arcitecture has a trade-off i.e, an advantage and a disadvantage. The decision depends of the business drivers: 
+    - What is more important? `A` gives `extensibility` but `B` gives `security`? The solution of course, It depends ...
 
 ##  4. <a name='UnderstandingBusinessDrivers'></a>Understanding Business Drivers
 
