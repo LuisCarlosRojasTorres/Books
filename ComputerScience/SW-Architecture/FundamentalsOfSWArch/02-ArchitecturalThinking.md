@@ -3,7 +3,7 @@
 * 2. [Technical Breadth](#TechnicalBreadth)
 * 3. [Analyzing Trade-Offs](#AnalyzingTrade-Offs)
 * 4. [Understanding Business Drivers](#UnderstandingBusinessDrivers)
-* 5. [Balancing Architecture and Hands-On Coding](#BalancingArchitectureandHands-OnCoding)
+* 5. [ How to Balance SW Architecture knowledge and Coding habilities?](#HowtoBalanceSWArchitectureknowledgeandCodinghabilities)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -55,4 +55,11 @@
 >
 > Bring useful information about this topic!
 
-##  5. <a name='BalancingArchitectureandHands-OnCoding'></a>Balancing Architecture and Hands-On Coding
+##  5. <a name='HowtoBalanceSWArchitectureknowledgeandCodinghabilities'></a> How to Balance SW Architecture knowledge and Co
+
+- A SW Architect requires both.
+- A SW Architect can code of course, **BUT** cannot be a `bottleneck`
+  - This happens, when the SW Arch, take ownership of code which belongs to the critical path of the project.
+    - The SW Arch has not enough time to be a full dev, so it can turn a `bottleneck`
+- Ways to avoid the `bottleneck trap`:
+  - Delegate *critical path code* to full time devs, then implement only *business functionality code*
