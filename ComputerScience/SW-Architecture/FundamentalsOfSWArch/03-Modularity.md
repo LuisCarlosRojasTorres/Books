@@ -19,6 +19,12 @@ This chapter has common topics with [Uncle Bob-Clean Architecture Chapter 4 - Co
 give it a look!
 ##  1. <a name='Definition'></a>Definition
 
+> **Definition:** A logical grouping of related code.
+> 
+> For Object-Oriented Programming Language: A group of classes, (`namespace` in `C#` or a `package` in `Java`)
+> For a Structured Programming Language: A group of functions.
+>
+
 ##  2. <a name='Measuring'></a>Measuring
 
 ###  2.1. <a name='Cohesion'></a>Cohesion
