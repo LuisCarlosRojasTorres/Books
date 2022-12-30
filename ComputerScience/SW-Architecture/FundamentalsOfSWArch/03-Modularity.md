@@ -26,7 +26,15 @@ give it a look!
 >
 
 ##  2. <a name='Measuring'></a>Measuring
-
+- A measure of how related the Components parts are to one another.
+- The list of range `cohesion` measures (from best to worst) is presented below:
+  - `Functional Cohesion`:
+  - `Sequencial Cohesion`:
+  - `Communicational Cohesion`:
+  - `Procedural Cohesion`:
+  - `Temporal Cohesion`:
+  - `Logical Cohesion`:
+  - `Coincidental Cohesion`:
 ###  2.1. <a name='Cohesion'></a>Cohesion
 
 ###  2.2. <a name='Coupling'></a>Coupling
