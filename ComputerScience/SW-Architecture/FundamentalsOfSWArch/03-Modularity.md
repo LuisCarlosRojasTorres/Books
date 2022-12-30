@@ -16,7 +16,7 @@
 <!-- /vscode-markdown-toc -->
 
 This chapter has common topics with [Uncle Bob-Clean Architecture Chapter 4 - Components](ComputerScience/UncleBob/CleanArchitecture/Sec04-Components.md)
-
+give it a look!
 ##  1. <a name='Definition'></a>Definition
 
 ##  2. <a name='Measuring'></a>Measuring
