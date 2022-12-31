@@ -29,12 +29,26 @@ give it a look!
 - A measure of how related the Components parts are to one another.
 - The list of range `cohesion` measures (from best to worst) is presented below:
   - `Functional Cohesion`:
+    - Every part of the Component is related to the other.
+    - The Component contains everything essencial to function.
+    - **Best** form of Cohesion.
   - `Sequencial Cohesion`:
-  - `Communicational Cohesion`:
+    - Two Components `A` and `B` interact, and the output of `A` is the input of `B`      
+  - `Communicational Cohesion`: 
+    - Two modules form a communication chain.
+    - Each operates on information and/or contributes o some output.
+      - Example: `A` add a record to the DB, `B` generates an email based on that information.
   - `Procedural Cohesion`:
+    - When `A` and `B` executes code in a particular order.
   - `Temporal Cohesion`:
+    - Components are related based on timing dependencies.
+      - Example: The Components which are initialized at Software Startup.
   - `Logical Cohesion`:
+    - When data inside a Component is related logically but not functionally.
+      - Example: Many `Java` packages which have groups of `static` methods that operate on something (e.g., `string`) but otherwise are unrelated.
   - `Coincidental Cohesion`:
+    - When data inside a Component are related only because it belong to the same source file.
+    - **Worst** form of Cohesion.
 ###  2.1. <a name='Cohesion'></a>Cohesion
 
 ###  2.2. <a name='Coupling'></a>Coupling
