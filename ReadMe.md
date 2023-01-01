@@ -3,6 +3,9 @@
 ## Livros:
 - [Dummy](/dummy.md)
 
+## Business
+
+- [The LEAN STARTUP](/Business/TheLeanStartup.md)
 ### Computer Science
 
 #### Software Architecture
