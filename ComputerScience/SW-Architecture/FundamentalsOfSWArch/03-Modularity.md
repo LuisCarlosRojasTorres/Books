@@ -26,6 +26,9 @@ give it a look!
 >
 
 ##  2. <a name='Measuring'></a>Measuring
+
+
+###  2.1. <a name='Cohesion'></a>Cohesion
 - A measure of how related the Components parts are to one another.
 - The list of range `cohesion` measures (from best to worst) is presented below:
   - `Functional Cohesion`:
@@ -49,7 +52,6 @@ give it a look!
   - `Coincidental Cohesion`:
     - When data inside a Component are related only because it belong to the same source file.
     - **Worst** form of Cohesion.
-###  2.1. <a name='Cohesion'></a>Cohesion
 
 ###  2.2. <a name='Coupling'></a>Coupling
 
