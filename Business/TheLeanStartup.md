@@ -30,6 +30,15 @@
   - Não estavamos no lugar correto no momento adequado.
 
 - O sucesso de uma Startup segue um processo, por tanto pode-se ensinar e aprender.
+
+### The LEAN Startup
+
+
+### Pq fracasam as Startups?
+1. As Startups trabalham com muita mais incertidao (i.e., não sabem quem serão seus consumidores ou quais serãos os produtos deles). Isto faz que *um bom plano*, *uma estratégia sólida* e uma *pesquisa de percado* não funcionem.
+   1. Os métodos tradicionais de managements precisam de *historia de funcionamento longa e estável* e *entorno estático*, uma Startup não tem nenhuma.
+2. O caos gerado por o **JUST DO IT**:
+   1. O fato que uma startup deva se gestionar é contraintuitivo.
 ##  2. <a name='ParteI-Ver'></a>Parte I - Ver
 
 ##  3. <a name='ParteII-Dirigir'></a>Parte II - Dirigir
