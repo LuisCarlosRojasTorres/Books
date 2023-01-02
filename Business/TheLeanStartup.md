@@ -13,6 +13,23 @@
 
 ##  1. <a name='Introduccin'></a>Introducción
 
+> Startup : es un negocio relativamente nueva pero con grandes posibilidades de crecimiento devido a:
+>   - prácticas asociadas a la innovación
+>   - desarrollo de tecnologías
+>   - buenos empleaos etc.
+
+- Mesmo tendo uma ideia boa, uma startup pode estar condenada desde o primeiro dia.
+  - Case se desconheça o processo a utilizar para converter aquela *ideia boa* numa grande empresa.
+
+- Existe um *mito* fruto do sesgo de selecção de produto e da racionalização posterior conhecido como: **o mantra dos emprendedores de sucesso**:
+  - "Através da determinação, brilhantes, momento correto e acima de tudo um grande produto, é possivel alcanzar a fama e a fortuna"
+
+- O fracaso sempre tem excusas:
+  - Não se tinha o necessario.
+  - Não fomos visionários o suficiente.
+  - Não estavamos no lugar correto no momento adequado.
+
+- O sucesso de uma Startup segue um processo, por tanto pode-se ensinar e aprender.
 ##  2. <a name='ParteI-Ver'></a>Parte I - Ver
 
 ##  3. <a name='ParteII-Dirigir'></a>Parte II - Dirigir
