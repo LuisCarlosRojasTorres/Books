@@ -27,9 +27,10 @@ give it a look!
 
 ##  2. <a name='Measuring'></a>Measuring
 
-$$ V_{test}$$
-
 ###  2.1. <a name='Cohesion'></a>Cohesion
+
+> "Attemping to divide a cohesive module would only result in increased coupling and decreased readibility" - Larry Constantine
+> 
 - A measure of how related the Components parts are to one another.
 - The list of range `cohesion` measures (from best to worst) is presented below:
   - `Functional Cohesion`:
@@ -54,6 +55,7 @@ $$ V_{test}$$
     - When data inside a Component are related only because it belong to the same source file.
     - **Worst** form of Cohesion.
 
+> 
 ###  2.2. <a name='Coupling'></a>Coupling
 
 ###  2.3. <a name='AbstracnessInstabilityandDisctancefromtheMainSequence'></a>Abstracness, Instability and Disctance from the Main Sequence
@@ -62,6 +64,9 @@ $$ V_{test}$$
 
 ###  2.5. <a name='Connascense'></a>Connascense
 
+> "Two Components are connacent if a change in one wuould require the other to be modified in order to maintain the overall correctness of the system" - Meilir Page-Jones
+>
+>
 ###  2.6. <a name='UnifyingCouplingandConnascenceMetrics'></a>Unifying Coupling and Connascence Metrics
 
 ##  3. <a name='FromModulestoComponents'></a>From Modules to Components
