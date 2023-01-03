@@ -159,8 +159,8 @@ or in other words
 
 ####  3.3.2. <a name='StabilityMetricsI'></a>Stability Metrics (I)
 Instability is defined as:
+$$ I = \frac{F_{out}}{F_{in}+F_{out}} $$
 > I = Fan-Out / (Fan-In + Fan-Out) 
->
 > Where:
 > - Fan-In: Incoming dependencies i.e. the number of classes outside this Component which depend on classes of this Component.
 > - Fan-Out: Outgoing dependencies i.e. The number of classes inside this Componen which depend on classes outside this Component.
@@ -221,6 +221,9 @@ or
 
 ####  3.4.2. <a name='AbstractnessmetricA'></a>Abstractness metric (A)
 The measure of abstractness of a Component is measured as:
+
+$$ A = \frac{N_{a}}{N_{c}}$$
+
 > A = Na / Nc
 >
 > Where:
