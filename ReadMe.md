@@ -1,4 +1,5 @@
-> TODO: CleanCode - Sec02 Naming Conventions
+## Commit format 
+`main ReadMe - <functionality Added>`
 
 ## Livros:
 - [Dummy](/dummy.md)
@@ -47,3 +48,7 @@
 - [Meditações - Marco Aurélio](/Filosofia/meditacoes.md)
 - [Nuevo Testamento](/Filosofia/Biblia-NovoTestamento.md)
 - [Sobre a brevidade da vida - Séneca](/filosofia/sobre_a_brevidade_da_vida.md)
+
+## Commit convention
+- At the beginning of each home file in a folder you can find the `Commit format` header.
+- This is used to set a pattern in the commit tittles
