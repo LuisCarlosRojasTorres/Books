@@ -20,13 +20,34 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
+**Commit Tittle format**
+``` console 
+DOTNET ASPNETCORE <functionality added>`
+
+List of changes:
+- Added <something e.g. ch01, fig, vid01, eq01> 
+- Fixed <something e.g. ch01, fig, vid01, eq01> 
+- Deleted <something e.g. ch01, fig, vid01, eq01>  
+
+List of TODOs
+- <verb> + <something e.g. ch01, fig, vid01, eq01> in <somewhere file01, sec1.2.3>
+```
 
 ##  1. <a name='WhatisASP.NET'></a>What is ASP.NET
 - It is an open framework for building secure and fast web apps and services within .NET
 - It is cross-platform
+- It lets you use razor (`C#` and `HTML`) to make web pages
+- Its freee
 
 ##  2. <a name='MakinganASP.NETCoreWebsite'></a>Making an ASP.NET Core Website
+1. Create a new project
+2. Click on `ASP.NET Core Web Aplication` and `Next`
+3. Name it `<NameofProject>.WebSite`
+4. Then `OK`, and you are done.
 
+### Solution Explorer overview
+- `wwwroot` folder: static stuff for graphics, css, js etc.
+- `pages`  folfer: for dynamic stuff, razor pages (`.cshtml` files)
 ##  3. <a name='AddingDatatoanASP.NETCoreWebSite'></a>Adding Data to an ASP.NET Core Web Site
 
 ##  4. <a name='AddingaServicetoanASP.NETCoreWebSite'></a>Adding a Service to an ASP.NET Core Web Site

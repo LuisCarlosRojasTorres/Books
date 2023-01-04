@@ -1,6 +1,8 @@
 ## Commit format 
 `main ReadMe - <functionality Added>`
 
+
+
 ## Livros:
 - [Dummy](/dummy.md)
 
@@ -51,4 +53,17 @@
 
 ## Commit convention
 - At the beginning of each home file in a folder you can find the `Commit format` header.
-- This is used to set a pattern in the commit tittles
+- This is used to set a pattern in the commit titles
+- Description is optional however there is a template for this:
+
+``` console 
+<Title>
+
+List of changes:
+- Added <something e.g. ch01, fig, vid01, eq01> 
+- Fixed <something e.g. ch01, fig, vid01, eq01> 
+- Deleted <something e.g. ch01, fig, vid01, eq01>  
+
+List of TODOs
+- <verb> + <something e.g. ch01, fig, vid01, eq01> in <somewhere file01, sec1.2.3>
+```
