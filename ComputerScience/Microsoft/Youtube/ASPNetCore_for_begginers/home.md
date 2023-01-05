@@ -20,7 +20,7 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-**Commit Tittle format**
+**Commit format**
 ``` console 
 DOTNET ASPNETCORE <functionality added>`
 
@@ -49,6 +49,24 @@ List of TODOs
 - `wwwroot` folder: static stuff for graphics, css, js etc.
 - `pages`  folfer: for dynamic stuff, razor pages (`.cshtml` files)
 ##  3. <a name='AddingDatatoanASP.NETCoreWebSite'></a>Adding Data to an ASP.NET Core Web Site
+
+- Including a json file:
+  - Create a `data` folder in `wwwroot` then drag and drop the json file there.
+  - Create a `models` folder in the project, where it will be created `.cs` files to handle the content of the files.
+    - Create a new `class` here (to represent the `json` data) and add variables for each of the fields in the `.json` file
+      - One way is write `prop + tab` VSStudio will show `public int MyProperty { get; set; }`
+  - Map the `cs` fields with `json`, using the tag `[JsonPropertyName("nameOfVariableInJSON")]`
+  - Create a `ToString` method.
+    - One easy way to do it is using the `JsonSerializer` showed in the snipped below:
+	``` cs
+	public override string ToString()
+    {
+        return JsonSerializer.Serialize<Product>(this);
+    }
+	```
+	- Note: this method is the same than use: `public override string ToString() => JsonSerializer.Serialize<Product>(this)`
+- Verify that there are no `compilation errors`, so press `Ctrl + F5`
+- Thats all folks!        
 
 ##  4. <a name='AddingaServicetoanASP.NETCoreWebSite'></a>Adding a Service to an ASP.NET Core Web Site
 

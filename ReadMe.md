@@ -1,12 +1,21 @@
 ## Commit format 
-`main ReadMe - <functionality Added>`
+``` console 
+main ReadMe - <functionality Added>
 
+List of changes:
+- Added <something e.g. ch01, fig, vid01, eq01> 
+- Fixed <something e.g. ch01, fig, vid01, eq01> 
+- Deleted <something e.g. ch01, fig, vid01, eq01>  
+
+List of TODOs
+- <verb> + <something e.g. ch01, fig, vid01, eq01> in <somewhere file01, sec1.2.3>
+```
 
 
 ## Livros:
 - [Dummy](/dummy.md)
 
-## Business
+### Business
 
 - [The LEAN STARTUP](/Business/TheLeanStartup.md)
 ### Computer Science
