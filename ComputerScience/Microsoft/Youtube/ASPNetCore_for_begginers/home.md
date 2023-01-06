@@ -70,6 +70,36 @@ List of TODOs
 
 ##  4. <a name='AddingaServicetoanASP.NETCoreWebSite'></a>Adding a Service to an ASP.NET Core Web Site
 
+- As a waiter in a restaurant, it solves `requests`.
+- A service help the code to be maintainable.
+- Create a `Services` folder in the project
+  - Create a `JsonFileProductService` and copy the code below:
+  ``` cs
+  public class JsonFileProductService
+	{
+        public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
+        {
+            WebHostEnvironment = webHostEnvironment;
+        }
+
+        public IWebHostEnvironment WebHostEnvironment { get; }
+
+        private string JsonFileName => Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json");
+
+        public IEnumerable<Product> GetProducts()
+        {
+            using var jsonFileReader = File.OpenText(JsonFileName);
+            return JsonSerializer.Deserialize<Product[]>(jsonFileReader.ReadToEnd(),
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+        }       
+    }
+  ```
+  - A WebApplications live in a `host` (but they are actually console apps)
+  - `webHostEnvironment` is a `service` that 
+
 ##  5. <a name='DatainaRazorPage'></a>Data in a Razor Page
 
 ##  6. <a name='StylingaRazorPage'></a>Styling a Razor Page
