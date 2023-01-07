@@ -73,21 +73,23 @@ List of TODOs
 - As a waiter in a restaurant, it solves `requests`.
 - A service help the code to be maintainable.
 - Create a `Services` folder in the project
-  - Create a `JsonFileProductService` and copy the code below:
+  - Create a `JsonFileProductService` class and copy the code below:
   ``` cs
   public class JsonFileProductService
 	{
         public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
         {
+            // [1]
             WebHostEnvironment = webHostEnvironment;
         }
 
         public IWebHostEnvironment WebHostEnvironment { get; }
 
-        private string JsonFileName => Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json");
+        private string JsonFileName => Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); // [2]
 
         public IEnumerable<Product> GetProducts()
         {
+          [3]
             using var jsonFileReader = File.OpenText(JsonFileName);
             return JsonSerializer.Deserialize<Product[]>(jsonFileReader.ReadToEnd(),
                 new JsonSerializerOptions
@@ -97,9 +99,35 @@ List of TODOs
         }       
     }
   ```
-  - A WebApplications live in a `host` (but they are actually console apps)
-  - `webHostEnvironment` is a `service` that 
+- [1] A WebApplications live in a `host` (but they are actually console apps)
+  - `Program.cs` actually is a console app which creates a `host` in `main` function
+- [2] this let the service to know where tbe `json` is located
+  - A hardcoded pathfile is bad and dangerous, so tHe WebHostEnvironment will know where files are located 
+    - `WebHostEnvironment.WebRootPath` returns the `wwwroots` folder of the project
+    - `Path.Combine` (from `System.io`) which combines the folders to make a full path
+  - `webHostEnvironment` is a `service` that is given to our service ( a `chain of services`)
+- [3] Converts the file in an `Product array`
+  - It returns an `IEnumerable` to loop along it
+- So `JsonFileProductService` is a service that has one job which is to give an array of Product from the `json` file. 
+  - **BUT** how the system could know that?
+  - How to communicate to `ASP.NET` that there is a new service available? This is achieved as described in the following steps:
+  - **NETCORE 6**:
+    - Include `using <NameOfProject>.Services` in our specific case will be: `using ContosoCrafts.WebSite.Services;`
+    - Then, `builder.Services.AddTransient<NameOfService>();` insert after `builder.Services.AddRazorPages();`
+- The code is showed below:
+  
+``` cs
+//Program.cs
+using ContosoCrafts.WebSite.Services;
 
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddRazorPages();
+builder.Services.AddTransient<JsonFileProductService>();
+//...
+```
+  
 ##  5. <a name='DatainaRazorPage'></a>Data in a Razor Page
 
 ##  6. <a name='StylingaRazorPage'></a>Styling a Razor Page
