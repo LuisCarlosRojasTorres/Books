@@ -213,9 +213,11 @@ So, the next step is to call all the data in the `Razor Page`.
 @foreach(var product in Model.Products)
 {
     <h2>@product.Title</h2>
+    <img src=@product.Image width="500" height="600">
 }
 ```
-
+- This code will show title and figure. However it sucks! So it is necessary to add some style there!
+- That's all Folks!
 ##  6. <a name='StylingaRazorPage'></a>Styling a Razor Page
 
 ##  7. <a name='MakingaSimpleAPI'></a>Making a Simple API
