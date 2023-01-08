@@ -55,6 +55,7 @@ List of TODOs
   - Create a `models` folder in the project, where it will be created `.cs` files to handle the content of the files.
     - Create a new `class` here (to represent the `json` data) and add variables for each of the fields in the `.json` file
       - One way is write `prop + tab` VSStudio will show `public int MyProperty { get; set; }`
+      - SO, this is a `C#` representation of the data.
   - Map the `cs` fields with `json`, using the tag `[JsonPropertyName("nameOfVariableInJSON")]`
   - Create a `ToString` method.
     - One easy way to do it is using the `JsonSerializer` showed in the snipped below:
@@ -127,8 +128,93 @@ builder.Services.AddRazorPages();
 builder.Services.AddTransient<JsonFileProductService>();
 //...
 ```
-  
+- NOTE: it is important to `Add` a service in `Program.cs` because:
+  - Now ALL the classes which need to declare a service in its constructor, they only to add as parameter. And it will work by `dependency injection` 
 ##  5. <a name='DatainaRazorPage'></a>Data in a Razor Page
+
+- `Razor page` is `cshtml`file is kind of `C#` and kind of `html`
+  - you can use `html` common sintaxis
+  - and `@{ }`  for `C#` which is executed in the server-side
+- Some keywords:
+  - `@page`
+  - `@model <nameOfClass>` it refers its `buddy-page` which is a file in `c#` where it is implemented the data that will be presented in the `Razor page` 
+  
+The `Razor Page` from Index is presented below:
+
+``` cs
+public class IndexModel : PageModel
+{
+  private readonly ILogger<IndexModel> _logger; 
+  //[3]
+    
+  public IndexModel(ILogger<IndexModel> logger) //[1] //[2]
+  {
+    _logger = logger;
+    // [4]
+  }
+
+  public void OnGet()
+  {
+    //[5]
+
+  }
+}
+```
+
+- [1] Looging is a service that is made available to you in ASP.NET
+  - You dont need to create it, you only need to ask for one by simply listing it in your arguments
+- [2] So, only asking for a service you get it,  `JSonFileProductService` is service that we want to use. So i will ask for it.
+- [3] Variables shall be created to store the outputs of the service.
+  - `{get; private set;}`: this to protect the `IEnumerable` from unwanted modifications
+- [4] Here the services will be stored as a local variables
+- [5] Razor Pages has `OnPost`, `OnPut` methods, all this web stuff. So it also has `OnGet`.
+  - `OnGet`: When someone gets this page, this method is called.
+
+The `IndexModel` class implemented is showed below:
+  
+``` cs 
+public class IndexModel : PageModel
+{
+  private readonly ILogger<IndexModel> _logger;
+        
+  public JsonFileProductService ProductService; //[3]
+  public IEnumerable<Product> Products { get; private set; }
+
+  public IndexModel(ILogger<IndexModel> logger, JsonFileProductService productService) //[1] //[2]
+  {
+    _logger = logger;
+    ProductService= productService; // [4]
+  }
+
+  public void OnGet()
+  {
+    Products = ProductService.GetProducts(); // [5]
+  }
+}
+```
+
+- After the implementation, the `@model` in the Razor page now know about `Products`
+
+So, the next step is to call all the data in the `Razor Page`.  
+- A dummy example of how to call this data is showed below:
+
+``` html
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4"> Contoso Crafts </h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@foreach(var product in Model.Products)
+{
+    <h2>@product.Title</h2>
+}
+```
 
 ##  6. <a name='StylingaRazorPage'></a>Styling a Razor Page
 
@@ -148,4 +234,5 @@ builder.Services.AddTransient<JsonFileProductService>();
 
 ##  14. <a name='Reference'></a>Reference
 [Link of the Playlist](https://www.youtube.com/watch?v=lE8NdaX97m0&list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy)
+[Link of the Repository](https://github.com/dotnet-presentations/ContosoCrafts)
 
