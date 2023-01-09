@@ -127,6 +127,7 @@
 
 ##  23. <a name='LinqPENDING'></a>Linq (PENDING)
 [1] [2]
+[LINK](/ComputerScience/Microsoft/NetCore/LINQ.md)
 
 ##  24. <a name='PerformancePENDING'></a>Performance (PENDING)
 [2]
