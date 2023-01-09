@@ -220,6 +220,7 @@ So, the next step is to call all the data in the `Razor Page`.
 - That's all Folks!
 ##  6. <a name='StylingaRazorPage'></a>Styling a Razor Page
 
+This is nothing more than a Bootstrap class.
 ##  7. <a name='MakingaSimpleAPI'></a>Making a Simple API
 
 ##  8. <a name='EnhancingyourWebAPI-Part1'></a>Enhancing your Web API - Part1
