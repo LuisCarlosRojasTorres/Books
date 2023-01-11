@@ -132,6 +132,9 @@ foreach (var p in customerFullNames)
 ####  3.3.1. <a name='Ordering'></a>Ordering
 - It specifies the order of the data returned by `Select`
 - `OrderBy` expects a method as its argument
+  - There are other methods such as:
+    - `OrderByDescending`
+    - `ThenBy` or `ThenByDescending`  which shall be used after `OrderBy` or `OrderByDescending`
 - The following example, return the fullNames of the customers in alphabetical order by LastName.
 
 
@@ -161,26 +164,179 @@ foreach (var p in customerFullNames)
 ```
 
 ####  3.3.2. <a name='Grouping'></a>Grouping
+- It groups data according to common values in one or more fields.
+- `GroupBy` expects a method that specifies the fields by which to group the data.
+  - The enumerable set returned by `GroupBy` contains all the fields in the original source collection.
+    - **BUT** the rows are grouped by the field used in the method.
+- The result of the method have many `summary methods`: such as `Key`, `Count()`, `Max`, `Min`
+- In the example below:
+  - The output is a set of `Companies` which are also collections of the `customers` which work in that `companies`
+  
+``` cs
+var customerByCompany = customers.GroupBy(x => x.Company);
+
+foreach (var customerPerCompany in customerByCompany)
+{
+    Console.WriteLine($" > {customerPerCompany.Key} : { customerPerCompany.Count()}");
+
+    foreach (var customer in customerPerCompany)
+    {
+        Console.WriteLine($"\t> {customer.FirstName} , {customer.LastName}");
+    }
+}
+```
+- The output is:
+``` console
+ > Facabaaka
+        > Lala , Papata
+        > Lalo , Papota
+ > Fecebeeke
+        > Lele , Pepete
+        > Lelo , Pepote
+ > Ficibiiki
+        > Lili , Pipiti
+        > Lila , Pipati
+ > Focobooko
+        > Lolo , Popoto
+        > Lola , Popato
+ > Fucubuuku
+        > Lulu , Puputu
+        > Lula , Pupatu
+```
 
 ####  3.3.3. <a name='Aggregating'></a>Aggregating
-###  3.4. <a name='Joiningdata'></a>Joining data
+- The summary methods such as `Count`, `Max` and `Min` can be used directly over the results of the `Select` method.
+- **BUT** summary methods do not distinguinsh duplicate values in the selected fields.
+  - In the example, there are only 5 distinct Companies, but they are repeated twice so there are a total of 10.
 
 ``` cs
-asdf
+int numberOfCompanies = customers.Select(x => x.Company).Count();
+Console.WriteLine($" > number of Companies: {numberOfCompanies}");
 ```
 - The output is:
 ``` console
-asdf
+ > number of Companies: 10
+```
+
+- To select only distinct companies the `Distinct()` method shall be included before `Count()`, as showed below: 
+ 
+``` cs
+int numberOfDistinctCompanies = customers.Select(x => x.Company).Distinct(). Count();
+Console.WriteLine($" > number of Distinct Companies: {numberOfDistinctCompanies}");
+```
+- The output is:
+``` console
+> number of Distinct Companies: 5
+```
+###  3.4. <a name='Joiningdata'></a>Joining data
+- It joins together multiple sets of data over one or more common key fields.
+- In this example it is showed how to display the `FirstName`, `LastName` (which belong to `Customer`) and `City` (which belong to `Addresses)
+  - The Common key between `Customer` and `City` is `Company`.
+- The `Select` method specifies the fields of interest in the `Custormers` array (`FirstName`, `LastName`) together with the common key `Company`.
+  - Then use `Join` to join the data identified by the `Select` method with another enumerable collections.
+- `Join(param1, param2, param3, param4)`
+  - `param1`: The enumerable collection with which to join. e.g.,`addresses`
+  - `param2`: The method that identifies the common key fields from the data identified by the `Select` method. e.g., `cust => cust.Company,`
+  - `param3`: A method that identifies the common key fields on which to join the selected data. e.g., `addre => addre.Company`
+  - `param4`: A method that specifies the columns you require in the enumerable result set returned by the `Join` method. e.g., `(cust,addre) => new { cust.FirstName, cust.LastName, addre.City}`
+
+``` cs
+var customerAndCity = customers.Select(c => new { c.FirstName, c.LastName, c.Company })
+    .Join(
+            addresses,
+            cust => cust.Company,
+            addre => addre.Company,
+            (cust,addre) => new { cust.FirstName, cust.LastName, addre.City}
+        );
+```
+- The output is:
+``` console
+ > { FirstName = Lala, LastName = Papata, City = Lama }
+ > { FirstName = Lele, LastName = Pepete, City = Leme }
+ > { FirstName = Lili, LastName = Pipiti, City = Limi }
+ > { FirstName = Lolo, LastName = Popoto, City = Lomo }
+ > { FirstName = Lulu, LastName = Puputu, City = Lumu }
+ > { FirstName = Lalo, LastName = Papota, City = Lama }
+ > { FirstName = Lelo, LastName = Pepote, City = Leme }
+ > { FirstName = Lila, LastName = Pipati, City = Limi }
+ > { FirstName = Lola, LastName = Popato, City = Lomo }
+ > { FirstName = Lula, LastName = Pupatu, City = Lumu }
 ```
 ###  3.5. <a name='Usingqueryoperators'></a>Using query operators
+- The code presented in the previous sections can be hard to understand and maintain. 
+  - So, `C#` added `query operators`
+- It is presented the examples from previous sections and its equivalent in `query operators`.
+
+#### Examples
+- To retrieve the `firstName` for each `customer` 
+``` cs
+var customerFirstNames = customers.Select(customer => customer.FirstName);
+// is Equivalent to
+var customerFirstNames  = from c in customers
+                          select c.FirstName;
+```
+
+- To retrieve the `firstName` and `lastName` for each `customer`
+``` cs
+var customerFullNames = customers.Select(cust => new
+{
+    FirstName = cust.FirstName,
+    LastName = cust.LastName
+});
+// is Equivalent to
+var customerFullNames = from c in customers
+                        select new {c.FirstName, c.LastName};
+```
+
+- Filtering data, showing the customers which work in `Facabaaka` company
 
 ``` cs
-asdf
+
+var customerFullNames = customers.Where(p => String.Equals(p.Company, "Facabaaka"))
+                                 .Select(cust => new
+                                 {
+                                     FirstName = cust.FirstName,
+                                     LastName = cust.LastName
+                                 });
+// is Equivalent to
+var customerFullNames = from c in customers
+                        where String.Equals(c.Company, "Facabaaka")
+                        select new {c.FirstName, c.LastName};
 ```
-- The output is:
-``` console
-asdf
+
+- Order by
+``` cs
+var customerFullNames = customers.OrderBy(x => x.LastName).Select(cust => new
+                        {   
+                            FirstName = cust.FirstName,
+                            LastName = cust.LastName
+                        });
+// is Equivalent to
+var customerFullNames = from c in customers
+                        orderby c.LastName
+                        select new { c.FirstName, c.LastName };
 ```
+
+- Group by
+``` cs
+var customerByCompany = customers.GroupBy(x => x.Company);
+// is Equivalent to
+var customerByCompany = from c in customers
+                        group c by c.Company;
+```
+
+- The `summary methods` can be used in the `query operators`:
+- To return the number of Companies (total)
+``` cs
+int numberOfCompanies = (from c in customers
+                         select c.Company).Count();
+```
+- To return the number of distinct Companies:
+``` cs
+int numberOfCompanies = (from c in customers
+                         select c.Company).Distinct().Count();
+```
+
 ###  3.6. <a name='QueringdatainTreeTItemObjects'></a>Quering data in `Tree<TItem>` Objects
 
 ``` cs
