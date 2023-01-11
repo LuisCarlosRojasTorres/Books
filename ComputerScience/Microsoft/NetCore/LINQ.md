@@ -10,8 +10,8 @@
 		* 3.3.3. [Aggregating](#Aggregating)
 	* 3.4. [Joining data](#Joiningdata)
 	* 3.5. [Using query operators](#Usingqueryoperators)
-	* 3.6. [Quering data in `Tree<TItem>` Objects](#QueringdatainTreeTItemObjects)
-	* 3.7. [LINQ and deferred evaluation](#LINQanddeferredevaluation)
+		* 3.5.1. [Examples](#Examples)
+	* 3.6. [LINQ and deferred evaluation](#LINQanddeferredevaluation)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -267,7 +267,7 @@ var customerAndCity = customers.Select(c => new { c.FirstName, c.LastName, c.Com
   - So, `C#` added `query operators`
 - It is presented the examples from previous sections and its equivalent in `query operators`.
 
-#### Examples
+####  3.5.1. <a name='Examples'></a>Examples
 - To retrieve the `firstName` for each `customer` 
 ``` cs
 var customerFirstNames = customers.Select(customer => customer.FirstName);
@@ -337,16 +337,7 @@ int numberOfCompanies = (from c in customers
                          select c.Company).Distinct().Count();
 ```
 
-###  3.6. <a name='QueringdatainTreeTItemObjects'></a>Quering data in `Tree<TItem>` Objects
-
-``` cs
-asdf
-```
-- The output is:
-``` console
-asdf
-```
-###  3.7. <a name='LINQanddeferredevaluation'></a>LINQ and deferred evaluation
+###  3.6. <a name='LINQanddeferredevaluation'></a>LINQ and deferred evaluation
 
 ``` cs
 asdf

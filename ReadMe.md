@@ -1,16 +1,16 @@
-## Commit format 
+## Commit format for all the books
 ``` console 
-main ReadMe - <functionality Added>
+<NameOf Book/Doc> - <name of functionality/chapter Added> - <in progress/finished>
 
 List of changes:
 - Added <something e.g. ch01, fig, vid01, eq01> 
 - Fixed <something e.g. ch01, fig, vid01, eq01> 
-- Deleted <something e.g. ch01, fig, vid01, eq01>  
+- Deleted <something e.g. ch01, fig, vid01, eq01>
+- Updated <something e.g. ch01, fig, vid01, eq01> 
 
 List of TODOs
 - <verb> + <something e.g. ch01, fig, vid01, eq01> in <somewhere file01, sec1.2.3>
 ```
-
 
 ## Livros:
 - [Dummy](/dummy.md)
@@ -60,19 +60,3 @@ List of TODOs
 - [Nuevo Testamento](/Filosofia/Biblia-NovoTestamento.md)
 - [Sobre a brevidade da vida - Séneca](/filosofia/sobre_a_brevidade_da_vida.md)
 
-## Commit convention
-- At the beginning of each home file in a folder you can find the `Commit format` header.
-- This is used to set a pattern in the commit titles
-- Description is optional however there is a template for this:
-
-``` console 
-<Title>
-
-List of changes:
-- Added <something e.g. ch01, fig, vid01, eq01> 
-- Fixed <something e.g. ch01, fig, vid01, eq01> 
-- Deleted <something e.g. ch01, fig, vid01, eq01>  
-
-List of TODOs
-- <verb> + <something e.g. ch01, fig, vid01, eq01> in <somewhere file01, sec1.2.3>
-```
