@@ -339,10 +339,18 @@ int numberOfCompanies = (from c in customers
 
 ###  3.6. <a name='LINQanddeferredevaluation'></a>LINQ and deferred evaluation
 
+> The application does not actually build the collection at the time that the LINQ extension method is executed; the collection is enumerated only WHEN YOU ITERATE OVER.
+
+- This means that:
+  - The data can change in the time between the execution of a `LINQ` query and when the data that the query identifies is retrieved.
+  - So, you always get the **most up-to-date data**
+- This strategy is called **deferred evaluation**
+
+
+However, LINQ provides the `ToList` method to force the evaluation of a query when it is defined and generate a `static` collection
+An example of `ToList` method is presented below:  
+
 ``` cs
-asdf
-```
-- The output is:
-``` console
-asdf
+int numberOfCompanies = (from c in customers.ToList()
+                         select c.Company).Distinct().Count();
 ```
