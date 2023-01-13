@@ -2,6 +2,8 @@
 ``` console 
 <NameOf Book/Doc> - <name of functionality/chapter Added> - <in progress/finished>
 
+Changelog:
+
 List of changes:
 - Added <something e.g. ch01, fig, vid01, eq01> 
 - Fixed <something e.g. ch01, fig, vid01, eq01> 
