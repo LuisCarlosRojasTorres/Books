@@ -21,8 +21,8 @@ give it a look!
 
 > **Definition:** A logical grouping of related code.
 > 
-> For Object-Oriented Programming Language: A group of classes, (`namespace` in `C#` or a `package` in `Java`)
-> For a Structured Programming Language: A group of functions.
+> - For Object-Oriented Programming Language: A group of classes, (`namespace` in `C#` or a `package` in `Java`)
+> - For a Structured Programming Language: A group of functions.
 >
 
 ##  2. <a name='Measuring'></a>Measuring

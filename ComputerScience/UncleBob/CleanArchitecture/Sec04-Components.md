@@ -159,7 +159,11 @@ or in other words
 
 ####  3.3.2. <a name='StabilityMetricsI'></a>Stability Metrics (I)
 Instability is defined as:
-$$ I = \frac{F_{out}}{F_{in}+F_{out}} $$
+
+``` math
+ I = \frac{F_{out}}{F_{in}+F_{out}} 
+```
+
 > I = Fan-Out / (Fan-In + Fan-Out) 
 > Where:
 > - Fan-In: Incoming dependencies i.e. the number of classes outside this Component which depend on classes of this Component.
