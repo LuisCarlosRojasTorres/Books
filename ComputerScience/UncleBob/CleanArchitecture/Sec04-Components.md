@@ -31,7 +31,10 @@
 - Well-designed components are independently deployable, and for that reason independently developable.
 
 ##  2. <a name='Ch13-ComponentCohesion'></a>Ch13 - Component Cohesion
-Three principles of component cohesion:
+
+- How to know a bunch of methods/functions/code can be considered as a Software Component?
+
+- Three principles of component cohesion:
 
 ###  2.1. <a name='REP-TheReuseReleaseEquivalencePrinciple'></a>REP - The Reuse/Release Equivalence Principle
 
@@ -46,9 +49,9 @@ Three principles of component cohesion:
 
 `classes that change for the same reasons and at the same times = same component`
 
-- In general **maintainability** is more important than **reusability** (how many times you will reuse a component vs how many minor versons you will release of that sw?)
-- So, if a requirement changes, there is a good chance that a minimal number of software components will change. This minimizes the workload related to releasing, revalidating, and redeploying the software.
-- For example, three classes that calculate trigonometric functions for a given angle in radians. If the algorithm to calculate the radian into to the return value of the functions change, all those functions also changes. So they shall go to the same module. Even if a requirements changes affecting the trigonometric functions, only onw component will be affected (because all they belong to the same component).
+- In general **maintainability** is more important than **reusability** (how many times you will reuse a component vs how many minor versions/patches you will release of that sw?)
+- So, if a requirement changes, there is a good chance that a minimal number of software components will change. This minimize the workload related to releasing, revalidating, and redeploying the software.
+- For example, three classes that calculate trigonometric functions for a given angle in radians. If the algorithm to calculate the radian into to the return value of the functions change, all those functions also changes. So they shall go to the same module. Even if a requirements changes affecting the trigonometric functions, only one component will be affected (because all they belong to the same component).
 
 ###  2.3. <a name='CRP-TheCommonReusePrinciple'></a>CRP - The Common Reuse Principle
 
@@ -56,23 +59,23 @@ Three principles of component cohesion:
 
 - Classes and modules that tend to be reused together belong in the
 same component.
-- So, classes that have lots of dependencies (tightly coupled) of each other belong to the same component.
+- So, classes that have a lot of dependencies (tightly coupled) of each other belong to the same component.
 - When a component depends on another, be sure that it depends on every class in that component.
-- For example, if lets say `Component A` uses **ONE** function from `Component B`(which has 50 functions):
-  - `B` is a dependency of `A`, Even if `A` only used **ONE** function !!
+- For example, lets say `Component A` uses **ONLY ONE** function from `Component B`(which has 50 functions):
+  - `B` is a dependency of `A`, Even if `A` only used **ONLY ONE** function !!
   - Everytime `B` is changed and compiled, `A` shall be recompiled, revalidated and redeployed (even if the function which `A` uses was not modified.)
   - On the other hand, if components are well-separated a minimum number of components will be affected for each time that a dependency change.
 
 ###  2.4. <a name='TheTensionDiagramforComponentCohesion'></a>The Tension Diagram for Component Cohesion
-- `REP` (group for reusers) and `CCP` (group for maitenance) are inclusive: tend to make components larger.
-- `CRP` (which splits to avoid unnecessary releases) is exclusive: tend to make components larger.
+- `REP` (group component parts for reuse) and `CCP` (group for maitenance) are inclusive: tend to make components larger.
+- `CRP` (which splits to avoid unnecessary releases) is exclusive: tend to make components smaller.
 - You shall find a balance between these three principles for each of your components.
 - If you only select two:
   - `REP`+`CCP` : Too many unneded releases.
   - `CCP`+`CRP` : Groups to reuse.
   - `CRP`+`REP` : Too many components change for each change is requirements.
 
-- Hint: At the beginning `CCP` is more important than `REP`, because developability is more important than reuse.
+- Hint: At the beginning `CCP` is **more important** than `REP`, because developability is more important than reuse.
   
 ##  3. <a name='Ch14-ComponentCoupling'></a>Ch14 - Component Coupling
 
@@ -85,7 +88,7 @@ same component.
 ![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14.png)
 
 ####  3.1.2. <a name='AnAcyclicDependencyGraph'></a>An Acyclic Dependency Graph
-- It is a `directed graph` where the Components are the `nodes` and the dependency relationship are the `directed edges`.
+- It is a `directed graph` where the Components are represented with `nodes` and the dependency relationships are the `directed edges`.
 - It has NO CYCLES (is a `directed acyclic graph` or `DAG`) i.e. Choosing one Component and following the dependency relationships its impossible to return to that Component. 
 - The following dependency graph will help to make some observations:
 ![Dependency Graph](/ComputerScience/UncleBob/CleanArchitecture/CH14a.png)
@@ -93,15 +96,15 @@ same component.
   - So the devs in charge of those Component should decide when the integration (with the new version of `Component B`) will happen.
   - If `Component Main` has a new version, no Componentes will be affected.
   - If a possible new version of `Component A` have to be tested, It only needs to build the `Component A` with the versions of `Component D` and `Component B` that are currently using.
-  - The compilation process is bottom up. i.e. First `Component B` is compiled.Then `Component D` and `Component C`. Later `Component A` and finally `Component Main`. (We know the build order of this SW because, we understand its dependencies)
+  - The compilation process is bottom up. i.e. First `Component B` is compiled.Then `Component D` and `Component C`. Later `Component A` and finally `Component Main`. So, **We know the build order of this SW because, we understand its dependencies**
 
 ####  3.1.3. <a name='TheDependencyCycle'></a>The Dependency Cycle
-- If a new Component `Component E` is released and has `Component D` as a dependency and `Component B` as a dependent, we have a `dependency cycle` (showed in **red** in the graph bellow). Some obersavations can be made:
+- If a new Component `Component E` is released and has `Component D` as a dependency and `Component B` as a dependent, we have a `dependency cycle` (showed in **red** in the graph bellow). Some observations can be made:
 ![Dependency Cycle](/ComputerScience/UncleBob/CleanArchitecture/CH14b.png)
   -  If a new version of `Component C` have to be release, it shall be compatible with `Component B`, but now also with `Component E` and with `Component D`. This makes the release more difficult.
-  - `Component B`, `Component D` and `Component E` become **one larger Component**. If any of this Components is modified it will affect the others.
+  - `Component B`, `Component D` and `Component E` become **one larger Component**. If any of these Components is modified, it will affect the others.
     - If `Component E` have to be tested, it shall be build and intetegrated with `Component D` and `Component B`
-- Cycles make it very difficult to isolate Components. So Unit testing and releasing become very difficult and error propne.
+- Cycles turns difficult to isolate Components. So Unit testing and releasing become more difficult and error prone.
 - The build order is difficult to obtain (because the cycle).
 
 ####  3.1.4. <a name='BreakingtheCycle'></a>Breaking the Cycle
@@ -110,23 +113,22 @@ same component.
 
 ``` cpp
 // Component B
-// file: ClassB1.h
-class ClassB1{
+// file: ClassB.h
+class ClassB{
 	...
 }
 
-
 // Component D
-// file: ClassB1.h
-#include "ClassB1" //<= Dependency!!!
-class ClassD1{
-	ClassB1 obj;   // Object that uses that dependency!!!
+// file: ClassB.h
+#include "ClassB" //<= Dependency!!!
+class ClassD{
+	ClassB obj;   // Object that uses that dependency!!!
 	...
 }
 ```
 - **Solution:** Dependency Inversion.
-  - The `Class` in `Component D` now uses an `Interface` which belongs to its Component.
-  - The `Class` in `Component B` (which was used) now imnplements the `Interface` from `Component D`.
+  - The `Class` in `Component D` now uses an `Interface` which belongs to the Component.
+  - The `Class` in `Component B` (which was used) now implements the `Interface` from `Component D`.
   - To use this new structure `dependency injection` is used.
 
 The problem (in red) and the solution can be see it graphically in the Figure below:
@@ -137,11 +139,14 @@ The problem (in red) and the solution can be see it graphically in the Figure be
 
 ###  3.3. <a name='TheStableDependenciesPrincipleSDP'></a>The Stable Dependencies Principle (SDP)
 
-> The dependencies of Component shall have less or equal *INSTABILITY* (I) than the Component.
+> The dependencies of a Component shall have less or equal *INSTABILITY* than the Component itself.
 
 or in other words
 
 > The Instability decreases in the direction of dependency.
+> ``` math
+> I_{dependency} < I_{dependent}
+> ```
 
 ####  3.3.1. <a name='Introduction-1'></a>Introduction
 
@@ -164,14 +169,13 @@ Instability is defined as:
  I = \frac{F_{out}}{F_{in}+F_{out}} 
 ```
 
-> I = Fan-Out / (Fan-In + Fan-Out) 
 > Where:
 > - Fan-In: Incoming dependencies i.e. the number of classes outside this Component which depend on classes of this Component.
 > - Fan-Out: Outgoing dependencies i.e. The number of classes inside this Componen which depend on classes outside this Component.
 
 - The range of Instability metric is `[0,1]`:
   - `I = 0` : means maximum stability i.e. The Component has no dependencies
-  - `I = 1` : menas maximum instability i.e. The Component is not a dependency for other Components.
+  - `I = 1` : means maximum instability i.e. The Component is not a dependency for other Components.
 - The Instability calculation is easier if the source code has **one class for each file**.
 
 **NOTES**:
@@ -226,10 +230,10 @@ or
 ####  3.4.2. <a name='AbstractnessmetricA'></a>Abstractness metric (A)
 The measure of abstractness of a Component is measured as:
 
-$$ A = \frac{N_{a}}{N_{c}}$$
+``` math
+A = \frac{N_{a}}{N_{c}}
+```
 
-> A = Na / Nc
->
 > Where:
 > - Na: Number of `interfaces` and `abstract classes` in the Component.
 > - Nc: Number of `classes`in the Component.
