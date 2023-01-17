@@ -253,8 +253,11 @@ However three regions can be identified:
 - **The Main Sequence**: Components that are not too **abstract** for its stability and not too **unstable** for its abstracness. In general, Components shall be on or close to this region.
 
 #### Distance (D) from the Main Sequence
-> `D = | A + I - 1 | `
-> 
+
+``` math
+D = | A + I - 1 | 
+```
+ 
 > Where:
 >  `D = 0`: Component is directly on the main sequence.
 >  `D = 1`: Component is at the maximum distance from the main sequence.

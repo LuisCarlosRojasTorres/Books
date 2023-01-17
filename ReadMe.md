@@ -49,7 +49,14 @@ List of TODOs
 - [UncleBob - Clean Code](/ComputerScience/UncleBob/CleanCode/Sec00-Index.md)
 - [UncleBob - Clean Coder](/ComputerScience/UncleBob/CleanCoder/Sec00-Index.md)
 
-#### Economics
+#### Udemy
+
+- [Macoratti - ASPNetCore MVC](/Udemy/Microsoft/Macoratti/AspNetCore-MVC/home.md)  
+- [Macoratti - Clean Architecture](/Udemy/Microsoft/Macoratti/CleanArchitectureWithASPNETCore/home.md)  
+- [Macoratti - Essencial Docker](/Udemy/Microsoft/Macoratti/EssentialDocker/home.md)  
+- [Macoratti - Web API ASPNetCore](/Udemy/Microsoft/Macoratti/WebAPI/home.md)  
+  
+### Economics
 
 - [The little book that STILL beats the market](/Economics/TheLittleBookThatBeatsTheMarket.md)
 
