@@ -33,9 +33,10 @@ List of TODOs
 
 #### Microsoft  
 
-- [AspNetCore](/ComputerScience/ASPNetCore/CH01.md)
-- [Microsoft - NET Core](/ComputerScience/Microsoft/NetCore/home.md)
-- [Microsoft - ASPNET Core](/ComputerScience/Microsoft/ASPNetCore/CH01.md)
+- [AspNetCore + React](/ComputerScience/Microsoft/ASPNetCore/ASPNetCore_and_React/CH01.md)  
+- [Microsoft Book - Programmin ASP.NET Core](/ComputerScience/Microsoft/ASPNetCore/CH01.md)  
+- [Microsoft Documentation- NET Core](/ComputerScience/Microsoft/NetCore/home.md)  
+- [Microsoft Documentation- ASPNET Core](/ComputerScience/Microsoft/ASPNetCore/CH01.md)  
 
 #### Theory  
 
