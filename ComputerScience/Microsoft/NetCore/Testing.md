@@ -72,3 +72,22 @@ public class UnitTest1
 - Then the results are shown as presented below:
 
 ![Test](/ComputerScience/Microsoft/NetCore/uploads/Testing001.PNG)
+
+### Some useful commands
+- `Fact Display`: It helps to identify the test and what it does
+- `Trait`: It helps to organize the test by category
+
+
+``` cs
+[Fact(Display = "Test Description")]
+[Trait("Category", "ChordLoader")]
+ public void Test1()
+    {
+        //...
+    }
+```
+
+
+## References
+- [](https://hamidmosalla.com/category/xunit/)
+- [Official](https://xunit.net/docs/getting-started/netcore/visual-studio)

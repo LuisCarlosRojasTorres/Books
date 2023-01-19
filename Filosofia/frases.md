@@ -17,3 +17,10 @@
 16. La memoria en general de la gente es de a lo máximo 3 meses. Si pasan de eso es pq recuerdan una ofensa y no un favor.
 17. Sentirse disconforme o frustado con algo es motivo bastante y suficiente para hacer algo al respecto.
 18. Si realmente quieres algo ya estarias intentándolo...
+19. No importa cuanto ganes, si los ingresos son menores que los gastos... eres pobre.
+20. Si tu fuente de renta es tu salario, eres proletario.
+21. La myor fuente de malas decisiones, estupideces y cosas aleatorias es el tedio.
+22. Eso es algo de lo que reclamaria alguien que está ocioso... quien está ocupado no tendria tiempo para pensar en ello.
+23. El ajedrez nos enseña que una victoria es consequencka de multilples movimientos muy bien pensados y conectados unos con otros, y no de una sola jugada.
+24. La mejor forma de facilitar el mañana es esforzandose hoy.
+25. Procura que tu siguiente paso sea apoyado en los pasos anteriores, esto facilitara las cosas
