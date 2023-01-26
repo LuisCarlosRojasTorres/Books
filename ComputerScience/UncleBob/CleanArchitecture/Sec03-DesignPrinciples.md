@@ -6,8 +6,14 @@
 	* 2.1. [The Problem](#TheProblem-1)
 	* 2.2. [The Solution](#TheSolution-1)
 * 3. [Ch09 - LSP - The Liskov Substitution Principle](#Ch09-LSP-TheLiskovSubstitutionPrinciple)
+	* 3.1. [The Problem](#TheProblem-2)
+	* 3.2. [The Solution](#TheSolution-2)
 * 4. [Ch10 - ISP - The Interface Segregation Principle](#Ch10-ISP-TheInterfaceSegregationPrinciple)
+	* 4.1. [The Problem](#TheProblem-3)
+	* 4.2. [The Solution](#TheSolution-3)
 * 5. [Ch11 - DIP - The Dependency Inversion Principle](#Ch11-DIP-TheDependencyInversionPrinciple)
+	* 5.1. [The Problem](#TheProblem-4)
+	* 5.2. [The Solution](#TheSolution-4)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -70,7 +76,7 @@ Let's see this with an example:
 ##  3. <a name='Ch09-LSP-TheLiskovSubstitutionPrinciple'></a>Ch09 - LSP - The Liskov Substitution Principle
 > "What is wanted here is something like the following substitution property: If for each object `o1` of type `S` there is an object `o2` of type `T` such that for all programs P defined in  terms of `T`, the behavior of P is unchanged when `o1` is substituted for `o2` then `S` is a subtype of `T`" - Barbara Liskov
 
-### The Problem
+###  3.1. <a name='TheProblem-2'></a>The Problem
 1. The `DummyUser` class uses the `Implementation1` class.
 2. However `DummyUser` class shall also be capable of use the `Implementation2` class, which has the same methods definition of `Implementation2` but different implementation.
 3. This kind of solutions difficult the maintainability.
@@ -78,7 +84,7 @@ Let's see this with an example:
 
 ![LSP](/ComputerScience/UncleBob/CleanArchitecture/uploads/LSP001.png)
 
-### The Solution
+###  3.2. <a name='TheSolution-2'></a>The Solution
 1. Both implementation have (or almost have) the same methods. So, both can be different implementations of an interface!!
 2. Create the `InterfaceDummy` interface.
    1. `Implementation1` class shall implement this interface.
@@ -95,18 +101,57 @@ Note:
 3. Then the variable can be used in the `DummyUser` class methods.
 
 ##  4. <a name='Ch10-ISP-TheInterfaceSegregationPrinciple'></a>Ch10 - ISP - The Interface Segregation Principle
+
 > "Many client-specific interfaces are better than one general purpose interface" - Robert Martin
+
+###  4.1. <a name='TheProblem-3'></a>The Problem
+1. We have three classes using the methods of another class:
+   1. `DummyC1` class uses `method1`
+   2. `DummyC2` class uses `method2`
+   3. `DummyC3` class uses `method3`
+2. However, all these three methods are implemented in the same class.
+   1. If any of these methos is updated or deleted, the `ClassWithMethods` class shall be compiled and redeployed.
+   2. Then `DummyC1`, `DummyC2` and `DummyC3` shall be compiled and redeployed too.
+   3. This constitutes an *instability*. 
 
 
 ![NO ISP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP001.png)
+
+###  4.2. <a name='TheSolution-3'></a>The Solution
+1. Create `interfaces`
+   1. Create `InterfaceDummy1` interface and define all the methods `DummyC1` class uses.
+   2. Create `InterfaceDummy2` interface and define all the methods `DummyC2` class uses.
+   3. Create `InterfaceDummy3` interface and define all the methods `DummyC3` class uses.
+2. `ClassWithMethods` class implements these three `interfaces`
+
+Now, when any of the methods is updated, only the `ClassWithMethods` class is compiled and deployed.
 
 ![ISP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP002.png)
 
 ##  5. <a name='Ch11-DIP-TheDependencyInversionPrinciple'></a>Ch11 - DIP - The Dependency Inversion Principle
 
-> "Depend on abstractions. Do not depend on concretions" - Robert Martin 
+> "The most flexible softwares are those in which source code dependencies refer only to abstractions, not to concretions" - Robert Martin 
+
+###  5.1. <a name='TheProblem-4'></a>The Problem
+1. The business rules are implemented in a concrete class i.e., `DummyDependency` class.
+   1. Each time when `DummyDependecy` is updated shall be compiled. This change affects all its `dependents` shall be compiled too.
+		- Software units that are actively developing, and undergoing frequent change are called `volatile`.
+		- Best practices recommends to reduce `volatily` in dependencies and business rules. 
+
+![NO DIP](/ComputerScience/UncleBob/CleanArchitecture/uploads/DIP001.png)
+
+###  5.2. <a name='TheSolution-4'></a>The Solution
+- Every change to an abstract interface corresponds to a change to its concrete implementations.
+  - However, chages to concrete implementations do not change its interfaces.
+  - The following coding practices can be obtained from the this:
+	1. **Do not refer to volatile concrete classes.**
+	2. **Do use volatile concrete classes as `base classes`.**
+	3. **Do not `override` concrete function/methods.**
 
 
-![NO DIP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP001.png)
+Steps:
+1. Create the `InterfaceDummy` interface, and define all the methods implemented in `DummyDependency` class.
+2. Modify the `DummyDependency` class to implement the `InterfaceDummy`
+3. Modify `DummyDependent` class to use the `InterfaceDummy` interface
 
-![DIP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP002.png)
+![DIP](/ComputerScience/UncleBob/CleanArchitecture/uploads/DIP002.png)
