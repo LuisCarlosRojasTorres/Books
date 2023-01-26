@@ -68,18 +68,44 @@ Let's see this with an example:
 
 
 ##  3. <a name='Ch09-LSP-TheLiskovSubstitutionPrinciple'></a>Ch09 - LSP - The Liskov Substitution Principle
+> "What is wanted here is something like the following substitution property: If for each object `o1` of type `S` there is an object `o2` of type `T` such that for all programs P defined in  terms of `T`, the behavior of P is unchanged when `o1` is substituted for `o2` then `S` is a subtype of `T`" - Barbara Liskov
 
-![NO LSP](/ComputerScience/UncleBob/CleanArchitecture/uploads/LSP001.png)
+### The Problem
+1. The `DummyUser` class uses the `Implementation1` class.
+2. However `DummyUser` class shall also be capable of use the `Implementation2` class, which has the same methods definition of `Implementation2` but different implementation.
+3. This kind of solutions difficult the maintainability.
+   - Another implementation means modify the `DummyUser` class.
 
+![LSP](/ComputerScience/UncleBob/CleanArchitecture/uploads/LSP001.png)
+
+### The Solution
+1. Both implementation have (or almost have) the same methods. So, both can be different implementations of an interface!!
+2. Create the `InterfaceDummy` interface.
+   1. `Implementation1` class shall implement this interface.
+   2. `Implementation2` class shall also implement this interface.
+3. `DummyUser` shall have `InterfaceDummy` type of variables in its methods.
+	- So, it does not matter if it receives an `Implementation1` or `Implementation2` object, `DummyUser` will use it.
+  
 ![LSP](/ComputerScience/UncleBob/CleanArchitecture/uploads/LSP002.png)
 
+Note:
+- A common implementation is:
+1. Define a `InterfaceDummy` private variable in the `DummyUser` class.
+2. This variable shall be set in the `DummyUser` class constructors.
+3. Then the variable can be used in the `DummyUser` class methods.
+
 ##  4. <a name='Ch10-ISP-TheInterfaceSegregationPrinciple'></a>Ch10 - ISP - The Interface Segregation Principle
+> "Many client-specific interfaces are better than one general purpose interface" - Robert Martin
+
 
 ![NO ISP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP001.png)
 
 ![ISP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP002.png)
 
 ##  5. <a name='Ch11-DIP-TheDependencyInversionPrinciple'></a>Ch11 - DIP - The Dependency Inversion Principle
+
+> "Depend on abstractions. Do not depend on concretions" - Robert Martin 
+
 
 ![NO DIP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP001.png)
 
