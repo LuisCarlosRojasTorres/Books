@@ -17,6 +17,11 @@
 
 ##  3. <a name='Ch09-LSP-TheLiskovSubstitutionPrinciple'></a>Ch09 - LSP - The Liskov Substitution Principle
 
+
 ##  4. <a name='Ch10-ISP-TheInterfaceSegregationPrinciple'></a>Ch10 - ISP - The Interface Segregation Principle
+
+![NO ISP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP001.png)
+
+![ISP](/ComputerScience/UncleBob/CleanArchitecture/uploads/ISP002.png)
 
 ##  5. <a name='Ch11-DIP-TheDependencyInversionPrinciple'></a>Ch11 - DIP - The Dependency Inversion Principle
