@@ -24,3 +24,7 @@
 23. El ajedrez nos enseña que una victoria es consequencka de multilples movimientos muy bien pensados y conectados unos con otros, y no de una sola jugada.
 24. La mejor forma de facilitar el mañana es esforzandose hoy.
 25. Procura que tu siguiente paso sea apoyado en los pasos anteriores, esto facilitara las cosas
+26. Ese tipo de actitudes es sintoma común en pessoas excesso o falta de masturbación
+27. Existen 3 tipos de personas, las que no vieron *Mente Brillante* y las que la vieron. Ah y las terceras que son las que después de la película fueron a buscar el árticulo `Non-cooperative Games` que publicó Nash, no importa si lo entendieron o no.  
+28. É muito dificil fazer valer a opinião pessoal, devido a lutas de ego, diferencias pessoais etc... Por isso quando falo uma coisa cito a um autor, um personagem ou um especialista na área conhecido. É facil... demasiado facil falar "Luis vc ta errado"... mas pago pra ver alguem dizer "Einstein, Julio César, Napoleão, ou qualquer um do mesmo nivel estar errado"
+29. Como esperas ganarle a los chinos no trabajando igual de duro? a los alemanes no planificando como ellos o a los japoneses no siendo disciplinado? No se puede.
