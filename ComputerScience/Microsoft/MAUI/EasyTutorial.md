@@ -101,3 +101,4 @@ The code is explained below:
   - Each `<ShellContent>` object is pointing to a page to display. This is set by the ContentTemplate property.
   
 ## Run the app
+`Ctrl+F5`
