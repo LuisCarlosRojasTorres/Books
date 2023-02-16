@@ -166,7 +166,7 @@ or in other words
 Instability is defined as:
 
 ``` math
- I = \frac{F_{out}}{F_{in}+F_{out}} 
+ I = \frac{F_{dependencies}}{F_{dependents}+F_{dependencies}} 
 ```
 
 > Where:
