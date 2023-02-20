@@ -1,8 +1,8 @@
 ## Embedded Linux Development using Yocto Projects
 
 - [CH01 - Meeting the Yocto Project](/OperationalSystems/EmbeddedLinuxDevelopment/CH01.md)
-- [CH02 - Baking Our Poky-Based System]()
-- [CH03 - Using Toaster to Bake an Image]()
+- [CH02 - Baking Our Poky-Based System](/OperationalSystems/EmbeddedLinuxDevelopment/CH02.md)
+- [CH03 - Using Toaster to Bake an Image](/OperationalSystems/EmbeddedLinuxDevelopment/CH03.md)
 - [CH04 - Grasping the BitBake Tool]()
 - [CH05 - Detailing the Temporary Build Directory]()
 - [CH06 - Assimilating Packaging Support]()
