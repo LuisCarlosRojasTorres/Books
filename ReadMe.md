@@ -34,14 +34,13 @@ List of TODOs
 #### Microsoft  
 
 - [AspNetCore + React](/ComputerScience/Microsoft/ASPNetCore/ASPNetCore_and_React/CH01.md)  
-- [Microsoft Book - Programmin ASP.NET Core](/ComputerScience/Microsoft/ASPNetCore/CH01.md)  
+- [Microsoft Book - Programming ASP.NET Core](/ComputerScience/Microsoft/ASPNetCore/CH01.md)  
 - [Microsoft Documentation- NET Core](/ComputerScience/Microsoft/NetCore/home.md)  
 - [Microsoft Documentation- ASPNET Core](/ComputerScience/Microsoft/ASPNetCore/CH01.md)  
 
 #### Theory  
 
-- [UA Object-Oriented Design](/ComputerScience/ObjectOrientedDesign.md)
-- [UA Design Patterns](/ComputerScience/ObjectOrientedDesign.md)
+- [UA Object-Oriented Design](/ComputerScience/OOD/ObjectOrientedDesign.md)
 
 #### Uncle Bob  
 

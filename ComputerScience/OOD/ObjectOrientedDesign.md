@@ -51,7 +51,7 @@ It means that:
   - The `0...*` on the left means: *A* `Student` object is associated to **0 or more** `Sport`. 
 
 
-![Association](/ComputerScience/uploads/01-association.png)
+![Association](/ComputerScience/OOD/uploads/01-association.png)
 
 ``` cs
 class Student{
@@ -78,7 +78,7 @@ class Student{
 	- The `0...*` on the right means: *A* `CrewMember` *object is associated to* **0 or more** `Airliner` *objects*.
 	- The `0...*` on the left means: *An* `Airliner` *object is associated to* **0 or more** `CrewMember` *objects*.
 	
-![Aggregation](/ComputerScience/uploads/02-aggregation.png)
+![Aggregation](/ComputerScience/OOD/uploads/02-aggregation.png)
 
 ``` cs
 class Airliner{
@@ -116,7 +116,7 @@ Where:
   - The `1...*` on the left means: *A* `House` *object is associated to* **1 or more** `Rooms` *objects*.
 
 
-![Composition](/ComputerScience/uploads/03-composition.png)
+![Composition](/ComputerScience/OOD/uploads/03-composition.png)
 
 ``` cs
 public class House
@@ -157,7 +157,7 @@ Where:
       -  it has a public attribute `field`.
       -  it has a public method `method2`.
 
-![Class Inheritance](/ComputerScience/uploads/04-class-inheritance.png)
+![Class Inheritance](/ComputerScience/OOD/uploads/04-class-inheritance.png)
 
 ####  1.4.2. <a name='Interfaceinheritance'></a>Interface inheritance
 - `Interface inheritance` only specifies common behaviours throught method signatures. 
@@ -169,5 +169,5 @@ Where:
   - Inherit `interface` and behaviours (`methods`) do not need to be rewritten in the `derived class`.
 
 
-![Interface Inheritance](/ComputerScience/uploads/05-interface-inheritance.png)
+![Interface Inheritance](/ComputerScience/OOD/uploads/05-interface-inheritance.png)
 
