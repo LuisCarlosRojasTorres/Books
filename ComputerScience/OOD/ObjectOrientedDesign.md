@@ -19,9 +19,31 @@
 ##  1. <a name='FourDesignPrinciples'></a>Four Design Principles
 
 ###  1.1. <a name='Abstraction'></a>Abstraction
-
-
+- It is how humans deal with complexity: Simplifying a concept in the problem domain.
+- It breaks a concept down into a simplified description.
+  - It ignores unimportant details.
+  - It emphasized the essential needed for the concept, within some concept.
+- It help us to model classes:
+  - It is used to determine the essencial details for some concept.
+- To model a class the designer have to choose the abstraction that is most appropriate to the **context** of the software development.
+  - This **context** shall be understoof before creating an abstraction.
+- The essential characteristics of an abstration can be understood in two ways:
+  - basic attributes: characteristics that do not dissapear over time.
+  - behaviours: responsabilities and actions. 
+- An example: Modelling the `Person` class
+  - For a dating app:
+    - Gender
+    - Age
+    - Social media accounts
+  - For a fit app:
+    - Gender
+    - Age
+    - IMC, 
+    - Number of diary steps etc...
+  - So different models can be obtained based on different context. So if the context changes the abstraction can change too.
+  
 ###  1.2. <a name='Encapsulation'></a>Encapsulation
+
 
 ###  1.3. <a name='Decomposition'></a>Decomposition
 It means that:
