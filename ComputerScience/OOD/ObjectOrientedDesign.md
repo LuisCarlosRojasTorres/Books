@@ -2,6 +2,9 @@
 * 1. [Four Design Principles](#FourDesignPrinciples)
 	* 1.1. [Abstraction](#Abstraction)
 	* 1.2. [Encapsulation](#Encapsulation)
+		* 1.2.1. [Integrity and Security](#IntegrityandSecurity)
+		* 1.2.2. [Changeable Implementation](#ChangeableImplementation)
+		* 1.2.3. [Black Box concept](#BlackBoxconcept)
 	* 1.3. [Decomposition](#Decomposition)
 		* 1.3.1. [Association Relationship](#AssociationRelationship)
 		* 1.3.2. [Aggregation Relationship](#AggregationRelationship)
@@ -43,7 +46,23 @@
   - So different models can be obtained based on different context. So if the context changes the abstraction can change too.
   
 ###  1.2. <a name='Encapsulation'></a>Encapsulation
+- It allows something to be contained in a capsule, some of which you can access from the outside and some of which you cannot.
+- Three concepts behind encapsulation:
+  - the ability to **bundle** attribute values (or data) and behaviours (or methods) that manipulates those values, into a self-contained object.
+  - the ability to **expose** certain data and functions of that object, which can be accessed from the other objects, usually through an `interface`.
+  - the ability to **restrict** access to certain data and functions to only within the object.
+- The object's data should only contain what is relevant for that object.
+####  1.2.1. <a name='IntegrityandSecurity'></a>Integrity and Security
+- Restricting access to certain data and functions to only within an object, leads to **data integrity** and the security of sensitive information.
+- If certain data are restricted from outside access, except through specific methods, then the data cannot be changed through variable assignments.
 
+####  1.2.2. <a name='ChangeableImplementation'></a>Changeable Implementation
+- Implementation of attributes and methods can change, but the accessible interface of a class can remain the same.
+####  1.2.3. <a name='BlackBoxconcept'></a>Black Box concept
+-  It means that he computation steps taken within a class never need to be known by any other class, as long as they are able to access the `interface`.
+   -  A class is therefore like a **black box** that you cannot see into for details about how attributes are represented or how methods compute their results.
+   -  What happens in the **box** to achieve an expected behaviour does not matter, as long as it is possible to provide inputs and obtain outputs by calling methods. 
+   -  What separates the real world from the internal workings of a class is a **abstraction barrier** which reduces complexity for users of the class.
 
 ###  1.3. <a name='Decomposition'></a>Decomposition
 It means that:
