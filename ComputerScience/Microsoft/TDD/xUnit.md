@@ -1,3 +1,73 @@
+## Fact
+- Facts are tests which are always true. They test invariant conditions
+
+
+``` cs
+
+[Fact]
+public void PassingTest()
+{
+    Assert.Equal(4, Add(2, 2));
+}
+
+[Fact]
+public void FailingTest()
+{
+    Assert.Equal(5, Add(2, 2));
+}
+
+int Add(int x, int y)
+{
+    return x + y;
+}
+
+[Fact] 
+public void ShouldAddDoubleValues() 
+{ 
+    var sut = new Calculator(); 
+
+    double result = sut.AddDoubles(1.1, 2.2); 
+
+    Assert.Equal(3.3, result, precision: 1); 
+}
+```
+
+## Theories
+- Theories are tests which are only true for a particular set of data
+
+
+``` cs
+public class ParameterizedTests { 
+
+    public bool IsOddNumber(int number) { 
+        return number % 2 != 0; 
+    } 
+
+    [Theory]
+    [InlineData(3)]
+    [InlineData(5)]
+    [InlineData(6)]
+    public void MyFirstTheory(int value)
+    {
+        Assert.True(IsOdd(value));
+    }
+
+    [Theory] 
+    [InlineData(5, 1, 3, 9)] 
+    [InlineData(7, 1, 5, 3)] 
+    public void AllNumbers_AreOdd_WithInlineData(int a, int b, int c, int d) { 
+
+        Assert.True(IsOddNumber(a)); 
+
+        Assert.True(IsOddNumber(b)); 
+
+        Assert.True(IsOddNumber(c)); 
+
+        Assert.True(IsOddNumber(d)); 
+    }
+}
+```
+
 # References
 
 - [XUnit – Part 1: xUnit Packages and Writing Your First Unit Test](https://hamidmosalla.com/2020/01/05/xunit-part-1-xunit-packages-and-writing-your-first-unit-test/)  
