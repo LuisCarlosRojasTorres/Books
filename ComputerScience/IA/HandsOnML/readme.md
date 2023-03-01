@@ -1,6 +1,6 @@
 
 ## Os Fundamentos
-- [CH01 - O Cénario do ML]()  
+- [CH01 - O Cénario do ML](/ComputerScience/IA/HandsOnML/CH01.md)  
 - [CH02 - Projeto de Aprendizado de Máquina de Ponta a Ponta]()  
 - [CH03 - Classificação]()  
 - [CH04 - Treinando Modelos]()  
@@ -19,5 +19,15 @@
 - [CH15 - Autoencoders]()  
 - [CH16 - Aprendizado por Reforço]()  
 
+
 ## Referencia
 - Mãos à Obra: Aprendizado de Máquina com Scikit-Learn & TersorFlow (Aurélien Géron)
+
+### Convenções neste livro
+
+##### Sugestão
+(Imagem de um esquilo)
+##### Nota 
+(Imagem de um pássaro)
+##### Alerta
+(Imagem de um escorpião)
