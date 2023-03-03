@@ -25,7 +25,7 @@
 
 ### Convenções neste livro
 
-##### Sugestão
+##### Dica
 (Imagem de um esquilo)
 ##### Nota 
 (Imagem de um pássaro)
