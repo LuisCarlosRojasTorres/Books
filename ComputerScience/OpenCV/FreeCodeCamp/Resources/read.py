@@ -9,7 +9,7 @@ cv.waitKey(0)
 
 ## Open a video file
 '''
-capture = cv.VideoCapture('Videos/dog.mp4')
+capture = cv.VideoCapture(0)
 
 while True:
     isTrue, frame = capture.read()
