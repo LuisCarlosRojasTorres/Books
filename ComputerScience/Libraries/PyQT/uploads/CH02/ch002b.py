@@ -1,61 +1,3 @@
-
-
-
-
-## The QLabel Widget
-
-- `QLabel`: It is a widget that you will use in almost every GUI you develop. 
-- A `QLabel` object is a placeholder to display plain or rich text, hyperlinks, images, or GIFs.
-  - `QPixmap` is a `Qt class` that is optimized for showing images on the screen and is useful for displaying an image on a `QLabel` object.
-- It is also useful for creating labels around other widgets to specify their roles or give them titles.
-- **REMEMBER**: To run these scripts you can one the the following ways
-  - Right click to the folder which contains the scripts
-    - Then `python <nameOfScript>.py`
-  - OR
-  - OPen PowerShell in the folder that contains the scripts
-    - Then `python <nameOfScript>.py` 
-
-``` python
-import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QLabel
-from PyQt6.QtGui import QPixmap
-
-class MainWindow(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.initializeUI()
-    
-    def initializeUI(self):
-        """Set up the application's GUI."""
-        self.setGeometry(100, 100, 250, 250)
-        self.setWindowTitle("QLabel Example")
-        self.setUpMainWindow()
-        self.show()    
-
-    def setUpMainWindow(self):
-        """Create QLabel to be displayed in the main window."""
-        hello_label = QLabel(self)
-        hello_label.setText("Hello")
-        hello_label.move(105, 15)
-        image = "./logo001.png"
-        try:
-            with open(image):
-                world_label = QLabel(self)
-                pixmap = QPixmap(image)
-                world_label.setPixmap(pixmap)
-                world_label.move(25, 40)
-        except FileNotFoundError as error:
-            print(f"Image not found.\nError: {error}")
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    sys.exit(app.exec())
-```
-
-## Project - User Profile GUI
-
-``` python
 # user_profile.py
 # Import necessary modules
 import sys
@@ -154,5 +96,3 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MainWindow()
     sys.exit(app.exec())
-
-```
