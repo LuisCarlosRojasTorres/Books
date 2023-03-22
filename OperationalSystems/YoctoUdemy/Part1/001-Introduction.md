@@ -30,7 +30,7 @@
 - Toolchain: The compiler and tools needed to create code for your target device.
 - Bootloader: Initialize the HMI and loads the linux kernel
 - Kernel: The heart of the system, managing system resources and interfacing with HW.  
-- Root filesystem: Contains the libraries and programs that are un once the kernel has completed its initialization.
+- Root filesystem: Contains the libraries and programs that are runned once the kernel has completed its initialization.
 
 ##  2. <a name='YoctoProject'></a>Yocto Project
 It provides devs create their own custom Linux distributions for any HW architecture.
@@ -53,10 +53,13 @@ So, it is possible to create our own Ubuntu for our HMI
 - Required Packages are described  [HERE](https://docs.yoctoproject.org/ref-manual/system-requirements.html#ubuntu-and-debian)
 
 ##  5. <a name='WhatisPOKY'></a>What is POKY
-- It is a reference/example distribution of Yocto. It is a combined repository of `OpenEmbedded Core`, `Bitbake`, `meta-yocto-bsp` (`bsp` board support packages) and `documentation`
-- Yocto is the name of the company, POKY are the actual bits downloaded.
+- It is a reference (i.e. example) distribution of Yocto. 
+  - Yocto uses Poky to build images!
+- It is a combined repository of `OpenEmbedded Core`, `Bitbake`, `meta-yocto-bsp` (`bsp` board support packages) and `documentation`
+  - It not contain binary files, it is a wprking example of hot to build your own custom linux distro for targered hw.
+- Yocto is the name of the company, POKY are the actual bits downloaded.  
   
-##  6. <a name='Whatismetadataa'></a>What is metadataa
+##  6. <a name='Whatismetadataa'></a>What is metadata
  `Data that describes and gives information about other data`
  So:
  - It refers to the build instructions:
@@ -73,7 +76,7 @@ So, it is possible to create our own Ubuntu for our HMI
 ###  7.1. <a name='OpenEmbeddedProject'></a>OpenEmbedded Project
 - Similar objectives to Yocto.
 - It provides a set of metadata for a wide variety of achitectures, features and applications: 
-  - Not a reference distribution.
+  - Do Not have a reference distribution.
   - Designed to be the foundation for others.
 
 - On the other hand, Yocto focuses on provide *powerful*, *easy-to-use*, *inter-operable*, *well-tested tools*, *metadata* and *board support packages* for a core set of architectures and specific boards.
@@ -87,8 +90,9 @@ So, it is possible to create our own Ubuntu for our HMI
   - It keeps track of all tasks being processed in order to ensure completion, maximizing the use of processing resources to reduce build time and being predictable.
 
 ##  9. <a name='Meta-yocto-bsp'></a>Meta-yocto-bsp
+- BSP stands for (Board Support Package)
 - It is a collection of information that defines how to support a particular HW device, set of devices, or HW platform.
-- It includes information about HW features present on the device and kernal configuration information along with any additional HW drivers required.
+- It includes information about HW features present on the device and kernel configuration information along with any additional HW drivers required.
 - It lists any additional SW components required in addition to a generic Linux SW stack for both essential and optional platform features.
 - It maintains several BSPs for:
   - Texas Instruments Beaglebone (`beaglebone`)
@@ -111,9 +115,46 @@ NOTE: To develop on different hardware, you will need to complement `POKY` with 
 ![Reference distribution](/OperationalSystems/YoctoUdemy/Part1/001.PNG)
 
 ##  11. <a name='HelloWorldofPoky'></a>Hello World of Poky
-
+1. Clone the poky repository `git clone git://git.yoctoproject.org/poky`
+  - Then `cd poky` and `ls`, the following folders will appear:
+    - `bitbake`: task scheduler
+    - `meta-poky`: poky metadata
+    - `documentation`
+2. Checkout the lates `branch/release` : `git checkout <latest release>`
+3. Prepare the build environment. Poky provides a script `oe-init-build-env`, which should be used to setup the build environment, including the Bitbake utility to your path: `source poky/oe-init-build-end buildName`
+  - Where `buildName` is an optional parameter for the name of the directory where the environment is set. It defaults to `build`
+  - This command *moves* you in a build folder and create two files `local.conf`, `bblayers.conf` inside the `conf` folder.
+  - If we enter `echo $PATH` in the `buildName` directory it will appear the following commands telling that poky scripts are available:
+  ``` console
+  /home/redtower02/poky/scripts:
+  /home/redtower02/poky/bitbake/bin:
+  /home/redtower02/.local/bin:
+  /usr/local/sbin:
+  /usr/local/bin:
+  /usr/sbin:
+  /usr/bin:
+  /sbin:
+  /bin:
+  /usr/games:
+  /usr/local/games:
+  /snap/bin:
+  /snap/bin:
+  /home/redtower02/.dotnet/tools
+  ```
+1.  Building Linux Distribution: 
+  - `bibake <image_name>`: so one example to test this is `bitbake core-image-minimal` (It will take a long time!).
+  - `time bitbake core-image-minimal`
 ##  12. <a name='RungeneratedImageinQEMU'></a>Run generated Image in QEMU
+- Quick Emulator or QEMU is a free and open source software package that performs hardware virtualization.
+- The QEMU based machines allow test and development withouth real hardware.
+- It has support for: `x86`, `x86-64`, `ARM` and so on.
+- Poky provides a script `runqemu` which allow you to start the QEMU using a yocto image
+- The command is `runqemu <machine> <zimage> <filesystem>`
+  - `runqemu -h` to get help
+  - For the image built in the previous section: `runqemu qemux86-64 core-image-minimal`
+    - To turn off the emulator use `poweroff`
 
+NOTE: To see all the scripts in poky use the following command `ls ../source/poky/scripts`
 ##  13. <a name='BuildandRunQEMUARM'></a>Build and Run QEMU ARM
 
 ##  14. <a name='RunQEMUinnongraphicmode'></a>Run QEMU in non graphic mode
