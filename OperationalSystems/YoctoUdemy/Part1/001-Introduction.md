@@ -4,7 +4,20 @@
 * 3. [Inputs and Outputs in Yocto](#InputsandOutputsinYocto)
 * 4. [Setting up the Build Machine](#SettinguptheBuildMachine)
 * 5. [What is POKY](#WhatisPOKY)
-* 6. [What is metadata](#Whatismetadata)
+* 6. [What is metadataa](#Whatismetadataa)
+* 7. [OpenEmbedded Core](#OpenEmbeddedCore)
+	* 7.1. [OpenEmbedded Project](#OpenEmbeddedProject)
+* 8. [Bitbake](#Bitbake)
+* 9. [Meta-yocto-bsp](#Meta-yocto-bsp)
+* 10. [Other Poky Repositories](#OtherPokyRepositories)
+* 11. [Hello World of Poky](#HelloWorldofPoky)
+* 12. [Run generated Image in QEMU](#RungeneratedImageinQEMU)
+* 13. [Build and Run QEMU ARM](#BuildandRunQEMUARM)
+* 14. [Run QEMU in non graphic mode](#RunQEMUinnongraphicmode)
+* 15. [Add Isusb to Yocto Image](#AddIsusbtoYoctoImage)
+* 16. [Build and Run Core Image Sato](#BuildandRunCoreImageSato)
+* 17. [Challenge](#Challenge)
+* 18. [Resources](#Resources)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -43,7 +56,7 @@ So, it is possible to create our own Ubuntu for our HMI
 - It is a reference/example distribution of Yocto. It is a combined repository of `OpenEmbedded Core`, `Bitbake`, `meta-yocto-bsp` (`bsp` board support packages) and `documentation`
 - Yocto is the name of the company, POKY are the actual bits downloaded.
   
-##  6. <a name='Whatismetadata'></a>What is metadataa
+##  6. <a name='Whatismetadataa'></a>What is metadataa
  `Data that describes and gives information about other data`
  So:
  - It refers to the build instructions:
@@ -55,9 +68,9 @@ So, it is possible to create our own Ubuntu for our HMI
  - Where they are obtained from
  - Semantic versioning of the packages used (including patches)
 
-## OpenEmbedded Core
+##  7. <a name='OpenEmbeddedCore'></a>OpenEmbedded Core
 
-### OpenEmbedded Project
+###  7.1. <a name='OpenEmbeddedProject'></a>OpenEmbedded Project
 - Similar objectives to Yocto.
 - It provides a set of metadata for a wide variety of achitectures, features and applications: 
   - Not a reference distribution.
@@ -66,14 +79,14 @@ So, it is possible to create our own Ubuntu for our HMI
 - On the other hand, Yocto focuses on provide *powerful*, *easy-to-use*, *inter-operable*, *well-tested tools*, *metadata* and *board support packages* for a core set of architectures and specific boards.
 - HOWEVER, both OpenEmbedded and Yocto share a core collection of metadata called `openembedded-core` or `oe-core`
 
-## Bitbake
+##  8. <a name='Bitbake'></a>Bitbake
 - Same functionality as `make` 
 - So, it is a task scheduler that parses python and shell script mixed code.
   - The code parsed generates and runs tasks, which are basically a set of steps ordered according to code dependencies.
   - It reads the `recipes` and follows them by fetching packages, building them and incorporating the results into bootable images.
   - It keeps track of all tasks being processed in order to ensure completion, maximizing the use of processing resources to reduce build time and being predictable.
 
-## Meta-yocto-bsp
+##  9. <a name='Meta-yocto-bsp'></a>Meta-yocto-bsp
 - It is a collection of information that defines how to support a particular HW device, set of devices, or HW platform.
 - It includes information about HW features present on the device and kernal configuration information along with any additional HW drivers required.
 - It lists any additional SW components required in addition to a generic Linux SW stack for both essential and optional platform features.
@@ -85,7 +98,7 @@ So, it is possible to create our own Ubuntu for our HMI
 
 NOTE: To develop on different hardware, you will need to complement `POKY` with `HW` Yocto layers.
 
-## Other Poky Repositories
+##  10. <a name='OtherPokyRepositories'></a>Other Poky Repositories
 - `meta-poky`: Poky-specific metadata
 - Documentation, which contains the Yocto Project source files used to make the set of user manuals.
 - So, POKY includes:
@@ -96,3 +109,19 @@ NOTE: To develop on different hardware, you will need to complement `POKY` with 
   - emulator QEMU to test the image
   
 ![Reference distribution](/OperationalSystems/YoctoUdemy/Part1/001.PNG)
+
+##  11. <a name='HelloWorldofPoky'></a>Hello World of Poky
+
+##  12. <a name='RungeneratedImageinQEMU'></a>Run generated Image in QEMU
+
+##  13. <a name='BuildandRunQEMUARM'></a>Build and Run QEMU ARM
+
+##  14. <a name='RunQEMUinnongraphicmode'></a>Run QEMU in non graphic mode
+
+##  15. <a name='AddIsusbtoYoctoImage'></a>Add Isusb to Yocto Image
+
+##  16. <a name='BuildandRunCoreImageSato'></a>Build and Run Core Image Sato
+
+##  17. <a name='Challenge'></a>Challenge
+
+##  18. <a name='Resources'></a>Resources 
