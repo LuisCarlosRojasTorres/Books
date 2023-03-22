@@ -121,7 +121,7 @@ NOTE: To develop on different hardware, you will need to complement `POKY` with 
     - `meta-poky`: poky metadata
     - `documentation`
 2. Checkout the lates `branch/release` : `git checkout <latest release>`
-3. Prepare the build environment. Poky provides a script `oe-init-build-env`, which should be used to setup the build environment, including the Bitbake utility to your path: `source poky/oe-init-build-end buildName`
+3. Prepare the build environment. Poky provides a script `oe-init-build-env`, which should be used to setup the build environment, including the Bitbake utility to your path: `source poky/oe-init-build-env buildName`
   - Where `buildName` is an optional parameter for the name of the directory where the environment is set. It defaults to `build`
   - This command *moves* you in a build folder and create two files `local.conf`, `bblayers.conf` inside the `conf` folder.
   - If we enter `echo $PATH` in the `buildName` directory it will appear the following commands telling that poky scripts are available:
@@ -156,8 +156,15 @@ NOTE: To develop on different hardware, you will need to complement `POKY` with 
 
 NOTE: To see all the scripts in poky use the following command `ls ../source/poky/scripts`
 ##  13. <a name='BuildandRunQEMUARM'></a>Build and Run QEMU ARM
+- To build a `core-image-minimal` for `ARM` processors:
+  - Edit `./build/conf/local.conf` 
+  - Set `MACHINE = qemuarm` and save and close the file (by default `MACHINE = qemux86-64`).
+  - Then enter the following commands in terminal
+    - `$ source poky/oe-init-build-env`
+    - `$ bitbake core-image-minimal`
+    - `$ runqemu core-image-minimal`
+##  14. <a name='RunQEMUinnongraphicmode'></a>Run QEMU i n non graphic mode
 
-##  14. <a name='RunQEMUinnongraphicmode'></a>Run QEMU in non graphic mode
 
 ##  15. <a name='AddIsusbtoYoctoImage'></a>Add Isusb to Yocto Image
 
