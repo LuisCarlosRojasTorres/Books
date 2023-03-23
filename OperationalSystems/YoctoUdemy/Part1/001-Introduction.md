@@ -164,12 +164,21 @@ NOTE: To see all the scripts in poky use the following command `ls ../source/pok
     - `$ bitbake core-image-minimal`
     - `$ runqemu core-image-minimal`
 ##  14. <a name='RunQEMUinnongraphicmode'></a>Run QEMU i n non graphic mode
-
-
+- So far, the `QEMU` was runnin in a window.
+- To run `QEMU` in a terminal, use the following command: `runqemu core-image-minimal nographic`
+  
 ##  15. <a name='AddIsusbtoYoctoImage'></a>Add Isusb to Yocto Image
-
+- If we try to use the `lsusb` command in the image from previous section, the console will show the following message `Command Not Found`
+  - `lsusb` command: display the information about USB buses and the devices connected to them. The properties displayed are speed, BUS, class, type details, etc.
+- So, **How can we add a package to the core-image-minimal?**
+  1. Open `local.conf` file and add the recipe name.
+     - `IMAGE_INSTALL_append = "usbutils"` for `lsusb`
+  2. Then `bitbake core-image-minimal`
 ##  16. <a name='BuildandRunCoreImageSato'></a>Build and Run Core Image Sato
-
+- `core-image-sato`: is a X11 Window-system-based image with a SATO theme and a GNOME mobile desktop environment.
+- `$ bitbake core-image-sato`
+- `$ runqemu qemuarm core-image-sato`
 ##  17. <a name='Challenge'></a>Challenge
-
+- Nothing
 ##  18. <a name='Resources'></a>Resources 
+- Nothing
