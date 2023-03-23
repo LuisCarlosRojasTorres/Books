@@ -17,26 +17,24 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
+##  1. <a name='Whatismetadata'></a> V019 What is metadata
 
+##  2. <a name='Whatisrecipe'></a> V020 What is recipe
 
-##  1. <a name='Whatismetadata'></a>What is metadata
+##  3. <a name='Whatisconfigurationfile'></a> V021 What is configuration file
 
-##  2. <a name='Whatisrecipe'></a>What is recipe
+##  4. <a name='Whatisclasses'></a> V022 What is classes
 
-##  3. <a name='Whatisconfigurationfile'></a>What is configuration file
+##  5. <a name='WhatisLayers'></a> V023 What is Layers
 
-##  4. <a name='Whatisclasses'></a>What is classes
+##  6. <a name='WhyLayers'></a> V024 Why Layers
 
-##  5. <a name='WhatisLayers'></a>What is Layers
+##  7. <a name='Findoutlayersusedbybitbakebuildsystem'></a> V025 Find out layers used by bitbake build system
 
-##  6. <a name='WhyLayers'></a>Why Layers
+##  8. <a name='Wheretogetlayers'></a> V026 Where to get layers
 
-##  7. <a name='Findoutlayersusedbybitbakebuildsystem'></a>Find out layers used by bitbake build system
+##  9. <a name='YoctoProjectCompatibleLayers'></a> V027 Yocto Project Compatible Layers
 
-##  8. <a name='Wheretogetlayers'></a>Where to get layers
+##  10. <a name='Whatisimage'></a> V028 What is image
 
-##  9. <a name='YoctoProjectCompatibleLayers'></a>Yocto Project Compatible Layers
-
-##  10. <a name='Whatisimage'></a>What is image
-
-##  11. <a name='WhatisPackage'></a>What is Package
+##  11. <a name='WhatisPackage'></a> V029 What is Package
