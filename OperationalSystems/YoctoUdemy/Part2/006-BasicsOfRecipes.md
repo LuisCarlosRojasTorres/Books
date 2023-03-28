@@ -62,6 +62,7 @@
   - `$ bitbake <recipe name> -c listtasks`
 
 ##  4. <a name='V043-RecipeFetchStage'></a>V043 - Recipe Fetch Stage
+**STAGE 1:**:  `do_fetch`
 - Fetching source files is the first thing the recipe shall do
 - This is controlled by the `SRC_URI` variable
   - Each recipe SHALL have a `SRC_URI` variable which points to the source location.
@@ -71,12 +72,62 @@
     - `https://` , `git://`, `svn://` for remote locations
     - `file://` for local files
 - By default, sources are fetched in `BUILDDIR/downloads`
+- The `do_fetch` tasks uses the prefix of each entry in the `SRC_URI` variable value to determine how to fetch the source code.
+- NOTE: Any patch files present, needs to be specified in `SRC_URI`
+
 ##  5. <a name='V044-RecipeUnpackStage'></a>V044 - Recipe Unpack Stage
+**STAGE 2:**:  `do_unpack`
+- All local files in `SRC_URI` are copied into the recipe's working directory in `$BUILDDIR/tmp/work/`
+- When extracting a tarball, BitBake expects to find the extracted files in a directory named `<application>-<version>`
+  - This is controlled by the `S` variable
+  - If the tarball follows the above format, then `S`variable do not need to be defined.
+- If the directory has another name, the `S` variable shall be defined.
+- If you are fetching from a Source Control Management **SCM** like git or SVN, or your file is local to your machine, **you need to define S**
+  - E.g., for git `S = ${WORKDIR}/git`
 
 ##  6. <a name='V045-RecipePatchStage'></a>V045 - Recipe Patch Stage
+**STAGE 3:**:  `do_patch`
+- Sometimes it is necessary to patch code after it has been fetched.
+- Patches have `.patch`, `.diff` or compressed version of these suffixes e.g. `.diff.gz`.
+- The `do_patch` task automatically applies these patches.
+- The build system should be apple to apply patches with the `-p1` option (i.e., one directory level in the path will be stripped off).
+- If your patch needs to have more directory levels stripped off, specify the number of levels using the `striplevel` option in the `SRC_URI` entry for the patch.
 
 ##  7. <a name='V046-RecipeLicensing'></a>V046 - Recipe Licensing
+- A recipe shall have a `LICENSE` and `LIC_FILES_CHKSUM` variables:
+- `LICENSE`:
+  - it specifies the license for the sw
+  - Tipically includes COPYING, LICENSE and README files.
+  - If you dont know the license of of a software, look for its license in its source code.
+    - Look at the top of a source file.
+      - `LICENSE = GPLv2`
+  - A collection of licenses are located at `meta/files/common-licenses/`
+- `LIC_FILES_CHKSUM`:
+  - The OpenEmbedded build system uses this variable to make sure the license text has not changed.
+    - If it changed, the build produces an error.
+    - Example taht assumes the sw has a copying file:
+      - `LIC_FILES_CHKSUM = "file://COPYING;md5=xxx"`
+
 
 ##  8. <a name='V047-RecipeConfigureStage'></a>V047 - Recipe Configure Stage
+**STAGE 4:**:  `do_configure`
+- It provides a wa of setting build-time configuration options before compilation.
+  - This is done running configure scripts with options, or modifying a build configuration file.
+    - `Autotools`: `configure.ac` configuration file
+    - `CMake`: `CMakeLists.txt` configuration file
+    - Otherwise, it is necessary to provide a `do_configure` task in your recipe unless there is nothing to configure.
 
 ##  9. <a name='V048-RecipeCompileInstallandPackageStage'></a>V048 - Recipe Compile, Install and Package Stage
+
+**STAGE 5:**:  `do_compile`
+- `do_compile` task happens after source is fetched, unpacked and configured.
+
+
+**STAGE 6:**:  `do_install`
+- After compilation completes , BitBakes executes the `do_install` task
+- All the built files with their hierarchy are copied to location that will mirror their locations on the target device,
+
+**STAGE 7:**:  `do_package`
+- This tasks splits the files produced by the recipe into logical components and package it correctly.
+  - Even SW that produces a single binary still have debug symbols, docuentation and other logical components that should be split out.
+  
