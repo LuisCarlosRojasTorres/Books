@@ -21,7 +21,11 @@
   - e.g., `wic`, `iso` etc
 - To know which classes are supported by an image:
   - `$ bitbake -e <NameOfImage> | grep ^IMAGE_FSTYPES=`
-  - 
+- **WARNING!!** Each image can have different FSTYPES!!
+  - qemux: `ext4`
+  - genericx86-64 `wic`
+
+
 ##  3. <a name='V036-Createyourownimagetype'></a> V036 - Create your own image type
 - This is done using inheritance from `image_types`
 - It has to define a function named `IMAGE_CMD_<type>`
