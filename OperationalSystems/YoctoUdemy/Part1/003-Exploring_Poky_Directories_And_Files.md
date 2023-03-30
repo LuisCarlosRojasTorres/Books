@@ -44,6 +44,8 @@
     - `bblayers.conf`:
       - tells bitbake what layers have to be included in the build
       - It can ba added new layers (manually) in the `BBLAYERS` variable
+
+
 ##  3. <a name='V032BB_NUMBER_THREADS'></a>V032 BB_NUMBER_THREADS
 - It determines the number of tasks that **bitbake will perform in parallel**.
 - Default: number of CPUs on the system.
@@ -68,6 +70,7 @@
 - `tmp` holds all the build system output
   - Images are present here `tmp/deploy/images/machine`
 - `cache` used by the bitbake's parser
+- 
 ##  7. <a name='V036BuildWorkflow'></a>V036 Build Workflow
 1. Developers specify architecture, policies, patcvhes and configuration details
 2. The build system:
@@ -94,6 +97,8 @@
 - Disadvantage: Difficult to debug while build fails of any recipe.
 - For example, if you want to exlude bitbake deleting source code of a particular package, you can add it in `RM_WORK_EXLUDE += "recipe-name"`
   - e.g., `RM_WORK_EXCLUDE += "core-image-minimal"`
+
+
 ##  10. <a name='V039Challenge'></a>V039 Challenge
 - Nothing
 

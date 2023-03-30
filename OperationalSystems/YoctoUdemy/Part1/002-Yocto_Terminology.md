@@ -59,6 +59,7 @@
 - It has extension `.bbclass`
 - They are usually placed in `classes` directory inside the `meta*` directory.
 - Some examples are given:
+  - `core-image.bbclass`: inherit by `core-image-base` and `core-image-minimal`.
   - `cmake.bbclass`: handles cmake in recipes.
   - `kernel.bbclass`: handles building kernels. Contains code to build  all kernel trees.
   - `module.bbclass`: provides support for building out-of-tree linux kernal modules.

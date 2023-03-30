@@ -61,7 +61,7 @@ Steps:
 
 ##  7. <a name='V067FlashYoctoImageusingwicutility'></a>V067 Flash Yocto Image using wic utility
 - `wic` images are SD card images and can be directly written into sd-card
-  - `core-image-minimal-beaglebone,wic,xz` is compressed wic image.
+  - `core-image-minimal-beaglebone.wic.xz` is compressed wic image.
 - It can be uncompressed using the `unxz` utility
   - `unxz core-image-minimal-beaglebone.wic.xz`
   - `ls -lh core-image-minimal-beaglebone.wic`
