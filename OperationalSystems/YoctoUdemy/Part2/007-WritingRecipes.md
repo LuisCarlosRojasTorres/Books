@@ -134,13 +134,7 @@ Stage 5: `bitbake myhello`
 - 
 
 ##  8. <a name='V056-AddingRecipetoImageRootFileSystem'></a>V056 - Adding Recipe to Image Root FileSystem
-
-- `sysroot`:
-  - contain neended headers and libraries for generating binaries that run on the target architecture
-- `recipe-sysroot-native`: 
-  - includes the build dependencies used in the host system during the build process.
-  - it is critical to the cross-compilation process because it encompasses the compiler, linker, build script tools and more.
-- `recipe-sysroot`: the libraries and headers used in the target code
+- You shall manually add the recipe to the image using `IMAGE_INSTALL_append` : 
 
 ``` console
 require recipes-core/images/core-image-minimal.bb
@@ -153,3 +147,10 @@ IMAGE_NAME = "myimage"
 ## Here it is added the recipe
 IMAGE_INSTALL_append = "myhello"
 ```
+Then:
+- `bitbake <ImageName>`
+- `runqemu`
+- in root `ls /usr/bin/userprog`
+  - if the directory exist, the compilation was successful
+- use `userprog` to call the program
+
