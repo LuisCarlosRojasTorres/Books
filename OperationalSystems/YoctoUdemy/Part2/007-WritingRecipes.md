@@ -38,7 +38,7 @@ Stage 4: Create a recipe file called `myhello_0.1.bb` with the following content
   - To calculatethe `md5` use `md5sum`, for example:
     - `md5sum MIT`: ` `
     - `md5sum ADSL`: `7ddd727dfd24eb311bcc7f5fd1f8ff67`
-
+  - `do_install`: copy the compiled program in the `rootfs`
 ``` console
 DESCRIPTION = Dummy description
 LICENSE = "MIT"
@@ -59,9 +59,18 @@ do_install(){
 
 Stage 5: `bitbake myhello`
 
+- NOTE: What is `S` and `D`
+  - `S`: The location in the Build Directory where unpacked recipe source code resides. By default, this directory is `${WORKDIR}/${BPN}-${PV}`, where `${BPN}` is the base recipe name and `${PV}` is the recipe version.
+  - `D`: The destination directory. The location in the Build Directory where components are installed by the `do_install` task. This location defaults to `${WORKDIR}/image`
+
 ##  2. <a name='V050-InstallKeyword'></a>V050 - Install Keyword
 - `install` not only copy files but also changes its ownership and permissions and optionally removes debugging symbols from executables.
   - It is a combination of: `cp`, `chown`, `chmod` and `strip`
+    - `cp`:
+    - `chown`: used to change the file Owner or group. Whenever you want to change ownership you can use chown command. 
+    - `chmod`: used to change the access mode of a file.
+    - `strip`: GNU strip discards all symbols from object files `objfile`.  
+      - `strip` modifies the files named in its argument, rather than writing modified copies under different names.
 
 
 ##  3. <a name='V051-WORKDIR'></a>V051 - WORKDIR
@@ -90,13 +99,39 @@ Stage 5: `bitbake myhello`
     - e.g., `bitbake -e myhello | grep ^WORKDIR=` 
       - output: `WORKDIR="/home/.../tmp/work/core2-64-poky-linux/myhello/0.1-r0"`
       - it can be compared with the format presented in previous section `{TMPDIR}/work/${MULTIMACH_TARGET_SYS}/${PN}/${EXTENDPE}${PV}-${PR}`
+- To see the list of task that will be performed for a given recipe:
+  - `bitbake -c listtasks <RecipeName>`
+
 
 ##  5. <a name='V053-ExploringWORKDIR'></a>V053 - Exploring WORKDIR
-- Lets say we are in `/home/.../tmp/work/core2-64-poky-linux/myhello/0.1-r0` folder from previous section
+- After `bitbake myhello` the compiled files are located in `WORKDIR`
+- Lets say that `WORKDIR` is `/home/.../tmp/work/core2-64-poky-linux/myhello/0.1-r0` folder from previous section
   - There are many folders and also the `userprog.c` and `userprog` files
-##  6. <a name='V054-RecipeBuildindeep'></a>V054 - Recipe Build in deep
 
+
+##  6. <a name='V054-RecipeBuildindeep'></a>V054 - Recipe Build in deep
+- `bitbake <RecipeName>` in steps:
+  - `bitbake -c fetch <RecipeName>`: creates the order tasks and logs
+    - `run.do_fetch`: script 
+  - `bitbake -c unpack <RecipeName>`: files are copied to the working directory e.g. `userprog.c` file
+  - `bitbake -c configure <RecipeName>`: TO BE CONTINUED in the following section
 ##  7. <a name='V055-RecipeBuildindeep2'></a>V055 - Recipe Build in deep 2
+- `bitbake -c configure <RecipeName>`: creates two recipes `recipe-sysroot` and `recipe-sysroot-native`
+- But what is `sysroot`:
+  - `recipe-sysroot-native`: includes the build **dependencies used in the host system** during the build process.
+    - It is critical to the cross-compilation process because it encompasses the compiler, linker, build script tools and more.
+  - `recipe-sysroot`: the libraries and headers used in the **target code**.
+- `bitbake -c compile <RecipeName>`: generates the `userprog` which is the `userprog.c` compiled program
+  - BB invoke the C cross-compiler for compiling the `userprog.c` source file.
+  - The results of the compilation will be in the folder pointed by the `B` environment variable i.e. in most cases the `S` folder
+- `bitbake -c install <RecipeName>`: creates the tree folder `image/usr/bin/userprog` the `bindir` (from V049). It also gives the permissions which can be seen using `ls iamge/usr/bin/userprog -al` (it will return `-rwxr-xr-x`)
+  - it specifies where the `userprog` binary should be installed into the `rootfs`
+  - it must be noticed that his installation will only happen within a remporary `rootfs` folder within the recipe `WORKDIR`
+- `bitbake -c package <RecipeName>`: creates:
+  - a `package` folder with the tree folder `package/usr/bin/userprog`
+  - a `packages-split`: it contains the previous `package` plus debug package, documentation package etc.
+- The last steps are performed doing `bitbake <RecipeName>` which creates the `deploy-rpms`
+- 
 
 ##  8. <a name='V056-AddingRecipetoImageRootFileSystem'></a>V056 - Adding Recipe to Image Root FileSystem
 

@@ -28,6 +28,8 @@
    2. Other resolve as general configuration settings.
 2. So, the file looks at the contents of the `IMAGE_FEATURES` variable and then maps or configures the feature accordingly.
 3. Based on this information, the build system automatically adds the appropriate packages or configuratiions to the `IMAGE_INSTALL` variable.
+
+
 ##  3. <a name='V029-ExampleofImagefeatures'></a>V029 - Example of Image features
 - Lets say, we select the `SSH server`
   - Yocto Project has two SSH Servers: 
