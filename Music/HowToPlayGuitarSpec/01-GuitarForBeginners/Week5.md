@@ -100,9 +100,15 @@
 ###  2.1. <a name='BarreChords'></a>Barre Chords
 - They are movable
 - They use the first finger as a CAPO
+- E Major open position + bar : F, G, A
+- A Major open position + bar : B, C
+- E minor open position + bar : Fm, Gm, Am
+- A minor open position + bar : Bm, Cm
+
 
 ###  2.2. <a name='PowerChords-1'></a>Power Chords
-
+- root5: A root note + 5th
+  - C5: C G
 ###  2.3. <a name='ReadingChordCharts'></a>Reading Chord Charts
 
 ##  3. <a name='PlayingChords'></a>Playing Chords
