@@ -19,12 +19,43 @@
 ##  1. <a name='PentatonicScale'></a>Pentatonic Scale
 
 ###  1.1. <a name='WhatisthePentatonicScale'></a>What is the Pentatonic Scale
+- Major Pentatonic: 1 2 3 5 6
+  - It essentially captures the major scale.
+  - For C Major pentatonic: C D E G A
+    - If we play this scale starting with A : A C D E G A
+    - A C D E G is the relative minor pentatonic of C:  1 3b 4 5 7b
+- G major pentatonic
+  - 6: 3 5
+  - 5: 2 5
+  - 4: 2 5
+  - 3: 2 4
+  - 2: 3 5 
+  - 1: 3
+- G major pentatonic
+  - 6: 3 6
+  - 5: 3 5
+  - 4: 3 5
+  - 3: 3 5
+  - 2: 3 6 
+  - 1: 3
+
 
 ###  1.2. <a name='SoloingwiththePentatonic'></a>Soloing with the Pentatonic
-
+- It is just about having fun.
 ##  2. <a name='EssentialElectricGuitarEffects'></a>Essential Electric Guitar Effects 
 
 ###  2.1. <a name='EssentialElectricGuitarEffectsandAmplification'></a>Essential Electric Guitar Effects and Amplification
+- Overdrive: very crunchy, lots of sustain.
+  - For power chords
+  - Popular in pop and rock music
+  - For soloing
+- Chorus pedal: sounds like more than one guitar.
+  - Turn prettier when playing chords
+  - Helps when playing a simple pretty rhythm part
+- Wha wha: vocalize sounds
+  - For soloing 
+  - Also for rhythm sound (funk)
+
 
 ##  3. <a name='Songs'></a>Songs
 
