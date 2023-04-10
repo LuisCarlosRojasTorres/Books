@@ -92,8 +92,11 @@
   - 3: `R`(7)
   - 2: `b3`(6)
   - 1: `5`(4)
+
+
 ###  1.7. <a name='PracticingDiminishedArpeggios'></a>Practicing Diminished Arpeggios
 ![Table of Progress](/Music/HowToPlayGuitarSpec/02-GuitarScalesAndChordProgressions/uploads/W2-03.PNG)
+
 ###  1.8. <a name='AugmentedArpeggios'></a>Augmented Arpeggios 
 You have a major third between the root and the third, and a major third between the third and the fifths sharp.
 - They are Major chords
@@ -113,9 +116,11 @@ You have a major third between the root and the third, and a major third between
   - 3: `R`(7)
   - 2: `3`(7)
   - 1: `5`(6)
-  - 
+ 
 ###  1.9. <a name='PracticingAugmentedArpeggios'></a>Practicing Augmented Arpeggios 
 ![Table of Progress](/Music/HowToPlayGuitarSpec/02-GuitarScalesAndChordProgressions/uploads/W2-04.PNG)
+
+
 ###  1.10. <a name='Puttingalltogether'></a>Putting all together
 - Using ONLY the notes of a `x` major scale. Lets say `C`:
   - `C major triad`: C E G
