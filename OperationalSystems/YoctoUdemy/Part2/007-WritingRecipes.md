@@ -39,7 +39,10 @@ Stage 4: Create a recipe file called `myhello_0.1.bb` with the following content
     - `md5sum MIT`: ` `
     - `md5sum ADSL`: `7ddd727dfd24eb311bcc7f5fd1f8ff67`
   - `do_install`: copy the compiled program in the `rootfs`
-``` console
+
+
+``` shell
+
 DESCRIPTION = Dummy description
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -136,7 +139,7 @@ Stage 5: `bitbake myhello`
 ##  8. <a name='V056-AddingRecipetoImageRootFileSystem'></a>V056 - Adding Recipe to Image Root FileSystem
 - You shall manually add the recipe to the image using `IMAGE_INSTALL_append` : 
 
-``` console
+``` shell
 require recipes-core/images/core-image-minimal.bb
 IMAGE_INSTALL_append += "usbutils"
 
@@ -145,7 +148,7 @@ IMAGE_FEATURES = "ssh-server-dropbear debug-tweaks read-only-rootfs splash tools
 IMAGE_NAME = "myimage"
 
 ## Here it is added the recipe
-IMAGE_INSTALL_append = "myhello"
+IMAGE_INSTALL_append = " myhello"
 ```
 Then:
 - `bitbake <ImageName>`
@@ -154,3 +157,45 @@ Then:
   - if the directory exist, the compilation was successful
 - use `userprog` to call the program
 
+
+## Cpp Recipe
+- The process to compile a recipe in Cpp is similar to a C program.
+  - The only difference is in the recipe as showed below.
+
+- File:
+
+
+``` cpp
+// testCpp.cpp
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Hello Yoctoba "<< endl;
+    return 0;
+}
+```
+
+- Recipe:
+ 
+``` shell
+DESCRIPTION = "Recipe for testCpp.cpp"
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+
+SRC_URI = "file://testCpp.cpp"
+
+S = "${WORKDIR}"
+
+do_compile() {
+   ${CXX} ${LDFLAGS} testCpp.cpp -o testCpp
+}
+
+do_install() {
+   install -d ${D}${bindir}
+   install -m 0755 testCpp ${D}${bindir}
+}
+
+```
