@@ -25,6 +25,10 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
+- To automate taks that are needed regularly.
+- Shell scripts are the equivalent of batch files in Windows
+- The default in linux is **B**ourne **A**gain **Sh**ell aka `bash`
+
 
 ##  1. <a name='ExecutingandDebuggingshellscripts'></a>Executing and Debugging shell scripts
 
