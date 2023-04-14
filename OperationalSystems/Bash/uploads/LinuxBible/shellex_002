@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Shell Example 002"
+VARIABLE01=481988
+echo "Variable01 is $VARIABLE01"

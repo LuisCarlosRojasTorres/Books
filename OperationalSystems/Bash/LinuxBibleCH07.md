@@ -31,7 +31,16 @@
 
 
 ##  1. <a name='ExecutingandDebuggingshellscripts'></a>Executing and Debugging shell scripts
+- It can be opened in any text editors.
+- Comments starts with `#`
+- Fist line in a shell file is `#!/bin/bash`
 
+``` shell
+#! /bin/bash
+
+echo "Shell Example 001"
+```
+- To execute a shell file such as `shellex_001` write the following command in `Terminal`: `bash shellex_001`
 ##  2. <a name='Understandingshellvariables'></a>Understanding shell variables
 
 ###  2.1. <a name='Specialshellpositionalparameters'></a> Special shell positional parameters
