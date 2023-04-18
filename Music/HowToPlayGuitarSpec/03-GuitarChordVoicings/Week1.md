@@ -43,7 +43,11 @@
 - Time and tone are not optional
 
 ###  2.3. <a name='TriadInversionsUptheFretboard'></a>Triad Inversions Up the Fretboard
-- For a major chord: ''
+- For a major chord: `1 3 5`
+  - First inversion: `3 5 1`
+  - Second inversion: `5 1 3 `
+- Example: take the  `C F Bb Eb` at their lowest place in no open position and practice [tabs here](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/P1%20-%20C%20F%20Bb%20Eb.pdf)
+  - Then use `G D A E` [tabs here](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/P2%20-%20G%20D%20A%20E.pdf)
 
 ###  2.4. <a name='MajorTriadInversionsUptheFretboard'></a> Reading - Major Triad Inversions Up the Fretboard
 
@@ -84,11 +88,17 @@ On the top string set 3-2-1, root position C triad is playable in third position
 ![](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/005.png)
 
 ###  2.5. <a name='MinorTriadInversionsUptheFretboardI'></a>Minor Triad Inversions Up the Fretboard I
+- From previous section we know that shapes for `135`, `351` and `513`, now it only about to use a `3b` instead of `3`, so the note is diminished 1 fret.
+  - For the exercise using the 1st 2nd and 3rd string is trivial.
+  - [tabs here](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/P3%20-%20Cm%20Fm%20Bbm%20Ebm.pdf)
 
 ###  2.6. <a name='MinorTriadInversionsUptheFretboardII'></a>Minor Triad Inversions Up the Fretboard II
+- [tabs here](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/P4%20-%20Gm%20Dm%20Am%20Em.pdf)
 
-###  2.7. <a name='TriadInversionsAcrosstheFretboard'></a> Reading - Triad Inversions Across the Fretboard
-
+###  2.7. <a name='TriadInversionsAcrosstheFretboard'></a> Triad Inversions Across the Fretboard
+- [tabs here](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/P5-Major%20Inversion%20across%20the%20fretboard.pdf)
+- [tabs here](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/P6-Minor%20Inversion%20across%20the%20fretboard.pdf)
+  
 ###  2.8. <a name='ReadingTriadInversionsAcrosstheFretboard'></a> Reading - Triad Inversions Across the Fretboard
 
 **Triad Inversions Across the Fretboard**
@@ -125,3 +135,14 @@ It's helpful to see all of the permutations on the fretboard, but be careful. If
 If you feel tension in your hand, shake it out, hanging your hand at your side, and try again.
 
 ##  3. <a name='PlayinTriadsalongtheFretboard'></a>Playin Triads along the Fretboard
+For your first project, you will be recording yourself playing through this Major/Minor Triad Inversion exercise. Next, you'll share a link of your recording below so that your peers may provide you with feedback. Finally, you will complete a self-assessment using the rubric.
+
+Your recording should:
+
+1. be recorded over the provided backing track
+
+2. demonstrate good tone and good timing
+
+3. use proper left hand technique to present each triad clearly, playing each individual note at the same time
+
+[Project](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/Project1.pdf)
