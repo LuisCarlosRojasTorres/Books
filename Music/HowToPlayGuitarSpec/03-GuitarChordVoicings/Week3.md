@@ -15,7 +15,7 @@
 <!-- /vscode-markdown-toc -->
 
 ##  1. <a name='SeventhChordsDrop2'></a>Seventh Chords Drop2
-
+A seventh chord is `1 3 5 7`
 ###  1.1. <a name='Lesson3Overview'></a>Lesson 3 Overview
 
 ###  1.2. <a name='Drop2Voicing-FourAdjacentStrings'></a>Drop2 Voicing - Four Adjacent Strings
