@@ -13,7 +13,10 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
+References:
+- Método Paulinho Nogueira para violão e outros instrumentos de harmonia
+- Nelson Faria for lecture and chords
+  
 ##  1. <a name='SeventhChordsDrop2'></a>Seventh Chords Drop2
 A seventh chord is `1 3 5 7`
 ###  1.1. <a name='Lesson3Overview'></a>Lesson 3 Overview
