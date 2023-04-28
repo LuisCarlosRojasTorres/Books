@@ -9,7 +9,7 @@
 8. El deber de una persona que se considera buena, es reconocer a otra persona buena y ayudarla en la medida de lo posible. Si no lo hace, no es una persona buena.
 9. El destino, es el grial del valiente y la excusa del debil.
 10. El cuento de la liebre y la tortuga es muy esclarecedor, la liebre es talento, inconstancia e indisciplina, la tortuga trabajo duro, constancia y disciplina. Esto funciona en las ligas menores, en las ligas mayores las liebres son talento, trabajo duro, constancia y disciplina.
-11. El problema de nuestra, la pasada y la proxima generación es que creen que en muy poco tiempo pueden ganarle a alguien que le ha dedicado años a un asunto. A esto le llamo el efecto **DISNEY**. Aver... métete a pelear en la UFC con un fin de semana de Muay Thai.
+11. El problema de nuestra, la pasada y la proxima generación es que creen que en muy poco tiempo pueden ganarle a alguien que le ha dedicado años a un asunto. A esto le llamo el efecto **DISNEY**. Aver... métete a pelear en la UFC con un workshop de fin de semana en Muay Thai.
 12. En la era de la información ser ignorante no es una falta... es un crimen.
 13. El papel de los medios de información es transmitir la idea de quien le está pagando. 
 14. La experiencia es la mejor maestra, pero la mayoria de la gente es demasiado estupida para aprender de ella.
@@ -24,7 +24,8 @@
 23. El ajedrez nos enseña que una victoria es consequencka de multilples movimientos muy bien pensados y conectados unos con otros, y no de una sola jugada.
 24. La mejor forma de facilitar el mañana es esforzandose hoy.
 25. Procura que tu siguiente paso sea apoyado en los pasos anteriores, esto facilitara las cosas
-26. Ese tipo de actitudes es sintoma común en pessoas excesso o falta de masturbación
+26. Ese tipo de actitudes es sintoma común en pessoas com excesso o falta de masturbación
 27. Existen 3 tipos de personas, las que no vieron *Mente Brillante* y las que la vieron. Ah y las terceras que son las que después de la película fueron a buscar el árticulo `Non-cooperative Games` que publicó Nash, no importa si lo entendieron o no.  
 28. É muito dificil fazer valer a opinião pessoal, devido a lutas de ego, diferencias pessoais etc... Por isso quando falo uma coisa cito a um autor, um personagem ou um especialista na área conhecido. É facil... demasiado facil falar "Luis vc ta errado"... mas pago pra ver alguem dizer "Einstein, Julio César, Napoleão, ou qualquer um do mesmo nivel estar errado"
 29. Como esperas ganarle a los chinos no trabajando igual de duro? a los alemanes no planificando como ellos o a los japoneses no siendo disciplinado? No se puede.
+30. Proletario querer se comparar com o dono da empresa é como a Pvta querer se comparar com o caf3t4o só pq os dois trabalham no pvt3iro
