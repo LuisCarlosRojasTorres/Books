@@ -56,5 +56,12 @@ References:
 - [L03_Drop2Drill-1.pdf](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W3/L03_Drop2Drill-1.pdf)
 - [L03_Drop2Drill-2.pdf](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W3/L03_Drop2Drill-2.pdf)
 ###  1.6. <a name='Drop2ChordQualities'></a>Drop2 Chord Qualities
-
+- Based on Major scale 3rd and 5th share the same string, so a solution is take the 3rd one octave higher.
+- Now, this formula will really help you a lot, like a C7 sus four C, F, it's hard to reach that one, G, B flat. So I take the f and put it up an octave within reach and where my fingers are and this becomes this and gives us a C7 sus
 ##  2. <a name='PracticeDrop2Voicing'></a>Practice Drop2 Voicing
+
+- [pdf1](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W3/L03_Project3_Ex.1.pdf)
+- [backing track1](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W3/L03_Project3_Ex1_Backing-Track.mp3)
+
+- [pdf2](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W3/L03_Project3_Ex.2.pdf)
+- [backing track2](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W3/L03_Project3_Ex2_Backing-Track.mp3)
