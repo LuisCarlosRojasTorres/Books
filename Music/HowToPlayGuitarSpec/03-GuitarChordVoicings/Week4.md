@@ -75,6 +75,8 @@ The most important notes of any seventh chord are its “guide tones,” the cho
 ###  1.7. <a name='Sub-FiveDominantChordSubstitutions'></a>Sub-Five Dominant Chord Substitutions
 - Here are sub-five dominant chord substitutions, presented in all 12 keys.
 ![](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W4/008.png)
+
+
 ###  1.8. <a name='GospelChords'></a>Gospel Chords
 - The C Major and D minor triads together contains `C`, `D`,`E`,`F`,`G`, and `A`. 
   - This is called `The Gospel Scale`
@@ -86,3 +88,9 @@ The most important notes of any seventh chord are its “guide tones,” the cho
 ###  1.9. <a name='ChordsSubstitutionsDiatonicChordsGospelTriads'></a>Chords Substitutions, Diatonic Chords, Gospel Triads
 
 ##  2. <a name='GospelChordsEtude'></a>Gospel Chords Etude
+
+![Tablature pdf](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W4/L04_Gospel-Triads-Etude.pdf)
+
+![Backing Track](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W4/L04_Gospel_Backing-Track.mp3)
+
+[Example of Performance](/Music/HowToPlayGuitarSpec/03-GuitarChordVoicings/uploads/W4/L04_Gospel_Example.mp3)
