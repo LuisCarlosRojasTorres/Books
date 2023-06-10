@@ -7,8 +7,6 @@ pip install pyspark
 ### PySpark Dataframes
 min 15:35
 
-###
-
 ## Reference
 
 
