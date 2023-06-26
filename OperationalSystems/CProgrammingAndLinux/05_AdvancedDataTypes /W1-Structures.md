@@ -113,7 +113,7 @@ void printStudent(struct student stud){
 	printf("Average grade: %.2lf\n",stud.aveGrade);
 }
 ```
--Another example
+- Pass structures to functions with pointers
 ``` c
 #include <stdio.h>
 
@@ -151,14 +151,17 @@ void printStudent(struct student stud) {
 	printf("Average grade: %.2lf\n",stud.aveGrade);
 }
 ```
-###  3.1. <a name='Exercise-1'></a>Exercise
-``` c
-```
+
 ##  4. <a name='Workwithstructures'></a>Work with structures
+- Access and modify structure’s members with the arrow operator
 ``` c
 
 ```
+- Get the size of a structure in memory
+``` c
 
+```
 ###  4.1. <a name='Exercise-1'></a>Exercise
+-
 ``` c
 ```
