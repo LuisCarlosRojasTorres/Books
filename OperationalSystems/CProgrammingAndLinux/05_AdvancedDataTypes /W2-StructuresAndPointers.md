@@ -139,12 +139,165 @@ triangle[1].x = 9;
 (triangle+1)->y = 5;  // Both are similar
 ```
 ##  2. <a name='Allocatememoryforstructures'></a>Allocate memory for structures
+- How to dynamically allocate in memory an array of structures
+- From the code of the previous section, now we implement a polygon of `num` vertices. 
+  - Because wo dont know how many vertices the polygon will have, the polygon has to be allocated in runtime.
+- We use `malloc` to reserve a space in memory of `num*sizeof(struct point)`
+  - Remember `malloc` returns a pointer to the beggining of the memory adress array
+  - `malloc` belongs to `stdlib`
+
+``` c
+#include <stdio.h>
+#include <stdlib.h>
+struct point{
+    int x;
+    int y;
+};
+void printPoint(struct point pt);
+void readPoint(struct point * ptr);
+void printPoly(struct point *ptr, int vertices);
+int main(void) {
+    //! showMemory(start=65520)
+    struct point * polygon;
+    int i, num;
+    printf("How many vertices does your polygon have? ");
+    scanf("%d", &num);
+    polygon = (struct point *) malloc(num * sizeof(struct point));
+    for (i=0; i<num; i++){
+        readPoint(&polygon[i]);
+    }
+    printPoly(polygon, num);
+    free(polygon); // DONT FORGET this
+	return 0;
+}
+
+void readPoint(struct point * ptr) {
+    printf("\nEnter a new point: \n");
+    printf("x-coordinate: ");
+    scanf("%d", &ptr->x);
+    printf("y-coordinate: ");
+    scanf("%d", &ptr->y);
+}
+
+void printPoly(struct point *ptr, int vertices) {
+    int i;
+    for (i=0; i<vertices; i++) {
+        printPoint(ptr[i]);
+    }
+}
+
+void printPoint(struct point pt){
+    printf("(%d, %d)\n", pt.x, pt.y);
+}
+```
+- When running: 
+  - `polygon` from `FF FC` to `FF FF`
+  - `i` from `FF F8` to `FF FB`
+  - `num` from `FF F4` to `FF F7`
+  - But where is the `array`? Well it is on the `heap`, and `polygon` has the address of this array as its value `01 76` i.e `0x176`
+    ![Alt text](image-5.png)
+
+    - ``
 
 ###  2.1. <a name='Exercise-1'></a>Exercise
+- In this task, we will continue to work with polygons. You are provided with the following:
+  - A familiar structure definition for a 2-dimensional point.
+  - Two familiar functions and their prototypes, "printPoint()" and "printPoly()".
+  - A prototype for "initializePoly()", a function that you must write.
+  - An empty main function which you must complete.
+- Please do not alter the provided code (except to fill in the main function and add your initializePoly() function).
+initializePoly() should receive as input a pointer to the first structure in an array of structures as well as an integer, indicating how many points can be stored in the array. Your job is to initialize these points in the following way: Using a for loop with i starting at 0, initialize the x-coordinate of the point at index i as -i, and the y-coordinate as i*i.
+- Your main function should read the number of vertices to store in the array of points from the user, then allocate the appropriate amount of memory, initialize the array with the function initializePoly, and finally print the vertices of the polygon using the function printPoly().
+
+
 ``` c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct point{
+	int x;
+	int y;
+};
+
+void printPoint(struct point);
+void printPoly(struct point *, int);
+void initializePoly(struct point *, int);
+void readPoint(struct point * ptr, int);
+
+int main(void) {
+    struct point *polygon;
+    int num;
+    scanf("%d", &num);
+    polygon = (struct point *) malloc(num * sizeof(struct point));
+    
+    initializePoly(polygon, num);
+    printPoly(polygon,num);
+    
+    free(polygon);
+
+}
+
+void printPoint(struct point pt) {
+    printf("(%d, %d)\n", pt.x, pt.y);
+}
+
+void printPoly(struct point *ptr, int N) {
+    int i;
+    for (i=0; i<N; i++) {
+        printPoint(ptr[i]);
+    }
+}
+
+// Write your initializePoly() function here
+void initializePoly(struct point *polygon, int num){
+    int i;
+    for (i=0; i<num; i++){
+        readPoint(&polygon[i],i);
+    }
+}
+
+void readPoint(struct point * ptr, int i) {
+    
+    ptr->x = -1 * i;
+    ptr->y = i*i;
+}
 ```
 ##  3. <a name='Gettoknowtheconceptofalinkedlist'></a>Get to know the concept of a linked list
+- Link structures together in a linked list
 
+``` c
+#include <stdio.h>
+
+struct point{
+    int x;
+    int y;
+    struct point * next;
+};
+
+int main(void) {
+    //! showMemory(start=65520)
+    struct point pt1 = {1, 2, NULL};
+    struct point pt2 = {-2, 3, NULL};
+    struct point pt3 = {5, -4, NULL};
+    struct point * start, * ptr;
+    
+    start = &pt1;
+    pt1.next = &pt2;
+    pt2.next = &pt3;
+    
+    ptr = start;
+    while (ptr!=NULL) {
+        printf("(%d, %d)\n", ptr->x, ptr->y);
+        ptr = ptr->next;
+    }
+	return 0;
+}
+
+```
+- Print a linked list
+- Append a new nodes to a linked list
+- Delete a linked list
+- 
 ###  3.1. <a name='Exercise-1'></a>Exercise
 ``` c
 ```
