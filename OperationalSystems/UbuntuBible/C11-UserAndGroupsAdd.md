@@ -52,29 +52,37 @@ default values and command-line parameters.
 - Altering a default value is as simple as editing the value associated with a keyword and saving the file before running the `adduser` command.
 
 ###  1.3. <a name='Modifyinguserswithusermod'></a>Modifying users with usermod
-
+- `usermod` changes account parameters. It has the follwing options:
+  - `-c <userName>`: Change the description associated with the user account.
+    - Use `" "` multiple words     
+  - `-d <home_dir>`: change the home directory to use for the account
+  - `-e <expire_date>`: change the home directory to use for the account 
+  - `-g <groupName>`: change the primary group e.g. `-g sudo
+  - `-G <GroupList>`: Set the user’s secondary groups to the supplied comma-separated list of groups. If the user is already in at least one group besides the user’s private group, you must add the `-a` option as well (`-Ga`). If not, the user belongs to only the new set of groups and loses membership to any previous groups.
+    - e.g. `usermod -Ga app_users, temporal, LBloOd`
+  - `-s <shell>`: specify a different command sell to use for this account. e.g. `-s bash`
+  - `-u <user-id>`: change the userID number for the account. e.g.  `-u 6969`
+    
 ###  1.4. <a name='Deletinguserswithdeluser'></a>Deleting users with deluser
+- To delete the user and its home directory:
+  - `deluser --remove-home LBloOd`
+- To dele only the account:
+  - `deluser LBloOd`
 
 ##  2. <a name='UnderstandingGroupAccounts'></a>Understanding Group Accounts
+- Groups are useful if you want to share a set of files with multiple users. You can create a group and configure the set of files to be associated with that group
+- Only `root` user can assign users to groups.
 
 ###  2.1. <a name='Usinggroupaccounts'></a>Using group accounts
+- Every user is assigned to a primary group. In Ubuntu, by default, that group is a new group
+with the same name as the user.
+- The primary group is indicated by the number in the third field of each entry in the `/etc/passwd` file;
+- Let’s turn to the `LBloOd` user and group accounts for examples. Here are a few facts about using groups:
+  - When `LBloOd` creates a file or directory, by default, that file or directory is assigned to `LBloOd`’s primary group (also called `LBloOd`).
+  - The user `LBloOd` can’t add herself to a supplementary group. She can’t even add another user to her `LBloOd` group. Only someone with `root` privilege can assign users to groups.
+
 
 ###  2.2. <a name='Creatinggroupaccounts'></a>Creating group accounts
-
-##  3. <a name='ManagingUsersintheEnterprise'></a>Managing Users in the Enterprise
-
-###  3.1. <a name='SettingpermissionswithAccessControlLists'></a>Setting permissions with Access Control Lists
-
-####  3.1.1. <a name='SettingACLswithsetfacl'></a>Setting ACLs with setfacl
-
-####  3.1.2. <a name='SettingdefaultACLs'></a>Setting default ACLs
-
-####  3.1.3. <a name='EnablingACLs'></a>Enabling ACLs
-
-####  3.1.4. <a name='Addingdirectoriesforuserstocollaborate'></a>Adding directories for users to collaborate
-
-####  3.1.5. <a name='CreatinggroupcollaborationdirectoriessetGIDbit'></a>Creating group collaboration directories (set GID bit)
-
-####  3.1.6. <a name='Creatingrestricteddeletiondirectoriesstickybit'></a>Creating restricted deletion directories (sticky bit)
-
-##  4. <a name='CentralizingUserAccounts'></a>Centralizing User Accounts
+- A `root` user, can create new groups from the command line with the `addgroup` command.
+  - e.g. `addgroup players` : Players groups is created with the next available `groupID`
+  - e.g. `addgroup --gid 1234 players`: Players groups is created with the `groupID` 1234.
