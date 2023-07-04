@@ -295,9 +295,22 @@ int main(void) {
 
 ```
 - Print a linked list
+
+``` c
+
+```
 - Append a new nodes to a linked list
+
+``` c
+
+```
+
 - Delete a linked list
-- 
+
+``` c
+
+```
+  
 ###  3.1. <a name='Exercise-1'></a>Exercise
 ``` c
 ```
