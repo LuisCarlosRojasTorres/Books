@@ -279,7 +279,8 @@ int main(void) {
     struct point pt1 = {1, 2, NULL};
     struct point pt2 = {-2, 3, NULL};
     struct point pt3 = {5, -4, NULL};
-    struct point * start, * ptr;
+    struct point * start, 
+    struct point * ptr;
     
     start = &pt1;
     pt1.next = &pt2;
