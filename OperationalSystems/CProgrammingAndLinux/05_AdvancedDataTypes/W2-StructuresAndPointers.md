@@ -263,7 +263,8 @@ void readPoint(struct point * ptr, int i) {
 }
 ```
 ##  3. <a name='Gettoknowtheconceptofalinkedlist'></a>Get to know the concept of a linked list
-- Link structures together in a linked list
+
+### Link structures together in a linked list
 
 ``` c
 #include <stdio.h>
@@ -271,7 +272,8 @@ void readPoint(struct point * ptr, int i) {
 struct point{
     int x;
     int y;
-    struct point * next;
+    // A reference to the next element in the list
+    struct point * next; 
 };
 
 int main(void) {
@@ -293,20 +295,75 @@ int main(void) {
     }
 	return 0;
 }
-
 ```
-- Print a linked list
+
+- `point1` from `FF F4` to `FF FF`
+  - `.x`
+    - `FF F4`: `00`
+    - `FF F5`: `00`
+    - `FF F6`: `00`
+    - `FF F7`: `01`
+  - `.y`
+    - `FF F8`: `00`
+    - `FF F9`: `00`
+    - `FF FA`: `00`
+    - `FF FB`: `02`
+  - `.next`
+    - `FF FC`: `00`
+    - `FF FD`: `00`
+    - `FF FE`: `FF`
+    - `FF FF`: `E8`
+- `point2` from `FF E8` to `FF F3`
+  - `.x`
+    - `FF E8`: `FF`
+    - `FF E9`: `FF`
+    - `FF EA`: `FF`
+    - `FF EB`: `FE`
+  - `.y`
+    - `FF EC`: `00`
+    - `FF ED`: `00`
+    - `FF EE`: `00`
+    - `FF EF`: `03`
+  - `.next`
+    - `FF F0`: `00`
+    - `FF F1`: `00`
+    - `FF F2`: `FF`
+    - `FF F3`: `DC`
+- `point3` from `FF DC` to `FF E7`
+  - `.x`
+    - `FF DC`: `00`
+    - `FF DD`: `00`
+    - `FF DE`: `00`
+    - `FF DF`: `05`
+  - `.y`
+    - `FF E0`: `FF`
+    - `FF E1`: `FF`
+    - `FF E2`: `FF`
+    - `FF E3`: `FC`
+  - `.next`
+    - `FF E4`: `00`
+    - `FF E5`: `00`
+    - `FF E6`: `00`
+    - `FF E7`: `00`
+- `start` `00 00 FF F4`
+- `ptr`: it iterates taking the following values...
+  - `FF F4`
+  - `FF E8`
+  - `FF DC`
+
+
+### Print a linked list
 
 ``` c
 
 ```
-- Append a new nodes to a linked list
+### Append a new nodes to a linked list
 
 ``` c
 
 ```
 
-- Delete a linked list
+### Delete a linked list
 
 ``` c
 
