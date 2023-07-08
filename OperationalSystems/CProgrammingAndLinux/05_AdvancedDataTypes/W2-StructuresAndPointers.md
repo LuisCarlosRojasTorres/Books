@@ -355,20 +355,220 @@ int main(void) {
 ### Print a linked list
 
 ``` c
+#include <stdio.h>
 
+struct point{
+    int x;
+    int y;
+    struct point * next;
+};
+void printPoints(struct point *start);
+
+int main(void) {
+    //! showMemory(start=65520)
+    struct point pt1 = {1, 2, NULL};
+    struct point pt2 = {-2, 3, NULL};
+    struct point pt3 = {5, -4, NULL};
+    struct point * start;
+    
+    start = &pt1;
+    pt1.next = &pt2;
+    pt2.next = &pt3;
+    
+    printPoints(start);
+    
+	return 0;
+}
+
+void printPoints(struct point *start) {
+    //! showMemory(start = 65520, cursors=[ptr])
+    struct point * ptr;
+    ptr = start;
+    while (ptr!=NULL) {
+        printf("(%d, %d)\n", ptr->x, ptr->y);
+        ptr = ptr->next;
+    }
+}
 ```
+- When this code runs an additional  `start` function-scope variable is created:
+  - `start`: from `FFD4` to `FFD7`
+    - first iteration: `0xFFF4`
+    - second iteration: `0xFFE8`
+    - third iteration: `0xFFDC`
+
+
 ### Append a new nodes to a linked list
 
 ``` c
+#include <stdio.h>
 
+struct point{
+    int x;
+    int y;
+    struct point * next;
+};
+void printPoints(struct point *start);
+void append (struct point * end, struct point * newpt);
+int main(void) {
+    //! showMemory(start=65520)
+    struct point pt1 = {1, 2, NULL};
+    struct point pt2 = {-2, 3, NULL};
+    struct point pt3 = {5, -4, NULL};
+    struct point * start;
+    
+    start = &pt1;
+    append(&pt1, &pt2);
+    append(&pt2, &pt3);
+    
+    printPoints(start);
+    
+	return 0;
+}
+
+void printPoints(struct point *start) {
+    //! showMemory(start = 65520, cursors=[ptr])
+    struct point * ptr;
+    ptr = start;
+    while (ptr!=NULL) {
+        printf("(%d, %d)\n", ptr->x, ptr->y);
+        ptr = ptr->next;
+    }
+}
+
+void append (struct point * end, struct point * newpt) {
+    end->next = newpt;
+} 
 ```
+- Another way of implementation
 
+``` c
+#include <stdio.h>
+
+struct point{
+    int x;
+    int y;
+    struct point * next;
+};
+void printPoints(struct point *start);
+struct point * append (struct point * end, struct point * newpt);
+int main(void) {
+    //! showMemory(start=65520)
+    struct point pt1 = {1, 2, NULL};
+    struct point pt2 = {-2, 3, NULL};
+    struct point pt3 = {5, -4, NULL};
+    struct point * start, * end;
+    
+    start = end = &pt1;
+    end = append(end, &pt2);
+    end = append(end, &pt3);
+    
+    printPoints(start);
+    
+	return 0;
+}
+
+void printPoints(struct point *start) {
+    //! showMemory(start = 65520, cursors=[ptr])
+    struct point * ptr;
+    ptr = start;
+    while (ptr!=NULL) {
+        printf("(%d, %d)\n", ptr->x, ptr->y);
+        ptr = ptr->next;
+    }
+}
+
+struct point * append (struct point * end, struct point * newpt) {
+    end->next = newpt;
+    return(end->next);
+} 
+```
 ### Delete a linked list
 
 ``` c
+#include <stdio.h>
+#include <stdlib.h>
+struct point{
+    int x;
+    int y;
+    struct point * next;
+};
+void printPoints(struct point *start);
+struct point * createPoint(int x, int y) ;
+struct point * append (struct point * end, struct point * newpt);
+void freePoints(struct point * start);
 
+int main(void) {
+    //! showMemory(start=65520)
+    struct point * start, * end, * newpt;
+    int num, i;
+    int x, y;
+    
+    printf("How many points? ");
+    scanf("%d", &num);
+    for (i=0; i<num; i++) {
+        printf("x = ");
+        scanf("%d", &x);
+        printf("y = ");
+        scanf("%d", &y);
+        newpt = createPoint(x,y);
+        if (i==0) {
+            start = end = newpt;
+        } else {
+            end = append(end,newpt);
+        }
+    }
+    printf("You entered: ");
+    printPoints(start);
+    freePoints(start);
+	return 0;
+}
+
+void printPoints(struct point *start) {
+    //! showMemory(start = 65520, cursors=[ptr])
+    struct point * ptr;
+    ptr = start;
+    while (ptr!=NULL) {
+        printf("(%d, %d)\n", ptr->x, ptr->y);
+        ptr = ptr->next;
+    }
+}
+
+struct point * append (struct point * end, struct point * newpt) {
+    end->next = newpt;
+    return(end->next);
+} 
+
+struct point * createPoint(int x, int y) {
+    struct point *ptr;
+    ptr = (struct point *)malloc(sizeof(struct point));
+    ptr->x = x;
+    ptr->y = y;
+    ptr->next = NULL;
+    return(ptr);
+}
+
+void freePoints(struct point * start) {
+    struct point * ptr = start;
+    while (ptr!=NULL) {
+        start = ptr;
+        ptr = ptr->next;
+        free(start);
+    }
+}
 ```
   
 ###  3.1. <a name='Exercise-1'></a>Exercise
 ``` c
+struct student {
+	char name[50];
+	int age;
+	struct student *next;
+};
 ```
+
+- Suppose furthermore you have created a student database in the form of a linked list and suppose that the pointer start (of type struct student *) points to the beginning of this list. How would you print the name and age of the first student in the list?
+![Alt text](image-6.png)
+- As in the previous question, you have defined a student record as follows: struct student { char name[50]; int age; struct student *next; }; and have created a student database in the form of a linked list with the pointer start (of type struct student *) pointing to the beginning of this list. How would you print the name and age of the second student in the list?
+![Alt text](image-7.png)
+- Suppose you wanted to delete the third student in a linked list of five students. Why can't you simply free the space allocated for the third student?
+![Alt text](image-8.png)
