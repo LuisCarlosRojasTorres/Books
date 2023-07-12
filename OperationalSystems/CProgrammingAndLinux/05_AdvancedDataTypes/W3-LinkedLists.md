@@ -937,7 +937,413 @@ struct digit *readNumber(void) {
 
 ####  5.1.1. <a name='Solution-1'></a>Solution 
 ``` c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct digit {
+    int num;
+    struct digit *next;
+};
+
+// Write your prototypes here
+struct digit *createDigit(int dig);
+struct digit * append(struct digit * end, struct digit * newDigptr);
+void printNumber(struct digit *start);
+void freeNumber(struct digit *start);
+struct digit *readNumber(void);
+int divisibleByThree(struct digit *start);
+
+int main(void) {
+    struct digit *start;
+    start = readNumber();
+    printf("The number ");
+    printNumber(start);
+    if (divisibleByThree(start)) 
+        printf("is divisible by 3.\n");
+    else
+        printf("is not divisible by 3.\n");
+    freeNumber(start);
+    return 0;
+}
+
+struct digit *createDigit(int dig) {
+    struct digit *ptr;
+    ptr = (struct digit *) malloc(sizeof(struct digit));
+    ptr->num = dig;
+    ptr->next = NULL;
+    return ptr;
+}
+
+struct digit * append(struct digit * end, struct digit * newDigptr) {
+    end->next = newDigptr;
+    return(end->next);
+}
+
+void printNumber(struct digit *start) {
+    struct digit * ptr = start;
+    while (ptr!=NULL) {
+        printf("%d", ptr->num);
+        ptr = ptr->next;
+    }
+    printf("\n");
+}
+
+void freeNumber(struct digit *start) {
+    struct digit * ptr = start;
+    struct digit * tmp;
+    while (ptr!=NULL) {
+        tmp = ptr->next;
+        free(ptr);
+        ptr = tmp;
+    }
+}
+
+struct digit *readNumber(void) {
+    char c;
+    int d;
+    struct digit *start, *end, *newptr;
+    start = NULL;
+    scanf("%c", &c);
+    while (c != '\n') {
+        d = c-48;
+        newptr = createDigit(d);
+        if (start == NULL) {
+            start = newptr;
+            end = start;
+        } else {
+            end = append(end, newptr);
+        }
+        scanf("%c", &c);
+    }
+    return(start);
+}
+
+// Write your divisibleByThree() function here
+int divisibleByThree(struct digit *start){
+    int ans = 0;
+    struct digit * ptr = start;
+    while (ptr!=NULL) {
+        ans += ptr->num;
+        ptr = ptr->next;
+    }
+    if(ans%3 == 0){
+        return 1;    
+    }else{
+        return 0;    
+    }    
+}
 ```
 ##  6. <a name='Searchingalinkedlist'></a>Searching a linked list
+``` c
+#include <stdio.h>
+#include <stdlib.h>
 
+struct digit {
+    int num;
+    struct digit *next;
+};
+
+struct digit * createDigit(int);
+struct digit * append(struct digit * end, struct digit * newDigptr);
+void printNumber(struct digit *);
+void freeNumber(struct digit *start);
+struct digit * readNumber();
+struct digit * searchNumber(struct digit * start, int number);
+
+int main(void) {
+    //! stack = showMemory(start=65520)
+    struct digit *start, *ptr;
+    int searchNum = 5;
+    printf("Please enter a number: ");
+    start = readNumber();
+    printNumber(start);
+    ptr = searchNumber(start, searchNum);
+    if (ptr!=NULL) {
+        printf("Found digit %d at location %p.\n", searchNum, ptr);
+    } else {
+        printf("Digit %d not found.\n", searchNum);
+    }
+    freeNumber(start);
+    return 0;
+}
+
+struct digit *createDigit(int dig) {
+    struct digit *ptr;
+    ptr = (struct digit *) malloc(sizeof(struct digit));
+    ptr->num = dig;
+    ptr->next = NULL;
+    return ptr;
+}
+
+struct digit * append(struct digit * end, struct digit * newDigptr) {
+    end->next = newDigptr;
+    return(end->next);
+}
+
+void printNumber(struct digit *start) {
+    struct digit * ptr = start;
+    while (ptr!=NULL) {
+        printf("%d", ptr->num);
+        ptr = ptr->next;
+    }
+    printf("\n");
+}
+
+void freeNumber(struct digit *start) {
+    struct digit * ptr = start;
+    struct digit * tmp;
+    while (ptr!=NULL) {
+        tmp = ptr->next;
+        free(ptr);
+        ptr = tmp;
+    }
+}
+
+struct digit * readNumber() {
+    //! heap=showMemory(start=309, cursors=[start, end, newptr])
+    char c;
+    int d;
+    struct digit *start, *end, *newptr;
+    start = NULL;
+    scanf("%c", &c);
+    while (c!='\n') {
+        d = c - 48;
+        newptr = createDigit(d);
+        if (start==NULL) {
+            start = newptr;
+            end = start;
+        } else {
+            end = append(end, newptr);
+        }
+        scanf("%c", &c);
+    }
+    return start;
+}
+
+struct digit * searchNumber(struct digit * start, int number) {
+//! heap=showMemory(start=348, cursors=[ptr,start])
+    struct digit * ptr = start;
+    while ((ptr!=NULL) && (ptr->num!=number)) {
+        ptr = ptr->next;
+    }
+    return(ptr);
+}
+```
+
+### Exercise
+- In this task you will work with the linked list of digits we have created in the lessons up to this point. As before you are provided with some code that you should not modify:
+  - A structure definition for the storage of each digit's information.
+  - A main() function to test your code. 
+  - The functions createDigit(), append(), printNumber(), freeNumber(), readNumber() and divisibleByThree() (although you may not need to use all of these).
+- Your task is to write a new function changeThrees() which takes as input a pointer that holds the address of the start of a linked list of digits. Your function should change all of those digits in this linked list that equal 3 to the digit 9, and count how many replacements were made. The function should return this number of replacements.
+
+``` c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct digit {
+    int num;
+    struct digit *next;
+};
+
+struct digit * createDigit(int dig);
+struct digit * append(struct digit * end, struct digit * newDigptr);
+void printNumber(struct digit *start);
+void freeNumber(struct digit *start);
+int divisibleByThree(struct digit * start);
+struct digit * readNumber(void);
+//Add your own function prototypes here
+
+int main(void) {
+    struct digit *start;
+    start = readNumber();
+
+    printf("The number ");
+    printNumber(start);
+    printf("was modified in %d places.\n", changeThrees(start));
+
+    printf("The new number is ");
+    printNumber(start);
+    freeNumber(start);
+
+    return 0;
+}
+
+struct digit * createDigit(int dig) {
+    struct digit *ptr;
+    ptr = (struct digit *) malloc(sizeof(struct digit));
+    ptr->num = dig;
+    ptr->next = NULL;
+    return ptr;
+}
+
+struct digit * append(struct digit * end, struct digit * newDigptr) {
+    end->next = newDigptr;
+    return(end->next);
+}
+
+void printNumber(struct digit *start) {
+    struct digit * ptr = start;
+    while (ptr!=NULL) {
+        printf("%d", ptr->num);
+        ptr = ptr->next;
+    }
+    printf("\n");
+}
+
+void freeNumber(struct digit *start) {
+    struct digit * ptr = start;
+    struct digit * tmp;
+    while (ptr!=NULL) {
+        tmp = ptr->next;
+        free(ptr);
+        ptr = tmp;
+    }
+}
+
+struct digit * readNumber(void) {
+    char c;
+    int d;
+    struct digit *start, *end, *newptr;
+    start = NULL;
+    scanf("%c", &c);
+    while (c != '\n') {
+        d = c-48;
+        newptr = createDigit(d);
+        if (start == NULL) {
+            start = newptr;
+            end = start;
+        } else {
+            end = append(end, newptr);
+        }
+        scanf("%c", &c);
+    }
+    return(start);
+}
+
+int divisibleByThree(struct digit * start) {
+    struct digit * ptr = start;
+    int qsum = 0;
+    while (ptr!=NULL) {
+        qsum += ptr->num;
+        ptr = ptr->next;
+    }
+    if (qsum%3==0) return 1;
+    else return 0;
+}
+
+// Write your changeThrees() function here
+```
+
+#### Solution 
+``` c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct digit {
+    int num;
+    struct digit *next;
+};
+
+struct digit * createDigit(int dig);
+struct digit * append(struct digit * end, struct digit * newDigptr);
+void printNumber(struct digit *start);
+void freeNumber(struct digit *start);
+int divisibleByThree(struct digit * start);
+struct digit * readNumber(void);
+int changeThrees(struct digit * start);
+//Add your own function prototypes here
+
+int main(void) {
+    struct digit *start;
+    start = readNumber();
+
+    printf("The number ");
+    printNumber(start);
+    printf("was modified in %d places.\n", changeThrees(start));
+
+    printf("The new number is ");
+    printNumber(start);
+    freeNumber(start);
+
+    return 0;
+}
+
+struct digit * createDigit(int dig) {
+    struct digit *ptr;
+    ptr = (struct digit *) malloc(sizeof(struct digit));
+    ptr->num = dig;
+    ptr->next = NULL;
+    return ptr;
+}
+
+struct digit * append(struct digit * end, struct digit * newDigptr) {
+    end->next = newDigptr;
+    return(end->next);
+}
+
+void printNumber(struct digit *start) {
+    struct digit * ptr = start;
+    while (ptr!=NULL) {
+        printf("%d", ptr->num);
+        ptr = ptr->next;
+    }
+    printf("\n");
+}
+
+void freeNumber(struct digit *start) {
+    struct digit * ptr = start;
+    struct digit * tmp;
+    while (ptr!=NULL) {
+        tmp = ptr->next;
+        free(ptr);
+        ptr = tmp;
+    }
+}
+
+struct digit * readNumber(void) {
+    char c;
+    int d;
+    struct digit *start, *end, *newptr;
+    start = NULL;
+    scanf("%c", &c);
+    while (c != '\n') {
+        d = c-48;
+        newptr = createDigit(d);
+        if (start == NULL) {
+            start = newptr;
+            end = start;
+        } else {
+            end = append(end, newptr);
+        }
+        scanf("%c", &c);
+    }
+    return(start);
+}
+
+int divisibleByThree(struct digit * start) {
+    struct digit * ptr = start;
+    int qsum = 0;
+    while (ptr!=NULL) {
+        qsum += ptr->num;
+        ptr = ptr->next;
+    }
+    if (qsum%3==0) return 1;
+    else return 0;
+}
+
+// Write your changeThrees() function here
+int changeThrees(struct digit * start){
+    struct digit * ptr = start;
+    int counter = 0;
+    while ( ptr!=NULL ) {
+        if(ptr->num==3){
+            ptr->num=9;
+            counter += 1;
+        }
+        ptr = ptr->next;
+    }
+    return counter;
+}
+```
 ##  7. <a name='SortingalinkedlistusingInsertionSort'></a>Sorting a linked list using  Insertion Sort
