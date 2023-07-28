@@ -20,7 +20,12 @@
 ##  1. <a name='AnatomyofCpp'></a>Anatomy of Cpp
 
 ###  1.1. <a name='CppBuildPipeline'></a>Cpp Build Pipeline
+1. **Preprocessor**: It resolves any preprocessor directive in the code.
+2. **Compilation**: Source code is converted int o a `binary` (i.e. object files `.o` or `.obj` depending on the platform)
+3. **Linker**: Links all the binaries and create a final executable.
 
+Remember: To compile with `g++`:
+``g++ -std=c11 -Wall -fmax-errors=10 -Wextra program.cpp -o program``
 ##  2. <a name='Preprocessordirectives'></a>Preprocessor directives
 
 ###  2.1. <a name='Include'></a>Include
