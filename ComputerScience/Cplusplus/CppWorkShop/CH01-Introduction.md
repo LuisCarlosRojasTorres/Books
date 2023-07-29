@@ -98,6 +98,51 @@ int main (){
 - `#ifndef` checks if the macro is not defined.
 
 ##  3. <a name='BasicIOStatements'></a>Basic I O Statements
+- `std::cout<<` 
+- `std::cin>>` will stop capturing input when it enconters a terminating character (`space tab` or `new line`)
+
+``` cpp
+#include<iostream>
+#include<string>
+int main (){
+    std::string name;
+    int age;
+    std::cout << "Name " << std::endl; // Luis Rojas
+    std::cin >> name;
+    std::cout << "Name:" << name << std::endl; // Prints Luis
+    return 0;
+}
+```
+
+- `getline` is used to capture a whole line.
+``` cpp
+#include<iostream>
+#include<string>
+int main (){
+    std::string name;
+    int age;
+    std::cout << "Name " << std::endl;
+    getline(std::cin , name); // Luis Rojas
+    std::cout << "Name:" << name << std::endl; // Prints Luis
+    return 0;
+}
+```
+-  NOTE: The `getline` **converts the input into a string**. To convert a string to int use `std::stoi` i.e. `"1" -> 1`
+``` cpp
+#include<iostream>
+#include<string>
+int main (){
+    std::string ageString;
+    int ageInt;
+    std::cout << "Age " << std::endl;
+    getline(std::cin , ageString); // 123456
+	ageInt = std::stoi(ageString);
+    std::cout << "Age:" << ageString << std::endl; // Prints 123456
+    return 0;
+}
+```
+
+- To start a new line or insert a blank one use `\n` or `std::endl`
 
 
 ##  4. <a name='Function'></a>Function

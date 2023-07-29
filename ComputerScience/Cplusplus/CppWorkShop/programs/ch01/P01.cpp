@@ -1,14 +1,16 @@
-#include<iostream>
-
 /* REMEMBER: To compile...
 g++ <dummyName>.cpp -o <dummyName>
 */
 
-#define SOMA(a,b) (a+b)
-int main (){
-    std::cout << SOMA(5,7) << std::endl;
 
-    #undef SOMA
-    std::cout << SOMA(5,7) << std::endl;
+#include<iostream>
+#include<string>
+int main (){
+    std::string ageString;
+    int ageInt;
+    std::cout << "Age " << std::endl;
+    getline(std::cin , ageString); // 123456
+	ageInt = std::stoi(ageString);
+    std::cout << "Age:" << ageString << std::endl; // Prints 123456
     return 0;
 }
