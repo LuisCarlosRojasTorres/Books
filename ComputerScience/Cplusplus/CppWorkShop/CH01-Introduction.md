@@ -187,7 +187,23 @@ void PassingByReference(int &n){
 ```
 
 ###  4.2. <a name='FunctionOverloading'></a>Function Overloading
-
+- This provides more than one version of the function
+- Lets say we want a function that multiplies integers, its declaration will be:
+``` cpp
+int multiplication(int, int);
+```
+- But if we try to multiply `double` they will be converted into `int` lossing precision. So we need specific functions for these arguments. 
+``` cpp
+int multiplication(int, int);
+double multiplication(double, double);
+```
+- The compiler will now which function to call.
 
 ###  4.3. <a name='DefaultParameters'></a>Default Parameters
+- This permits that some arguments in functions will be **optional**. The formar is the following:
+`<returnType> nameOfTheFunction( Type1 param1, Type2 param2 = defaultValue1, Type3 param3 = defaultValue2...)` 
+- The optional parameters shall starts from the right. So for example: ` int multiply( int a, int b = 10)`
+  - Can be called as:
+    - `multiply( 3 , 4)` which sets `b = 4`, so it returns `12`.
+    - `multiply( 3)` which implies `b = 10`, so it returns `30`.
 
