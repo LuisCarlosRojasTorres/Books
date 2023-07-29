@@ -146,10 +146,45 @@ int main (){
 
 
 ##  4. <a name='Function'></a>Function
-
+- It has two parts:
+  - **function declaration**: contains the most basic information about how that function will work. They are usually located at headers `.h` file.
+    - return type 
+    - name of the function
+    - parameters
+  - **function definition**: contains the implementation. THey are located at `.cpp` files
+- A function is declared as follows:
+`<returnType> nameOfTheFunction( parameterType1, parameterType2, ...)` 
 
 ###  4.1. <a name='PassingbyValuePassingbyReference'></a>Passing by Value, Passing by Reference
 
+- **Passing by Value** that means that the function is working with a copy of the argument.
+- **Passing by Reference** this used the actual variable. It called writing `&` before the variable name.
+- 
+``` cpp
+#include<iostream>
+#include<string>
+
+void PassingByValue(int);
+void PassingByReference(int&);
+
+int main (){
+    int n1 = 3;
+    int n2 =5;
+    PassingByValue(n1);
+    PassingByReference(n2);
+
+    std::cout << n1 << std::endl; // Returns 3
+    std::cout << n2 << std::endl; // Returns 25
+    return 0;
+}
+
+void PassingByValue(int n){
+    n=n*n;
+}
+void PassingByReference(int &n){
+    n=n*n;
+}
+```
 
 ###  4.2. <a name='FunctionOverloading'></a>Function Overloading
 
