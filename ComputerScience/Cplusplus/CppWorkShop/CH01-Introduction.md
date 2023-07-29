@@ -74,14 +74,40 @@ int main (){
 }
 ```
 ###  2.3. <a name='ConditionalCompilation'></a>Conditional Compilation 
+- `#ifdef/#endif` are used to check if a macro was defined before is used.
+
+``` cpp
+#include<iostream>
+#define LOBO "SOU LOBO"
+int main (){
+    #ifdef LOBO
+		std::cout << LOBO << std::endl;
+	#endif
+
+	#undef LOBO
+
+	#ifdef LOBO
+		//This is not executed
+		std::cout << LOBO << std::endl;
+	#endif
+
+    return 0;
+}
+```
+
+- `#ifndef` checks if the macro is not defined.
 
 ##  3. <a name='BasicIOStatements'></a>Basic I O Statements
 
+
 ##  4. <a name='Function'></a>Function
+
 
 ###  4.1. <a name='PassingbyValuePassingbyReference'></a>Passing by Value, Passing by Reference
 
+
 ###  4.2. <a name='FunctionOverloading'></a>Function Overloading
+
 
 ###  4.3. <a name='DefaultParameters'></a>Default Parameters
 
