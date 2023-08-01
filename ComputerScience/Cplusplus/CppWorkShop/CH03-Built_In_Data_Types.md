@@ -14,8 +14,8 @@
 		* 2.3.2. [Initialization](#Initialization-1)
 	* 2.4. [Modifying Elements](#ModifyingElements)
 * 3. [Classes and Structs](#ClassesandStructs)
-	* 3.1. [Classes](#Classes)
-	* 3.2. [Structs](#Structs)
+	* 3.1. [Structs](#Structs)
+	* 3.2. [Classes](#Classes)
 	* 3.3. [Access Modifiers](#AccessModifiers)
 	* 3.4. [Constructors Destructors](#ConstructorsDestructors)
 * 4. [Storage Lifetime](#StorageLifetime)
@@ -206,12 +206,41 @@ int main()
 
 ##  3. <a name='ClassesandStructs'></a>Classes and Structs
 
-###  3.1. <a name='Classes'></a>Classes 
+###  3.1. <a name='Structs'></a>Structs
+- It purpose is to store data:
 
-###  3.2. <a name='Structs'></a>Structs
+``` cpp
+struct Coordinate
+{
+	int x;
+	int y;
+}
+int main()
+{
+	Coordinate c;
+	c.x = 3;
+	c.y = 4;
+}
+```
+
+###  3.2. <a name='Classes'></a>Classes 
+- They are a colletion of variables and functionality.
+- Its variables an functions are called as `members`
+  - By defaults its members are `private`
+
+``` cpp
+class dummyClass
+{
+	AccessModifier:
+		memberVariable;
+		memberMethod
+}
+```
 
 ###  3.3. <a name='AccessModifiers'></a>Access Modifiers
-
+- `private`
+- `protected`
+- `public`
 ###  3.4. <a name='ConstructorsDestructors'></a>Constructors Destructors
 
 ##  4. <a name='StorageLifetime'></a>Storage Lifetime
