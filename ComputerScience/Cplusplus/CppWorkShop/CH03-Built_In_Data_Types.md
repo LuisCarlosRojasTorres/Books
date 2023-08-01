@@ -12,6 +12,7 @@
 	* 2.3. [Vectors](#Vectors)
 		* 2.3.1. [Accessing Elements](#AccessingElements-1)
 		* 2.3.2. [Initialization](#Initialization-1)
+	* 2.4. [Modifying Elements](#ModifyingElements)
 * 3. [Classes and Structs](#ClassesandStructs)
 	* 3.1. [Classes](#Classes)
 	* 3.2. [Structs](#Structs)
@@ -144,10 +145,64 @@ int myArray [3][5] = {{1,2,3,4,5},{2,4,6,8,10},{3,6,9,12,15}};
 - The numbers for rows and colums could be `#define`s
 
 ###  2.3. <a name='Vectors'></a>Vectors
+- Dynamic size (defined during runtime).
+- it store collections of elements continuously.
+- Format: `std::vector<TypeOfVariable> dummyName`
+
 
 ####  2.3.1. <a name='AccessingElements-1'></a>Accessing Elements
-
+- First option:
+  - Using indexes `[]`
+    ``` cpp
+	std::vector<int> integerVector;
+	int myFirstElement = integerVector[0];
+	int mySecondElement = integerVector[1];
+	```
+- Second option:
+  - Using `.at` function. It is almost the same that using indexes, BUT it throws exceptions instead of undefined behavior.
+    ``` cpp
+	std::vector<int> integerVector;
+	int myFirstElement = integerVector.at(0);
+	int mySecondElement = integerVector.at(1);
+	```    - 
 ####  2.3.2. <a name='Initialization-1'></a>Initialization
+- Initialization with values:
+  - `std::vector<int> dummyVector {1,2,3,4,5};`
+- Initialization with repeated values (5 elements all with a value of `1`):
+  - `std::vector<int> dummyVector (5,1);`
+- It is possible to initialize a vector using an array or another vector.
+  - `std::vector<int> dummyVector (dummyArray, dummyArray + dummyArraySize);`
+  - `std::vector<int> dummyVector (dummyVector.begin(), dummyVector.end());`
+
+``` cpp
+#include <iostream>
+#include <array>
+#include <vector>
+
+int main()
+{
+    int dummyArray[10] = {1,2,3,4,5,6,7,8,9,10};
+
+    std::vector<int> dummyVector (dummyArray+3, dummyArray+6);
+    std::vector<int> dummyVector2 (dummyVector.begin(), dummyVector.begin()+3);
+
+    for( int i : dummyVector){
+        std::cout << "vector1: " << i << std::endl;
+    }
+
+    for( int i : dummyVector2){
+        std::cout << "vector2: " << i << std::endl;
+    }
+    return 0;
+}
+```
+
+###  2.4. <a name='ModifyingElements'></a>Modifying Elements
+- `push_back`: add an element to the end of the vector.
+- `pop_back`: remove an element from the end of a vector.
+- `insert` (use iterators): `myVector.erase(myVector.begin()+1)`
+- `erase` (use iterators): `myVector.insert(myVector.begin()+2,9)`
+  - `begin()`: returns an iterator pointing to the first element in the vector.
 
 ##  3. <a name='ClassesandStructs'></a>Classes and Structs
 
