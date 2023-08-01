@@ -18,6 +18,8 @@
 	* 3.2. [Classes](#Classes)
 	* 3.3. [Access Modifiers](#AccessModifiers)
 	* 3.4. [Constructors Destructors](#ConstructorsDestructors)
+		* 3.4.1. [Constructor](#Constructor)
+		* 3.4.2. [Destructor](#Destructor)
 * 4. [Storage Lifetime](#StorageLifetime)
 	* 4.1. [Static](#Static)
 
@@ -238,11 +240,77 @@ class dummyClass
 ```
 
 ###  3.3. <a name='AccessModifiers'></a>Access Modifiers
-- `private`
-- `protected`
-- `public`
+- `private`: members only available to the class in which they're defined and to friend functions.
+- `protected`: Child classes can access them.
+- `public`: Accessible from anywhere the class is.
+
+``` cpp
+#include <iostream>
+#include <string>
+class MyClass
+{
+	public:
+	   int publicInt = 0;
+	protected:
+	   int protectedInt = 0;
+	private:
+	   int privateInt = 0;
+};
+
+int main(){
+	MyClass dummy;
+	std::cout << dummy.publicInt << std::endl;
+	std::cout << dummy.protectedInt << std::endl; // Compilation error
+	std::cout << dummy.privateInt << std::endl; // Compilation error
+}
+```
 ###  3.4. <a name='ConstructorsDestructors'></a>Constructors Destructors
 
+####  3.4.1. <a name='Constructor'></a>Constructor
+- It performs any setup that is required for the object to operate correctly.
+- It has the form: `MyClass()`
+
+``` cpp
+#include <iostream>
+#include <string>
+class MyClass
+{
+	public:
+	   MyClass()
+	   {
+	      publicInt = 5;
+	   }
+	   
+	   int publicInt = 0;	
+};
+
+int main()
+{
+	MyClass dummy;
+	std::cout << dummy.publicInt << std::endl; //It prints 5
+}
+```
+####  3.4.2. <a name='Destructor'></a>Destructor
+- It performs any cleanup such as de-allocating memory and so on.
+- It has the form: `~MyClass()`
+
+``` cpp 
+#include <iostream>
+#include <string>
+class MyClass
+{
+	public:
+	   MyClass()
+	   {
+	      publicInt = 5;
+	   }
+	   ~MyClass()
+	   {
+	      std::cout << "Class Destructor" << std::endl; //It prints 5
+	   }
+	   int publicInt = 0;	
+};
+```
 ##  4. <a name='StorageLifetime'></a>Storage Lifetime
 
 ###  4.1. <a name='Static'></a>Static
