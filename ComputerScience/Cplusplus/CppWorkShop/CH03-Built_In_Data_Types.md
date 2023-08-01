@@ -134,6 +134,14 @@ Address: 0x7ffe2b23e7d0
 ```
 
 ###  2.2. <a name='MultidimensionalArrays'></a>Multidimensional Arrays
+- The format is the following: `Type dummyName [numOfRows][numOfColums]`
+- One example is:
+
+``` cpp
+int myArray [3][5] = {{1,2,3,4,5},{2,4,6,8,10},{3,6,9,12,15}};
+```
+
+- The numbers for rows and colums could be `#define`s
 
 ###  2.3. <a name='Vectors'></a>Vectors
 
