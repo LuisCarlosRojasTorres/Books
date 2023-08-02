@@ -312,5 +312,33 @@ class MyClass
 };
 ```
 ##  4. <a name='StorageLifetime'></a>Storage Lifetime
+- In Cpp curly brackets denote `scope`
+  - `scope` refers to a section of code that denotes the lifetime of objects declared within it.
+  - Variables can only be used in their `scope`. An exception is using `pointers`!!!
+
 
 ###  4.1. <a name='Static'></a>Static
+- The `static` keywords scopes an object's lifetime to that of the application.
+  - So, static variables are only initialize once and then maintain their value through the application lifetime.
+- The following example prints `12345` if we delete the `static` word it will print `11111`.
+
+
+``` cpp
+#include <iostream>
+#include <string>
+int myValue()
+{
+	static int value = 0;
+	return ++value
+}
+
+int main()
+{
+	for(int i = 0; i < 5; ++i)
+	{
+		std::cout << myValue(); 
+		//It prints 12345,
+	}
+	
+}
+```
