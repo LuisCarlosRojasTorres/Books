@@ -23,11 +23,58 @@
 ##  3. <a name='ContructorsandDestructors'></a>Contructors and Destructors
 
 ###  3.1. <a name='Constructors'></a>Constructors
+- Initialize class member variables
+- They have same name as the class
+- No return type
+- Called automatically whenever an instance of the class the belong is created.
 
+For a class:
+
+``` cpp 
+class Persona
+{
+    public:
+        std::string name;
+        int age;   
+};
+```
 ###  3.2. <a name='DefaultConstructors'></a>Default Constructors
+- No paramaters 
+- If no implementedm the compiler will create one using the variable default values. i.e `0` for numbers and `empty` for strings.
+``` cpp 
+
+class Persona
+{
+    public:
+        std::string name;
+        int age;
+
+        Persona(){
+            name = "Lobo";
+            age = 5;
+        }   
+};
+```
 
 ###  3.3. <a name='ParameterizedConstructors'></a>Parameterized Constructors 
 
+``` cpp 
+class Persona
+{
+    public:
+        std::string name;
+        int age;
+
+        Persona(){
+            name = "Lobo";
+            age = 5;
+        }
+        Persona(std::string dname, int dage){
+            name = dname;
+            age = dage;
+        }    
+};
+```
 ###  3.4. <a name='CopyConstructors'></a>Copy Constructors
 
 ###  3.5. <a name='ShallowcopyorDeepCopy'></a>Shallow copy or Deep Copy
@@ -35,3 +82,4 @@
 ###  3.6. <a name='CopyAssignmentOperator'></a>Copy Assignment Operator
 
 ###  3.7. <a name='Destructors'></a>Destructors
+- it cleans up when an object is destroyed.
