@@ -21,19 +21,41 @@
 <!-- /vscode-markdown-toc -->
 
 ##  1. <a name='V044-Introtovariables'></a>V044 - Intro to variables
+**Nothing to add**
 
 ##  2. <a name='V045-Whatisavariable'></a>V045 - What is a variable
 
+- We can add variables to the `qinfo` message using:
+
+``` cpp
+int variable = 5;
+qInfo() << "Something: " << variable;
+```
 ##  3. <a name='V046-Introtodatatypes'></a>V046 - Intro to data types
+- **Data Type** it defines what a variable or constant represents.
+
 
 ##  4. <a name='V047-Datatypes'></a>V047 - Data types
 
+![Alt text](image-3.png)
+
 ##  5. <a name='V048-Introtoconstants'></a>V048 - Intro to constants
+**Constant* something that does not change
 
 ##  6. <a name='V049-Constants'></a>V049 - Constants
+- It uses the keyword `const` e.g. `const int id = 100;`
+- If you change it, the program will not compile.
+
 
 ##  7. <a name='V050-Enums'></a>V050 - Enums
 
+``` cpp
+enum Color {red = 0, green = 35, blue = 1988};
+Color myColor = Color::green;
+
+// This line will print 35
+qInfo() << "Color: " << myColor;
+```
 ##  8. <a name='V051-Structs'></a>V051 - Structs
 
 ##  9. <a name='V052-Introtoarrays'></a>V052 - Intro to arrays
