@@ -86,5 +86,16 @@ int main(int argc, char *argv[])
 21:22:31: Elapsed time: 00:01.
 ```
 ##  3. <a name='V42-Comments'></a>V42 - Comments
+Same as cpp:
 
+``` cpp
+// This is a comment
+
+/*
+This a paragraph which also can be a comment...
+Loren ipsilum pichulem 
+*/
+```
 ##  4. <a name='V43-Codingstandardsstylesandconventions'></a>V43 - Coding standards, styles and conventions
+
+![Alt text](image-2.png)
