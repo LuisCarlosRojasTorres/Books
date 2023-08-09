@@ -72,7 +72,19 @@ int main(int argc, char *argv[])
 ```
 
 ##  2. <a name='V41-Examiningthebuildprocess'></a>V41 - Examining the build process
+- When compiling a project the following messages can be seen in tab `4 Compile Output`:
 
+```
+21:22:30: Running steps for project V040...
+# The following starts the build process...
+21:22:30: Starting: "/home/redtower02/Qt/Tools/CMake/bin/cmake" --build /home/redtower02/Documents/Repositories/qtFiles/Qt6Beginners/S03/build-V040-Desktop_Qt_6_5_1_GCC_64bit-Debug --target all
+# THe following will generate the autogen folder with moc_predefs.h
+[1/4 55.6/sec] Automatic MOC and UIC for target V040
+[2/3 1.9/sec] Building CXX object CMakeFiles/V040.dir/main.cpp.o
+[3/3 2.5/sec] Linking CXX executable V040
+21:22:31: The process "/home/redtower02/Qt/Tools/CMake/bin/cmake" exited normally.
+21:22:31: Elapsed time: 00:01.
+```
 ##  3. <a name='V42-Comments'></a>V42 - Comments
 
 ##  4. <a name='V43-Codingstandardsstylesandconventions'></a>V43 - Coding standards, styles and conventions
