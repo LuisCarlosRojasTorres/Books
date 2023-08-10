@@ -106,3 +106,15 @@ std::array<int,5> ages;
 qInfo() << ages.size; // will return 5
 ```
 
+##  11. <a name='V054-Arithmeticoperators'></a>V054 - Arithmetic operators
+- The conversation about `dummy++, ++dummy, dummy--, --dummy`
+
+
+##  12. <a name='V055-Assignmentoperators'></a>V055 - Assignment operators
+![Alt text](image-4.png)
+
+##  13. <a name='V056-Comparisonoperators'></a>V056 - Comparison operators
+![Alt text](image-5.png)
+
+##  14. <a name='V057-Logicaloperators'></a>V057 - Logical operators
+![Alt text](image-6.png)
