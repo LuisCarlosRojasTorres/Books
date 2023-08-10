@@ -48,7 +48,9 @@ qInfo() << "Something: " << variable;
 
 
 ##  7. <a name='V050-Enums'></a>V050 - Enums
-
+- You can assign only integers;
+- Onde assigned you cant you can change their values.
+- 
 ``` cpp
 enum Color {red = 0, green = 35, blue = 1988};
 Color myColor = Color::green;
@@ -56,16 +58,31 @@ Color myColor = Color::green;
 // This line will print 35
 qInfo() << "Color: " << myColor;
 ```
+
 ##  8. <a name='V051-Structs'></a>V051 - Structs
+- A kind of data structure
 
-##  9. <a name='V052-Introtoarrays'></a>V052 - Intro to arrays
+``` cpp
+enum Colors {red, green, blue, black};
 
-##  10. <a name='V053-Arrays'></a>V053 - Arrays
+struct device{
+    int weight;
+    double value;
+    Colors itsColor;
+}
+```
 
-##  11. <a name='V054-Arithmeticoperators'></a>V054 - Arithmetic operators
+- If we use `sizeof` for a variable which is a `device struct` we will get `24`. Which makes sense because it "contains" 6 integers.
+- To set values we do:
 
-##  12. <a name='V055-Assignmentoperators'></a>V055 - Assignment operators
+``` cpp
+int main(int argc, char *argv[])
+{
+    device laptop;
+    qinfo << "Size: " << sizeof(laptop);
 
-##  13. <a name='V056-Comparisonoperators'></a>V056 - Comparison operators
-
-##  14. <a name='V057-Logicaloperators'></a>V057 - Logical operators
+    laptop.itsColor = Colors::red;
+    laptop.value = 1000;
+    laptop.weight = 4;
+}
+```
