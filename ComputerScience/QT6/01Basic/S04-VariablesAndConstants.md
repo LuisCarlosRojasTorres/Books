@@ -86,3 +86,23 @@ int main(int argc, char *argv[])
     laptop.weight = 4;
 }
 ```
+##  9. <a name='V052-Introtoarrays'></a>V052 - Intro to arrays
+- A variable that contains multiple indexed values which their locations are next to each other.
+
+
+##  10. <a name='V053-Arrays'></a>V053 - Arrays
+- Same as cpp standard...
+  
+``` cpp
+itn ages[3] = {10, 40, 60};
+qInfo() << ages[0];
+```
+
+- another way using std::array;
+- remember if the array was not initialize it will print garbage.
+- An special function is `.size` which return the lenght of the array.
+``` cpp
+std::array<int,5> ages;
+qInfo() << ages.size; // will return 5
+```
+
