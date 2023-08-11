@@ -14,10 +14,28 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
+** How to add classes in QT6??**
+- For an empty new project the `CMakeList.txt` shows the following:
+
+``` cmake
+add_executable(dummyProject
+  main.cpp  
+)
+```
+- If a `DummyClass` is added header and source file shall be added in the `CMakeList.txt` .
+``` cmake
+add_executable(dummyProject
+  main.cpp  
+  DummyClass.h
+  DummyClass.cpp
+)
+```
+- Then Build the Project `Ctrl+B` and thats all.
+
 ##  1. <a name='V082-Whatareclasses'></a>V082 - What are classes
-
+- Nothing to add
 ##  2. <a name='V083-Introtoclasses'></a>V083 - Intro to classes
-
+- Nothing to add
 ##  3. <a name='V084-ConstructorsandDeconstructors'></a>V084 - Constructors and Deconstructors
 
 ##  4. <a name='V085-Introtoinheritance'></a>V085 - Intro to inheritance
