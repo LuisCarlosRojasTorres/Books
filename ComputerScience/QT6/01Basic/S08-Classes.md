@@ -35,7 +35,45 @@ add_executable(dummyProject
 ##  1. <a name='V082-Whatareclasses'></a>V082 - What are classes
 - Nothing to add
 ##  2. <a name='V083-Introtoclasses'></a>V083 - Intro to classes
-- Nothing to add
+- When writing a header e.g. `dummy.h`:
+  - You can add code to any function declaration with: `Right click / Refactor / Add definition in <dummy>.cpp`
+  - Press `F4` to change from header to source view and viceversa.
+
+- It is recommended to use classes which inherits from `QObject`. So for the `Animal` class the default Qt header is:
+
+``` cpp 
+#ifndef ANIMAL_H
+#define ANIMAL_H
+
+#include <QObject>
+
+class Animal : public QObject
+{    
+    Q_OBJECT
+public:
+    // This constructor sets that if the PARENT obj is destroyed the CHILD object is also destroyed.
+    explicit Animal(QObject *parent = nullptr);
+
+signals:
+
+};
+
+#endif // ANIMAL_H
+```
+
+- The default constructor for the previous class is:
+
+``` cpp
+#include "Animal.h"
+
+Animal::Animal(QObject *parent)
+    : QObject{parent}
+{
+
+}
+```
+
+
 ##  3. <a name='V084-ConstructorsandDeconstructors'></a>V084 - Constructors and Deconstructors
 
 ##  4. <a name='V085-Introtoinheritance'></a>V085 - Intro to inheritance
