@@ -73,16 +73,24 @@ Animal::Animal(QObject *parent)
 }
 ```
 
-
 ##  3. <a name='V084-ConstructorsandDeconstructors'></a>V084 - Constructors and Deconstructors
+- Nothing to add (same as Cpp)
 
 ##  4. <a name='V085-Introtoinheritance'></a>V085 - Intro to inheritance
+- Nothing to add (same as Cpp)
 
 ##  5. <a name='V086-Inheritance'></a>V086 - Inheritance
+- Nothing to add (same as Cpp)
 
 ##  6. <a name='V087-Interfaces'></a>V087 - Interfaces
+- A contract between objects. (same concept) as `Interfaces` in `C#` 
+  - It contains only a header `.h` with `virtual functions`.
+    - Virtual functions has the form:
+      - `virtual <DataType> dummyName(parameters) = 0;`
+
 
 ##  7. <a name='V088-Overriding'></a>V088 - Overriding
+- Nothing to add (same as Cpp)
 
 ##  8. <a name='V089-QObjectClass'></a>V089 - QObject Class
 
