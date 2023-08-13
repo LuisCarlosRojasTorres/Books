@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oJGI7blDVgbq04ukf4+WL433hXn8X160SC/kEPwCZTXW9zXOdfFOU8yzRVj7Xq9WbAfRYz+u9Gniz6x56xTjbA==",
+  "dgSpecHash": "wuW/iLHTWEzH2HyRUhCF4+JbDXX41nRDfmbiJu7DZbbZNMIxDqiXqe8ZJJxeBX+E8BpVXgegwd/rEppoL2CtCQ==",
   "success": true,
   "projectFilePath": "/home/redtower02/Documents/Repositories/Books/ComputerScience/Algorithms/Algoritmos-Dasgupta/source_code/csharp/Dasgupta/CH01/CH01.csproj",
   "expectedPackageFiles": [
-    "/home/redtower02/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.20/microsoft.netcore.app.host.linux-x64.6.0.20.nupkg.sha512"
+    "/home/redtower02/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.21/microsoft.netcore.app.host.linux-x64.6.0.21.nupkg.sha512"
   ],
   "logs": []
 }
