@@ -93,4 +93,4 @@ Animal::Animal(QObject *parent)
 - Nothing to add (same as Cpp)
 
 ##  8. <a name='V089-QObjectClass'></a>V089 - QObject Class
-
+- When a class inherits from `QObject` it has all the functionalities describes in the Qt Documentation for `QObject`.
