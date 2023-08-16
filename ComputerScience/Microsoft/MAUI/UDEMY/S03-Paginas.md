@@ -125,3 +125,12 @@ public partial class App : Application
 ![Alt text](image-7.png)
 
 ## V014. El tipo de página TabbedPage
+1. Crear una nueva `ContentPage` e.g. `TabbedPageExample`
+2. Substituir `ContentPage` por `TabbedPage` en `TabbedPageExample.xaml` y `TabbedPageExample.xaml.cs`
+3. Eliminar el contenido de `TabbedPageExample.xaml`. Este tipo de paginas son containers de `ContentPages` 
+4. Adicionar `ContentPage`s en el `xaml`
+![Alt text](image-8.png)
+5. Finalmente adicionar su constructor en `App.xaml.cs`
+   - `MainPage = new TabbedPageExample();`
+6. Finalmente tenemos la aplicacion
+![Alt text](image-9.png)
