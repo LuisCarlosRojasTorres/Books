@@ -97,6 +97,47 @@
 
 
 ##  5. <a name='V021.Grid'></a>V021. Grid
+- Por defult un `Grid` solo crea una 1 fila y 1 columna
+- La posicion de cada columna y file comienza en `0`
+
+
+``` xml
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Text="Dummy1" Grid.Row="0" Grid.Column="0" />
+        <Button Text="Dummy2" Grid.Row="1" Grid.Column="1" />
+    </Grid>
+```
+![Alt text](image-14.png)
+
+- El tamaño de las filas y columnas puede ser editado como numeros `"50"` o como porcentaje de pantalla `".3*"` (`30%`)
+- UN ejempl es mostrado
+
+``` xml
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Text="Dummy1" Grid.Row="0" Grid.Column="0" />
+        <Button Text="Dummy2" Grid.Row="1" Grid.Column="1" />
+    </Grid>
+```
+
+![Alt text](image-15.png)
 
 ##  6. <a name='V023.AbsoluteLayout'></a>V023. AbsoluteLayout
 
