@@ -140,8 +140,23 @@
 ![Alt text](image-15.png)
 
 ##  6. <a name='V023.AbsoluteLayout'></a>V023. AbsoluteLayout
-
-##  7. <a name='V024.Githubrepo'></a>V024. Github repo
+- The old way, `0,0` top-left corner and bottom-right is `w,h`
+- Two ways:
+  - Full absolute: medidas en numeros enteros.
+    - Solo usa el tag `AbsoluteLayout.LayoutBounds`
+  - Proportional: usa las tags que terminan en `Proportional` i.e. `SizeProportional, XProportional`
+    - Se puede utilizar más de dos tags en `LayoutFlags`
+``` xml
+<AbsoluteLayout>
+    <Button Text="Click Me1!" AbsoluteLayout.LayoutBounds="0,200,250,100"/>
+    <Button Text="Click Me2!" 
+        AbsoluteLayout.LayoutBounds="0,400,.5,.3"
+        AbsoluteLayout.LayoutFlags="SizeProportional"/>    
+    <Button Text="Click Me3!" 
+        AbsoluteLayout.LayoutBounds="0,600,.5,.3"
+        AbsoluteLayout.LayoutFlags="SizeProportional, XProportional"/>            
+</AbsoluteLayout>
+```
 
 ##  8. <a name='V025.FlexLayout'></a>V025. FlexLayout
 
