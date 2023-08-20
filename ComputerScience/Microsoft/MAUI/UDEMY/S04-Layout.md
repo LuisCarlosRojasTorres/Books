@@ -160,3 +160,65 @@
 
 ##  8. <a name='V025.FlexLayout'></a>V025. FlexLayout
 
+- Puede organizar vertical y horizontalmente los componentes en una fila.
+- Puede controlar la orientacion y alineacion para diferentes tamaños de pantalla.
+
+- Un ejemplo seria:
+
+``` xml
+<FlexLayout>
+    <Button Text="Click Me!" />
+    <Button Text="Click Me2!" />
+</FlexLayout>
+```
+
+![Alt text](image-16.png)
+
+- Tiene las siguientes propiedades:
+  - `Direction=Strech` comportamiento por default
+  - `Direction=Row` los alinea horizontalmente  a la izquierda
+  - `Direction=RowReverse` los alinea horizontalmente  a la derecha
+  - `Direction=Column` los alinea verticalmente en la parte superior
+  - `Direction=ColumnReverse` los alinea verticalmente en la parte inferior
+  - `Direction=Center` los alinea horizontalmente  en el centro
+
+- Un ejemplo de como controlar toda la pantalla es el siguiente:
+``` xml
+    <FlexLayout Direction="Column">
+
+        <!-- Header -->
+        <Label Text="HEADER"
+               FontSize="18"
+               BackgroundColor="Aqua"
+               HorizontalTextAlignment="Center" />
+
+        <!-- Body -->
+        <FlexLayout FlexLayout.Grow="1">
+
+            <!-- Content -->
+            <Label Text="CONTENT"
+                   FontSize="18"
+                   BackgroundColor="Gray"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FlexLayout.Grow="1" />
+
+            <!-- Navigation items-->
+            <BoxView FlexLayout.Basis="150"
+                     FlexLayout.Order="-1"
+                     Color="Blue" />
+
+            <!-- Aside items -->
+            <BoxView FlexLayout.Basis="50"
+                     Color="Green" />
+
+        </FlexLayout>
+
+        <!-- Footer -->
+        <Label Text="FOOTER"
+               FontSize="18"
+               BackgroundColor="Pink"
+               HorizontalTextAlignment="Center" />
+    </FlexLayout>
+```
+![Alt text](image-17.png)
