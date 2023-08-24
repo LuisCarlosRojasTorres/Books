@@ -128,6 +128,100 @@
 ![Alt text](image-19.png)
 
 ##  2. <a name='V28.Controlesqueiniciancommandos'></a>V28. Controles que inician commandos
+
+### Button
+- Su evento se llama `Clicked`
+  - `<Button x:Name="btnDummy" Text="Click me!" Clicked="btnDummy_Clicked"/>`
+- El código de este evento se encuentra en la `code behind` asociado. Este es de la siguiente forma:
+
+``` cs 
+private void btnDummy_Clicked(object sender, EventArgs e)
+{
+    // Code here!
+    DisplayAlert( "Test", "This is a Demo", "Ok")
+}
+```
+
+### Display Alert
+- Es el tipo de mensaje que aparece en un dialogo.
+- TIene la siguiente sintaxis:
+  - `DisplayAlert( "Test", "This is a Demo", "Ok")`
+![Alt text](image-20.png)
+
+
+### Image Button
+- Similar al buton pero se puede utilizar una imagen. Conveniente para cuando tienes una imagen en svg.
+- `<ImageButton x:Name="btnDummy2" Source="git.png" Clicked="btnDummy_Clicked"/>`
+
+Ambos botones se verian asi:
+![Alt text](image-21.png)
+
+### Radio button
+- Los de toda la vida...
+  - `GroupName` para agruparlos
+- Un ejemplo a seguir:
+
+``` xml
+<RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                Content="Option1" GroupName="Group1"/>
+<RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                Content="Option2" GroupName="Group1"/>
+``` 
+
+![Alt text](image-22.png)
+
+### Search Bar
+- Es la barra de búsqueda.
+
+``` xml
+<SearchBar x:Name="searchControl"
+                   SearchButtonPressed="searchControl_SearchButtonPressed" />
+```
+- Un codigo para la funcion de evento podria ser el siguiente:
+
+``` cs 
+private void searchControl_SearchButtonPressed(object sender, EventArgs e)
+{
+   DisplayAlert("Searching", $"Searching: {searchControl.Text}", "OK");
+}
+```
+
+![Alt text](image-23.png)
+
+### SwipeView
+- Elemento muy comun en los programas de email donde al darle swipe a un buton se abren ciertas opciones.
+- Tiene una estructura especifica mostrada a seguir:
+``` xml
+<SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem
+                            BackgroundColor="LightGreen"
+                            IconImageSource="dotnet_bot.svg"  
+                            Invoked="SwipeItem_Invoked"
+                            Text="Favorite"/>
+                    <SwipeItem
+                            BackgroundColor="LightPink"
+                            IconImageSource="dotnet_bot.svg"  
+                            Invoked="SwipeItem_Invoked"
+                            Text="Delete"/>
+
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            <Grid BackgroundColor="LightGray"
+                      HeightRequest="60"
+                      WidthRequest="300">
+                <Label HorizontalOptions="Center"
+                           Text="Swipe Right"
+                           VerticalOptions="Center"/>
+            </Grid>
+</SwipeView>
+```
+
+- Antes de dar swipe:
+![Alt text](image-24.png)
+- Durante 
+![Alt text](image-25.png)
 ##  3. <a name='V29.Controlesparaestablecervalores'></a>V29. Controles para establecer valores
 
 ##  4. <a name='V30.Controlesdeedicindetexto'></a>V30. Controles de edición de texto
