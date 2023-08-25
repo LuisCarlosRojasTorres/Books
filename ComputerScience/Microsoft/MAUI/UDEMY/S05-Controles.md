@@ -310,5 +310,13 @@ Para multiples lineas de texto
 <Editor Autosize="TextChanges">
 ```
 
+##  5. <a name='V31.Controlesparaindicaractividad'></a>V31. Controles para indicar actividad
+
+## Activity Indicator 
+- El tipico mensaje de *loading*
+
+``` xml
+<ActivityIndicator IsRunning="True" Color="Blue" />
+```
 
 
