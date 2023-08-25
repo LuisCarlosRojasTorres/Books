@@ -224,6 +224,51 @@ private void searchControl_SearchButtonPressed(object sender, EventArgs e)
 ![Alt text](image-25.png)
 ##  3. <a name='V29.Controlesparaestablecervalores'></a>V29. Controles para establecer valores
 
+### CheckBox
+- Para adicionar etiqueta precisa de un controlador externo.
+
+
+``` xml
+<CheckBox IsChecked="True">
+```
+
+### Slider
+
+``` xml
+<Slider x:Name="slider"
+        Minimum="0"
+        Maximum="10"
+        MinimumTrackColor="Yellow"
+        MaximumTrackColor="Green"
+        ThumbColor="DarkRed"
+        ValueChanged="slider_ValueChanged"
+/>
+```
+
+### Stepper
+``` xml
+<Stepper x:Name="stepper" 
+        ValueChanged="stepper_ValueChanged"
+        Maximum="10"
+        Minimum="2"
+        Increment="2"/>
+```
+
+### Switch
+``` xml
+<Switch IsToggled="True"/>
+```
+
+### DatePicker
+``` xml
+<DatePicker />
+```
+
+### TimePicker
+``` xml
+<TimePicker/>
+```
+
 ##  4. <a name='V30.Controlesdeedicindetexto'></a>V30. Controles de edición de texto
 
 ##  5. <a name='V31.Controlesparaindicaractividad'></a>V31. Controles para indicar actividad
