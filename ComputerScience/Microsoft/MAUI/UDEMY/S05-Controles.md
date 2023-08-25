@@ -245,6 +245,13 @@ private void searchControl_SearchButtonPressed(object sender, EventArgs e)
 />
 ```
 
+``` cs
+private void slider_ValueChanged(object sender, ValueChangedEventArgs e)
+{
+    lblSlider.Text = slider.Value.ToString();
+}    
+```
+
 ### Stepper
 ``` xml
 <Stepper x:Name="stepper" 
@@ -254,9 +261,18 @@ private void searchControl_SearchButtonPressed(object sender, EventArgs e)
         Increment="2"/>
 ```
 
+``` cs
+private void stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+{
+    if (stepper != null)
+    {
+        lblSlider.Text = stepper.Value.ToString();
+    }
+}
+```
 ### Switch
 ``` xml
-<Switch IsToggled="True"/>
+<Switch IsToggled="True" />
 ```
 
 ### DatePicker
@@ -269,9 +285,30 @@ private void searchControl_SearchButtonPressed(object sender, EventArgs e)
 <TimePicker/>
 ```
 
+
+![Alt text](image-26.png)
+
 ##  4. <a name='V30.Controlesdeedicindetexto'></a>V30. Controles de edición de texto
 
-##  5. <a name='V31.Controlesparaindicaractividad'></a>V31. Controles para indicar actividad
+### Entry
+Para una linea de texto
+Tiene dos eventos:
+- TextChanged: cada vez que una tecla es precionada.
+- Complete: cuando se apriete el boton de finalizado en el teclado virtual.
 
-##  6. <a name='V32.Controlesparadesplegarcolecciones'></a>V32. Controles para desplegar colecciones
+``` xml
+<Entry Placeholder="Dummy1"
+        PlaceholderColor="Blue"
+        IsPassword="False"
+        Keyboard="Default" />
+```
+
+### Editor
+Para multiples lineas de texto
+
+``` xml
+<Editor Autosize="TextChanges">
+```
+
+
 
