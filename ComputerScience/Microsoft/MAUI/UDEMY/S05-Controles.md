@@ -319,4 +319,11 @@ Para multiples lineas de texto
 <ActivityIndicator IsRunning="True" Color="Blue" />
 ```
 
+## Progress Bar
 
+- Si se conocen cuantos pasos el proceso tiene es recomendable usar una progress bar.
+  - El progreso se da en porcentaje.
+
+``` xml
+<ProgressBar Progress=".5" />
+```
