@@ -327,3 +327,232 @@ Para multiples lineas de texto
 ``` xml
 <ProgressBar Progress=".5" />
 ```
+
+## V032. Controles para  desplegar Colecciones
+
+### CarouselView
+- Necesitamos un origen de informacion, esto es realizado en `ItemsSource`
+- Para dar formato a los elementos mostrados se usa un `ItemTemplate` i.e. ponerlo dentro de un frame.
+``` xml
+<CarouselView>
+<CarouselView.ItemsSource>
+        <x:Array Type="{x:Type x:String}">
+                <x:String>mono</x:String>
+                <x:String>monodroid</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monorail</x:String>
+                <x:String>monodevelop</x:String>
+                <x:String>monotone</x:String>
+                <x:String>monopoly</x:String>
+                <x:String>monomodal</x:String>
+                <x:String>mononucleosis</x:String>
+        </x:Array>
+</CarouselView.ItemsSource>
+
+<CarouselView.ItemTemplate>
+        <DataTemplate>
+                <StackLayout>
+                    <Frame Margin="20"
+                           BorderColor="DarkGray"
+                           CornerRadius="5"
+                           HasShadow="True"
+                           HeightRequest="100"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding .}"/>
+                    </Frame>
+                </StackLayout>
+        </DataTemplate>
+</CarouselView.ItemTemplate>
+</CarouselView>   
+```
+
+El resultado es el siguiente:
+
+![Alt text](image-27.png)
+
+- Hasta ahora nos encontramos con el siguiente problema. **NO SABEMOS EN QUE ELEMENTO NOS ENCONTRAMOS**
+  - Para poder saber esto necesitamos un `IndicatorView`
+    - Este debe ser implementado y adicioando como argumento en el `<CarouselView>`
+- El codigo final es el siguiente:
+```xml
+<CarouselView IndicatorView="indicatorView">
+        <CarouselView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>mono</x:String>
+                <x:String>monodroid</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monorail</x:String>
+                <x:String>monodevelop</x:String>
+                <x:String>monotone</x:String>
+                <x:String>monopoly</x:String>
+                <x:String>monomodal</x:String>
+                <x:String>mononucleosis</x:String>
+            </x:Array>
+        </CarouselView.ItemsSource>
+        <CarouselView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Frame Margin="20"
+                           BorderColor="DarkGray"
+                           CornerRadius="5"
+                           HasShadow="True"
+                           HeightRequest="100"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding .}"/>
+                    </Frame>
+                </StackLayout>
+
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+     </CarouselView>
+
+        <IndicatorView
+        x:Name="indicatorView"
+        HorizontalOptions="Center"
+        IndicatorColor="LightGray"
+        SelectedIndicatorColor="DarkGray"/>
+```
+
+
+
+
+![Alt text](image-28.png)
+
+### List View
+- Parecido al anterior pero vertical
+- Requiere el tag `ViewCel` y `HasUnevenRows`
+``` xml
+    <ListView HasUnevenRows="True">
+        <ListView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>mono</x:String>
+                <x:String>monodroid</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monorail</x:String>
+                <x:String>monodevelop</x:String>
+                <x:String>monotone</x:String>
+                <x:String>monopoly</x:String>
+                <x:String>monomodal</x:String>
+                <x:String>mononucleosis</x:String>
+            </x:Array>
+        </ListView.ItemsSource>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Frame Margin="20"
+                           BorderColor="DarkGray"
+                           CornerRadius="5"
+                           HasShadow="True"
+                           HeightRequest="100"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding .}"/>
+                    </Frame>
+                        </StackLayout>
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+     </ListView>
+```
+
+![Alt text](image-29.png)
+
+- Cuando se seleciona queda asi
+
+![Alt text](image-30.png)
+
+### Collection View
+- Salio despues de `ListView`
+   - no necesita `ViewCell`
+``` xml
+    <CollectionView SelectionMode="None">
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>mono</x:String>
+                <x:String>monodroid</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monorail</x:String>
+                <x:String>monodevelop</x:String>
+                <x:String>monotone</x:String>
+                <x:String>monopoly</x:String>
+                <x:String>monomodal</x:String>
+                <x:String>mononucleosis</x:String>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                    <StackLayout>
+                        <Frame Margin="20"
+                           BorderColor="DarkGray"
+                           CornerRadius="5"
+                           HasShadow="True"
+                           HeightRequest="100"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding .}"/>
+                    </Frame>
+                        </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+     </CollectionView>
+```
+- Similar al `ListView` pero no puede seleccionar elementos.
+  - Para esto se usa el argumento `SelectionMode="Single"` (por default está `SelectionMode=None`). 
+  - Incluso se puede seleccionar multiples elementos con `SelectionMode="Multiple"`
+
+### Picker
+
+
+``` cs
+    <StackLayout>
+        <Picker VerticalOptions="Center">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>mono</x:String>
+                    <x:String>monodroid</x:String>
+                    <x:String>monotouch</x:String>
+                    <x:String>monorail</x:String>
+                    <x:String>monodevelop</x:String>
+                    <x:String>monotone</x:String>
+                    <x:String>monopoly</x:String>
+                    <x:String>monomodal</x:String>
+                    <x:String>mononucleosis</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+    </StackLayout>
+```
+
+
+### Table View
+
+``` xml
+<TableView Intent="Settings">
+        <TableRoot>
+            <TableSection Title="First Section">
+                <TextCell Detail="TextCell Detail" Text="TextCell1" />
+                <EntryCell Label="Entry Label" Text="EntryCell Text1" />
+                <SwitchCell Text="SwitchCell Text1" />
+                <ImageCell
+                    Detail="ImageCell Detail"
+                    ImageSource="dotnet_bot.svg"
+                    Text="ImageCell Text1" />
+            </TableSection>
+            <TableSection Title="Second Section">
+                <TextCell Detail="TextCell Detail" Text="TextCell2" />
+                <EntryCell Label="Entry Label" Text="EntryCell Text2" />
+                <SwitchCell Text="SwitchCell Text2" />
+                <ImageCell
+                    Detail="ImageCell Detail"
+                    ImageSource="dotnet_bot.svg"
+                    Text="ImageCell Text2" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+```
+- `Intent=Settings`:
+![Alt text](image-32.png)
