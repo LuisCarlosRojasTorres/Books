@@ -320,3 +320,21 @@ private void btnRandom_Clicked(object sender, EventArgs e)
 ```
 
 ##  7. <a name='V040.Copiandoelcoloralportapapeles'></a>V040. Copiando el color al portapapeles
+- Para esto se utiliza un paquete nuget (solo se puede adicionar paquetes nuget al proyecto cuando no se está debugando)
+- `CommunityToolkit Maui`
+
+- Adicionamos el `Clicked="ImageButton_Clicked"` al `ImageButton`
+
+- Y el codigo para este:
+
+``` cs
+private async void ImageButton_Clicked(object sender, EventArgs e)
+{
+    await Clipboard.SetTextAsync(hexValue);
+    var toast = Toast.Make("Color copied",
+        CommunityToolkit.Maui.Core.ToastDuration.Short,
+        12);
+        
+    await toast.Show();
+}
+```
