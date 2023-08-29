@@ -98,6 +98,7 @@
 ```
 
 ![Alt text](image-39.png)
+
 ##  3. <a name='V44.Definiendoseccindeentradadedatos'></a>V44. Definiendo sección de entrada de datos
 - Los botones para entrar datos.
 ``` xml
