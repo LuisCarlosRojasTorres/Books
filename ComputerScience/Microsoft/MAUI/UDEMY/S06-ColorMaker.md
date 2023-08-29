@@ -25,6 +25,7 @@
 </ContentPage.Resources>
 ```
 ##  3. <a name='V036.DeterminandoeltipodeLayoutparalaaplicacin'></a>V036. Determinando el tipo de Layout para la aplicación
+
 - Para conter los elementos siguientes utilizaremos un grid:
 ``` xml
 <Grid x:Name="Container" BackgroundColor="Black">
@@ -33,6 +34,204 @@
 ```
 ##  4. <a name='V037.Creandolaseccindeloscontroles'></a>V037. Creando la sección de los controles
 
+- Se crea un frame para poner los slides
+``` xml
+<Grid x:Name="Container" BackgroundColor="Black">
+    <Frame Margin="10,0,10,0" VerticalOptions="Center">
+	<VerticalStackLayout Spacing="15" VerticalOptions="Center">
+        <Label FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="Color Mark" />
+	</VerticalStackLayout>
+    </Frame>
+</Grid>
+```
+
+![Alt text](image-33.png)
+
+- Adding slides
+
+``` xml
+    <Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10,0,10,0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   Text="Color Mark"/>            
+            <Label Text="Red Value:"/>
+            <Slider 
+                x:Name="sldRed"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+                <Label Text="Green Value:"/>
+                <Slider 
+                x:Name="sldGreen"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+                <Label Text="Blue Value:"/>
+                <Slider 
+                x:Name="sldBlue"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+```
+
+![Alt text](image-34.png)
+
+- Adicionando un frame para obtener el codigo de color
+
+``` xml
+<Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10,0,10,0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   Text="Color Mark"/>            
+            <Label Text="Red Value:"/>
+            <Slider 
+                x:Name="sldRed"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Label Text="Green Value:"/>
+            <Slider 
+                x:Name="sldGreen"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Label Text="Blue Value:"/>
+            <Slider 
+                x:Name="sldBlue"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label 
+                            x:Name="lblHex"
+                            HorizontalTextAlignment="End"
+                            Text="HEX Value: #000000"
+                            VerticalOptions="Center" />                        
+                    </HorizontalStackLayout>
+            </Frame>
+                <Button x:Name="btnRandom"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Generate Random Color"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+```
+
+![Alt text](image-35.png)
+
+- Adicionando un  `ImageButton`
+``` xml
+<Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10,0,10,0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   Text="Color Mark"/>            
+            <Label Text="Red Value:"/>
+            <Slider 
+                x:Name="sldRed"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Label Text="Green Value:"/>
+            <Slider 
+                x:Name="sldGreen"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Label Text="Blue Value:"/>
+            <Slider 
+                x:Name="sldBlue"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label 
+                            x:Name="lblHex"
+                            HorizontalTextAlignment="End"
+                            Text="HEX Value: #000000"
+                            VerticalOptions="Center" />
+                        <ImageButton 
+                            Margin="10,0,0,0"
+                            HeightRequest="25"
+                            Source="copy.svg"
+                            VerticalOptions="Center"
+                            WidthRequest="25" />
+                    </HorizontalStackLayout>
+            </Frame>                
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+```
+
+![Alt text](image-36.png)
+
+- Adicionando el botón para generar colores random
+
+``` xml
+<Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10,0,10,0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   Text="Color Mark"/>            
+            <Label Text="Red Value:"/>
+            <Slider 
+                x:Name="sldRed"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Label Text="Green Value:"/>
+            <Slider 
+                x:Name="sldGreen"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Label Text="Blue Value:"/>
+            <Slider 
+                x:Name="sldBlue"
+                MaximumTrackColor="{StaticResource Tertiary}"
+                MinimumTrackColor="{StaticResource Secondary}"
+                ThumbColor="{StaticResource Primary}" />
+            <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label 
+                            x:Name="lblHex"
+                            HorizontalTextAlignment="End"
+                            Text="HEX Value: #000000"
+                            VerticalOptions="Center" />
+                        <ImageButton 
+                            Margin="10,0,0,0"
+                            HeightRequest="25"
+                            Source="copy.svg"
+                            VerticalOptions="Center"
+                            WidthRequest="25" />
+                    </HorizontalStackLayout>
+            </Frame>
+                <Button x:Name="btnRandom"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Generate Random Color"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+```
+![Alt text](image-37.png)
 ##  5. <a name='V038.Cambiandoelcolordefondo'></a>V038. Cambiando el color de fondo
 
 ##  6. <a name='V039.Generandoelcoloraleatorio'></a>V039. Generando el color aleatorio
