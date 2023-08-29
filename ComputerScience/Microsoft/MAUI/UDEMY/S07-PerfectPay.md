@@ -13,7 +13,193 @@
 ##  1. <a name='V42.Overviewdelaaplicacin'></a>V42. Overview de la aplicación
 
 ##  2. <a name='V43.Creandolaseccindeinformacindepropinas'></a>V43. Creando la sección de información de propinas
+- Primero la parte informativa
 
+
+``` xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PerfectPay.MainPage"
+             BackgroundColor="#323232">
+
+    <ContentPage.Resources>
+        <Color x:Key="SectionsColor">#444444</Color>
+        <Color x:Key="LightFont">#d6d6d6</Color>
+        <Color x:Key="DarkFont">#4fd8eb</Color>
+    </ContentPage.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*" />
+            <RowDefinition Height=".7*" />
+        </Grid.RowDefinitions>
+        <Frame
+            Padding="10"
+            BackgroundColor="{StaticResource SectionsColor}"
+            BorderColor="Transparent">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".1*" />
+                    <RowDefinition Height=".9*" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.ColumnSpan="3"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Text="TOTAL P/PERSON"
+                    TextColor="{StaticResource DarkFont}" />
+                <Label
+                    x:Name="lblTotal"
+                    Grid.Row="1"
+                    FontAttributes="Bold"
+                    FontSize="35"
+                    HorizontalTextAlignment="Center"
+                    Text="$0.00"
+                    TextColor="{StaticResource LightFont}"
+                    VerticalOptions="CenterAndExpand" />
+                <BoxView
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="0,10,0,0"
+                    VerticalOptions="Center"
+                    Color="#adadad" />
+                <VerticalStackLayout
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Label Text="SUBTOTAL" TextColor="{StaticResource LightFont}" />
+                    <Label
+                        x:Name="lblSubtotal"
+                        FontAttributes="Bold"
+                        Text="$0.00"
+                        TextColor="{StaticResource LightFont}" />
+                    <Label
+                        Margin="0,10,0,0"
+                        Text="TIP"
+                        TextColor="{StaticResource LightFont}" />
+                    <Label
+                        x:Name="lblTipByPerson"
+                        FontAttributes="Bold"
+                        Text="$0.00"
+                        TextColor="{StaticResource LightFont}" />
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+    </Grid>
+
+</ContentPage>
+```
+
+![Alt text](image-39.png)
 ##  3. <a name='V44.Definiendoseccindeentradadedatos'></a>V44. Definiendo sección de entrada de datos
+- Los botones para entrar datos.
+``` xml
+<Grid Grid.Row="1" Margin="0,15,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".3*" />
+            <ColumnDefinition Width=".7*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label
+                Text="Enter your bill: $"
+                TextColor="{StaticResource LightFont}"
+                VerticalOptions="Center" />
+        <Entry
+                x:Name="txtBill"
+                Grid.Column="1"
+                BackgroundColor="{StaticResource SectionsColor}"
+                Keyboard="Numeric"
+                Text="0.0"
+                TextColor="{StaticResource LightFont}"
+                VerticalOptions="Center" />
+        <Label
+                Grid.Row="1"
+                Text="Choose your tip"
+                TextColor="{StaticResource LightFont}"
+                VerticalOptions="Center" />
+        <HorizontalStackLayout
+                Grid.Row="1"
+                Grid.Column="1"
+                HeightRequest="70"
+                HorizontalOptions="CenterAndExpand"
+                Spacing="10">
+            <Button
+                    
+                    Text="10%"
+                    WidthRequest="70" />
+            <Button
+                    
+                    Text="15%"
+                    WidthRequest="70" />
+            <Button
+                    
+                    Text="20%"
+                    WidthRequest="70" />
+        </HorizontalStackLayout>
+        <Label
+                x:Name="lblTip"
+                Grid.Row="2"
+                Text="Tip: 0%"
+                TextColor="{StaticResource LightFont}"
+                VerticalOptions="Center" />
+        <Slider
+                x:Name="sldTip"
+                Grid.Row="2"
+                Grid.Column="1"
+                Maximum="50"
+                Minimum="0"
+            
+            />
+        <Label
+                Grid.Row="3"
+                Text="Split the total"
+                TextColor="{StaticResource LightFont}"
+                VerticalOptions="Center" />
+        <HorizontalStackLayout
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+            <Button
+                    x:Name="btnMinus"
+            
+                    Text="-"
+                    WidthRequest="70" />
+            <Label
+                    x:Name="lblNoPerons"
+                    Margin="-5,0,-5,0"
+                    BackgroundColor="{StaticResource SectionsColor}"
+                    FontSize="25"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="1"
+                    TextColor="{StaticResource LightFont}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    WidthRequest="100" />
+            <Button
+                    x:Name="btnPlus"
+            
+                    Text="+"
+                    WidthRequest="70" />
+        </HorizontalStackLayout>
+    </Grid>
+```
+
+![Alt text](image-40.png)
 
 ##  4. <a name='V45.Realizandolosclculos'></a>V45. Realizando los cálculos
