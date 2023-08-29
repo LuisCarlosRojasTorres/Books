@@ -237,7 +237,6 @@
 1. Adicionar la propiedad `ValueChanged="Slider_ValueChanged"` a los slides.
 2. Adicioanr el siguiente codigo en el *code behind*
 
-
 ``` cs
 private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
 {
@@ -261,6 +260,63 @@ private void SetColor(Color color)
 	lblHex.Text = hexValue;
 }
 ```
+
+![Alt text](image-38.png)
+
 ##  6. <a name='V039.Generandoelcoloraleatorio'></a>V039. Generando el color aleatorio
+- Para user el debug se importa el `using System.Diagnostics;`
+
+``` cs
+using System.Diagnostics;
+//...
+bool isRandom;
+string hexValue;
+
+public MainPage()
+{
+	InitializeComponent();
+}
+
+private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+{
+    if (!isRandom)
+    {
+        var red = sldRed.Value;
+        var green = sldGreen.Value;
+        var blue = sldBlue.Value;
+
+        Color color = Color.FromRgb(red, green, blue);
+
+        SetColor(color);
+    }
+}
+
+private void SetColor(Color color)
+{
+    Debug.WriteLine(color.ToString());
+    btnRandom.BackgroundColor = color;
+    Container.BackgroundColor = color;
+    hexValue = color.ToHex();
+    lblHex.Text = hexValue;
+}
+   
+private void btnRandom_Clicked(object sender, EventArgs e)
+{
+    isRandom = true;
+    var random = new Random();
+
+    var color = Color.FromRgb(
+             random.Next(0, 256),
+             random.Next(0, 256),
+             random.Next(0, 256));
+
+    SetColor(color);
+
+    sldRed.Value = color.Red
+    sldGreen.Value = color.Green;
+    sldBlue.Value = color.Blue;
+    isRandom = false;
+}
+```
 
 ##  7. <a name='V040.Copiandoelcoloralportapapeles'></a>V040. Copiando el color al portapapeles
