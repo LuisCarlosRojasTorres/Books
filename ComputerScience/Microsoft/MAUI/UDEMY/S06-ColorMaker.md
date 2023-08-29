@@ -25,7 +25,12 @@
 </ContentPage.Resources>
 ```
 ##  3. <a name='V036.DeterminandoeltipodeLayoutparalaaplicacin'></a>V036. Determinando el tipo de Layout para la aplicación
-
+- Para conter los elementos siguientes utilizaremos un grid:
+``` xml
+<Grid x:Name="Container" BackgroundColor="Black">
+        
+</Grid>
+```
 ##  4. <a name='V037.Creandolaseccindeloscontroles'></a>V037. Creando la sección de los controles
 
 ##  5. <a name='V038.Cambiandoelcolordefondo'></a>V038. Cambiando el color de fondo
