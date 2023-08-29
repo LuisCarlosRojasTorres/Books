@@ -232,8 +232,35 @@
     </Grid>
 ```
 ![Alt text](image-37.png)
-##  5. <a name='V038.Cambiandoelcolordefondo'></a>V038. Cambiando el color de fondo
 
+##  5. <a name='V038.Cambiandoelcolordefondo'></a>V038. Cambiando el color de fondo
+1. Adicionar la propiedad `ValueChanged="Slider_ValueChanged"` a los slides.
+2. Adicioanr el siguiente codigo en el *code behind*
+
+
+``` cs
+private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+{
+	if(!isRandom)
+    {
+		var red = sldRed.Value;
+		var green = sldGreen.Value;
+		var blue = sldBlue.Value;
+
+		Color color = Color.FromRgb(red, green, blue);
+
+		SetColor(color);
+	}		
+}
+
+private void SetColor(Color color)
+{
+	btnRandom.BackgroundColor = color;
+	Container.BackgroundColor = color;
+	hexValue = color.ToHex();
+	lblHex.Text = hexValue;
+}
+```
 ##  6. <a name='V039.Generandoelcoloraleatorio'></a>V039. Generando el color aleatorio
 
 ##  7. <a name='V040.Copiandoelcoloralportapapeles'></a>V040. Copiando el color al portapapeles
