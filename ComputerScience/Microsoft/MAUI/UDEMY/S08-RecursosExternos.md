@@ -11,6 +11,46 @@
 <!-- /vscode-markdown-toc -->
 
 ##  1. <a name='V047.AgregandoImgenesalproyecto'></a>V047. Agregando Imágenes al proyecto
+- Los nombres tienes que ser mayuscykas
+- La extension de la imagen no es necesaria (a menos que tengas dos imagenes que se llaman igual)
+
+- Ventajas de png con jpeg es que aceptan transparencia.
+
+``` xml
+<StackLayout BackgroundColor="SkyBlue">
+    <Image Source="yoctoba.png"/>
+</StackLayout>
+```
+
+- Se puede user `gif`
+
+``` xml
+<StackLayout BackgroundColor="Black">
+    <Image Source="loader"
+		   IsAnimationPlaying="True" />
+</StackLayout>
+```
+
+- MAUI acepta imagenes `svg`.
+  - Sin embargo pueden aparecer borrosas las imagenes. Esto debido a que se tiene que establecer un tamaño base.
+  - Esto es definido en el proyecto, asi el del robot es definido como:
+
+``` xml
+<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+```
+- Por tanto copiamos la linea referente al `dotnet_bot.svg` para la nueva iamgen:
+
+``` xml
+<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+		<MauiImage Update="Resources\Images\dummyImage.svg" BaseSize="300,300" />
+```
+
+- Tiene una propiedad llamada `TintColor=<ColorPlaceHolder>` que pinta de un colro solido la imagen.
+
 ##  2. <a name='V048.AgregandoyutilizandoFuentes'></a>V048. Agregando y utilizando Fuentes
 ##  3. <a name='V049.Utilizandofuentesdeconos'></a>V049. Utilizando fuentes de íconos
 ##  4. <a name='V050.Agregandootrotipodearchivos'></a>V050. Agregando otro tipo de archivos
