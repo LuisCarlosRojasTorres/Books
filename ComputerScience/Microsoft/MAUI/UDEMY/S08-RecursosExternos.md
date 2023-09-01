@@ -52,5 +52,50 @@
 - Tiene una propiedad llamada `TintColor=<ColorPlaceHolder>` que pinta de un colro solido la imagen.
 
 ##  2. <a name='V048.AgregandoyutilizandoFuentes'></a>V048. Agregando y utilizando Fuentes
+- Las fuentes pueden ser descargadasen formato `.ttf`
+
+
+``` xml
+<StackLayout BackgroundColor="Black">
+    <Label 
+        FontFamily="OpenSans-Semibold.ttf"
+        FontAttributes="Bold,Italic"
+        FontSize="50"
+        TextColor="White"
+        Text="This is a font test"
+    />
+</StackLayout>
+```
+
+- Para no tener que utilizar el nombre completo junto con la extension se puede crear un *alias*.
+- Esto se consigue en el main program. Aqui por ejemplo se encuentra las fuentes default:
+
+``` cs
+builder
+	.UseMauiApp<App>()
+	.ConfigureFonts(fonts =>
+	{
+		fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+		fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+		fonts.AddFont("<FontNamePlaceholder>.ttf", "<FontAliasPlaceholder>");
+	});
+```
+
+- Asi puede ser utilizado en el xaml
+
+``` xml
+<StackLayout BackgroundColor="Black">
+    <Label 
+        FontFamily="<FontAliasPlaceholder>"
+        FontAttributes="Bold,Italic"
+        FontSize="50"
+        TextColor="White"
+        Text="This is a font test"
+    />
+</StackLayout>
+```
+
+
 ##  3. <a name='V049.Utilizandofuentesdeconos'></a>V049. Utilizando fuentes de íconos
+- 
 ##  4. <a name='V050.Agregandootrotipodearchivos'></a>V050. Agregando otro tipo de archivos
