@@ -95,7 +95,64 @@ builder
 </StackLayout>
 ```
 
-
 ##  3. <a name='V049.Utilizandofuentesdeconos'></a>V049. Utilizando fuentes de íconos
 - 
 ##  4. <a name='V050.Agregandootrotipodearchivos'></a>V050. Agregando otro tipo de archivos
+- La carpeta `raw` sirve para incluir `pdfs`, `json`, `office files`.
+  - Base de datos??
+- Para poder utilizar estos `resources` un template es disponibilizado en `AboutAssets.txt`
+
+``` cs
+async Task LoadMauiAsset()
+{
+	using var stream = await FileSystem.OpenAppPackageFileAsync("AboutAssets.txt");
+	using var reader = new StreamReader(stream);
+
+	var contents = reader.ReadToEnd();
+}
+```
+
+- Este método debe ser copiado en el `MainPage.xml` con el nombre del archivo que queremos leer en el argumento del método `OpenAppApckageFleAsync`
+
+### Ejemplo
+- Digamos que queremos leer el archivo `data.json`:
+
+``` json
+{
+	"Name": "Lobo",
+	"Age": 5
+}
+```
+
+1. Implementar una clase para modelar el `json`
+
+``` cs 
+public class Person 
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+```
+
+2. Adicionar `using System.Text.Json;` ahora `var p = JsonSerializer.Deserialize<Person>(contents);` ahora `p` va a almacenar los datos.
+
+``` cs 
+async Task LoadMauiAsset()
+{
+    using var stream = await FileSystem.OpenAppPackageFileAsync("data.json");
+    using var reader = new StreamReader(stream);
+
+    var contents = reader.ReadToEnd();
+
+    var p = JsonSerializer.Deserialize<Person>(contents);
+}
+```
+3. Implementar `OnAppearing`
+
+``` cs
+protected override async void OnAppearing()
+{
+    base.OnAppearing();
+    await LoadMauiAsset();
+}
+```
