@@ -15,6 +15,8 @@
 
 ##  1. <a name='V052.Introduccin'></a>V052. Introducción
 
+
+##  2. <a name='V053.Definiendolainterfazprincipal'></a>V053. Definiendo la interfaz principal
 - Primero se implementa la parte gráfica:
 
 ``` xml
@@ -48,8 +50,6 @@ builder
         fonts.AddFont("Bison.ttf", "MainFont");
     });
 ```
-##  2. <a name='V053.Definiendolainterfazprincipal'></a>V053. Definiendo la interfaz principal
-
 ##  3. <a name='V054.Trabajandocondegradadosennetmaui'></a>V054. Trabajando con degradados en net maui
 
 ##  4. <a name='V055.Creandoelfondodelaaplicacin'></a>V055. Creando el fondo de la aplicación
