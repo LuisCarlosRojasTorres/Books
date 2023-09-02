@@ -51,6 +51,43 @@ builder
     });
 ```
 ##  3. <a name='V054.Trabajandocondegradadosennetmaui'></a>V054. Trabajando con degradados en net maui
+- Las coordenadas de la pantalla son las siguientes:
+
+![Alt text](image-43.png)
+
+- Esto se realiza con `<LinearGradientBrush/>`
+
+``` xml
+<Grid BackgroundColor="Navy">
+    <Grid.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStopCollection>
+                <GradientStop Offset="0" Color="DarkBlue"/>
+                <GradientStop Offset="1" Color="LightBlue"/>
+            </GradientStopCollection>
+        </LinearGradientBrush>
+    </Grid.Background>
+    <Grid Margin="25" RowDefinitions=".8*,.2*">
+        <Label
+            FontFamily="MainFont"
+            FontSize="50"
+            HorizontalTextAlignment="Center"
+            Text="Quem tem cu tem medo."
+            TextColor="White"
+            VerticalOptions="Center" />
+        <Button 
+            Grid.Row="1" 
+            BackgroundColor="Black"
+            Opacity=".4"
+            Text="Get New Quote" />
+    </Grid>
+</Grid>
+```
+
+![Alt text](image-44.png)
+
+Para `<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">`
+![Alt text](image-45.png)
 
 ##  4. <a name='V055.Creandoelfondodelaaplicacin'></a>V055. Creando el fondo de la aplicación
 
