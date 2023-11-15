@@ -20,6 +20,9 @@
 ##  4. <a name='V061BindingContext'></a>V061 BindingContext
 ##  5. <a name='V062Bindingentrecontroles'></a>V062 Binding entre controles
 ##  6. <a name='V063ModosenBinding'></a>V063 Modos en Binding
+- `OneTime`: source to target at initialization
+- `OneWay`: only source to target
+- `TwoWay`: source to target and viceversa
 ##  7. <a name='V064INotifyPropertyChanged'></a>V064 INotifyPropertyChanged
 
 
