@@ -80,4 +80,41 @@ static void MethodC()
 - Como esperado o tempo que demorou foi de aprox: `3000 + 2000 + 1000 = 6000` milliseconds.
 
 ### Running multiple methods asynchronously using tasks
+- A classe `Thread` permite criar `new Threads` e gerenciar eles. (porem eh um pouco complicado fazer isso diretamente)
+- A classe `Task` is a **thread wrapper** which ease the creation and management of threads (moreover it allows the code to execute `aynchronously`). 
+- To run the previous code asynchronously it is only necessary to modify the method call and use `Task` instead.
+- There are three ways to create a task:
+
+``` cs
+Console.WriteLine(" RUNNING METHODS ASYNCHRONOULY in Multiple Threads");
+OutputThreadInfo();
+Stopwatch timer = Stopwatch.StartNew();
+
+Task taskA = new(MethodA); //1 way
+taskA.Start();
+
+Task taskB = Task.Factory.StartNew(MethodB); //2 way
+Task taskC = Task.Run(MethodC); //3 way
+
+Console.WriteLine($" Time elapsed: {timer.ElapsedMilliseconds:#,##0}ms");
+```
+
+```
+RUNNING METHODS ASYNCHRONOULY in Multiple Threads
+ >> Thread id: 1, Priority: Normal, Background: False, Name: null
+ >>>>>>>>>>>>>>>>>>>>>>>
+ >> Starting Method A...
+ >> Thread id: 4, Priority: Normal, Background: True, Name: .NET ThreadPool Worker
+ >>>>>>>>>>>>>>>>>>>>>>>
+ >> Starting Method B...
+ >> Thread id: 6, Priority: Normal, Background: True, Name: .NET ThreadPool Worker
+ >>>>>>>>>>>>>>>>>>>>>>>
+ >> Starting Method C...
+ >> Thread id: 7, Priority: Normal, Background: True, Name: .NET ThreadPool Worker
+ Time elapsed: 10ms
+```
+
+- The message `>> Finished Method ...` does not exist in the console output!!.
+   - The main method only calls the Tasks and continue until its end. When that happens, the task are not finished.
+
 
