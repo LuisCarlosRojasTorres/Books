@@ -115,6 +115,39 @@ RUNNING METHODS ASYNCHRONOULY in Multiple Threads
 ```
 
 - The message `>> Finished Method ...` does not exist in the console output!!.
-   - The main method only calls the Tasks and continue until its end. When that happens, the task are not finished.
+   - The main method only calls the Tasks and continue until its end. When that happens, **the task are not finished*!!*.
+   - To solve this we can use the following three methods:
+      - `t.Wait()`: This waits for the task instance named `t` to complete execution.
+      - `Task.WaitAny(Task[])`: It waits until one of the tasks in the array completes
+      - `Task.WaitAll(Task[])`: It waits until all the tasks in the array completes
 
+#### Examples with t.Wait   
+   
+- This will take `6018` ms. Each Task begins after the previous one is finished.
 
+``` cs
+Task taskA = new(MethodA);
+taskA.Start();
+taskA.Wait();
+
+Task taskB = Task.Factory.StartNew(MethodB);
+taskB.Wait();
+
+Task taskC = Task.Run(MethodC);
+taskC.Wait();      
+```
+
+- On the other hand this will take `3018` ms. All threads are called and the process finishes when the longest thread (thread C has a `3000`ms sleep) is completed.
+
+```
+Task taskA = new(MethodA);
+taskA.Start();
+
+Task taskB = Task.Factory.StartNew(MethodB);
+
+Task taskC = Task.Run(MethodC);
+
+taskA.Wait();
+taskB.Wait();
+taskC.Wait();
+```
