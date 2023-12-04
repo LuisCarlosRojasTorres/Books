@@ -154,6 +154,7 @@ taskC.Wait();
 
 #### Examples with Wait.Any
 - This takes 1000 ms because as soon as the first thread finishes the main thread too.
+
 ``` cs
 Task taskA = new(MethodA);
 taskA.Start();
