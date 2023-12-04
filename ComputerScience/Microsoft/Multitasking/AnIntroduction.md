@@ -151,3 +151,42 @@ taskA.Wait();
 taskB.Wait();
 taskC.Wait();
 ```
+
+#### Examples with Wait.Any
+- This takes 1000 ms because as soon as the first thread finishes the main thread too.
+``` cs
+Task taskA = new(MethodA);
+taskA.Start();
+
+Task taskB = Task.Factory.StartNew(MethodB);
+
+Task taskC = Task.Run(MethodC);
+
+Task[] tasks = { taskA, taskB, taskC };
+Task.WaitAny(tasks);
+```
+
+- Output
+   - It can be observed that as soon as the one thread is completed the main thread finishes.
+```
+RUNNING METHODS ASYNCHRONOULY in Multiple Threads
+
+ >> Thread id: 1, Priority: Normal, Background: False, Name: null
+ >>>>>>>>>>>>>>>>>>>>>>>
+ >> Starting Method A...
+ >> Thread id: 4, Priority: Normal, Background: True, Name: .NET ThreadPool Worker
+ >>>>>>>>>>>>>>>>>>>>>>>
+ >> Starting Method B...
+ >> Thread id: 6, Priority: Normal, Background: True, Name: .NET ThreadPool Worker
+ >>>>>>>>>>>>>>>>>>>>>>>
+ >> Starting Method C...
+ >> Thread id: 7, Priority: Normal, Background: True, Name: .NET ThreadPool Worker
+ >> Finished Method C...
+ Time elapsed: 1,039ms
+```
+#### Examples with Wait.All
+- If the `WaitAny` is replaced by `WaitAll`. The time elapsed will be `3014` ms.
+
+``` cs
+Task.WaitAny(tasks);
+```
