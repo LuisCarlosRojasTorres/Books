@@ -74,6 +74,10 @@ static void Greetings(List<string> names, DummyDelegate dummyDelegate)
         dummyDelegate(name);        
     }    
 }
+
+//To call the method...
+var names = new List<string> { "Luis", "Jessyca", "Lobo", "Rufa"};
+Greetings(names, SayHello);
 ```
 
 
