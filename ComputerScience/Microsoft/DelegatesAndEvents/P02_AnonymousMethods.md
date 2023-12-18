@@ -3,7 +3,7 @@
         
 ## What is its purpose?
 - To be used with a `delegate`
-  - It is resomended when defining a new method is not necessary because you only use it once. 
+  - It is recomended when defining a new method is not necessary because you only use it once. 
       
 ## Important Concepts
 - Sintax:
