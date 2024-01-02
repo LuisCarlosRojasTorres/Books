@@ -103,7 +103,7 @@ class DummyPublisherWithData
         // Otherwise nothing happens
         if(dummyEvent != null)
         {
-            dummyEvent(this, DummyEventArgs { stringVar = dummyString, intVar = dummyInt });
+            dummyEvent(this, new DummyEventArgs { stringVar = dummyString, intVar = dummyInt });
         }
     }
 }
@@ -131,7 +131,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        var dummyPublisher = new DummyPublisher();
+        var dummyPublisher = new DummyPublisherWithData();
 
         // Reference to EventHandler delegate
         dummyPublisher.dummyEvent += DummySubscriber.SubscriberMethod;        
