@@ -23,7 +23,7 @@
       - [ ] AutoResetEvent
       - [ ] ManualResetEvent
       - [ ] CountdownEvent
-    - [ ] Design Patterns for Concurrency
+    - [ ] [Design Patterns for Concurrency](https://learn.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/)
   - [ ] Web
     - [ ] [Intro](https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2022)
     - [ ] [WebApp](https://learn.microsoft.com/en-us/aspnet/core/tutorials/choose-web-ui?view=aspnetcore-8.0)
