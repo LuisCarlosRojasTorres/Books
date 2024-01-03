@@ -134,3 +134,66 @@ class Program
     }
 }
 ```
+
+### How to use using lambda expressions
+
+#### Without Parameters
+
+1. Create a `ThreadStart` with a lambda statement.
+
+``` cs
+ThreadStart startNoParam = () => {
+    Console.WriteLine(" - DummyMethod...");
+    Thread.Sleep(2000);
+    Console.WriteLine(" - DummyMethod...done");
+};
+```
+
+2. Initialize the `Thread(ThreadStart)` object with the `ThreadStart` delegate as argument.
+
+``` cs 
+var t1 = new Thread(startNoParam);
+t1.Start();
+t1.Join();
+```
+
+- Full code:
+
+``` cs
+public class Program
+{
+    static void Main(string[] args)
+    {
+        ThreadStart startNoParam = () => {
+            Console.WriteLine(" - DummyMethod...");
+            Thread.Sleep(2000);
+            Console.WriteLine(" - DummyMethod...done");
+        };
+
+        var t1 = new Thread(startNoParam);
+        t1.Start();
+        t1.Join();
+    }
+}
+```
+
+#### With Parameters
+
+1. Create a `ParameterizedThreadStart` with a lambda statement.
+
+``` cs
+ParameterizedThreadStart startParam = (object? o) => {
+    Console.WriteLine(" - DummyMethodWithParameters...");
+    Thread.Sleep(2000);
+    Console.WriteLine($" - DummyMethodWithParameters: o={o}");
+    Console.WriteLine(" - DummyMethodWithParameters...done");
+};
+```
+
+2. Initialize the `Thread(ParameterizedThreadStart)` object with the `ParameterizedThreadStart` delegate as argument.
+
+``` cs
+var t2 = new Thread(startParam);
+t2.Start(5);
+t2.Join();
+```
