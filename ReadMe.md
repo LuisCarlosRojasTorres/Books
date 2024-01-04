@@ -2,7 +2,7 @@
 - Technologies to learn:
   - [ ] [Concurrency in C#](https://www.csharptutorial.net/csharp-concurrency/)
     - [ ] MultiThreading
-      - [ ] Thread
+      - [x] Thread
       - [ ] Background
       - [ ] ThreadPool
     - [ ] Taskbased Asynchronous
