@@ -39,28 +39,34 @@ dummyThread.Start();
 - Full code:
 
 ``` cs 
-static void DummyMethod()
+public class Program
 {
-    for (int i = 0; i < 5; i++)
+    static void DummyMethod()
     {
-        Thread.Sleep(100);
-        Console.WriteLine(" - DummyMethod in Background thread running...");        
+        for (int i = 0; i < 10; i++)
+        {
+            Thread.Sleep(100);
+            Console.WriteLine(" - DummyMethod in Background thread running...");
+        }
     }
-}
 
-var dummyThread = new Thread(DoWork);
-dummyThread.IsBackground = true;
-dummyThread.Start();
+    static void Main(string[] args)
+    {
+        var dummyThread = new Thread(DummyMethod);
+        dummyThread.IsBackground = true;
+        dummyThread.Start();
 
-// Do some work in the main thread
-for (int i = 0; i < 2; i++)
-{
-    Thread.Sleep(100);
-    Console.WriteLine("Main thread running...");
+        // Do some work in the main thread
+        for (int i = 0; i < 2; i++)
+        {
+            Thread.Sleep(100);
+            Console.WriteLine("Main thread running...");
+        }
+    }
 }
 ```
 
-The output is :
+- The output is :
 
 ```
 Main thread running...
@@ -68,5 +74,22 @@ Background thread running...
 Main thread running...
 ```
 
-So, the program ends before the Background thread finishes. 
+- So, the program ends before the Background thread finishes. 
+- On the other hand, if the `IsBackground` property is commented the output will be:
+
+```
+Main thread running...
+ - DummyMethod in Background thread running...
+ - DummyMethod in Background thread running...
+Main thread running...
+ - DummyMethod in Background thread running...
+ - DummyMethod in Background thread running...
+ - DummyMethod in Background thread running...
+ - DummyMethod in Background thread running...
+ - DummyMethod in Background thread running...
+ - DummyMethod in Background thread running...
+ - DummyMethod in Background thread running...
+ - DummyMethod in Background thread running...
+```
+
 
