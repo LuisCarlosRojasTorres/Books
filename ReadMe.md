@@ -1,12 +1,12 @@
 ## 2024 
 - Technologies to learn:
   - [ ] [Concurrency in C#](https://www.csharptutorial.net/csharp-concurrency/)
-    - [ ] MultiThreading
+    - [x] MultiThreading
       - [x] Thread
-      - [ ] Background
-      - [ ] ThreadPool
+      - [x] Background Pool
+      - [x] ThreadPool
     - [ ] Taskbased Asynchronous
-      - [ ] Task
+      - [x] Task
       - [ ] Chain multiple tasks
       - [ ] Handle exceptions
       - [ ] AsyncAwait
