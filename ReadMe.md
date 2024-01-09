@@ -7,10 +7,10 @@
       - [x] ThreadPool
     - [ ] Taskbased Asynchronous
       - [x] Task
-      - [ ] Chain multiple tasks
-      - [ ] Handle exceptions
-      - [ ] AsyncAwait
-      - [ ] Cancelling an Async operations
+      - [x] Chain multiple tasks
+      - [x] Handle exceptions
+      - [x] AsyncAwait
+      - [x] Cancelling an Async operations
       - [ ] WhenAny
       - [ ] WhenAll
     - [ ] Synchronization
@@ -20,8 +20,8 @@
       - [ ] readerWriterLockSlin
       - [ ] SemaphoreSlime
     - [ ] Thread Signaling
-      - [ ] AutoResetEvent
-      - [ ] ManualResetEvent
+      - [x] AutoResetEvent
+      - [x] ManualResetEvent
       - [ ] CountdownEvent
     - [ ] [Design Patterns for Concurrency](https://learn.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/)
   - [ ] Web
