@@ -65,6 +65,33 @@ txt.Name.SetBinding(Label.TextProperty, personBinding);
 
 ##  3. <a name='V060CreandoBindingsenXAML'></a>V060 Creando Bindings en XAML
 
+1. Add the namespace where the model is located
+
+``` xml
+<ContentPage
+...
+xmlns:Models="clr-namespace:DummySpace.Models">
+```
+2. Create an static resouce (which is an instance of the model class) to bind:
+
+``` xml
+<ContentPage.Resources>
+	<Models.Person 
+		x:Key="person"
+		Name="Rufa"
+		Age=18/>
+</ContentPage.Resources>
+```
+
+3. Bind the xaml object property
+``` xml
+<Label
+	x:Name="txtName"
+	FontSize="50"
+	Text="{Binding Name, Source={StaticResource person}}"
+	HorizontalOptions="Center"
+	VerticalOptions="Center" />
+```
 
 ##  4. <a name='V061BindingContext'></a>V061 BindingContext
 ##  5. <a name='V062Bindingentrecontroles'></a>V062 Binding entre controles
