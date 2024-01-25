@@ -151,9 +151,16 @@ BindingContext = person
 ```
 
 ##  6. <a name='V063ModosenBinding'></a>V063 Modos en Binding
-- `OneTime`: source to target at initialization
-- `OneWay`: only source to target
-- `TwoWay`: source to target and viceversa
+- The `Binding` also has `Mode`
+- `Mode=OneTime`: source to target at initialization
+- `Mode=OneWay`: only source to target
+- `Mode=TwoWay`: source to target and viceversa
+``` xml
+<DummyCntrol
+DummyField="{Binding Source={x=Reference slider}, Path=Value, Mode=OneWay}"
+/>
+```
+  
 ##  7. <a name='V064INotifyPropertyChanged'></a>V064 INotifyPropertyChanged
 
 
