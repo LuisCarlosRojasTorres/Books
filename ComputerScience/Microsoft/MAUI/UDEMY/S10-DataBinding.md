@@ -132,6 +132,24 @@ BindingContext = person
 	VerticalOptions="Center" />
 ```
 ##  5. <a name='V062Bindingentrecontroles'></a>V062 Binding entre controles
+1. Create the object source:
+``` xml
+<Slider
+	x:Name="slider"
+	Maximum="360"
+	Minimum="0"
+/>
+```
+
+2. Bind the source object to another control, setting `Source` and `Path`
+
+``` xml
+<Label
+	FontSize="50"
+	Rotation="{Binding Source={x=Reference slider}, Path=Value}"
+/>
+```
+
 ##  6. <a name='V063ModosenBinding'></a>V063 Modos en Binding
 - `OneTime`: source to target at initialization
 - `OneWay`: only source to target
