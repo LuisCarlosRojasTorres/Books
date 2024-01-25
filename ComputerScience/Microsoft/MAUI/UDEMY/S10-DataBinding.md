@@ -94,6 +94,43 @@ xmlns:Models="clr-namespace:DummySpace.Models">
 ```
 
 ##  4. <a name='V061BindingContext'></a>V061 BindingContext
+
+- Una forma más practica de realizar binding es la siguiente (del ejemplo odel V058).
+
+``` cs
+var person = new Person
+{
+	Name = "Rufo",
+	Age = 18
+};
+
+txtName.BindingContext = person;
+txtName.SetBinding(Label.TextProperty, "Name");
+```
+- Se puede hacer lo mismo dentro de un contenedor. De esta forma todos los objetos xaml contenidos pueden acceder a los campos del objeto.
+1. Set binding context in the `ContentPage`  code file:
+``` cs
+var person = new Person
+{
+	Name = "Rufo",
+	Age = 18
+};
+
+BindingContext = person
+```
+2. Reference the fields of the object in the binding context. It is not necessary `x:Name` in the xaml objects
+``` xml
+<Label
+	FontSize="50"
+	Text="{Binding Name}"
+	HorizontalOptions="Center"
+	VerticalOptions="Center" />
+<Label
+	FontSize="50"
+	Text="{Binding Age}"
+	HorizontalOptions="Center"
+	VerticalOptions="Center" />
+```
 ##  5. <a name='V062Bindingentrecontroles'></a>V062 Binding entre controles
 ##  6. <a name='V063ModosenBinding'></a>V063 Modos en Binding
 - `OneTime`: source to target at initialization
