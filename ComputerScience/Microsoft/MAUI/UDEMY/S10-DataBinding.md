@@ -155,6 +155,7 @@ BindingContext = person
 - `Mode=OneTime`: source to target at initialization
 - `Mode=OneWay`: only source to target
 - `Mode=TwoWay`: source to target and viceversa
+
 ``` xml
 <DummyCntrol
 DummyField="{Binding Source={x=Reference slider}, Path=Value, Mode=OneWay}"
@@ -162,5 +163,103 @@ DummyField="{Binding Source={x=Reference slider}, Path=Value, Mode=OneWay}"
 ```
   
 ##  7. <a name='V064INotifyPropertyChanged'></a>V064 INotifyPropertyChanged
+- Para que un objeto toda vez que sea modificado la GUI cambie tambien, su clase debe implementar `INotifyPropertyChanged`
+1. Implement `INotifyPropertyChanged` interface
 
+``` cs
+namespace DatabindingDemo.Models
+{
+     public class Person : INotifyPropertyChanged
+     {
+          public string Name
+          {
+               get => name; set
+               {
+                    name = value;
+                    OnPropertyChanged();
+               }
+          }
+          public string Phone
+          {
+               get => phone; set
+               {
+                    phone = value;
+                    OnPropertyChanged();
+               }
+          }
+          public string Address
+          {
+               get => address; set
+               {
+                    address = value;
+                    OnPropertyChanged();
+               }
+          }
+
+          public event PropertyChangedEventHandler PropertyChanged;
+
+          protected void OnPropertyChanged([CallerMemberName] string propName = null)
+          {
+               PropertyChanged?.Invoke(this,
+                    new PropertyChangedEventArgs(propName));
+          }
+     }
+}
+```
+
+2. Bind the content page to an object of that class
+``` cs 
+public partial class MainPage : ContentPage
+{
+	Person person = new Person();
+
+	public MainPage()
+	{
+		InitializeComponent();
+
+          person = new Person
+          {
+               Name = "John",
+               Phone = "9999",
+               Address = "X Address"
+          };
+
+          BindingContext = person; //HEREEEE!!!
+     }
+
+     private void OnCounterClicked(object sender, EventArgs e)
+     {
+		//Values are modified so it will triger the event          
+        person.Name = "Peter";
+        person.Phone = "0000";
+        person.Address = "New Address";          
+     }
+}
+```
+
+3. Bind the xaml controls to binding object
+``` xml
+<ScrollView>
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25"
+        VerticalOptions="Center">
+        <Entry
+            FontSize="50"
+            HorizontalOptions="Center"
+            Text="{Binding Name}"
+            VerticalOptions="Center" />
+        <Entry
+            FontSize="50"
+            HorizontalOptions="Center"
+            Text="{Binding Phone}"
+            VerticalOptions="Center" />
+        <Entry
+            FontSize="50"
+            HorizontalOptions="Center"
+            Text="{Binding Address}"
+            VerticalOptions="Center" />
+    </VerticalStackLayout>
+</ScrollView>
+```
 
