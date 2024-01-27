@@ -31,7 +31,10 @@
       - `<Label Text="{Binding Dummy.Property}">` 
 
 
-## V078 Creando bindings
+## V078 Creando bindings a diferentes controles desde un mismo viewmodel
+- Al realizar los pasos del video anterior todo campo del objeto instanciado en el `viewmodel``, esta disponible en el `View`.
+
+- Por tanto, cualquier control en el `View` puede acceder a cualquier campo del objeto `Dummy`.
 
 ## V079 Bindings de Propiedades
 
