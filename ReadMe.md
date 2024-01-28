@@ -1,3 +1,46 @@
+## 2024 
+- Technologies to learn:
+  - [ ] [Concurrency in C#](https://www.csharptutorial.net/csharp-concurrency/)
+    - [x] MultiThreading
+      - [x] Thread
+      - [x] Background Pool
+      - [x] ThreadPool
+    - [ ] Taskbased Asynchronous
+      - [x] Task
+      - [x] Chain multiple tasks
+      - [x] Handle exceptions
+      - [x] AsyncAwait
+      - [x] Cancelling an Async operations
+      - [ ] WhenAny
+      - [ ] WhenAll
+    - [ ] Synchronization
+      - [ ] lock statement
+      - [ ] deadlock
+      - [ ] interlocked
+      - [ ] readerWriterLockSlin
+      - [ ] SemaphoreSlime
+    - [ ] Thread Signaling
+      - [x] AutoResetEvent
+      - [x] ManualResetEvent
+      - [ ] CountdownEvent
+    - [ ] [Design Patterns for Concurrency](https://learn.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/)
+  - [ ] Web
+    - [ ] [Intro](https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2022)
+    - [ ] [WebApp](https://learn.microsoft.com/en-us/aspnet/core/tutorials/choose-web-ui?view=aspnetcore-8.0)
+      - [ ] [Razor](https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/?view=aspnetcore-8.0)
+      - [ ] [MVC](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-8.0&tabs=visual-studio)
+      - [ ] [Blazor](https://learn.microsoft.com/en-us/aspnet/core/blazor/tutorials/?view=aspnetcore-8.0)
+    - [ ] [API](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/apis?view=aspnetcore-8.0)
+      - [ ] [Controller-based API](https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-8.0)
+      - [ ] [Minimal API](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/overview?view=aspnetcore-8.0)
+  - Docker:
+    - [ ] [For NET Core](https://www.udemy.com/course/docker-essencial-para-a-plataforma-net/learn/lecture/13509390?start=90)
+    - [ ] [And Kubernetes](https://www.udemy.com/course/docker-kubernetes-the-practical-guide/learn/lecture/22166652?start=0#overview)
+  - [ ] NGINX
+  - [ ] TLS
+  - [ ] Devops
+    - [ ] [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
+
 ## Commit format for all the books
 ``` console 
 <NameOf Book/Doc> - <name of functionality/chapter Added> - <in progress/finished>
