@@ -36,8 +36,57 @@
 
 - Por tanto, cualquier control en el `View` puede acceder a cualquier campo del objeto `Dummy`.
 
-## V079 Bindings de Propiedades
+## V079 Bindings de collecction a control de tipo collection
+- En `ViewModel`
+  - Getter de una collection e.g. `DummyCol`
+  - Intanciar la collection en el contructor
+- En `View.cs`
+  - Bind a una instancia del ViewModel: `BindingContext = new DummyViewModel()`
+- En `View.xaml`
+  - Setar ItemSource en el ColletionView:
 
+``` xml
+<CollectionView ItemsSource="{Binding Dummy}" SelectionMode="Multiple">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Frame
+                        Margin="20"
+                        BorderColor="DarkGray"
+                        CornerRadius="5"
+                        HasShadow="True"
+                        HeightRequest="100"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding .}" />
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+```
+- Si lo que se quiere es listar una collecion de objetos se tiene que especificar que campo debe ser mostrado eso en el `<Label Test="Binding DummyCollectionProperty">`
+
+``` xml
+<CollectionView ItemsSource="{Binding DummyCollection}" SelectionMode="Multiple">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Frame
+                        Margin="20"
+                        BorderColor="DarkGray"
+                        CornerRadius="5"
+                        HasShadow="True"
+                        HeightRequest="100"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding DummyCollectionProperty}" />
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+```
 ## V080 Value Converter 
 
 ## V081 Value Converter Back 
