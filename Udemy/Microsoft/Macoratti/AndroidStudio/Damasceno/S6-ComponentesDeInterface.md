@@ -1,6 +1,6 @@
 
 ## 55. Introdução às Constraints
-
+- Permite, organizar a screen a partir de `molas`.
 ## 56. Configurações de constraints
 
 ## 57. Alinhamento pela linha base
