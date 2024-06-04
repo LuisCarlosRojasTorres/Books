@@ -1,10 +1,14 @@
 
 ## 55. Introdução às Constraints
 - Permite, organizar a screen a partir de `molas`.
+
 ## 56. Configurações de constraints
+- Para limpar todos os contraints de um widget: click direito , `clear all constraints on selection`
 
 ## 57. Alinhamento pela linha base
-
+- Apara alinhar precisamos no minimo alinhar com os circulos na horizontal e na vertical
+- Alinhar na linha base quer dizer na linha base do texto. 
+  - Click direito no `widget` (com texto) e click em `Show baseline`
 ## 58. Atalhos para alinhamentos
 
 ## 59. Utilizando chain
