@@ -23,12 +23,18 @@
 - É uma tipo de linha guia que contraria a linha gui normal (que é fixa) esta se ajusta ao conteudo. 
 - No `Component Tree` os elementos deben ser botados dentro do `Barrier`
 - Os elementos externos a barrier podem fazer as referencias geometricas dele com os elementos contidos.
-- Outra forma é nos `Attributes`  do widget seleccionar a barrier no combobox de `layout_constraintTop_toBottomOf` ou `layout_constraintEnd_toEndOf` ou `layout_constraintStart_toStartOf`
+- Outra forma é nos `Attributes`  do widget seleccionar a barrier no combobox de `layout_constraintTop_toBottomOf` ou `layout_constraintEnd_toEndOf` ou `layout_constraintStart_toStartOf`.
 
 ## 62. Padding e Margin
+- Padding (prenchimento): espaço entre a borda de uma caixa e o conteudo dela
+- Margin : é o espaço externo entre elementos
 
 ## 63. Unidades de medida
-
+- Pixel: maix pixels num mesmo espaço melhor a qualidade.
+- DPI (dot per inch): 
+- O problema desta media é que uma imagem de alto dpi se ajusta com a tela: numa tela com pouco dpi ficara gigante e numa de alto depi ficará pequena.
+- Solução: Unidade de medida DP. Uma imagem de `50dp x 20dp` ocupará o mesmo espaço, porem a qualidade será alterada para ajustar a tela.
+  -   `sp`: pra texto.
 ## 64. Entendendo XML
 
 ## 65. Orientação de tela
