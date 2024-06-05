@@ -8,14 +8,22 @@
 ## 57. Alinhamento pela linha base
 - Apara alinhar precisamos no minimo alinhar com os circulos na horizontal e na vertical
 - Alinhar na linha base quer dizer na linha base do texto. 
-  - Click direito no `widget` (com texto) e click em `Show baseline`
+  - Click direito no `widget` (com texto) e click em `Show baseline` click e drag to o baseline do outro elemento.
+
 ## 58. Atalhos para alinhamentos
 
 ## 59. Utilizando chain
 
 ## 60. Linhas guia
+- É uma linha (vertical ou horizontal) auxiliar para linhar elementos, logicamente nao é visualizada ao executar o app.
+  - Elas podem utilizar valores fixos ou porcentagens. Para mudar isso tem que dar click na bola cinça com o simbolo de seta.
+- Para accessar: `Right-Click (on design)/Add Helpers/` ou `Palled menu/ Helpers tab`
 
 ## 61. Utilizando Barrier
+- É uma tipo de linha guia que contraria a linha gui normal (que é fixa) esta se ajusta ao conteudo. 
+- No `Component Tree` os elementos deben ser botados dentro do `Barrier`
+- Os elementos externos a barrier podem fazer as referencias geometricas dele com os elementos contidos.
+- Outra forma é nos `Attributes`  do widget seleccionar a barrier no combobox de `layout_constraintTop_toBottomOf` ou `layout_constraintEnd_toEndOf` ou `layout_constraintStart_toStartOf`
 
 ## 62. Padding e Margin
 
