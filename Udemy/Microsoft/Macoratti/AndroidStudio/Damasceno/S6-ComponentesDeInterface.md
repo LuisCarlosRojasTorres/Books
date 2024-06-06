@@ -55,8 +55,13 @@
 </activity>
 ```
 ## 66. Pasta values
-
+- `string.xml`: 
+  - O melhor é definir aqui o conteudo que vai ser apresentado em botoes e textviews. Com isso 
 ## 67. Ícones - Vector Asset
+- `Right Click on drawable / New / Vector Asset / ` a imagem vai ficar na pasta `drawable`
+  - Para mudar o ícone no android manifest:
+    - `android:icon="@mipmap/ic_launcher"` (default)
+    - mudar para `android:icon="@drawable/nome_do_icon"`
 
 ## 68. Temas - parte 1
 
