@@ -64,9 +64,12 @@
     - mudar para `android:icon="@drawable/nome_do_icon"`
 
 ## 68. Temas - parte 1
-
+- Os `Themes` sao asignados no manifest: 
+  - `android:theme="@style/Theme.Section6"`
+- O tema da app se encontra `/res/values/themes` ele herda de `Theme.Material3.DayNight.NoActionBar`, caso nao se defina nada diferente todas os estilos são puxados do **`parent`**
+- Para mudar a cor de um elemento a melhor prática é definar a cor no `colors.xml` 
 ## 69. Temas - parte 2
-
+- Para ativar o night moode no emulador `Ajustes/Tela/NightMode`
 ## 70. ScrollView
 
 ## 71. Caixa de texto (EditText)
