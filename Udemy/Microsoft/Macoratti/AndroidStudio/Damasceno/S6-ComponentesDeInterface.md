@@ -35,10 +35,25 @@
 - O problema desta media é que uma imagem de alto dpi se ajusta com a tela: numa tela com pouco dpi ficara gigante e numa de alto depi ficará pequena.
 - Solução: Unidade de medida DP. Uma imagem de `50dp x 20dp` ocupará o mesmo espaço, porem a qualidade será alterada para ajustar a tela.
   -   `sp`: pra texto.
+   
+
 ## 64. Entendendo XML
 
 ## 65. Orientação de tela
-
+- É setado por Activity no `AndroidManifest`: `android:screenOrientation` tem varios tipos muito especificos  (ir pra documentação oficial)
+``` xml
+<activity
+  android:name=".MainActivity"
+  android:exported="true"
+  android:screenOrientation="unspecified">
+  
+  <intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+                
+    <category android:name="android.intent.category.LAUNCHER" />
+  </intent-filter>
+</activity>
+```
 ## 66. Pasta values
 
 ## 67. Ícones - Vector Asset
