@@ -70,7 +70,9 @@
 - Para mudar a cor de um elemento a melhor prática é definar a cor no `colors.xml` 
 ## 69. Temas - parte 2
 - Para ativar o night moode no emulador `Ajustes/Tela/NightMode`
+
 ## 70. ScrollView
+- Permite incluir mais elementos do que entra na tela.
 
 ## 71. Caixa de texto (EditText)
 
