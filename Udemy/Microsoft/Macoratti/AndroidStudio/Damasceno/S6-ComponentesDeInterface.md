@@ -75,7 +75,10 @@
 - Permite incluir mais elementos do que entra na tela.
 
 ## 71. Caixa de texto (EditText)
-
+- Ao clickar em `Palette/Text` aparecem diferentes `TextView` e.g. `Plain Text, Password.... Email` etc. A diferença entre elas é o teclado.
+  - Nos atributos tem:
+    - `hint`: texto traslucido para indicar o que escrever
+    - `input type`: permite customizar o teclado de acordo ao tipo de input.
 ## 72. Caixas de texto (TextInputLayout)
 
 ## 73. Eventos de clique + classe R.java
