@@ -82,7 +82,17 @@
 ## 72. Caixas de texto (TextInputLayout)
 
 ## 73. Eventos de clique + classe R.java
+Duas formas:
+A primeira é simples, a segunda é caso se precise ter condições para a execução dos métodos.
+1. Adicionar um botão
+2. Crear método: Todo método que vai estar asociado ao click de um botao DEVE ter como parâmetro `View view` 
+   ``` kt
+   public void dummyMethod(View view)
 
+   ```
+3. Fazendo isso vai aparecer no combobox do `OnClick` do botão.
+
+Utilizando eventos
 ## 74. Recuperando valores digitados
 
 ## 75. Criando interface da Netflix - parte 01
