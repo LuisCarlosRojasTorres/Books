@@ -86,7 +86,7 @@ LINK : [HERE](https://developer.android.com/guide/components/activities/activity
   - O sistema está destruindo temporariamente a atividade devido a uma mudança na configuração, como a rotação do dispositivo ou a entrada no modo de várias janelas.
   - A partir do estado "Interrompido", a atividade volta a interagir com o usuário ou para de operar e é encerrada. Se a atividade voltar, o sistema invocará onRestart(). Caso a Activity deixe de operar, o sistema chamará onDestroy().
 
-- Exemplo:
+- Exemplo: É utilizado o exemplo anterior como base
   - No mainactiviy é possivel criar os seguintes métodos (apresentados a seguir) 
     - NOTA: No método de log `Log.i` Primeiro parametro é p tag do log, o outro é o conteudo
     - Os logs sao printados no `Logcat` onde da pra filtrar por `tag`
@@ -161,3 +161,66 @@ class MainActivity : AppCompatActivity() {
     - Log: `OnRestart OnStart OnResume`
   - App fechado
     - Log: `OnPause OnStop OnDestroy`
+
+## V103 Passando dados entre activities
+- Os valores sao enviados no `Intent` utilizando o método `putExtra`
+- Exemplo: É utilizado o exemplo anterior como base
+1. No MainActivity.kt 
+``` kt
+buttonAbrir.setOnClickListener {
+            val intent  = Intent(this,
+                dummyActivity::class.java)
+
+            // Aqui sao setados os dados
+            intent.putExtra("dummy_double",73.90)
+            intent.putExtra("dummy_int",4888)
+            intent.putExtra("dummy_string","This is a Message from MainActivity")
+
+            startActivity(intent)
+        } 
+```
+2. Criar um TextView no na outra activity layout com `id = txt_dummy`
+3. O Codigo no activity é o seguinte:
+``` kt
+class dummyActivity : AppCompatActivity() {
+
+    lateinit var buttonCerrar : Button
+    lateinit var txtDummy : TextView // Pra utilizar o TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_dummy)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        buttonCerrar = findViewById(R.id.button_go_back)
+        txtDummy = findViewById(R.id.txt_dummy) //Carregando o TextView
+
+        val bundle = intent.extras // Aqui tem todos os parametros adicionados com PutExtra
+        if( bundle != null) //Proteçao caso retorne null
+        {
+          //Variaveis utilizadas na activity anterior
+            val dummy_message = bundle.getString("dummy_string")
+            val dummy_int = bundle.getInt("dummy_int")
+            val dummy_double = bundle.getDouble("dummy_double")
+
+            //Mensagem que agrupa todas elas 
+            val result = "Msg: $dummy_message , Int: $dummy_int , double: $dummy_double"
+            // Assignar o resultado
+            txtDummy.text = result
+        }
+
+        buttonCerrar.setOnClickListener {
+            finish()
+        }
+    }
+}
+```
+
+## V104 Passando objetos entre activities
+- Exemplo: É utilizado o exemplo anterior como base
+
