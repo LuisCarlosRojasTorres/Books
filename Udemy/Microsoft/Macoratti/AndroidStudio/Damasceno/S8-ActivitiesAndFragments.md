@@ -309,3 +309,8 @@ lateinit var buttonCerrar : Button
         }
     }
 ```
+
+## V107 - Introdução aos fragments
+- São partes reutilizaveis da interface de usuário
+- Definem e gerenciam o proprop layout, tem ciclo de vida proprio e pode processar eventos de entrada.
+- Nao existem por conta propria precisam ser hospedados dentro de uma `activity` ou por outro `fragment`
