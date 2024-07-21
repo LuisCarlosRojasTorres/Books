@@ -314,3 +314,84 @@ lateinit var buttonCerrar : Button
 - São partes reutilizaveis da interface de usuário
 - Definem e gerenciam o proprop layout, tem ciclo de vida proprio e pode processar eventos de entrada.
 - Nao existem por conta propria precisam ser hospedados dentro de uma `activity` ou por outro `fragment`
+
+## V108 Criando interface para Fragment 
+- Utiliza `FragmentContainerView`
+  - Precisa de ter `fragments` previamente criados
+
+## V109 - Criando um fragment
+- Duas formas:
+  - Usando XML
+  - Programaticamente
+- `Right Click on Package / New/Fragment/ Fragment (Blank)`
+  - Coding style Fragment Name: `<dummyName>Fragment.kt` e Fragment Layout Name: `fragment_<dummyName>`
+- Ao adicionar um `FragmentContainerView` vao aparecer dois erros:
+  - `Unknown Fragments`: Recomenda que en quanto estiver utilizando o Android Studio, deve utilizar o `@layout/fragment_<dummyName>` para renderizar
+    - Ao ver o código vemos o seguinte:
+    ``` xml
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.redtowersoft.s8.Test1Fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="219dp"
+        tools:layout="@layout/fragment_test1" />
+    ```
+    - No caso do meu fragment criado deu `tools:layout="@layout/fragment_test1"`
+    - Lembrando que `tools:` recursos que funcionan no android studio porem na hora de compilar nao serao levados em consideração.
+  - `Missing Constraints in Constraing Layout`:
+
+- Exemplo: 
+1. Criar um namespace `fragment` 
+2. Criar uma nova `kotlin` class e que ela herde de Fragment. Implementar o default do método `onCreateView`. Assumindo um nome `Dummy1Fragment`. O codigo deve ficar assim.
+``` kt
+class Dummy1Fragment : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+}
+```
+3. Criar um novo layout resource com nome `fragment_dummy1`
+   1. Temporalmente pode ser criado um txt com o nome do ffragment nele para poder reconhecer facil durante a implementação.
+4. Para assignar a nova classe ao novo layout se utiliza o método `inflate`:
+   1. `R.layout.fragment_dummy1`: O fragment que queremos
+   2. `container`: pq vai ser contido num contianer
+   3. `false`: false para montagem automatica, true pra manual
+``` kt
+class Dummy1Fragment : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val fragView = inflater.inflate(
+            R.layout.fragment_dummy1,
+            container,
+            false)
+        
+        return fragView
+    }
+}
+```
+
+5. Mudar o xml da activity que vai conter ele para o fragment escolhido
+``` xml
+<androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.redtowersoft.s8.fragments.Dummy1Fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:layout="@layout/fragment_dummy1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+```
