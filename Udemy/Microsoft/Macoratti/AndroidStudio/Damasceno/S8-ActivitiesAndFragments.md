@@ -223,4 +223,89 @@ class dummyActivity : AppCompatActivity() {
 
 ## V104 Passando objetos entre activities
 - Exemplo: É utilizado o exemplo anterior como base
+1. Adicionar o seguinte pacote `id("org.jetbrains.kotlin.plugin.parcelize")` no `build.gradle.kts` 
 
+``` 
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.jetbrains.kotlin.plugin.parcelize")    
+}
+
+```
+2. Criar uma `new kotlin data class` e.g. `DummyPerson`
+``` kt
+//Pacotes nescesarios
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize  //Para que o compilador parserise o construtor
+data class DummyPerson(val name: String, val surname: String, val age: Int) : Parcelable //Implementa a interface
+```
+3. Criar um objeto do tipo `DummyPerson` e adicionar no `intent.PutExtra`
+``` kt
+lateinit var buttonAbrir : Button
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        buttonAbrir = findViewById(R.id.button_newActivity)
+
+        buttonAbrir.setOnClickListener {
+            val intent  = Intent(this,
+                dummyActivity::class.java)
+
+            // CRIANDO OBJETO
+            val dummyPerson = DummyPerson("Rufa", "VonRufinstein", 12)
+            //ADICIONANDO NO INTENT
+            intent.putExtra("person", dummyPerson)
+
+            startActivity(intent)
+        }        
+    }
+```
+4. O método `getParcelable` tem duas implementações para versoes menores e maiores a versção 33. Por tanto tem que se implementar as duas.
+```
+lateinit var buttonCerrar : Button
+    lateinit var txtDummy : TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_dummy)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        buttonCerrar = findViewById(R.id.button_go_back)
+        txtDummy = findViewById(R.id.txt_dummy)
+
+        val bundle = intent.extras // Aqui tem todos os parametros adicionados com PutExtra
+        if( bundle != null)
+        {
+            //OBTENDO BUNDLE PARA VERSOES MAIORES A 33
+            val person = if( Build.VERSION.SDK_INT >= 33){
+                bundle.getParcelable("person", DummyPerson::class.java)
+            }else{
+                bundle.getParcelable("person")
+            }
+
+            //B
+            val result = "Name: ${person?.name} , Sobrenome: ${person?.surname}  , Idade: ${person?.age} "
+            txtDummy.text = result
+        }
+
+        buttonCerrar.setOnClickListener {
+            finish()
+        }
+    }
+```
