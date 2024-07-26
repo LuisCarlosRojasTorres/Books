@@ -343,8 +343,8 @@ lateinit var buttonCerrar : Button
   - `Missing Constraints in Constraing Layout`:
 
 - Exemplo: 
-1. Criar um namespace `fragment` 
-2. Criar uma nova `kotlin` class e que ela herde de Fragment. Implementar o default do método `onCreateView`. Assumindo um nome `Dummy1Fragment`. O codigo deve ficar assim.
+1. Criar um namespace `fragment` (folder)
+2. Criar uma nova `kotlin` class e que ela herde de `Fragment`. Implementar o default do método `onCreateView`. Assumindo um nome `Dummy1Fragment`. O codigo deve ficar assim.
 ``` kt
 class Dummy1Fragment : Fragment() {
 
@@ -374,7 +374,7 @@ class Dummy1Fragment : Fragment() {
         val fragView = inflater.inflate(
             R.layout.fragment_dummy1,
             container,
-            false)
+            attachToRoot: false)
         
         return fragView
     }
