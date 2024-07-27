@@ -395,3 +395,76 @@ class Dummy1Fragment : Fragment() {
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 ```
+
+## V110 Navegando pelos fragments
+- Se utiliza o `fragmentManager` e dois métodos:
+  - `.beginTransaction`: inicia operação
+  - `.commit`: confirma operação
+  - As operações podem ser:
+    - `add`: vai sobrepor um fragment acima do outro
+    - `replace`: substitui caso exista outro frament
+    - `remove`
+- Exemplo:É utilizado o exemplo anterior como base
+1. Dar id ao `fragmentContainerView` e.g. `fgContainer`
+2. Dentro do OnCreate da activity da pra botar o seguinte codigo:
+   1. Este seria o template:
+   ``` kt
+    val fragmentManager = supportFragmentManager.beginTransaction()
+        fragmentManager.add(R.id.<Id do Fragment Container>, <Classe do Fragment>())
+        fragmentManager.commit()
+    ``` 
+   2. ou seja
+   ``` kt
+   val fragmentManager = supportFragmentManager.beginTransaction()
+        fragmentManager.add(R.id.fgContainer, Dummy1Fragment())
+        fragmentManager.commit()
+   ``` 
+3. Outra forma seria utilizando botoes digamos que temos dois botoes no Activity com ids `button_frag1` e `button_frag2` codigo a seguir:
+   
+``` kt
+class FragmentTestActivity : AppCompatActivity() {
+
+    lateinit var btn_dummy1 : Button
+    lateinit var btn_dummy2 : Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_fragment_test)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        //Asignar os ids aos botoes
+        btn_dummy1 = findViewById(R.id.button_frag1)
+        btn_dummy2 = findViewById(R.id.button_frag2)
+
+        //É boa pratica instanciar fora os fragments para depois utilizar
+        val fgDummy1Instance = Dummy1Fragment()
+        val fgDummy2Instance = Dummy2Fragment()
+
+        //Assignar os métodos aos botoes
+        btn_dummy1.setOnClickListener{
+            val fragmentManager = supportFragmentManager.beginTransaction()
+            fragmentManager.replace(R.id.fgContainer, fgDummy1Instance)
+            fragmentManager.commit()
+        }
+
+        btn_dummy2.setOnClickListener{
+            val fragmentManager = supportFragmentManager.beginTransaction()
+            fragmentManager.replace(R.id.fgContainer, fgDummy2Instance)
+            fragmentManager.commit()
+        }
+    }
+}
+```
+## V111 Ciclo de Vida dos fragments
+![alt text](image-1.png)
+
+## V112 Actions com fragmentos
+
+## V113 Passando parametros para fragments
+
+## Usando  Fragment da extensaoKTX
