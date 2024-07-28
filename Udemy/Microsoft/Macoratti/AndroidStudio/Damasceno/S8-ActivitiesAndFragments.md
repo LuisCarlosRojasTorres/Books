@@ -463,8 +463,52 @@ class FragmentTestActivity : AppCompatActivity() {
 ## V111 Ciclo de Vida dos fragments
 ![alt text](image-1.png)
 
-## V112 Actions com fragmentos
+## V112 Ações com fragmentos
+
+- Podemos adicionar views no fragment.
+- Exemplo: Este depende do exemplo anterior.
+  - No fragment `Dummy1Fragment.kt ` com layout `fragment_dummy1.xml` vamos adicionar um `EditText` (id: `fg1_editText`), um `Button`  (id: `fg1_btnSubmit`), e um `TextView`  (id: `fg1_txtResult`).
+  - Para poder utilizar o `findViewById` num fragment é necessario especificar a instancia deste. Codigo a seguir do `Dummy1Fragment`:
+  ``` kt
+  class Dummy1Fragment : Fragment() {
+
+    // Variaveis para carregar as views
+    private lateinit var dummyEditText : EditText
+    private lateinit var dummyButton : Button
+    private lateinit var dummyTextResult : TextView
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // fragView tem a instancia do fragment
+        val fragView = inflater.inflate(
+            R.layout.fragment_dummy1,
+            container,
+            false)
+
+
+        // Para assignar o view precisamos fazer referencia a instancia do frament
+        // dummyVariable = <instanciaDoFragment>.findViewById(R.id.<idDoView>)
+        dummyEditText = fragView.findViewById(R.id.fg1_editText)
+        dummyButton = fragView.findViewById(R.id.fg1_btnSubmit)
+        dummyTextResult = fragView.findViewById(R.id.fg1_txtResult)
+
+        //Ja tendo isso a implementação é como sempre
+        dummyButton.setOnClickListener {
+            val textToGet = dummyEditText.text.toString()
+            dummyTextResult.text = "Result is:  $textToGet"
+        }
+
+
+
+        return fragView
+
+    }
+}
+  ```
 
 ## V113 Passando parametros para fragments
 
-## Usando  Fragment da extensaoKTX
+## V114 Usando  Fragment da extensao KTX
