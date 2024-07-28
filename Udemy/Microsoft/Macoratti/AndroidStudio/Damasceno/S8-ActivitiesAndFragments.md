@@ -510,5 +510,94 @@ class FragmentTestActivity : AppCompatActivity() {
   ```
 
 ## V113 Passando parametros para fragments
+- Para passar argumentos desde um activity ao fragment que ela contem se faz o seguinte:
+    1. Na Activity: Se cria um `bundle` onde estarao as variaveis de forma parecida com um dictionary
+    2. Na Activity: Se adiciona este `bundle` ao campo `arguments` da instancia do fragment.
+    3. No fragment: Criar as variaveis para asignar o bundle
+    4. No fragment: No método `OnCreate` assignar o campo `arguments` a cada variavel do fragment.   
+    5. No fragment: No método `OnCreateView` utilizar as novas variaveis.
 
+- Antes de fazer o bundle se tinha a seguinte implementação
+``` kt
+val fgDummy1Instance = Dummy1Fragment()
+btn_dummy1.setOnClickListener{
+            val fragmentManager = supportFragmentManager.beginTransaction()
+            fragmentManager.replace(R.id.fgContainer, fgDummy1Instance)
+            fragmentManager.commit()
+        }
+```
+- Para implementar o bundle foi feito o seguinte
+``` kt
+val fgDummy1Instance = Dummy1Fragment()
+//1. Bundle
+val bundle = bundleOf(
+            "tag1" to "dummyContent1",
+            "tag2" to "dummyContent2",
+            "tag3" to 3.141592
+        )
+//2. Asignar o bundle ao arguments
+fgDummy1Instance.arguments = bundle
+
+btn_dummy1.setOnClickListener{
+            val fragmentManager = supportFragmentManager.beginTransaction()
+            fragmentManager.replace(R.id.fgContainer, fgDummy1Instance)
+            fragmentManager.commit()
+        }        
+        
+```
+- A implementação no fragment é a seguinte:
+
+``` kt
+class Dummy1Fragment : Fragment() {
+
+    private lateinit var dummyTitle : TextView
+    private lateinit var dummyEditText : EditText
+    private lateinit var dummyButton : Button
+    private lateinit var dummyTextResult : TextView
+
+    //3. Criar variaveis
+    private var tag1Content : String? = null
+    private var tag2Content : String? = null
+    private var tag3Content = 0.0
+
+    //4. OnCreate method pegar as variaveis do argument
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        Log.i("CicloDeVida", "onCreate")
+        tag1Content = arguments?.getString("tag1")
+        tag2Content = arguments?.getString("tag2")
+        tag3Content = arguments?.getDouble("tag3") ?: 0.0
+    }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val fragView = inflater.inflate(
+            R.layout.fragment_dummy1,
+            container,
+            false)
+
+        dummyTitle = fragView.findViewById(R.id.fg1_txtTitle)
+        dummyEditText = fragView.findViewById(R.id.fg1_editText)
+        dummyButton = fragView.findViewById(R.id.fg1_btnSubmit)
+        dummyTextResult = fragView.findViewById(R.id.fg1_txtResult)
+
+        //5. On Create view utilizar as novas variaveis
+        dummyTitle.text = "Tag1: $tag1Content, Tag2: $tag2Content and Tag3: $tag3Content"
+
+        dummyButton.setOnClickListener {
+            val textToGet = dummyEditText.text.toString()
+            dummyTextResult.text = "Result is:  $textToGet"
+        }
+
+
+
+        return fragView
+
+    }
+}
+
+```
 ## V114 Usando  Fragment da extensao KTX
