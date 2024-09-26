@@ -199,9 +199,100 @@ fun DummyComposableListFunctionPreview() {
 }
 ```
 ### ConstraintLayout
+- Creates responsive layouts with relative positioning.
+  - It can use chains, guidelines to position child elements relative to each other.
+- To use it add the following dependency to the `build.gradle` file:
+- Use Groovy instead of Kotlin for Gradle
+```
+implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+```
 ``` kt
 ```
 ## Material Design
+
+``` kt
+```
+
+## Anexo
+
+### C2 Code
+- `MainActivity.kt`
+``` kt
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+
+            DummyComposableListFunction(
+                        dummyName = "Rufo",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp)
+                            .background(Color.Red)
+                    )
+                }
+            }
+        }
+
+@Composable
+fun DummyComposableFunction(dummyName: String, modifier: Modifier = Modifier) {
+    Text(modifier = modifier, text = "Dummy name example: $dummyName")
+}
+
+@Composable
+fun DummyComposableColumnFunction(dummyName1: String, dummyName2: String,modifier: Modifier = Modifier) {
+    Column  {
+        Text(modifier = modifier, text = "Dummy name 1 example: $dummyName1")
+        Text(modifier = modifier, text = "Dummy name 2 example: $dummyName2")
+    }
+}
+
+@Composable
+fun DummyComposableListFunction(dummyName: String, modifier: Modifier = Modifier) {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.LightGray)
+    ) {
+        items(100) {
+            Text(
+                modifier = modifier,
+                text = "$dummyName $it"
+            )
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DummyComposableFunctionPreview() {
+    DummyComposableFunction("Rufo",modifier = Modifier
+        .fillMaxWidth()
+        .padding(5.dp)
+        .background(Color.Red))
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DummyComposableColumnFunctionPreview() {
+    DummyComposableColumnFunction("Rufo", "Rufa", modifier = Modifier
+        .fillMaxWidth()
+        .padding(5.dp)
+        .background(Color.Red))
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DummyComposableListFunctionPreview() {
+    DummyComposableListFunction("Rufo", modifier = Modifier
+        .fillMaxWidth()
+        .padding(5.dp)
+        .background(Color.Red))
+}
+```
+
+### C3 Code
 
 ``` kt
 ```
