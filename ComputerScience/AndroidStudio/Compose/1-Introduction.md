@@ -204,7 +204,7 @@ fun DummyComposableListFunctionPreview() {
 - To use it add the following dependency to the `build.gradle` file:
 - Use Groovy instead of Kotlin for Gradle
 ```
-implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+implementation libs.androidx.constraintlayout.compose
 ```
 ``` kt
 ```
