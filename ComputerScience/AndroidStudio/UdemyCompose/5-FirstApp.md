@@ -65,11 +65,36 @@ Para centrar o elemento dentro da coluna se passa um `modifier`
 - Alignment: orientação dos elementos dentro do elemento pai
 
 ``` kt
-Column(verticalArrangement = Arrangement.Center,
+Column(
+    modifier = Modifier.fillMaxWidth(),
+    verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally)  {...}
 ```
 ## V083 - Spacer vs Padding
+- Padding: Simple! (lack reusability). For fine control of specific elements...
+- Spacer: Reusable! (more complex and verbose). For a general appearance...
 
+``` kt
+//
+        Text(text = "Dummy name 1 example")
+  
+        Spacer(modifier = Modifier.height(16.dp)) //This adds the space between elements
+  
+        OutlinedTextField(value = "Enter value",  onValueChange = { })
+  
+```
 ## V084 - Adding DropdownMenus and DropDownMenuItems
+- DropDownMenu:
+  - `expanded`: false means closed by default
+- DropDownItem:
+  - `text`: ,
+
+``` kt
+DropdownMenu(expanded = false, onDismissRequest = { /*TODO*/ }) {
+    DropdownMenuItem(text = { Text(text = "Lobo") }, onClick = { /*TODO*/ })
+    DropdownMenuItem(text = { Text(text = "Rufa") }, onClick = { /*TODO*/ })
+    DropdownMenuItem(text = { Text(text = "Rufo") }, onClick = { /*TODO*/ })
+}
+```
 
 ## V085 - Finish
