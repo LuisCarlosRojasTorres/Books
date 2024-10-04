@@ -55,12 +55,19 @@ fun UnitConverter() {
 Box{
     Button(onClick = { }) {
         Text(text = "Click me")
-        Icon(Icons.Default.ArrowDropDown, "Lobo")
+        Icon(Icons.Default.ArrowDropDown, contentDescription = "Lobo")
     }
 }
 ```
 ## V082 - Modifier, VerticalArrangement and HorizontalAlignment
+Para centrar o elemento dentro da coluna se passa um `modifier`
+- Arrangement: localização dos elementos na tela
+- Alignment: orientação dos elementos dentro do elemento pai
 
+``` kt
+Column(verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally)  {...}
+```
 ## V083 - Spacer vs Padding
 
 ## V084 - Adding DropdownMenus and DropDownMenuItems
