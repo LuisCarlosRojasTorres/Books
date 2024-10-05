@@ -8,7 +8,7 @@
   - It is used in conjunction with remember funtion to manage changing data.
 
 ## V088 Dummy example
-
+- todas as variaveis que estão com `remember` vao mandar signal de que mudaram no app. e por isso o UI muda.
 ``` kt
 @Composable
 fun DummyExample()
