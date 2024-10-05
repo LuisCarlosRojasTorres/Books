@@ -46,3 +46,39 @@ fun DummyExamplePreview() {
 ```
 
 ![alt text](V088a.png)
+
+## V090 Understanding the by keyword
+
+``` kt
+@Composable
+fun DummyExample()
+{    
+    var yourGuess by remember {mutableStateOf(0) }
+    var result by remember { mutableStateOf(0)}
+    var output by remember{mutableStateOf("None")}
+    Column {
+        Text(text = "Your Guess:  ${yourGuess}")
+        Text(text = "Results:  ${result}")
+        Text(text = "Output:  ${output}")
+
+        Button(onClick = { /*TODO*/
+            yourGuess = Random.nextInt(1,10)
+            result = Random.nextInt(1,10)
+
+            //yourGuess.value= myAns
+            //result.value = bankAns
+
+            if(yourGuess == result){
+                output = "WIN"
+            }
+            else{
+                output = "LOOSE"
+            }
+        }) {
+            Text(text = "Click for take a chance")
+        }
+    }
+}
+```
+
+## V091 Implementing state
