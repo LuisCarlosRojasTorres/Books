@@ -141,3 +141,60 @@ fun ShoppingListApp()
     }
 }
 ```
+## V107 Finishing AlertDialog
+
+``` kt
+AlertDialog(
+            onDismissRequest =
+            {
+                showDialog = false
+            },
+            confirmButton =
+            {
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween)
+                {
+                    Button(onClick =
+                    {
+                        if(itemName.isNotBlank()) //IMPORTANT to not save null objects
+                        {
+                            val newItem = ShoppingItem(id = sItems.size +1, name = itemName, quantity = itemQuantity.toInt())
+                            sItems = sItems + newItem //easy to add elements to a list...
+                            showDialog = false // 
+                            itemName = "-" // to set to default the alert dialog content
+                            itemQuantity = "0" // to set to default the alert dialog content
+                        }
+                    })
+                    {
+                        Text(text = "Add")
+                    }
+                    Button(onClick = { showDialog = false }) {
+                        Text(text = "Cancel")
+                    }
+                }
+            },
+            title = { Text(text = "Add Shopping Item")},
+            text = {
+                Column {
+                    OutlinedTextField(
+                        value = itemName,
+                        onValueChange = {itemName = it},
+                        singleLine = true,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp)
+                    )
+                    OutlinedTextField(
+                        value = itemQuantity,
+                        onValueChange = {itemQuantity = it},
+                        singleLine = true,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp)
+                    )
+                }
+            }
+        )
+```
