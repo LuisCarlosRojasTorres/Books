@@ -80,8 +80,19 @@ fun DummyExample()
     }
 }
 ```
+## 091 Outlined text 
 
-## V091 Implementing state
+``` kt
+OutlinedTextField(
+    value = inputValue, //valor inicial da variavel
+    onValueChange =
+    {
+        inputUnit = it // assim o valor no composable é assignado a essa variavel
+    },
+    label = { Text(text="Enter a value")} //Hint do input
+)
+```
+## V092 Implementing state
 - Para adicionar comportamento ao dropmenu e dropitems...
 
 ``` kt
@@ -120,10 +131,20 @@ Row{
             
         }
     }
-
-            
-
-            
-            
-
 ```
+
+## V093 
+- It is posible to create functions inside `composables`, and then call it in onClick events.
+
+Button(onClick = {
+            iExpanded = true // o menu vai abrir
+            DummyFunction() // THIS!
+        }) {
+            Text(text = "Click me")
+            Icon(Icons.Default.ArrowDropDown, "Lobo")
+        }
+- `?:` elvis operator: an smart if, which transforms the argument (if null) into a given value.
+
+## V094
+
+## V095
