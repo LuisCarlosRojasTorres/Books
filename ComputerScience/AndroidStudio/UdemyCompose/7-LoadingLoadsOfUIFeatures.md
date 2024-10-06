@@ -82,3 +82,48 @@ fun DummyExample()
 ```
 
 ## V091 Implementing state
+- Para adicionar comportamento ao dropmenu e dropitems...
+
+``` kt
+Row{
+    var iExpanded by remember{ mutableStateOf("false")}
+    
+    Box{
+        Button(onClick = {
+            iExpanded = true // o menu vai abrir
+        }) {
+            Text(text = "Click me")
+            Icon(Icons.Default.ArrowDropDown, "Lobo")
+        }
+        DropdownMenu(expanded = iExpanded,
+            onDismissRequest =
+            {
+                // o menu vai fechar ao clicar em qualquer regiao fora do menu
+                iExpanded = false 
+            })
+        {
+            DropdownMenuItem(text = { Text(text = "Lobo") },
+                onClick = {
+                    iExpanded = false
+                    /* codigo here */ 
+                })
+            DropdownMenuItem(text = { Text(text = "Rufa") },
+                onClick = {
+                    iExpanded = false
+                    /* codigo here */ 
+                })
+            DropdownMenuItem(text = { Text(text = "Rufo") },
+                onClick = {
+                    iExpanded = false
+                    /* codigo here */ 
+                })
+            
+        }
+    }
+
+            
+
+            
+            
+
+```
