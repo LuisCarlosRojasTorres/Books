@@ -145,6 +145,9 @@ Button(onClick = {
         }
 - `?:` elvis operator: an smart if, which transforms the argument (if null) into a given value.
 
-## V094
+## V095 Adding style to Text
+- Use `style = MaterialTheme. ...`
 
-## V095
+``` kt
+Text("DummyText", style = MaterialTheme.typography.headlineLarge)
+```
