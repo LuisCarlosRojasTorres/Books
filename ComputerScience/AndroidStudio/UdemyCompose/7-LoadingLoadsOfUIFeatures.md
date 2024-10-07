@@ -198,3 +198,43 @@ AlertDialog(
             }
         )
 ```
+
+## V108 Setting up the LazyList
+- To set a parameter as a lambda expression use the `() -> Unit` command. Example:
+  - The `onClick` method in `Button` follows this rule.
+
+``` kt
+@Composable
+fun ShoppingListItem(
+    item: ShoppingItem,
+    onEditClick: ()-> Unit,
+    onDeleteClick: ()-> Unit
+)
+{
+        Row(
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth()
+            .border(
+                border = BorderStroke(2.dp, Color.Cyan),
+                shape = RoundedCornerShape(20)
+            )
+    ){
+        Text(text = item.name, modifier = Modifier.padding(8.dp))
+    }    
+}
+```
+- Por enquanto para que apareçam no LazyList
+
+``` kt
+LazyColumn(
+    modifier = Modifier
+        .fillMaxSize()
+        .padding(16.dp)
+)
+{
+    items(sItems){
+        ShoppingListItem(it, {}, {})
+    }
+}
+```
