@@ -238,3 +238,73 @@ LazyColumn(
     }
 }
 ```
+
+## V109
+- basic Concepts about lambda expressions...
+
+## V110 Added icons to ListItem
+``` kt 
+@Composable
+fun ShoppingListItem(
+    item: ShoppingItem,
+    onEditClick: ()-> Unit,
+    onDeleteClick: ()-> Unit
+)
+{
+    Row(
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth()
+            .border(
+                border = BorderStroke(2.dp, Color.Cyan),
+                shape = RoundedCornerShape(20)
+            )
+    ){
+        Text(text = item.name, modifier = Modifier.padding(8.dp))
+        Text(text = "Qty: ${item.quantity}", modifier = Modifier.padding(8.dp))
+        Row (modifier = Modifier.padding(8.dp)){
+            IconButton(
+                onClick = onEditClick // Referencia ao parametro lambda
+            ) {
+                Icon(imageVector = Icons.Default.Edit, contentDescription = null)
+            }
+            IconButton(
+                onClick = onDeleteClick // Referencia ao parametro lambda
+            ) {
+                Icon(imageVector = Icons.Default.Delete, contentDescription = null)
+            }
+        }
+    }
+}
+```
+
+## V112 Map 
+``` kt
+fun main(){
+    val num = listOf(1,2,3)
+    val numDoubled = num.map( it*2)
+    println(numDoubled) // 2, 4, 6
+}
+```
+## V113 Copy
+- Permite fazer copiar de um objeto e depois modifica-lo
+``` kt
+fun main(){
+    val blueRoseVase = Vase(color = "Blue", design = "Rose")
+    val redRoseVase = blueRoseVase.copy(color = "Red")
+}
+
+
+data class Vase(val color: String, val design: String)
+```
+
+## V114 let
+- Permite fazer modificações dentro de um scope, nao afetando o objeto original
+``` kt
+fun main(){
+    val name : String? = "Ella"
+    name?.let{
+        println(it.toUpperCase())
+    }
+}
+```
