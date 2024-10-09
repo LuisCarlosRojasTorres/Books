@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
 - FirstScene.kt
 ``` kt
 @Composable
-fun FirstScreen(modifier: Modifier = Modifier) {
+fun FirstScreen() {
     val name = remember {
         mutableStateOf("")
     }
@@ -43,7 +43,7 @@ fun FirstScreen(modifier: Modifier = Modifier) {
 - SecondScene.kt
 ``` kt
 @Composable
-fun SecondScreen(modifier: Modifier = Modifier) {
+fun SecondScreen() {
     val name = remember {
         mutableStateOf("")
     }
@@ -60,6 +60,83 @@ fun SecondScreen(modifier: Modifier = Modifier) {
     }
 }
 ```
-## V151
+## V151 NavController
+- Add this to the gradle file:
 
+```
+val nav_version = "2.8.0"
+implementation("androidx.navigation:navigation-compose:$nav_version")
+```
+
+- Creating navigating 
+``` kt 
+//MainActivity.kt
+@Composable
+fun MyApp(){
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "firstScreen"){
+        //Creating route for composable FirstScreen
+        composable ( "firstscreen" ){}
+        //Creating route for composable SecondScreen
+        composable ( "secondscreen" ){}
+    }
+}
+```
+- Add lambda parameter for both composables
+
+``` kt 
+//FirstScene.kt
+@Composable
+fun FirstScreen(navigatingToSecond:()-> Unit) {
+// ...
+        Button(onClick =
+        {
+            navigatingToSecondScreen() //Call to lambda
+        }) {
+            Text(text = "Go to second screen")
+        }
+}
+```
+
+``` kt 
+//SecondScene.kt
+@Composable
+fun SecondScreen(navigatingToSecond:()-> Unit) {
+// ...
+        Button(onClick =
+        {
+            navigatingToFirstScreen() //Call to lambda
+        }) {
+            Text(text = "Go to first screen")
+        }
+}
+```
+
+- Add controls to navController
+``` kt
+@Composable
+fun MyApp(){
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "firstScreen"){
+        composable ( "firstscreen" ){
+            FirstScreen {
+                navController.navigate(route = "secondscreen")
+            }
+        }
+        composable ( "secondscreen" ){
+            SecondScreen {
+                navController.navigate(route = "firstscreen")
+            }
+        }
+    }
+}
+```
 ## V152
+
+
+
+
+``` kt 
+//FirstScene.kt
+
+```
