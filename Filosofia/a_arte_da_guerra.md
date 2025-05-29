@@ -18,6 +18,11 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
+Guía:
+- **Ley**
+- *Contexto*
+- `Palabra clave`
+  - Explicación personal
 
 ##  1. <a name='EvaluacionesEstratgicas'></a>Evaluaciones Estratégicas
 
