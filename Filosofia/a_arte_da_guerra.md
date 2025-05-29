@@ -1,5 +1,6 @@
 
-## Avaliações
+
+## Evaluaciones Estratégicas
 
 - `A guerra é o caminho para a sobrevivência ou a ruína. É indispensável estudá-la profundamente`
   - Vivir es un eterno conflicto, es estar constantemente en guerra/conflicto.
@@ -8,15 +9,15 @@
   - Si quieres paz, prepárate para la guerra...
 - `Cinco Fatores Fundamentais` 
   - 
-## Guerreando
+## El Combate
 ## Estratégia Ofensiva
-## Disposições
-## Energia
-## Fraquezas e Forças
-## Manobras
-## As Nove Variáveis
-## Movimentações 
-## Terreno
-## As Nove Variedades de Terreno
-## Ataques com o Emprego de Fogo
-## Utilização de Agentes Secretos
+## La formación
+## La posición del ejército
+## La vacuidad y la plenitud
+## Las maniobras
+## Las nueve variables
+## El ejército en marcha
+## La topología
+## Los nueve tipos de terrenos
+## Ataques con fuego
+## El uso de espias
