@@ -26,13 +26,31 @@ Guía:
 
 ##  1. <a name='EvaluacionesEstratgicas'></a>Evaluaciones Estratégicas
 
-- `A guerra é o caminho para a sobrevivência ou a ruína. É indispensável estudá-la profundamente`
-  - Vivir es un eterno conflicto, es estar constantemente en guerra/conflicto.
-- `A guerra é uma questão tão séria que deve haver toda a precaução para que os homens nao entrem nela sem a devida reflexão`
+- **La guerra es el camino para la sobrevivencia o la ruína. É indispensable estudiarla profundamente**
+  - La guerra en tiempo modernos lo veo como el "processo para conquistar algo". 
+- **A guerra é uma questão tão séria que deve haver toda a precaução para que os homens nao entrem nela sem a devida reflexão**
   - Saber cuando es el momento de entrar o evitar un conflicto.
-  - Si quieres paz, prepárate para la guerra...
-- `Cinco Fatores Fundamentais` 
-  - 
+  - "Si vis pacem para bellum": Si quieres paz, prepárate para la guerra...
+- **La guerra se evalúa en función de 5 factores: Política, Clima, Terreno, Mando, Doctrina**
+  - En un equipo contra otro equipo seria:
+    - Política: Relación entre los miembros con el lider de equipo
+    - Clima: El ambiente laboral, como se llevan los otros equipos y líderes con relación al equipo. 
+    - Terreno: La organización (diagrama) de cargos y equipos. Que tan relevante es el equipo en la estructura?
+    - Mando: Las capacidades del lider.
+    - Doctrina: La sinergia del equipo, su satisfaccion con respecto al trabajo y los materiales disponibles.
+  - A nivel personal seria:
+    - Política: Relación con personas de otros equipo y lideranza.
+    - Clima: El clima laboral general de la empresa, como es la relación entre equipos, lideres, la dirección. 
+    - Terreno: La organización (diagrama) de cargos y equipos. Que tan visible eres, ponto (cargo) de partida y de llegada.
+    - Mando: Soft skills y hard skills.
+    - Doctrina: Su disciplina, mecanismos de liberación de stress y alimentacion. Que tanto puede invertir en dinero y tiempo en él mismo.
+- **El arte de la guerra se basa en el engaño. Tiene trampas para engañar al enemigo**
+  - Para poder engañarlo es necesario conocerlo.    
+  - De que pie cojea? Dale cuerda...
+- **Ataca al enemigo cuando no esté preparado y aparece quando nadie lo espere**
+  - Esto me recuerda a: "Cuando debe atacar un ninja? un ninja espera el momento indicado cuando el enemigo duerme y baja su guardia ,cuando sus armas yacen olvidadas en la quietud de la noche ese es el momento para un ataque ninja."
+  - Déjalo que se confie.
+  
 ##  2. <a name='ElCombate'></a>El Combate
 ##  3. <a name='EstratgiaOfensiva'></a>Estratégia Ofensiva
 ##  4. <a name='Laformacin'></a>La formación
