@@ -90,6 +90,15 @@ Guía:
 - **Si no conoces a tu enemigo NI te conoces a ti mismo vencerás 0%**
 
 ## C04 La formación
+- **Primero volverse invencible, después esperar el momento de vulnerabilidad del enemigo.**
+  - Ser invencible: depende de uno.
+  - Ser vulnerable: depende del enemigo.
+- **Defiendase a si mismo cuando no pueda derrotar al enemigo y ataque al enemigo cuando pueda.**
+  - *Al atacar rapidamente el enemigo mejora la propia defensa porque tiene pocas chances de atacar de vuelta*
+    - Rápido, certero y letal.
+- **no desaprovechar ninguna oportunidad de vencer al enemigo**
+- **Un ejercito destinado al fracaso, luchara esperando ganar pero sin ningún tipo de planificación.**
+
 ## C05 La posición del ejército
 ## C06 La vacuidad y la plenitud
 ## C07 Las maniobras
