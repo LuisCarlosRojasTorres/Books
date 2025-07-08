@@ -23,14 +23,25 @@ CurrentAlarmList: ela vem em cada iteração.
     - `this.ActiveAlarmList`: empty
     - `this.NewActiveAlarmList`: 1,2
     - `this.NonActiveAlarmList`: empty
-2. t= T_up
+2. t= 2T_up
   - Initial state:
-    - `currentAlarmList`: 1,2
+    - `currentAlarmList`: 1,3
+    - `this.ActiveAlarmList`: empty
+    - `this.NewActiveAlarmList`: 1,2
+    - `this.NonActiveAlarmList`: empty
+  - After operations:
+    - `currentAlarmList`: 1,3
+    - `this.ActiveAlarmList`: 1
+    - `this.NewActiveAlarmList`: 3
+    - `this.NonActiveAlarmList`: 2
+2. t= 3T_up
+  - Initial state:
+    - `currentAlarmList`: 1,3,5
     - `this.ActiveAlarmList`: empty
     - `this.NewActiveAlarmList`: empty
     - `this.NonActiveAlarmList`: empty
   - After operations:
-    - `currentAlarmList`: 1,2
+    - `currentAlarmList`: 1,3,5
     - `this.ActiveAlarmList`: empty
     - `this.NewActiveAlarmList`: 1,2
     - `this.NonActiveAlarmList`: empty
