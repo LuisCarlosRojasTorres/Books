@@ -1,3 +1,45 @@
+- [Introduction](#introduction)
+- [Information Assurance](#information-assurance)
+  - [CIA Triads](#cia-triads)
+  - [R The CIA Triad](#r-the-cia-triad)
+  - [R CIA Triad Deep Dive: Confidentiality](#r-cia-triad-deep-dive-confidentiality)
+  - [R CIA Triad Deep Dive: Integrity](#r-cia-triad-deep-dive-integrity)
+  - [R CIA Triad Deep Dive: Availability](#r-cia-triad-deep-dive-availability)
+  - [V Identification](#v-identification)
+  - [R Authentication](#r-authentication)
+  - [V Multifactor Authentication or Single Factor Authentication](#v-multifactor-authentication-or-single-factor-authentication)
+  - [R Methods of Authentication](#r-methods-of-authentication)
+  - [R Non-repudiation](#r-non-repudiation)
+  - [R Privacy](#r-privacy)
+  - [Self Check: Security Concepts](#self-check-security-concepts)
+- [Risk Mitigation Process](#risk-mitigation-process)
+  - [R Module Overview](#r-module-overview)
+  - [R Risk Management Terminology](#r-risk-management-terminology)
+  - [R Threats](#r-threats)
+  - [V Threats](#v-threats)
+  - [R Vulnerabilities](#r-vulnerabilities)
+  - [Vulnerabilities](#vulnerabilities)
+  - [Reading Likelihood](#reading-likelihood)
+  - [Likelihood](#likelihood)
+  - [Risk – Concepts and Definitions](#risk--concepts-and-definitions)
+  - [Risk Management](#risk-management)
+  - [Reading Risk Identification](#reading-risk-identification)
+  - [Reading Risk Assessment](#reading-risk-assessment)
+  - [Reading Risk Treatment](#reading-risk-treatment)
+  - [Self Check: Risk Terms](#self-check-risk-terms)
+  - [Reading Risk Priorities](#reading-risk-priorities)
+  - [Reading Risk Tolerance](#reading-risk-tolerance)
+- [Security Controls](#security-controls)
+  - [Security Controls](#security-controls-1)
+  - [Reading - What are Security Controls?](#reading---what-are-security-controls)
+  - [Reading - Physical Controls](#reading---physical-controls)
+  - [Reading - Technical Controls](#reading---technical-controls)
+  - [Reading - Administrative Controls](#reading---administrative-controls)
+- [Governance](#governance)
+- [ISC2 Code of Ethics](#isc2-code-of-ethics)
+- [Security Principles Review](#security-principles-review)
+
+
 ## Introduction
 
 ## Information Assurance
@@ -114,18 +156,48 @@ In today’s world of e-commerce and electronic transactions, there are opportun
 - While `security` and `privacy` both focus on the protection of personal and sensitive data, there is a difference between them. With the increasing rate at which data is collected and digitally stored across all industries, the push for privacy legislation and compliance with existing policies steadily grows. In today’s global economy, privacy legislation and regulations on privacy and data protection can impact corporations and industries regardless of physical location. Global privacy is an especially crucial issue when considering requirements regarding the collection and security of personal information. There are several laws that define privacy and data protection, which periodically change. Ensuring that protective security measures are in place is not enough to meet privacy regulations or to protect a company from incurring penalties or fines from mishandling, misuse, or improper protection of personal or private information. An example of a law with multinational implications is the European Union’s General Data Protection Regulation (GDPR) which applies to all organizations, foreign or domestic, doing business in the EU or with its citizens. Companies operating or doing business within the United States may also fall under several state legislations that regulate the collection and use of consumer data and privacy. Likewise, member nations of the EU enact laws to put GDPR into practice and sometimes add more stringent requirements. These laws, including national- and state-level laws, dictate that **any entity anywhere in the world handling the private data of people in a particular legal jurisdiction must abide by its privacy requirements**. As a member of an organization's data protection team, you will not be required to interpret these laws, but you will need an understanding of how they apply to your organization.
 
 ### Self Check: Security Concepts
+![alt text](image.png)
 
+![alt text](image-1.png)
 ## Risk Mitigation Process 
 
-### Module Overview
+### R Module Overview
+- This module gets you started by presenting foundational terminology and introducing you to the risk management process.
+- First, a definition of  risk  is  a measure of the extent to which an entity is threatened by a potential circumstance or event. It is often expressed as a combination of:
+  - the adverse impacts that would arise if the circumstance or event occurs,  and 
+  - the likelihood of occurrence. 
+- Information security risk reflects the potential adverse impacts that result from the possibility of unauthorized access, use, disclosure, disruption, modification or destruction of information and/or information systems. This definition represents that risk is associated with threats, impact and likelihood, and it also indicates that IT risk is a subset of business risk. 
 
-### Reading Risk Management Terminology
+### R Risk Management Terminology
+- Security professionals use their knowledge and skills to examine operational risk management, determine how to use risk data effectively, work cross-functionally and report actionable information and findings to the stakeholders concerned. Terms such as threats, vulnerabilities and assets are familiar to most cybersecurity professionals.
+   - An asset is something in need of protection.
+   - A vulnerability is a gap or weakness in those protection efforts.
+   - A threat is something or someone that aims to exploit a vulnerability to thwart (frustrate) protection efforts.
+- Risk is the intersection of these terms. Let's look at them more closely.
 
-### Reading Threats
+### R Threats
 
-### Threats
+- A threat is a person or thing that takes action to exploit (or make use of) a target organization’s system vulnerabilities, as part of achieving or furthering its goal or objectives. To better understand threats, consider the scenario in the video on the next page.
+- In the context of cybersecurity, typical threat actors include the following:
+   - Insiders (either deliberately, by simple human error, or by gross incompetence).
+   - Outside individuals or informal groups (either planned or opportunistic, discovering vulnerability).
+   - Formal entities that are nonpolitical (such as business competitors and cybercriminals).
+   - Formal entities that are political (such as terrorists, nation-states, and hacktivists).
+   - Intelligence or information gatherers (could be any of the above).
+   - Technology (such as free-running bots and artificial intelligence , which could be part of any of the above).
 
-### Reading Vulnerabilities
+*Threat Vector: The means by which a threat actor carries out their objectives.
+
+### V Threats
+Tourists are popular targets for pickpockets. 
+- The existence of pickpockets in a crowded tourist spot is a **threat** to the people gathered there. 
+- That threat applies to everyone in the vicinity, even other pickpockets, if you are in the vicinity and a pickpocket has identified you as a target, you are facing a **threat actor**, whether you know it or not. 
+- The approach and technique taken by the pickpocket is their **threat vector**. 
+
+### R Vulnerabilities
+A vulnerability is an **inherent weakness or flaw in a system or component**, which, if triggered or acted upon, could cause a risk event to occur. Consider the pickpocket scenario on the next page.
+
+An organization’s security team strives to decrease its vulnerability. To do so, they view their organization with the eyes of the threat actor, asking themselves, “Why would we be an attractive target?” The answers might provide steps to take that will discourage threat actors, cause them to look elsewhere or simply make it more difficult to launch an attack successfully. For example, to protect yourself from the pickpocket, you could carry your wallet in an inside pocket instead of the back pant pocket or behave alertly instead of ignoring your surroundings. Managing vulnerabilities starts with one simple step: Learn what they are.
 
 ### Vulnerabilities
 
