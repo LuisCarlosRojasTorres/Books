@@ -228,23 +228,24 @@ How do the pickpockets actions affect your ability to continue your journey? If 
 - Likelihood: Probability
 
 ### V Risk Management
+- Risk appetite: the amount of risk an organization is willing to accept to achieve its objectives, balancing potential rewards against potential losses.
+- Risk Management responses: There are 4 valid responses
+  - Accept (less common): you can choose to accept the risk if it's within your risk appetite or the extreme opposite of that is the risk is too high. It is outside of your risk appetite or your risk tolerance. There is too bigger a risk of, let's say an earthquake occurring, therefore we are going to close that building down. We're going to avoid the risk by not doing the activity, by not locating in that area or whatever. 
+  - Avoid (less common): To do nothing to not be in risk
+  - Reduce(mitigate) (More common): We can reduce risks. We can manage those risks and reduce the level of either the likelihood or the impact or both through the use of controls. The word reduce is the International Standards Organization, ISO, that's their terminology in risk management. Old term was `mitigate` but that implies that the risk is gone, and that never happen.
+  - Share (transfer) (More common): Old term was `transfer`, that never happen. But if you have insurance you share the risk of a car accident with a company.
+- Ignoring a risk is not the same as chossing to accept a risk (should never do).
+  - Ignoring it is pretending it's not there. That's not a good response. The role of security in risk management then is to help with the risk assessment, to help recommend risk management responses.
+- The role of security in risk management.
 
 ### R Risk Identification
-How do you identify risks? Do you walk down the street watching out for traffic and looking for puddles on the ground? Maybe you’ve noticed loose wires at your desk or water on the office floor? If you’re already on the lookout for risks, you’ll fit with other security professionals who know it’s necessary to dig deeper to find possible problems.  
-
-In the world of cyber, identifying risks is not a one-and-done activity. It’s a recurring process of identifying different possible risks, characterizing them and then estimating their potential for disrupting the organization.  
-
-It involves looking at your unique company and analyzing its unique situation. Security professionals know their organization’s strategic, tactical and operational plans.
-
-Takeaways to remember about risk identification:
-
-Identify risk to communicate it clearly. 
-
-Employees at all levels of the organization are responsible for identifying risk.
-
-Identify risk to protect against it. 
-
-As a security professional, you are likely to assist in risk assessment at a system level, focusing on process, control, monitoring or incident response and recovery activities. If you’re working with a smaller organization, or one that lacks any kind of risk management and mitigation plan and program, you might have the opportunity to help fill that planning void.
+- In the world of cyber, identifying risks is not a one-and-done activity. It’s a recurring process of identifying different possible risks, characterizing them and then estimating their potential for disrupting the organization.  
+- It involves looking at your unique company and analyzing its unique situation. **Security professionals know their organization’s strategic, tactical and operational plans**.
+- Takeaways to remember about risk identification:
+  - Identify risk to communicate it clearly. 
+  - Employees at all levels of the organization are responsible for identifying risk.
+  - Identify risk to protect against it. 
+- As a security professional, you are likely to assist in risk assessment at a system level, focusing on process, control, monitoring or incident response and recovery activities. If you’re working with a smaller organization, or one that lacks any kind of risk management and mitigation plan and program, you might have the opportunity to help fill that planning void.
 
 ### R Risk Assessment
 Risk assessment is defined as the process of identifying, estimating and prioritizing risks to an organization’s operations (including its mission, functions, image and reputation), assets, individuals, other organizations and even the nation. Risk assessment should result in aligning (or associating) each identified risk resulting from the operation of an information system with the goals, objectives, assets or processes that the organization uses, which in turn aligns with or directly supports achieving the organization’s goals and objectives. 
