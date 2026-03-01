@@ -370,23 +370,24 @@ And are these controls enough in isolation. Could we just rely on administrative
 ### V - Governance
 - **governance** is how we make decisions, how we tell people how to behave, and this related to our administrative controls. 
 - We're going to look at governance elements. We're going to look specifically at things like compliance, regulations and laws, but also some of that internal governance; standards, policies, procedures, and recommendations. Compliance. Compliance can be an external requirement. For privacy, we said you have to comply with regulations, you have to comply with laws. 
-These can arise externally. We can also have internal compliance requirements. We have a set of standards policies that we have to meet. Then that compliance has been agreed by the board. We have to meet that there's something that we have to comply with. The policies, the procedures, the standards, the guidelines, those are things that we have talked that have been agreed at some point within the organization that we have to follow. Laws and regulations might mean that our internal policies, and procedures are shaped in a way that complies with the laws and the regulations. 
-Similarly, we said standards, things you must do, guidelines, recommendations. These may arise externally. They could relate to your particular industry sector. But they may be internal standards and guidelines. Somebody could have said, well look, this is best practice, this is how we are going to behave. You will have these standards for encryption as an example. This links very much to the type of industry that you're in. 
-Increasingly, industries are regulated. Privacy regulation is growing globally. But also we see health care, finance, military, government, communications, transport, all those critical national infrastructure elements are typically regulated. We talked already about ISO 27001, the cybersecurity standards that you can be certified to. It's the definitive standard, an international standard that sets out the specification for your information security, the documentation risk approach and controls. But ISO also have another document on cybersecurity management. This is ISO 27032, supposed to again be an international definitive standard, offering guidance on what to do, so you cannot be certified to this standard. 
-The standard recognizes the different vectors that cyberattacks rely on and helps provide guidance on how to protect your organization from them. We said SPA800, special publication 800-53 is NIST control document, control framework, and we also have NIST cybersecurity framework. The cybersecurity framework was designed to help organizations identify their capabilities, and needs to help an organization identify where they are currently, their current posture, and where they want to be their target state: so your current state and your target state. Think about this as planning a journey. In order to travel somewhere, you need to know where you are, you need to know where you want to go. Then the gap between those two points gives you a roadmap. Literally when you're traveling a map across the roads, maybe. 
-But the same is true for cybersecurity. If you can identify where you are, where you want to be, you can identify the gap and that becomes a road-map for you to go from where you are to where you need to be. The framework is divided into different tiers and profiles, and the profiles give you examples of different industries, and you try to recognize where you are within that continuum. We're a telecommunication provider, for example, and yeah, this profile looks like us, looks like where we are. That profile looks like where we want to be, and it helps you shape your next steps. It gives you effectively the basis for a strategy and the roadmap. Policies, we talked about policies. 
-Policies are the high-level statement saying what we're doing. They should reflect the law, they should reflect the strategy and mission of the organization, and we said a good policy will explain why you're doing it. Doesn't have to, but a good policy will explain that because if people that have to follow this policy understand why it's asking you to do these things, they're more likely to comply. Policies are signed off by the senior leadership of the organization. One of those C-level officers, a member of the board. Procedures, are signed off at the next level down. Procedures are step-by-step instructions. 
-They're signed off at a lower level, not at the next level down rather, but a lower level within the organization, within a business unit. Why they signed off at a low level? Well, the procedures are how we deliver the high-level policy, so how we deliver the policy. For example, we may have a backup policy that explains how we are going to protect data. The backup procedure might explain how you change the backup tapes. You remove the old tape, you put it in a secure location. You get the new tape, you insert it. 
-Maybe you start the backup. Because these require specific knowledge usually related to a business area, so for the backups, maybe IT, then typically these procedures are signed off within that business area, the created within the business area. If a policy and procedure conflict in terms of contradicting each other, the policy usually takes precedence because it is signed off by the board. We would normally respect the policy over the procedure. 
+- These can arise externally. We can also have internal compliance requirements. We have a set of standards policies that we have to meet. Then that compliance has been agreed by the board. We have to meet that there's something that we have to comply with. The policies, the procedures, the standards, the guidelines, those are things that we have talked that have been agreed at some point within the organization that we have to follow. Laws and regulations might mean that our internal policies, and procedures are shaped in a way that complies with the laws and the regulations. 
+- Similarly, we said standards, things you must do, guidelines, recommendations. These may arise externally. They could relate to your particular industry sector. But they may be internal standards and guidelines. Somebody could have said, well look, this is best practice, this is how we are going to behave. You will have these standards for encryption as an example. This links very much to the type of industry that you're in. 
+- Increasingly, industries are regulated. Privacy regulation is growing globally. But also we see health care, finance, military, government, communications, transport, all those critical national infrastructure elements are typically regulated. We talked already about ISO 27001, the cybersecurity standards that you can be certified to. It's the definitive standard, an international standard that sets out the specification for your information security, the documentation risk approach and controls. But ISO also have another document on cybersecurity management. This is ISO 27032, supposed to again be an international definitive standard, offering guidance on what to do, so you cannot be certified to this standard. 
+- The standard recognizes the different vectors that cyberattacks rely on and helps provide guidance on how to protect your organization from them. We said SPA800, special publication 800-53 is NIST control document, control framework, and we also have NIST cybersecurity framework. The cybersecurity framework was designed to help organizations identify their capabilities, and needs to help an organization identify where they are currently, their current posture, and where they want to be their target state: so your current state and your target state. Think about this as planning a journey. In order to travel somewhere, you need to know where you are, you need to know where you want to go. Then the gap between those two points gives you a roadmap. Literally when you're traveling a map across the roads, maybe. 
+- But the same is true for cybersecurity. If you can identify where you are, where you want to be, you can identify the gap and that becomes a road-map for you to go from where you are to where you need to be. The framework is divided into different tiers and profiles, and the profiles give you examples of different industries, and you try to recognize where you are within that continuum. We're a telecommunication provider, for example, and yeah, this profile looks like us, looks like where we are. That profile looks like where we want to be, and it helps you shape your next steps. It gives you effectively the basis for a strategy and the roadmap. Policies, we talked about policies. 
+- Policies are the high-level statement saying what we're doing. They should reflect the law, they should reflect the strategy and mission of the organization, and we said a good policy will explain why you're doing it. Doesn't have to, but a good policy will explain that because if people that have to follow this policy understand why it's asking you to do these things, they're more likely to comply. Policies are signed off by the senior leadership of the organization. One of those C-level officers, a member of the board. Procedures, are signed off at the next level down. Procedures are step-by-step instructions. 
+- They're signed off at a lower level, not at the next level down rather, but a lower level within the organization, within a business unit. Why they signed off at a low level? Well, the procedures are how we deliver the high-level policy, so how we deliver the policy. For example, we may have a backup policy that explains how we are going to protect data. The backup procedure might explain how you change the backup tapes. You remove the old tape, you put it in a secure location. You get the new tape, you insert it. 
+- Maybe you start the backup. Because these require specific knowledge usually related to a business area, so for the backups, maybe IT, then typically these procedures are signed off within that business area, the created within the business area. 
+- If a policy and procedure conflict in terms of contradicting each other, the policy usually takes precedence because it is signed off by the board. We would normally **respect the policy over the procedure**. 
 
 ### R - Governance Elements
-Any business or organization exists to fulfill a purpose, whether it is to provide raw materials to an industry, manufacture equipment to build computer hardware, develop software applications, construct buildings or provide goods and services. To complete the objective requires that decisions are made, rules and practices are defined, and policies and procedures are in place to guide the organization in its pursuit of achieving its goals and mission.
+**Any business or organization exists to fulfill a purpose**, whether it is to provide raw materials to an industry, manufacture equipment to build computer hardware, develop software applications, construct buildings or provide goods and services. To complete the objective requires that decisions are made, rules and practices are defined, and policies and procedures are in place to guide the organization in its pursuit of achieving its goals and mission.
 
 When leaders and management implement the systems and structures that the organization will use to achieve its goals, they are guided by laws and regulations created by governments to enact public policy. Laws and regulations guide the development of standards, which cultivate policies, which result in procedures.
 
-How are regulations, standards, policies and procedures related?  It might help to look at the list in reverse.   
-- Procedures are the detailed steps to complete a task that support departmental or organizational policies.
-- Policies are put in place by organizational governance, such as executive management, to provide guidance in all activities to ensure that the organization supports industry standards and regulations.
+**How are regulations, standards, policies and procedures related**?  It might help to look at the list in reverse.   
+- Procedures are the detailed steps to complete a task that support departmental or organizational policies. (low level)
+- Policies are put in place by organizational governance, such as executive management, to provide guidance in all activities to ensure that the organization supports industry standards and regulations. (high level)
 - Standards are often used by governance teams to provide a framework to introduce policies and procedures in support of regulations.
 - Regulations are commonly issued in the form of laws, usually from government (not to be confused with governance) and typically carry financial penalties for noncompliance.
 
@@ -395,13 +396,11 @@ Now that we see how they are connected, we’ll look at some details and example
 ![alt text](image-7.png)
 
 ### R - Governance Elements: Regulations and Laws
-Regulations and associated fines and penalties can be imposed by governments at the national, regional or local level. Because regulations and laws can be imposed and enforced differently in different parts of the world, here are a few examples to connect the concepts to actual regulations.
-
-The Health Insurance Portability and Accountability Act (HIPAA) of 1996 is an example of a law that governs the use of protected health information (PHI) in the United States. Violation of the HIPAA rule carries the possibility of fines and/or imprisonment for both individuals and companies.
-
-The General Data Protection Regulation (GDPR) was enacted by the European Union (EU) to control use of Personally Identifiable Information (PII) of its citizens and those in the EU. It includes provisions that apply financial penalties to companies who handle data of EU citizens and those living in the EU even if the company does not have a physical presence in the EU, giving this regulation an international reach.
-
-Finally, it is common to be subject to regulation on several levels. Multinational organizations are subject to regulations in more than one nation in addition to multiple regions and municipalities. Organizations need to consider the regulations that apply to their business at all levels—national, regional and local—and ensure they are compliant with the most restrictive regulation.
+**Regulations and associated fines and penalties can be imposed by governments at the national, regional or local level**. 
+- Because regulations and laws can be imposed and enforced differently in different parts of the world, here are a few examples to connect the concepts to actual regulations.
+  - The Health Insurance Portability and Accountability Act (HIPAA) of 1996 is an example of a law that governs the use of protected health information (PHI) in the United States. Violation of the HIPAA rule carries the possibility of fines and/or imprisonment for both individuals and companies.
+  - The General Data Protection Regulation (GDPR) was enacted by the European Union (EU) to control use of Personally Identifiable Information (PII) of its citizens and those in the EU. It includes provisions that apply financial penalties to companies who handle data of EU citizens and those living in the EU even if the company does not have a physical presence in the EU, giving this regulation an international reach.
+- Finally, **it is common to be subject to regulation on several levels**. Multinational organizations are subject to regulations in more than one nation in addition to multiple regions and municipalities. Organizations need to consider the regulations that apply to their business at all levels—national, regional and local—and ensure they are compliant with the most restrictive regulation.
 
 ### R - Governance Elements: Standards
 Organizations use multiple standards as part of their information systems security programs, both as compliance documents and as advisories or guidelines. Standards cover a broad range of issues and ideas and may provide assurance that an organization is operating with policies and procedures that support regulations and are widely accepted best practices.
@@ -417,14 +416,24 @@ Thanks to the Internet Engineering Task Force (IETF), there are standards in com
 The Institute of Electrical and Electronics Engineers (IEEE) also sets standards for telecommunications, computer engineering and similar disciplines.
 
 ### R - Governance Elements: Policies
-Policy is informed by applicable law(s) and specifies which standards and guidelines the organization will follow. Policy is broad, but not detailed; it establishes context and sets out strategic direction and priorities. Governance policies are used to moderate and control decision-making, to ensure compliance when necessary and to guide the creation and implementation of other policies.
+- Policy is informed by applicable law(s) and **specifies which standards and guidelines the organization will follow**. 
+- Policy is broad, but not detailed; it establishes context and sets out strategic direction and priorities. 
+- Governance policies are used to **moderate and control decision-making**, to ensure compliance when necessary and to guide the creation and implementation of other policies.
 
-Policies are often written at many levels across the organization. High-level governance policies are used by senior executives to shape and control decision-making processes. Other high-level policies direct the behavior and activity of the entire organization as it moves toward specific or general goals and objectives. Functional areas such as human resources management, finance and accounting, and security and asset protection usually have their own sets of policies. Whether imposed by laws and regulations or by contracts, the need for compliance might also require the development of specific high-level policies that are documented and assessed for their effective use by the organization.
+- Policies are often **written at many levels across the organization**. High-level governance policies are used by senior executives to **shape and control decision-making processes**. 
+- Other high-level policies direct the behavior and activity of the entire organization as it moves toward specific or general goals and objectives. Functional areas such as human resources management, finance and accounting, and security and asset protection usually have their own sets of policies. Whether imposed by laws and regulations or by contracts, the need for compliance might also require the development of specific high-level policies that are documented and assessed for their effective use by the organization.
 
 Policies are implemented, or carried out, by people; for that, someone must expand the policies from statements of intent and direction into step-by-step instructions, or procedures.
 
 ### R - Governance Elements: Procedures
-Procedures define the explicit, repeatable activities necessary to accomplish a specific task or set of tasks. They provide supporting data, decision criteria or other explicit knowledge needed to perform each task. Procedures can address one-time or infrequent actions or common, regular occurrences. In addition, procedures establish the measurement criteria and methods to use to determine whether a task has been successfully completed. Properly documenting procedures and training personnel on how to locate and follow them is necessary for deriving the maximum organizational benefits from procedures.
+- Procedures **define the explicit, repeatable activities necessary to accomplish a specific task or set of tasks**. 
+- They provide:
+  - supporting data, 
+  - decision criteria or 
+  - other explicit knowledge needed to perform each task. 
+- Procedures can address one-time or infrequent actions or common, regular occurrences. 
+- In addition, procedures **establish the measurement criteria and methods to use to determine whether a task has been successfully completed**. 
+- Properly documenting procedures and training personnel on how to locate and follow them is necessary for deriving the maximum organizational benefits from procedures.
 
 
 ## ISC2 Code of Ethics
@@ -484,117 +493,117 @@ Continue Your Path to Becoming CC-Certified You’re on your way! Make the most 
 [Register for CC](https://www.isc2.org/landing/cc-coursera)
 
 ### R - Terms and Definitions
-Adequate Security - Security commensurate with the risk and the magnitude of harm resulting from the loss, misuse or unauthorized access to or modification of information. Source: OMB Circular A-130
+- Adequate Security - Security commensurate with the risk and the magnitude of harm resulting from the loss, misuse or unauthorized access to or modification of information. Source: OMB Circular A-130
 
-Administrative Controls - Controls implemented through policy and procedures. Examples include access control processes and requiring multiple personnel to conduct a specific operation. Administrative controls in modern environments are often enforced in conjunction with physical and/or technical controls, such as an access-granting policy for new users that requires login and approval by the hiring manager.
+- Administrative Controls - Controls implemented through policy and procedures. Examples include access control processes and requiring multiple personnel to conduct a specific operation. Administrative controls in modern environments are often enforced in conjunction with physical and/or technical controls, such as an access-granting policy for new users that requires login and approval by the hiring manager.
 
-Artificial Intelligence - The ability of computers and robots to simulate human intelligence and behavior.
+- Artificial Intelligence - The ability of computers and robots to simulate human intelligence and behavior.
 
-Asset - Anything of value that is owned by an organization. Assets include both tangible items such as information systems and physical property and intangible assets such as intellectual property.
+- Asset - Anything of value that is owned by an organization. Assets include both tangible items such as information systems and physical property and intangible assets such as intellectual property.
 
-Authentication - Access control process validating that the identity being claimed by a user or entity is known to the system, by comparing one (single factor or SFA) or more (multi-factor authentication or MFA) factors of identification.
+- Authentication - Access control process validating that the identity being claimed by a user or entity is known to the system, by comparing one (single factor or SFA) or more (multi-factor authentication or MFA) factors of identification.
 
-Authorization - The right or a permission that is granted to a system entity to access a system resource. NIST 800-82 Rev.2
+- Authorization - The right or a permission that is granted to a system entity to access a system resource. NIST 800-82 Rev.2
 
-Availability - Ensuring timely and reliable access to and use of information by authorized users.
+- Availability - Ensuring timely and reliable access to and use of information by authorized users.
 
-Baseline - A documented, lowest level of security configuration allowed by a standard or organization.   
+vBaseline - A documented, lowest level of security configuration allowed by a standard or organization.   
 
-Bot - Malicious code that acts like a remotely controlled “robot” for an attacker, with other Trojan and worm capabilities.
+- Bot - Malicious code that acts like a remotely controlled “robot” for an attacker, with other Trojan and worm capabilities.
 
-Classified or Sensitive Information - Information that has been determined to require protection against unauthorized disclosure and is marked to indicate its classified status and classification level when in documentary form.
+- Classified or Sensitive Information - Information that has been determined to require protection against unauthorized disclosure and is marked to indicate its classified status and classification level when in documentary form.
 
-Confidentiality - The characteristic of data or information when it is not made available or disclosed to unauthorized persons or processes. NIST 800-66 
+- Confidentiality - The characteristic of data or information when it is not made available or disclosed to unauthorized persons or processes. NIST 800-66 
 
-Criticality  - A measure of the degree to which an organization depends on the information or information system for the success of a mission or of a business function. NIST SP 800-60 Vol. 1, Rev. 1 
+- Criticality  - A measure of the degree to which an organization depends on the information or information system for the success of a mission or of a business function. NIST SP 800-60 Vol. 1, Rev. 1 
 
-Data Integrity - The property that data has not been altered in an unauthorized manner. Data integrity covers data in storage, during processing and while in transit. Source: NIST SP 800-27 Rev A
+- Data Integrity - The property that data has not been altered in an unauthorized manner. Data integrity covers data in storage, during processing and while in transit. Source: NIST SP 800-27 Rev A
 
-Encryption - The process and act of converting the message from its plaintext to ciphertext. Sometimes it is also referred to as enciphering. The two terms are sometimes used interchangeably in literature and have similar meanings.
+- Encryption - The process and act of converting the message from its plaintext to ciphertext. Sometimes it is also referred to as enciphering. The two terms are sometimes used interchangeably in literature and have similar meanings.
 
-General Data Protection Regulation (GDPR) - In 2016, the European Union passed comprehensive legislation that addresses personal privacy, deeming it an individual human right. 
+- General Data Protection Regulation (GDPR) - In 2016, the European Union passed comprehensive legislation that addresses personal privacy, deeming it an individual human right. 
 
-Governance -The process of how an organization is managed; usually includes all aspects of how decisions are made for that organization, such as policies, roles, and procedures the organization uses to make those decisions.
+- Governance -The process of how an organization is managed; usually includes all aspects of how decisions are made for that organization, such as policies, roles, and procedures the organization uses to make those decisions.
 
-Health Insurance Portability and Accountability Act (HIPAA) - This U.S. federal law is the most important healthcare information regulation in the United States. It directs the adoption of national standards for electronic healthcare transactions while protecting the privacy of individual's health information. Other provisions address fraud reduction, protections for individuals with health insurance and a wide range of other healthcare-related activities. Est. 1996.
+- Health Insurance Portability and Accountability Act (HIPAA) - This U.S. federal law is the most important healthcare information regulation in the United States. It directs the adoption of national standards for electronic healthcare transactions while protecting the privacy of individual's health information. Other provisions address fraud reduction, protections for individuals with health insurance and a wide range of other healthcare-related activities. Est. 1996.
 
-Impact - The magnitude of harm that could be caused by a threat’s exercise of a vulnerability.
+- Impact - The magnitude of harm that could be caused by a threat’s exercise of a vulnerability.
 
-Information Security Risk - The potential adverse impacts to an organization’s operations (including its mission, functions and image and reputation), assets, individuals, other organizations, and even the nation, which results from the possibility of unauthorized access, use, disclosure, disruption, modification or destruction of information and/or information systems.
+- Information Security Risk - The potential adverse impacts to an organization’s operations (including its mission, functions and image and reputation), assets, individuals, other organizations, and even the nation, which results from the possibility of unauthorized access, use, disclosure, disruption, modification or destruction of information and/or information systems.
 
-Institute of Electrical and Electronics Engineers - IEEE is a professional organization that sets standards for telecommunications, computer engineering and similar disciplines.
+- Institute of Electrical and Electronics Engineers - IEEE is a professional organization that sets standards for telecommunications, computer engineering and similar disciplines.
 
-Integrity - The property of information whereby it is recorded, used and maintained in a way that ensures its completeness, accuracy, internal consistency and usefulness for a stated purpose.
+- Integrity - The property of information whereby it is recorded, used and maintained in a way that ensures its completeness, accuracy, internal consistency and usefulness for a stated purpose.
 
-International Organization of Standards (ISO) - The ISO develops voluntary international standards in collaboration with its partners in international standardization, the International Electro-technical Commission (IEC) and the International Telecommunication Union (ITU), particularly in the field of information and communication technologies.
+- International Organization of Standards (ISO) - The ISO develops voluntary international standards in collaboration with its partners in international standardization, the International Electro-technical Commission (IEC) and the International Telecommunication Union (ITU), particularly in the field of information and communication technologies.
 
-Internet Engineering Task Force (IETF) - The internet standards organization, made up of network designers, operators, vendors and researchers, that defines protocol standards (e.g., IP, TCP, DNS) through a process of collaboration and consensus. Source: NIST SP 1800-16B 
+- Internet Engineering Task Force (IETF) - The internet standards organization, made up of network designers, operators, vendors and researchers, that defines protocol standards (e.g., IP, TCP, DNS) through a process of collaboration and consensus. Source: NIST SP 1800-16B 
 
-Likelihood - The probability that a potential vulnerability may be exercised within the construct of the associated threat environment.
+- Likelihood - The probability that a potential vulnerability may be exercised within the construct of the associated threat environment.
 
-Likelihood of Occurrence - A weighted factor based on a subjective analysis of the probability that a given threat is capable of exploiting a given vulnerability or set of vulnerabilities.
+- Likelihood of Occurrence - A weighted factor based on a subjective analysis of the probability that a given threat is capable of exploiting a given vulnerability or set of vulnerabilities.
 
-Multi-Factor Authentication - Using two or more distinct instances of the three factors of authentication (something you know, something you have, something you are) for identity verification.
+- Multi-Factor Authentication - Using two or more distinct instances of the three factors of authentication (something you know, something you have, something you are) for identity verification.
 
-National Institutes of Standards and Technology (NIST) - The NIST is part of the U.S. Department of Commerce and addresses the measurement infrastructure within science and technology efforts within the U.S. federal government. NIST sets standards in a number of areas, including information security within the Computer Security Resource Center of the Computer Security Divisions.
+- National Institutes of Standards and Technology (NIST) - The NIST is part of the U.S. Department of Commerce and addresses the measurement infrastructure within science and technology efforts within the U.S. federal government. NIST sets standards in a number of areas, including information security within the Computer Security Resource Center of the Computer Security Divisions.
 
-Non-repudiation - The inability to deny taking an action such as creating information, approving information and sending or receiving a message.
+- Non-repudiation - The inability to deny taking an action such as creating information, approving information and sending or receiving a message.
 
-Personally Identifiable Information (PII) - The National Institute of Standards and Technology, known as NIST, in its Special Publication 800-122 defines PII as “any information about an individual maintained by an agency, including (1) any information that can be used to distinguish or trace an individual’s identity, such as name, Social Security number, date and place of birth, mother’s maiden name, or biometric records; and (2) any other information that is linked or linkable to an individual, such as medical, educational, financial and employment information.”
+- Personally Identifiable Information (PII) - The National Institute of Standards and Technology, known as NIST, in its Special Publication 800-122 defines PII as “any information about an individual maintained by an agency, including (1) any information that can be used to distinguish or trace an individual’s identity, such as name, Social Security number, date and place of birth, mother’s maiden name, or biometric records; and (2) any other information that is linked or linkable to an individual, such as medical, educational, financial and employment information.”
 
-Physical Controls - Controls implemented through a tangible mechanism. Examples include walls, fences, guards, locks, etc. In modern organizations, many physical control systems are linked to technical/logical systems, such as badge readers connected to door locks.
+- Physical Controls - Controls implemented through a tangible mechanism. Examples include walls, fences, guards, locks, etc. In modern organizations, many physical control systems are linked to technical/logical systems, such as badge readers connected to door locks.
 
-Privacy - The right of an individual to control the distribution of information about themselves.
+- Privacy - The right of an individual to control the distribution of information about themselves.
 
-Probability - The chances, or likelihood, that a given threat is capable of exploiting a given vulnerability or a set of vulnerabilities. Source: NIST SP 800-30 Rev. 
+- Probability - The chances, or likelihood, that a given threat is capable of exploiting a given vulnerability or a set of vulnerabilities. Source: NIST SP 800-30 Rev. 
 
-Protected Health Information (PHI) - Information regarding health status, the provision of healthcare or payment for healthcare as defined in HIPAA (Health Insurance Portability and Accountability Act).   
+- Protected Health Information (PHI) - Information regarding health status, the provision of healthcare or payment for healthcare as defined in HIPAA (Health Insurance Portability and Accountability Act).   
 
-Qualitative Risk Analysis - A method for risk analysis that is based on the assignment of a descriptor such as low, medium or high. Source: NISTIR 8286
+- Qualitative Risk Analysis - A method for risk analysis that is based on the assignment of a descriptor such as low, medium or high. Source: NISTIR 8286
 
-Quantitative Risk Analysis - A method for risk analysis where numerical values are assigned to both impact and likelihood based on statistical probabilities and monetarized valuation of loss or gain. Source: NISTIR 8286
+- Quantitative Risk Analysis - A method for risk analysis where numerical values are assigned to both impact and likelihood based on statistical probabilities and monetarized valuation of loss or gain. Source: NISTIR 8286
 
-Risk - A possible event which can have a negative impact upon the organization.
+- Risk - A possible event which can have a negative impact upon the organization.
 
-Risk Acceptance - Determining that the potential benefits of a business function outweigh the possible risk impact/likelihood and performing that business function with no other action.
+- Risk Acceptance - Determining that the potential benefits of a business function outweigh the possible risk impact/likelihood and performing that business function with no other action.
 
-Risk Assessment - The process of identifying and analyzing risks to organizational operations (including mission, functions, image, or reputation), organizational assets, individuals and other organizations. The analysis performed as part of risk management which incorporates threat and vulnerability analyses and considers mitigations provided by security controls planned or in place. 
+- Risk Assessment - The process of identifying and analyzing risks to organizational operations (including mission, functions, image, or reputation), organizational assets, individuals and other organizations. The analysis performed as part of risk management which incorporates threat and vulnerability analyses and considers mitigations provided by security controls planned or in place. 
 
-Risk Avoidance - Determining that the impact and/or likelihood of a specific risk is too great to be offset by the potential benefits and not performing a certain business function because of that determination.
+- Risk Avoidance - Determining that the impact and/or likelihood of a specific risk is too great to be offset by the potential benefits and not performing a certain business function because of that determination.
 
-Risk Management - The process of identifying, evaluating and controlling threats, including all the phases of risk context (or frame), risk assessment, risk treatment and risk monitoring.
+- Risk Management - The process of identifying, evaluating and controlling threats, including all the phases of risk context (or frame), risk assessment, risk treatment and risk monitoring.
 
-Risk Management Framework - A structured approach used to oversee and manage risk for an enterprise. Source: CNSSI 4009
+- Risk Management Framework - A structured approach used to oversee and manage risk for an enterprise. Source: CNSSI 4009
 
-Risk Mitigation - Putting security controls in place to reduce the possible impact and/or likelihood of a specific risk.
+- Risk Mitigation - Putting security controls in place to reduce the possible impact and/or likelihood of a specific risk.
 
-Risk Tolerance - The level of risk an entity is willing to assume in order to achieve a potential desired result. Source: NIST SP 800-32. Risk threshold, risk appetite and acceptable risk are also terms used synonymously with risk tolerance.
+- Risk Tolerance - The level of risk an entity is willing to assume in order to achieve a potential desired result. Source: NIST SP 800-32. Risk threshold, risk appetite and acceptable risk are also terms used synonymously with risk tolerance.
 
-Risk Transference - Paying an external party to accept the financial impact of a given risk.
+- Risk Transference - Paying an external party to accept the financial impact of a given risk.
 
-Risk Treatment - The determination of the best way to address an identified risk. 
+- Risk Treatment - The determination of the best way to address an identified risk. 
 
-Security Controls - The management, operational and technical controls (i.e., safeguards or countermeasures) prescribed for an information system to protect the confidentiality, integrity and availability of the system and its information. Source: FIPS PUB 199
+- Security Controls - The management, operational and technical controls (i.e., safeguards or countermeasures) prescribed for an information system to protect the confidentiality, integrity and availability of the system and its information. Source: FIPS PUB 199
 
-Sensitivity - A measure of the importance assigned to information by its owner, for the purpose of denoting its need for protection. Source: NIST SP 800-60 Vol 1 Rev 1
+- Sensitivity - A measure of the importance assigned to information by its owner, for the purpose of denoting its need for protection. Source: NIST SP 800-60 Vol 1 Rev 1
 
-Single-Factor Authentication - Use of just one of the three available factors (something you know, something you have, something you are) to carry out the authentication process being requested.
+- Single-Factor Authentication - Use of just one of the three available factors (something you know, something you have, something you are) to carry out the authentication process being requested.
 
-State - The condition an entity is in at a point in time.
+- State - The condition an entity is in at a point in time.
 
-System Integrity - The quality that a system has when it performs its intended function in an unimpaired manner, free from unauthorized manipulation of the system, whether intentional or accidental. Source: NIST SP 800-27 Rev. A
+- System Integrity - The quality that a system has when it performs its intended function in an unimpaired manner, free from unauthorized manipulation of the system, whether intentional or accidental. Source: NIST SP 800-27 Rev. A
 
-Technical Controls - Security controls (i.e., safeguards or countermeasures) for an information system that are primarily implemented and executed by the information system through mechanisms contained in the hardware, software or firmware components of the system.
+- Technical Controls - Security controls (i.e., safeguards or countermeasures) for an information system that are primarily implemented and executed by the information system through mechanisms contained in the hardware, software or firmware components of the system.
 
-Threat - Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image or reputation), organizational assets, individuals, other organizations or the nation through an information system via unauthorized access, destruction, disclosure, modification of information and/or denial of service.
+- Threat - Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image or reputation), organizational assets, individuals, other organizations or the nation through an information system via unauthorized access, destruction, disclosure, modification of information and/or denial of service.
 
-Threat Actor - An individual or a group that attempts to exploit vulnerabilities to cause or force a threat to occur.
+- Threat Actor - An individual or a group that attempts to exploit vulnerabilities to cause or force a threat to occur.
 
-Threat Vector - The means by which a threat actor carries out their objectives.
+- Threat Vector - The means by which a threat actor carries out their objectives.
 
-Token - A physical object a user possesses and controls that is used to authenticate the user’s identity. Source: NISTIR 7711
+- Token - A physical object a user possesses and controls that is used to authenticate the user’s identity. Source: NISTIR 7711
 
-Vulnerability - Weakness in an information system, system security procedures, internal controls or implementation that could be exploited by a threat source. Source: NIST SP 800-30 Rev 1 
+- Vulnerability - Weakness in an information system, system security procedures, internal controls or implementation that could be exploited by a threat source. Source: NIST SP 800-30 Rev 1 
 
 ### V - Security Principles Quiz
 
