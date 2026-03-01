@@ -30,14 +30,28 @@
   - [R Risk Priorities](#r-risk-priorities)
   - [R Risk Tolerance](#r-risk-tolerance)
 - [Security Controls](#security-controls)
-  - [Security Controls](#security-controls-1)
-  - [Reading - What are Security Controls?](#reading---what-are-security-controls)
-  - [Reading - Physical Controls](#reading---physical-controls)
-  - [Reading - Technical Controls](#reading---technical-controls)
-  - [Reading - Administrative Controls](#reading---administrative-controls)
+  - [V - Security Controls](#v---security-controls)
+  - [R - What are Security Controls?](#r---what-are-security-controls)
+  - [R - Physical Controls](#r---physical-controls)
+  - [R - Technical Controls](#r---technical-controls)
+  - [R - Administrative Controls](#r---administrative-controls)
+  - [Self Check: Security Controls](#self-check-security-controls)
 - [Governance](#governance)
+  - [V - Governance](#v---governance)
+  - [R - Governance Elements](#r---governance-elements)
+  - [R - Governance Elements: Regulations and Laws](#r---governance-elements-regulations-and-laws)
+  - [R - Governance Elements: Standards](#r---governance-elements-standards)
+  - [R - Governance Elements: Policies](#r---governance-elements-policies)
+  - [R - Governance Elements: Procedures](#r---governance-elements-procedures)
 - [ISC2 Code of Ethics](#isc2-code-of-ethics)
+  - [V - ISC2 Code of Ethics](#v---isc2-code-of-ethics)
+  - [R - Professional Code of Conduct](#r---professional-code-of-conduct)
+  - [Self Check: Applying the Code](#self-check-applying-the-code)
 - [Security Principles Review](#security-principles-review)
+  - [V - Chapter Review](#v---chapter-review)
+  - [R - Course Summary](#r---course-summary)
+  - [R - Terms and Definitions](#r---terms-and-definitions)
+  - [V - Security Principles Quiz](#v---security-principles-quiz)
 
 
 ## Introduction
@@ -286,67 +300,303 @@ Often, risk tolerance is dictated by geographic location. For example, companies
 
 ## Security Controls
 
-### Security Controls
+### V - Security Controls
+- And this is our very next module, module three. So we will look at how controls operate, what a control is in effect. And then we will look at the three types of control. All modern security frameworks, break controls up into three types and we've looked already at physical and logical but there is a third type of control, administrative controls. And these are controls that tell people how to behave. Part of our governance policies, procedures and so on. And it's not the case that we use any one of these control types. 
 
-### Reading - What are Security Controls?
+- We actually layer them. There is an interdependency. It's not usually enough to have just administrative controls or just physical controls or just logical controls. Just think if you had a data center and your data center had lots of really good logical controls, lots of very good technical protections, firewalls, antivirus and so on. But there was no lock on the door. Anybody passing by your building could go in and out if you have zero physical controls. Even if you've got very good technical controls, There is still a significant risk. 
 
-### Reading - Physical Controls
+- So usually we need a balance between the two or a balance between the three factoring in the administrative controls, we tell people what to do, but people always don't don't always do what they are told to do. They might forget, make a mistake or intentionally behave in a different way. So it's not enough to have administrative controls. So we layer these three control types, we use a combination of them and that kind of relates back to multifactor authentication. The reason you you combine the different factors is because it's harder to attack a combination of factors instead of using one factor like something you know, three times it's much stronger to use three different types. Same is true here in terms of controls. Were using different types of controls in combination so a control helps to affect an outcome in the real world. 
 
-### Reading - Technical Controls
+- You have a remote control for your television, it affects an outcome. And what we're trying to do is to detect correct, prevent or reduce a risk to affect that that outcome somehow controls and control activity follow on from our risk management and we have a risk based approach to security. Therefore this control activity is really important now and it's part of all major cybersecurity frameworks and we have three listed there. So so 27,001 the international standards organization offer a certification for companies they can choose to to meet. And 27,001 has a requirement for a risk assessment risk management. And then depending on your risk management, what you say your risk management affect how you use controls and 27,001 has over 100 controls that it suggests you respond to. For example, do you synchronize time on your on your network, Do you do background checks for employees? 
 
-### Reading - Administrative Controls
+- Lots of different controls that it asked you to think about. Control objectives in IT COBIT is managed by Osaka. Osaka as an organization grew out of audit. So when finance systems were paper based There were controls to manage the accuracy of finance data. When computers started to sort store finance data in the 1960s 70's at that point auditors realized that we needed to control our IT environment. We need to protect and control our IT environment and the control objectives in IT. We're an extension of that kind of financial audit, financial audit. 
 
-Self Check: Security Controls
+- And again it contains a list of controls that we have to consider that we should consider as an organization. NIST, the National Institute for Science and Technology is the US based Organization that provides two really important sets of documents. The Special Publications SP. The Special Publications in the 800 series. And also they produce the federal information processing standards Phipps. And if you are a federal US agency, a government agency, a national government agency in America then you have to follow their guidance. You don't have any choice. 
 
-Practice Assignment•. Duration: 14 minutes14 min
-•Grade: --
+- But the great thing about Nist is all of their guidance is available on their website. It is very easy to read and understand and it is free of charge. The price is zero. So this guidance I use extensively. It is very well known worldwide and on the right in the image there you see a QR code for one of the special publication documents sp 800-53. This is one of the most well known documents produced by Nist and it contains again their their control activity. Their recommendations for control activity. 
+
+- So they go three different approaches to cybersecurity, three different frameworks, all of which are risk based, all of which require you to undertake control activity to manage your risk. Security controls then help to manage the risk by reducing the risk to a level that is acceptable, they lower the risk, very rarely do they lower it to zero. Usually there is some risk remaining, we call that residual risk, residual risk is the risk that remains after we have applied these security controls. And what we're looking to do is to decide whether the benefit from a control is worthwhile given the, given its cost. So the cost versus the benefit. For example, if we had a data center in the basement of a building And once a year it flooded and the flood caused $10,000 worth of damage. So the flooding happens once each year and causes $10,000 worth of damage. 
+
+- If we could buy a pump that completely mitigated, reduced the risk to zero of flooding as soon as it detected water, it would pump the water away If that pump cost $20,000 a year to install and maintain, would we buy it Well in this example? Maybe not the cost of the control is $20,000 a year. The benefit that it gives is only $10,000 a year. So it depends, that's a really basic example. There would be other factors the disruption of the flood. If it if it causes $10,000 worth of damage. Those systems are likely to be offline. 
+
+- The damage to our reputation of being offline. So that that was a really simple example. But we do think about the cost of the control versus its benefit and that judgment over whether to adopt control or not. That judgment in terms of how we manage the control we said is made by the leadership within the organization, by those C level officers and the security controls. We see they're just broken up into those three groupings. Administrative controls, physical and technical. Let's take a look at each of the types. 
+
+- So controls relating to the administrative category. These are telling people how to behave. We have policies, procedures, guidelines, standards, policies are a high level statement, procedures are step by step, instructions on how to do something, guidelines or recommendations. With guidelines. Think about the word, you should you should do these things standards. The word to remember is must standards say you must do something, guidelines are just recommendations. Standards we have to follow. 
+And are these controls enough in isolation. Could we just rely on administrative controls? Absolutely not. People forget people deliberately undermine controls. I've seen an argument. I've found somebody behaving in a way that breached policy and I said why are you doing this? And their answer was Well, my way of doing it is better. 
+
+- And that may be that the kind of thinking people may not be aware of the reason for a policy or procedure to exist. A good policy will say what you're doing, but also will explain why to help generate buy in so that people understand they're more likely to comply with it if they understand. But administrative policies are not effective in isolation. We don't consider consider them to be effective in isolation. It doesn't mean they have no value. They're really important. They say what we do and then we try to make sure that we're doing what we say we do. 
+
+- So this is the starting point for governance. This is what we do as an organization. This is how we behave. We then use physical and logical controls to enforce those behaviors. Physical controls often secure access to something, for example, a door in offense controls, access to a site, the door in a safe. It's a gap in a secure perimeter that controls access. So physical access control systems, door entry systems, CCTV systems, alarm systems are all examples of physical controls. 
+
+- And again, really good physical security isn't enough. If we had good administrative controls. Good physical controls. Well that's great, but we still need technical controls. Just think if you had a data center that was very well guarded that had good procedures, policies surrounding its use surrounding its use what if it's connected to the internet without a firewall without any protection technically or logically it's going to face significant risks. So again, administrative, physical and logical used to be need to be used in combination for our technical or logical controls. Then things like encryption. 
+
+- Endpoint security. Endpoint security is a more modern phrase for antivirus. Antivirus is protecting just against viruses. Modern endpoint detection and response systems E D R. They provide protection for network threats, ransomware malware viruses not just for viruses. So the term you'll hear commonly is either endpoint security or e D R. Endpoint detection and response clustering. 
+
+- Getting systems to work together in combination to provide more resilience and we can think about some controls as being preventative of firewall we can think about as being preventative. It prevents somebody breaking into our network. But also if there is a problem, it might also be in part detective. The same is true of antivirus type products they might help prevent, they might help detect depending on the type of threat. And we talked already about whether a control is worthwhile a decision against the benefit it confers versus its cost, the cost of buying it to the cost of maintaining it. We looked at the common control frameworks 27,001 which companies can be certified to ice aka that produce the control objectives in it and they also produce something called risk it. So those two ice aka frameworks together Give us something very similar to ISO 27001. 
+
+- Nist sp 800-53 Is a Nist National Institute of Science and Technology Longstanding Organization. It's been around since 1901. They produce those special publications and the federal information processing standards. 
+
+### R - What are Security Controls?
+- Security controls pertain to the physical, technical and administrative mechanisms that act as safeguards or countermeasures prescribed for an information system to protect the confidentiality, integrity and availability of the system and its information. The implementation of controls should reduce risk, hopefully to an acceptable level.
+
+![alt text](image-5.png)
+
+### R - Physical Controls
+- Physical controls address process-based security needs using **physical hardware devices**, such as:
+  - badge readers, 
+  - architectural features of buildings and facilities, 
+  - and specific security actions to be taken by people. 
+- They typically provide ways of controlling, directing or preventing the movement of people and equipment throughout a specific physical location, such as an office suite, factory or other facility. Physical controls also provide protection and control over entry onto the land surrounding the buildings, parking lots or other areas that are within the organization’s control. In most situations, physical controls are supported by technical controls as a means of incorporating them into an overall security system.
+
+- Visitors and guests accessing a workplace, for example, must often enter the facility through a designated entrance and exit, where they can be identified, their visit’s purpose assessed, and then allowed or denied entry. Employees would enter, perhaps through other entrances, using company-issued badges or other tokens to assert their identity and gain access. These require technical controls to integrate the badge or token readers, the door release mechanisms and the identity management and access control systems into a more seamless security system.
+
+### R - Technical Controls
+- Technical controls (also called logical controls) are security controls that computer systems and networks directly implement. These controls can provide automated protection from unauthorized access or misuse, facilitate detection of security violations and support security requirements for applications and data. Technical controls can be configuration settings or parameters stored as data, managed through a software graphical user interface (GUI), or they can be hardware settings done with switches, jumper plugs or other means.
+- However, the implementation of technical controls always requires significant operational considerations and should be consistent with the management of security within the organization. 
+  
+### R - Administrative Controls
+- Administrative controls (also known as managerial controls) are directives, guidelines or advisories aimed at the people within the organization. They provide frameworks, constraints and standards for human behavior, and should cover the entire scope of the organization’s activities and its interactions with external parties and stakeholders.
+
+- It is vitally important to realize that administrative controls can and should be powerful, effective tools for achieving information security. Even the simplest security awareness policies can be an effective control, if you can help the organization fully implement them through systematic training and practice.
+
+- Many organizations are improving their overall security posture by integrating their administrative controls into the task-level activities and operational decision processes that their workforce uses throughout the day. This can be done by providing them as in-context ready reference and advisory resources, or by linking them directly into training activities. These and other techniques bring the policies to a more neutral level and away from the decision-making of only the senior executives. It also makes them immediate, useful and operational on a daily and per-task basis.
+
+### Self Check: Security Controls
+
+![alt text](image-6.png)
 
 ## Governance
 
-Governance
+### V - Governance
+- **governance** is how we make decisions, how we tell people how to behave, and this related to our administrative controls. 
+- We're going to look at governance elements. We're going to look specifically at things like compliance, regulations and laws, but also some of that internal governance; standards, policies, procedures, and recommendations. Compliance. Compliance can be an external requirement. For privacy, we said you have to comply with regulations, you have to comply with laws. 
+These can arise externally. We can also have internal compliance requirements. We have a set of standards policies that we have to meet. Then that compliance has been agreed by the board. We have to meet that there's something that we have to comply with. The policies, the procedures, the standards, the guidelines, those are things that we have talked that have been agreed at some point within the organization that we have to follow. Laws and regulations might mean that our internal policies, and procedures are shaped in a way that complies with the laws and the regulations. 
+Similarly, we said standards, things you must do, guidelines, recommendations. These may arise externally. They could relate to your particular industry sector. But they may be internal standards and guidelines. Somebody could have said, well look, this is best practice, this is how we are going to behave. You will have these standards for encryption as an example. This links very much to the type of industry that you're in. 
+Increasingly, industries are regulated. Privacy regulation is growing globally. But also we see health care, finance, military, government, communications, transport, all those critical national infrastructure elements are typically regulated. We talked already about ISO 27001, the cybersecurity standards that you can be certified to. It's the definitive standard, an international standard that sets out the specification for your information security, the documentation risk approach and controls. But ISO also have another document on cybersecurity management. This is ISO 27032, supposed to again be an international definitive standard, offering guidance on what to do, so you cannot be certified to this standard. 
+The standard recognizes the different vectors that cyberattacks rely on and helps provide guidance on how to protect your organization from them. We said SPA800, special publication 800-53 is NIST control document, control framework, and we also have NIST cybersecurity framework. The cybersecurity framework was designed to help organizations identify their capabilities, and needs to help an organization identify where they are currently, their current posture, and where they want to be their target state: so your current state and your target state. Think about this as planning a journey. In order to travel somewhere, you need to know where you are, you need to know where you want to go. Then the gap between those two points gives you a roadmap. Literally when you're traveling a map across the roads, maybe. 
+But the same is true for cybersecurity. If you can identify where you are, where you want to be, you can identify the gap and that becomes a road-map for you to go from where you are to where you need to be. The framework is divided into different tiers and profiles, and the profiles give you examples of different industries, and you try to recognize where you are within that continuum. We're a telecommunication provider, for example, and yeah, this profile looks like us, looks like where we are. That profile looks like where we want to be, and it helps you shape your next steps. It gives you effectively the basis for a strategy and the roadmap. Policies, we talked about policies. 
+Policies are the high-level statement saying what we're doing. They should reflect the law, they should reflect the strategy and mission of the organization, and we said a good policy will explain why you're doing it. Doesn't have to, but a good policy will explain that because if people that have to follow this policy understand why it's asking you to do these things, they're more likely to comply. Policies are signed off by the senior leadership of the organization. One of those C-level officers, a member of the board. Procedures, are signed off at the next level down. Procedures are step-by-step instructions. 
+They're signed off at a lower level, not at the next level down rather, but a lower level within the organization, within a business unit. Why they signed off at a low level? Well, the procedures are how we deliver the high-level policy, so how we deliver the policy. For example, we may have a backup policy that explains how we are going to protect data. The backup procedure might explain how you change the backup tapes. You remove the old tape, you put it in a secure location. You get the new tape, you insert it. 
+Maybe you start the backup. Because these require specific knowledge usually related to a business area, so for the backups, maybe IT, then typically these procedures are signed off within that business area, the created within the business area. If a policy and procedure conflict in terms of contradicting each other, the policy usually takes precedence because it is signed off by the board. We would normally respect the policy over the procedure. 
 
-Video•. Duration: 7 minutes7 min
-Governance Elements
+### R - Governance Elements
+Any business or organization exists to fulfill a purpose, whether it is to provide raw materials to an industry, manufacture equipment to build computer hardware, develop software applications, construct buildings or provide goods and services. To complete the objective requires that decisions are made, rules and practices are defined, and policies and procedures are in place to guide the organization in its pursuit of achieving its goals and mission.
 
-Reading•. Duration: 2 minutes2 min
-Governance Elements: Regulations and Laws
+When leaders and management implement the systems and structures that the organization will use to achieve its goals, they are guided by laws and regulations created by governments to enact public policy. Laws and regulations guide the development of standards, which cultivate policies, which result in procedures.
 
-Reading•. Duration: 2 minutes2 min
-Governance Elements: Standards
+How are regulations, standards, policies and procedures related?  It might help to look at the list in reverse.   
+- Procedures are the detailed steps to complete a task that support departmental or organizational policies.
+- Policies are put in place by organizational governance, such as executive management, to provide guidance in all activities to ensure that the organization supports industry standards and regulations.
+- Standards are often used by governance teams to provide a framework to introduce policies and procedures in support of regulations.
+- Regulations are commonly issued in the form of laws, usually from government (not to be confused with governance) and typically carry financial penalties for noncompliance.
 
-Reading•. Duration: 2 minutes2 min
-Governance Elements: Policies
+Now that we see how they are connected, we’ll look at some details and examples of each.
 
-Reading•. Duration: 2 minutes2 min
-Governance Elements: Procedures
+![alt text](image-7.png)
 
-Reading•. Duration: 1 minute1 min
+### R - Governance Elements: Regulations and Laws
+Regulations and associated fines and penalties can be imposed by governments at the national, regional or local level. Because regulations and laws can be imposed and enforced differently in different parts of the world, here are a few examples to connect the concepts to actual regulations.
+
+The Health Insurance Portability and Accountability Act (HIPAA) of 1996 is an example of a law that governs the use of protected health information (PHI) in the United States. Violation of the HIPAA rule carries the possibility of fines and/or imprisonment for both individuals and companies.
+
+The General Data Protection Regulation (GDPR) was enacted by the European Union (EU) to control use of Personally Identifiable Information (PII) of its citizens and those in the EU. It includes provisions that apply financial penalties to companies who handle data of EU citizens and those living in the EU even if the company does not have a physical presence in the EU, giving this regulation an international reach.
+
+Finally, it is common to be subject to regulation on several levels. Multinational organizations are subject to regulations in more than one nation in addition to multiple regions and municipalities. Organizations need to consider the regulations that apply to their business at all levels—national, regional and local—and ensure they are compliant with the most restrictive regulation.
+
+### R - Governance Elements: Standards
+Organizations use multiple standards as part of their information systems security programs, both as compliance documents and as advisories or guidelines. Standards cover a broad range of issues and ideas and may provide assurance that an organization is operating with policies and procedures that support regulations and are widely accepted best practices.
+
+The International Organization for Standardization (ISO) develops and publishes international standards on a variety of technical subjects, including information systems and information security, as well as encryption standards. ISO solicits input from the international community of experts to provide input on its standards prior to publishing. Documents outlining ISO standards may be purchased online.
+
+The National Institute of Standards and Technology (NIST) is a United States government agency under the Department of Commerce and publishes a variety of technical standards in addition to information technology and information security standards. Many of the standards issued by NIST are requirements for U.S. government agencies and are considered recommended standards by industries worldwide. NIST standards solicit and integrate input from industry and are free to download from the NIST website.
+
+Finally, think about how computers talk to other computers across the globe. People speak different languages and do not always understand each other. How are computers able to communicate? Through standards, of course!
+
+Thanks to the Internet Engineering Task Force (IETF), there are standards in communication protocols that ensure all computers can connect with each other across borders, even when the operators do not speak the same language.
+
+The Institute of Electrical and Electronics Engineers (IEEE) also sets standards for telecommunications, computer engineering and similar disciplines.
+
+### R - Governance Elements: Policies
+Policy is informed by applicable law(s) and specifies which standards and guidelines the organization will follow. Policy is broad, but not detailed; it establishes context and sets out strategic direction and priorities. Governance policies are used to moderate and control decision-making, to ensure compliance when necessary and to guide the creation and implementation of other policies.
+
+Policies are often written at many levels across the organization. High-level governance policies are used by senior executives to shape and control decision-making processes. Other high-level policies direct the behavior and activity of the entire organization as it moves toward specific or general goals and objectives. Functional areas such as human resources management, finance and accounting, and security and asset protection usually have their own sets of policies. Whether imposed by laws and regulations or by contracts, the need for compliance might also require the development of specific high-level policies that are documented and assessed for their effective use by the organization.
+
+Policies are implemented, or carried out, by people; for that, someone must expand the policies from statements of intent and direction into step-by-step instructions, or procedures.
+
+### R - Governance Elements: Procedures
+Procedures define the explicit, repeatable activities necessary to accomplish a specific task or set of tasks. They provide supporting data, decision criteria or other explicit knowledge needed to perform each task. Procedures can address one-time or infrequent actions or common, regular occurrences. In addition, procedures establish the measurement criteria and methods to use to determine whether a task has been successfully completed. Properly documenting procedures and training personnel on how to locate and follow them is necessary for deriving the maximum organizational benefits from procedures.
+
 
 ## ISC2 Code of Ethics
 
-ISC2 Code of Ethics
+### V - ISC2 Code of Ethics
+Our last module then is looking at ethics. Ethics, really important. If you think about some different industries, for example, the world of law and medicine, they've had ethical frameworks for millennia, not just hundreds of years, thousands of years. Cybersecurity; well, cybersecurity didn't really exist as a profession until the silicon chip existed. Silicon chip was created in 1959 and so cybersecurity followed on. We started to see the ethical issues becoming discussed in the 1980s, '70s, '80s, and ISC Squared helpfully as a not-for-profit professional body for the industry, for us as members created a code of ethics. Let's look at what ethics are, and also specifically at the ISC Squared Code of Ethics and why it's important. 
+Ethics are typically a reflection of a society's beliefs. For example, a society believes that it is, maybe, wrong to kill. You see that reflected in the culture and ultimately often in law. You start to see law saying, you must not kill. If you kill somebody, you will be punished. But what's interesting is that there isn't a single idea of what is ethical globally. In some cultures, certain behaviors are accepted that may not be acceptable in others. 
+We see this as the world globalizes, as we become more connected to each other, as different societies, travel becomes easier. We're exposed to different societies, different cultures, and different legal frameworks. What does that mean in terms of our response as an organization and as individuals? Also, what truly is ethical? Are there common things that we should and shouldn't do? Do bear in mind if you have a company that operates in different parts of the world, in different territories, a single company may cross different cultural and consequently different ethical boundaries. There are some really small things like for example, in Japan, if somebody hands you a business card, it is expected you will treat that business card with respect. 
+In other parts of the world, the business card is treated as a piece of paper with contact details on it. It's not treated with respect, is not unethical or disrespectful to place it on a shelf or to write on it. Two different ideas of what is appropriate. What is ethical? Well, ISC Squared, were one of the first professional bodies to come up with an idea for cybersecurity of what is ethical. Just think about the legal world, legal world, medical world we said, they've had these ethical codes for millennia because they have access to high levels of information or they have positions of power. Or within cybersecurity quite often, we have elevated access to systems, to services, and so the idea of ethics is important for that reason. 
+The ISC Squared Code of Ethics, the preamble, the start, says that the safety and welfare of society and the common good, the duty to our principles and to each other requires that we adhere to and be seen to adhere to, the highest ethical standards of behavior and strict adherence to this code, is a condition of certification. Let's just look at some of the wording here. The very first thing it introduces is important, the safety and welfare of society. What is society? It's a group of human beings. Human beings come first. Then we talk about our principles. 
+The principle is the senior person within the company you're working for. You are responsible maybe to the chief executive, the duty to our principal. But before the principal, is your responsibility to other human beings. We have the safety and welfare of people, of society. The duty to our principals, to our employer, or particularly to that senior manager within our employer and to each other, requires that we are ethical. It says, strict adherence is a condition of certification. So if you become certified and you behave in a way that is unethical, that operates counter to that statement, that first paragraph, you can be decertified. 
+You can lose your certification. Just as a doctor can lose their ability to operate, they can lose their medical license or a lawyer can, so we can lose our professional credentials. The ISC Squared Code of Ethics has different canons. If English isn't your first language, the word canon can mean a weapon that shoots cannonballs. But it can also mean a grouping of items, and in this context, it's talking about a grouping of items. The code of ethics groups include protecting society, the common good, necessary public trust and confidence, and the infrastructure that we act honorably, honestly, justly, responsibly, and legally, and that we provide diligent and competent service to our principles. Finally, that we advance and protect the profession. 
+Great set of items. Again, just look that piece about human beings and society, public trust is the very first thing. Really important. 
 
-Video•. Duration: 6 minutes6 min
-Professional Code of Conduct
+### R - Professional Code of Conduct
+All information security professionals who are certified by ISC2 recognize that certification is a privilege that must be both earned and maintained. Every ISC2 member is required to commit to fully support the Canons of the ISC2 Code of Ethics. For more information on the Code of Ethics, please visit https://www.isc2.org/Ethics.
 
-Reading•. Duration: 2 minutes2 min
-Self Check: Applying the Code
+The preamble states the purpose and intent of the ISC2 Code of Ethics.
 
-Practice Assignment•. Duration: 2 minutes2 min
-•Grade: --
+The Canons represent the important beliefs held in common by the members of ISC2. The most important tenets are listed first, followed by the rest in order of priority. Cybersecurity professionals who are members of ISC2 have a duty to all entities listed in the Canons.
+
+According to the Canons, an ISC2 member is expected to do the following:
+
+**ISC2 Code of Ethics Preamble**
+- The safety and welfare of society and the common good, duty to our principals, and to each other, requires that we adhere, and be seen to adhere, to the highest ethical standards of behavior. 
+- Therefore, strict adherence to this Code is a condition of certification. 
+
+**ISC2 Code of Ethics Canons**
+The ISC2 member is expected to do the following: 
+- Protect society, the common good, necessary public trust and confidence, and the infrastructure.
+- Act honorably, honestly, justly, responsibly, and legally.
+- Provide diligent and competent service to principals.
+- Advance and protect the profession.
+
+### Self Check: Applying the Code
 
 ## Security Principles Review
 
-Chapter Review
+### V - Chapter Review
+So we have two slides, just trying to summarize the content that we've covered in this first chapter and then we have some questions. Let's start then with the first slide. Confidentiality, integrity and availability alongside privacy are important foundation concepts that are widely referenced and used throughout the course. It's important that we understand them because the knowledge we've gained in Chapter 1 is used in subsequent chapters, we build on that. We have said that authentication can occur in a variety of ways using the three different factors. Either one of them, one factor, single factor or combinations of those factors. Two factor or multi factor authentication. 
+The correct implementation ultimately, primarily, depends on the level of assurance, the level of confidence that we require. In a military environment, maybe you use all three factors. For something more trivial, maybe just a single factor is okay. So, we looked at the considerations like throughput, invasiveness and so on. But the biggest issue was the level of confidence we need. We said risks, threats, vulnerabilities and likelihoods are managed formally by organizations according to their risk appetite. We should never ignore a risk. 
+We choose one of the other four risk responses, one of the other four management responses. Remember e risk is the outcome, the threat is the thing trying to do the damage. A vulnerability is the weakness and the likelihood is the probability of something adverse happening of the risk materializing. Controls then help us reduce the risk down to an acceptable level until the remaining or residual risk is within our risk appetite. We said that pretty much all security frameworks now group controls into three types. Those three types are administrative, physical and logical. And when we say logical, we can use that term technical, interdependently logical or technical. 
+We said governance is the process by which an organization makes decisions, but also how it documents its approach. And this includes abiding by legal and regulatory requirements, ensuring that policies and procedures exist to direct the way the organization operates.
 
-Video•. Duration: 2 minutes2 min
-Course Summary
+### R - Course Summary
+In this course, we covered security principles, starting with concepts of information assurance. We highlighted the CIA triad as the primary components of information assurance. The “C” stands for confidentiality; we must protect the data that needs protection and prevent access to unauthorized individuals. The “I” represents integrity; we must ensure the data has not been altered in an unauthorized manner. The “A” symbolizes availability; we must make sure data is accessible to authorized users when and where it is needed, and in the form and format that is required. We also discussed the importance of privacy, authentication, non-repudiation and authorization. 
 
-Reading•. Duration: 3 minutes3 min
-Terms and Definitions
+You explored the safeguards and countermeasures prescribed for an information system to protect the confidentiality, integrity and availability of the system and its information. By applying risk management, we were able to assess and prioritize the risks (asset vulnerabilities that can be exploited by threats) to an organization. An organization can decide whether to accept the risk (ignoring the risks and continuing risky activities), avoid the risk (ceasing the risky activity to remove the likelihood that an event will occur), mitigate the risk (taking action to prevent or reduce the impact of an event), or transfer the risk (passing risk to a third party). 
 
-Reading•. Duration: 20 minutes20 min
-Security Principles Quiz
+You then learned about three types of security controls: physical, technical and administrative. They act as safeguards or countermeasures prescribed for an information system to protect the confidentiality, integrity and availability of the system and its information. The implementation of security controls should reduce risk, hopefully to an acceptable level. Physical controls address process-based security needs using physical hardware devices, such as a badge reader, architectural features of buildings and facilities, and specific security actions taken by people. Technical controls (also called logical controls) are security controls that computer systems and networks directly implement. Administrative controls (also known as managerial controls) are directives, guidelines or advisories aimed at the people within the organization.
+
+You were then introduced to organizational security roles and governance, the policies and procedures that shape organizational management and drive decision-making. As discussed, we typically derive procedures from policies, policies from standards, standards from regulations. Regulations are commonly issued in the form of laws, usually from government (not to be confused with governance) and typically carry financial penalties for noncompliance. Standards are often used by governance teams to provide a framework to introduce policies and procedures in support of regulations. Policies are put in place by organizational governance, such as executive management, to provide guidance in all activities to ensure the organization supports industry standards and regulations. Procedures are the detailed steps to complete a task that will support departmental or organizational policies.
+
+Finally, we covered the ISC2  Code of Ethics, which members of the organization commit to fully support. Bottom line, we must act legally and ethically in the field of cybersecurity.
+
+Continue Your Path to Becoming CC-Certified You’re on your way! Make the most of your learning and go the distance to obtain your Certified in Cybersecurity (CC®) credential from ISC2—the world’s leading cybersecurity organization. 
+[Register for CC](https://www.isc2.org/landing/cc-coursera)
+
+### R - Terms and Definitions
+Adequate Security - Security commensurate with the risk and the magnitude of harm resulting from the loss, misuse or unauthorized access to or modification of information. Source: OMB Circular A-130
+
+Administrative Controls - Controls implemented through policy and procedures. Examples include access control processes and requiring multiple personnel to conduct a specific operation. Administrative controls in modern environments are often enforced in conjunction with physical and/or technical controls, such as an access-granting policy for new users that requires login and approval by the hiring manager.
+
+Artificial Intelligence - The ability of computers and robots to simulate human intelligence and behavior.
+
+Asset - Anything of value that is owned by an organization. Assets include both tangible items such as information systems and physical property and intangible assets such as intellectual property.
+
+Authentication - Access control process validating that the identity being claimed by a user or entity is known to the system, by comparing one (single factor or SFA) or more (multi-factor authentication or MFA) factors of identification.
+
+Authorization - The right or a permission that is granted to a system entity to access a system resource. NIST 800-82 Rev.2
+
+Availability - Ensuring timely and reliable access to and use of information by authorized users.
+
+Baseline - A documented, lowest level of security configuration allowed by a standard or organization.   
+
+Bot - Malicious code that acts like a remotely controlled “robot” for an attacker, with other Trojan and worm capabilities.
+
+Classified or Sensitive Information - Information that has been determined to require protection against unauthorized disclosure and is marked to indicate its classified status and classification level when in documentary form.
+
+Confidentiality - The characteristic of data or information when it is not made available or disclosed to unauthorized persons or processes. NIST 800-66 
+
+Criticality  - A measure of the degree to which an organization depends on the information or information system for the success of a mission or of a business function. NIST SP 800-60 Vol. 1, Rev. 1 
+
+Data Integrity - The property that data has not been altered in an unauthorized manner. Data integrity covers data in storage, during processing and while in transit. Source: NIST SP 800-27 Rev A
+
+Encryption - The process and act of converting the message from its plaintext to ciphertext. Sometimes it is also referred to as enciphering. The two terms are sometimes used interchangeably in literature and have similar meanings.
+
+General Data Protection Regulation (GDPR) - In 2016, the European Union passed comprehensive legislation that addresses personal privacy, deeming it an individual human right. 
+
+Governance -The process of how an organization is managed; usually includes all aspects of how decisions are made for that organization, such as policies, roles, and procedures the organization uses to make those decisions.
+
+Health Insurance Portability and Accountability Act (HIPAA) - This U.S. federal law is the most important healthcare information regulation in the United States. It directs the adoption of national standards for electronic healthcare transactions while protecting the privacy of individual's health information. Other provisions address fraud reduction, protections for individuals with health insurance and a wide range of other healthcare-related activities. Est. 1996.
+
+Impact - The magnitude of harm that could be caused by a threat’s exercise of a vulnerability.
+
+Information Security Risk - The potential adverse impacts to an organization’s operations (including its mission, functions and image and reputation), assets, individuals, other organizations, and even the nation, which results from the possibility of unauthorized access, use, disclosure, disruption, modification or destruction of information and/or information systems.
+
+Institute of Electrical and Electronics Engineers - IEEE is a professional organization that sets standards for telecommunications, computer engineering and similar disciplines.
+
+Integrity - The property of information whereby it is recorded, used and maintained in a way that ensures its completeness, accuracy, internal consistency and usefulness for a stated purpose.
+
+International Organization of Standards (ISO) - The ISO develops voluntary international standards in collaboration with its partners in international standardization, the International Electro-technical Commission (IEC) and the International Telecommunication Union (ITU), particularly in the field of information and communication technologies.
+
+Internet Engineering Task Force (IETF) - The internet standards organization, made up of network designers, operators, vendors and researchers, that defines protocol standards (e.g., IP, TCP, DNS) through a process of collaboration and consensus. Source: NIST SP 1800-16B 
+
+Likelihood - The probability that a potential vulnerability may be exercised within the construct of the associated threat environment.
+
+Likelihood of Occurrence - A weighted factor based on a subjective analysis of the probability that a given threat is capable of exploiting a given vulnerability or set of vulnerabilities.
+
+Multi-Factor Authentication - Using two or more distinct instances of the three factors of authentication (something you know, something you have, something you are) for identity verification.
+
+National Institutes of Standards and Technology (NIST) - The NIST is part of the U.S. Department of Commerce and addresses the measurement infrastructure within science and technology efforts within the U.S. federal government. NIST sets standards in a number of areas, including information security within the Computer Security Resource Center of the Computer Security Divisions.
+
+Non-repudiation - The inability to deny taking an action such as creating information, approving information and sending or receiving a message.
+
+Personally Identifiable Information (PII) - The National Institute of Standards and Technology, known as NIST, in its Special Publication 800-122 defines PII as “any information about an individual maintained by an agency, including (1) any information that can be used to distinguish or trace an individual’s identity, such as name, Social Security number, date and place of birth, mother’s maiden name, or biometric records; and (2) any other information that is linked or linkable to an individual, such as medical, educational, financial and employment information.”
+
+Physical Controls - Controls implemented through a tangible mechanism. Examples include walls, fences, guards, locks, etc. In modern organizations, many physical control systems are linked to technical/logical systems, such as badge readers connected to door locks.
+
+Privacy - The right of an individual to control the distribution of information about themselves.
+
+Probability - The chances, or likelihood, that a given threat is capable of exploiting a given vulnerability or a set of vulnerabilities. Source: NIST SP 800-30 Rev. 
+
+Protected Health Information (PHI) - Information regarding health status, the provision of healthcare or payment for healthcare as defined in HIPAA (Health Insurance Portability and Accountability Act).   
+
+Qualitative Risk Analysis - A method for risk analysis that is based on the assignment of a descriptor such as low, medium or high. Source: NISTIR 8286
+
+Quantitative Risk Analysis - A method for risk analysis where numerical values are assigned to both impact and likelihood based on statistical probabilities and monetarized valuation of loss or gain. Source: NISTIR 8286
+
+Risk - A possible event which can have a negative impact upon the organization.
+
+Risk Acceptance - Determining that the potential benefits of a business function outweigh the possible risk impact/likelihood and performing that business function with no other action.
+
+Risk Assessment - The process of identifying and analyzing risks to organizational operations (including mission, functions, image, or reputation), organizational assets, individuals and other organizations. The analysis performed as part of risk management which incorporates threat and vulnerability analyses and considers mitigations provided by security controls planned or in place. 
+
+Risk Avoidance - Determining that the impact and/or likelihood of a specific risk is too great to be offset by the potential benefits and not performing a certain business function because of that determination.
+
+Risk Management - The process of identifying, evaluating and controlling threats, including all the phases of risk context (or frame), risk assessment, risk treatment and risk monitoring.
+
+Risk Management Framework - A structured approach used to oversee and manage risk for an enterprise. Source: CNSSI 4009
+
+Risk Mitigation - Putting security controls in place to reduce the possible impact and/or likelihood of a specific risk.
+
+Risk Tolerance - The level of risk an entity is willing to assume in order to achieve a potential desired result. Source: NIST SP 800-32. Risk threshold, risk appetite and acceptable risk are also terms used synonymously with risk tolerance.
+
+Risk Transference - Paying an external party to accept the financial impact of a given risk.
+
+Risk Treatment - The determination of the best way to address an identified risk. 
+
+Security Controls - The management, operational and technical controls (i.e., safeguards or countermeasures) prescribed for an information system to protect the confidentiality, integrity and availability of the system and its information. Source: FIPS PUB 199
+
+Sensitivity - A measure of the importance assigned to information by its owner, for the purpose of denoting its need for protection. Source: NIST SP 800-60 Vol 1 Rev 1
+
+Single-Factor Authentication - Use of just one of the three available factors (something you know, something you have, something you are) to carry out the authentication process being requested.
+
+State - The condition an entity is in at a point in time.
+
+System Integrity - The quality that a system has when it performs its intended function in an unimpaired manner, free from unauthorized manipulation of the system, whether intentional or accidental. Source: NIST SP 800-27 Rev. A
+
+Technical Controls - Security controls (i.e., safeguards or countermeasures) for an information system that are primarily implemented and executed by the information system through mechanisms contained in the hardware, software or firmware components of the system.
+
+Threat - Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image or reputation), organizational assets, individuals, other organizations or the nation through an information system via unauthorized access, destruction, disclosure, modification of information and/or denial of service.
+
+Threat Actor - An individual or a group that attempts to exploit vulnerabilities to cause or force a threat to occur.
+
+Threat Vector - The means by which a threat actor carries out their objectives.
+
+Token - A physical object a user possesses and controls that is used to authenticate the user’s identity. Source: NISTIR 7711
+
+Vulnerability - Weakness in an information system, system security procedures, internal controls or implementation that could be exploited by a threat source. Source: NIST SP 800-30 Rev 1 
+
+### V - Security Principles Quiz
 
 Video•. Duration: 5 minutes5 min
 Security Concepts Quiz
