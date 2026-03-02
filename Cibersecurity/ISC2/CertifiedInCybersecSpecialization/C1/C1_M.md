@@ -496,7 +496,11 @@ You then learned about three types of security controls: **physical, technical a
 - Technical controls (also called logical controls) are security controls that computer systems and networks directly implement. 
 - Administrative controls (also known as managerial controls) are directives, guidelines or advisories aimed at the people within the organization.
 
-You were then introduced to organizational security roles and governance, the policies and procedures that shape organizational management and drive decision-making. As discussed, we typically derive procedures from policies, policies from standards, standards from regulations. Regulations are commonly issued in the form of laws, usually from government (not to be confused with governance) and typically carry financial penalties for noncompliance. Standards are often used by governance teams to provide a framework to introduce policies and procedures in support of regulations. Policies are put in place by organizational governance, such as executive management, to provide guidance in all activities to ensure the organization supports industry standards and regulations. Procedures are the detailed steps to complete a task that will support departmental or organizational policies.
+You were then introduced to organizational security roles and governance, the policies and procedures that shape organizational management and drive decision-making. As discussed, we typically derive **procedures from policies, policies from standards, standards from regulations**. 
+- Regulations are commonly issued in the form of laws, usually from government (not to be confused with governance) and typically carry financial penalties for noncompliance.
+- Standards are often used by governance teams to provide a framework to introduce policies and procedures in support of regulations. 
+- Policies are put in place by organizational governance, such as executive management, to provide guidance in all activities to ensure the organization supports industry standards and regulations. 
+- Procedures are the detailed steps to complete a task that will support departmental or organizational policies.
 
 Finally, we covered the ISC2  Code of Ethics, which members of the organization commit to fully support. Bottom line, we must act legally and ethically in the field of cybersecurity.
 
@@ -618,19 +622,6 @@ vBaseline - A documented, lowest level of security configuration allowed by a st
 
 ### V - Security Principles Quiz
 
-Video•. Duration: 5 minutes5 min
-Security Concepts Quiz
+![alt text](image-8.png)
 
-Due, Jan 21, 11:59 PM -03
-Graded Assignment•. Duration: 20 minutes20 min
-•Grade: --
-Peer Review
-
-Due, Jan 21, 11:59 PM -03
-Graded Assignment•. Duration: 1 hour1h
-•Grade: --
-Peer Review
-
-Due, Jan 24, 11:59 PM -03
-Review Your Peers
-•Grade: --
+![alt text](image-9.png)
