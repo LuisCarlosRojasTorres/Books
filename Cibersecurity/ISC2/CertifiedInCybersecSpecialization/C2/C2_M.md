@@ -15,8 +15,6 @@
 - [Disaster Recovery (DR)](#disaster-recovery-dr)
   - [The Goal of Disaster Recovery](#the-goal-of-disaster-recovery)
   - [Components of a Disaster Recovery Plan](#components-of-a-disaster-recovery-plan)
-  - [Self Check: Components of DR](#self-check-components-of-dr)
-  - [Disaster Recovery in Action](#disaster-recovery-in-action)
 - [Incident Response, Business Continuity, and Disaster Recovery Review](#incident-response-business-continuity-and-disaster-recovery-review)
   - [Course Summary](#course-summary)
   - [Terms and Definitions](#terms-and-definitions)
@@ -271,23 +269,32 @@ Depending on the size of the organization and the number of people involved in t
   - Managers and public relations personnel will have simple-to-follow, high-level documents to help them communicate the issue accurately without requiring input from team members who are busy working on the recovery. 
 
 
-### Self Check: Components of DR
-
-### Disaster Recovery in Action
-
 ## Incident Response, Business Continuity, and Disaster Recovery Review
+- incident, is something that ​jeopardizes the confidentiality, integrity or availability of an information system. 
+- ​Incident response. ​Business continuity and disaster recovery plans are crucial to preparing for ​adverse events. 
+- ​Plans must be prepared, reviewed and ​tested in order to remain effective 
+- following an incident of any kind. ​Learning can and should be used to improve plans. 
+- ​An effective communication during an adverse event is critical, and this ​usually involves a range of stakeholders, and 
+- the communications are differentiated. ​It's not one size fits all
 
 ### Course Summary
-This course focused mainly on the availability part of the CIA triad and the importance of maintaining availability for business operations. Maintaining business operations during or after an incident, event, breach, intrusion, exploit or zero day is accomplished through the implementation of Incident Response (IR), Business Continuity (BC), and/or Disaster Recovery (DR) plans. While these three plans may seem to overlap in scope, they are three distinct plans that are vital to the survival of any organization facing out of the ordinary operating conditions. Here are the primary things to remember from this course:
+- This course** focused mainly on the availability part of the CIA triad and the importance of maintaining availability for business operations**. 
+- Maintaining business operations during or after an incident, event, breach, intrusion, exploit or zero day is accomplished through the implementation of Incident Response (IR), Business Continuity (BC), and/or Disaster Recovery (DR) plans. While these three plans may seem to overlap in scope, they are three distinct plans that are vital to the survival of any organization facing out of the ordinary operating conditions. Here are the primary things to remember from this course:
 
-First, the Incident Response plan responds to abnormal operating conditions to keep the business operating. The four main components of Incident Response are: Preparation; Detection and Analysis; Containment, Eradication and Recovery; and Post-Incident Activity. Incident Response teams are typically a cross-functional group of individuals who represent the management, technical and functional areas of responsibility most directly impacted by a security incident. The team is trained on incident response and the organization’s incident response plan. When an incident occurs, the team is responsible for determining the amount and scope of damage and whether any confidential information was compromised, implementing recovery procedures to restore security and recover from incident-related damage, and supervising implementation of future measures to improve security and prevent recurrence of the incident.
+- First, the Incident Response plan responds to **abnormal operating conditions to keep the business operating**. The four main components of Incident Response are: 
+  - Preparation; 
+  - Detection and Analysis; 
+  - Containment, 
+  - Eradication and Recovery; 
+  - and Post-Incident Activity. 
+- Incident Response teams are typically a cross-functional group of individuals who represent the management, technical and functional areas of responsibility most directly impacted by a security incident. The team is trained on incident response and the organization’s incident response plan. 
+- When an incident occurs, the team is responsible for determining the amount and scope of damage and whether any confidential information was compromised, implementing recovery procedures to restore security and recover from incident-related damage, and supervising implementation of future measures to improve security and prevent recurrence of the incident.
 
-Second, the Business Continuity plan is designed to keep the organization operating through the crisis. Components of the Business Continuity plan include details about how and when to enact the plan and notification systems and call trees for alerting the team members and organizational associates that the plan has been enacted. In addition, it includes contact numbers for contacting critical third-party partners, external emergency providers, vendors and customers. The plan provides the team with immediate response procedures and checklists and guidance for management.
+- Second, the **Business Continuity plan is designed to keep the organization operating through the crisis**. Components of the Business Continuity plan include details about how and when to enact the plan and notification systems and call trees for alerting the team members and organizational associates that the plan has been enacted. In addition, it includes contact numbers for contacting critical third-party partners, external emergency providers, vendors and customers. The plan provides the team with immediate response procedures and checklists and guidance for management.
 
-Finally, when both the Incident Response (IR) and Business Continuity (BC) plans fail, the Disaster Recovery (DR) plan is activated to return operations to normal as quickly as possible. The Disaster Recovery (DR) plan may include the following components: executive summary providing a high-level overview of the plan, department-specific plans, technical guides for IT personnel responsible for implementing and maintaining critical backup systems, full copies of the plan for critical disaster recovery team members, and checklists for certain individuals.
+- Finally, **when both the Incident Response (IR) and Business Continuity (BC) plans fail, the Disaster Recovery (DR) plan is activated to return operations to normal as quickly as possible**. 
+- The Disaster Recovery (DR) plan may include the following components: executive summary providing a high-level overview of the plan, department-specific plans, technical guides for IT personnel responsible for implementing and **maintaining critical backup systems**, full copies of the plan for critical disaster recovery team members, and checklists for certain individuals.
 
-Continue Your Path to Becoming CC-Certified You’re on your way! Make the most of your learning and go the distance to obtain your Certified in Cybersecurity (CC®) credential from ISC2—the world’s leading cybersecurity organization. 
-Register for CC>
 ### Terms and Definitions
 Adverse Events - Events with a negative consequence, such as system crashes, network packet floods, unauthorized use of system privileges, defacement of a web page or execution of malicious code that destroys data.
 
@@ -324,6 +331,10 @@ Vulnerability - Weakness in an information system, system security procedures, i
 Zero Day - A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not, in general, fit recognized patterns, signatures or methods.    
 
 ### Incident Response, Business Continuity, and Disaster Recovery Quiz
+![alt text](image-3.png)
 
+![alt text](image-4.png)
+
+![alt text](image-6.png)
 ### Incident Response, Business Continuity & Disaster Recovery Concepts Quiz
 
