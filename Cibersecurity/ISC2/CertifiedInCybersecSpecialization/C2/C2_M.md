@@ -234,10 +234,29 @@ In this scenario, the BIA already identified the dependencies of customer billin
 
 ## Disaster Recovery (DR)
 
-### The Goal of Disaster Recovery
-In the Business Continuity module, the essential elements of business continuity planning were explored. Disaster recovery planning steps in where BC leaves off. When a disaster strikes or an interruption of business activities occurs, the Disaster recovery plan (DRP) guides the actions of emergency response personnel until the end goal is reached—which is to see the business restored to full last-known reliable operations.
+**Goal**
+- Restore operability of the target system, application or computer facility infrastructure at an alternate site after en emergency (NIST SP800-34)
+- Restoring operations
+- Usually activated after an event that causes disruption with long-term effects.
 
-Disaster recovery refers specifically to restoring the information technology and communications services and systems needed by an organization, both during the period of disruption caused by any event and during restoration of normal services. The recovery of a business function may be done independently of the recovery of IT and communications services; however, the recovery of IT is often crucial to the recovery and sustainment of business operations. Whereas business continuity planning is about maintaining critical business functions, disaster recovery planning is about restoring IT and communications back to full operations after a disruption.
+**Disaster Recovery Plan**
+- Similar to business continuity plan
+- Documentation of instructions or procedures that describe how an organization's mission/business processes will be sustained during and after a significant disruption.
+- It consist:
+  - Preparation - who to involve
+  - Business Impact Analysis
+  - When to invoke
+  - Controls: Alternate site, backups, preventive controls
+  - People, communication and authority
+- Test the plan
+- It should change over time. Why? Organization changesm Environment changes.
+- It is a documentation of a predeterminated set of instructions and procedures that describe how critical processes can be sustained after a significant disruption.
+- Even with a DR, not everything will go well. Something will be need to be adapted and updated.
+
+### The Goal of Disaster Recovery
+In the Business Continuity module, the essential elements of business continuity planning were explored. Disaster recovery planning steps in where BC leaves off. When a disaster strikes or an interruption of business activities occurs, **the Disaster recovery plan (DRP) guides the actions of emergency response personnel until the end goal is reached—which is to see the business restored to full last-known reliable operations**.
+
+Disaster recovery refers specifically to **restoring the information technology and communications services and systems needed by an organization**, both during the period of disruption caused by any event and during restoration of normal services. The recovery of a business function may be done independently of the recovery of IT and communications services; however, the recovery of IT is often crucial to the recovery and sustainment of business operations. Whereas **business continuity planning is about maintaining critical business functions**, **disaster recovery planning** is about **restoring IT and communications back to full operations after a disruption**.
 
 ### Components of a Disaster Recovery Plan
 Depending on the size of the organization and the number of people involved in the DRP effort, organizations often maintain multiple types of plan documents, intended for different audiences. The following list includes various types of documents worth considering:
