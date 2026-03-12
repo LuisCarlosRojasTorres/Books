@@ -208,27 +208,29 @@ Many organizations now have **a dedicated team responsible for investigating any
   - Without the proper support, ​business continuity planning efforts have little chance of success. 
 
 ### Components of a Business Continuity Plan
-Business continuity planning (BCP) is the proactive development of procedures to restore business operations after a disaster or other significant disruption to the organization. Members from across the organization should participate in creating the BCP to ensure all systems, processes and operations are accounted for in the plan.
+- **Business continuity planning (BCP)** is the proactive development of **procedures to restore business operations after a disaster** or other significant disruption to the organization. A disaster can be a burning building or a hacking attack.
+- Members from across the organization should participate in creating the BCP to ensure all systems, processes and operations are accounted for in the plan.
+- The term business is used often, as this is mostly a business function as opposed to a technical one. 
+  - However, in order to safeguard the confidentiality, integrity and availability of information, the technology must align with the business needs.
 
-The term business is used often, as this is mostly a business function as opposed to a technical one. However, in order to safeguard the confidentiality, integrity and availability of information, the technology must align with the business needs.
-
-Here are some common components of a comprehensive business continuity plan:
-- List of the BCP team members, including multiple contact methods and backup members
-- Immediate response procedures and checklists (security and safety procedures, fire suppression procedures, notification of appropriate emergency-response agencies, etc.)
-- Notification systems and call trees for alerting personnel that the BCP is being enacted
-- Guidance for management, including designation of authority for specific managers
-- How/when to enact the plan
-- Contact numbers for critical members of the supply chain (vendors, customers, possible external emergency providers, third-party partners)
+- Here are some common components of a comprehensive business continuity plan:
+  - List of the BCP **team members**, including multiple contact methods and backup members
+  - Immediate **response procedures and checklists** (security and safety procedures, fire suppression procedures, notification of appropriate emergency-response agencies, etc.)
+  - Notification systems and call trees for alerting personnel that the BCP is being enacted
+  - Guidance for management, including designation of authority for specific managers
+  - How/when to enact the plan
+  - Contact numbers for critical members of the supply chain (vendors, customers, possible external emergency providers, third-party partners)
 
 
 ### Self Check: Common BC Components
-
+![alt text](image-2.png)
 ### Business Continuity in Action
 What does business continuity look like in action?
 
-Imagine that the billing department of a company suffers a complete loss in a fire. The fire occurred overnight, so no personnel were in the building at the time. A Business Impact Analysis (BIA) was performed four months ago and identified the functions of the billing department as very important to the company, but not immediately affecting other areas of work. Through a previously signed agreement, the company has an alternative area in which the billing department can work, and it can be available in less than one week. Until that area can be fully ready, customer billing inquiries will be answered by customer service staff. The billing department personnel will remain in the alternate working area until a new permanent area is available.
+Imagine that the billing department of a company suffers a **complete loss in a fire**. The fire occurred overnight, so no personnel were in the building at the time. 
+- A **Business Impact Analysis (BIA)** was performed four months ago and identified the functions of the billing department as very important to the company, but not immediately affecting other areas of work. Through a previously signed agreement,**the company has an alternative area in which the billing department can work**, and it can be available in less than one week. Until that area can be fully ready, customer billing inquiries will be answered by customer service staff. The billing department personnel will remain in the alternate working area until a new permanent area is available.
 
-In this scenario, the BIA already identified the dependencies of customer billing inquiries and revenue. Because the company has ample cash reserves, a week without billing is acceptable during this interruption to normal business. Pre-planning was realized by having an alternate work area ready for the personnel and having the customer service department handle the billing department’s calls during the transition to temporary office space. With the execution of the plan, there was no material interruption to the company’s business or its ability to provide services to its customers—indicating a successful implementation of the business continuity plan.
+In this scenario, the BIA already identified the dependencies of customer billing inquiries and revenue. Because the company has ample cash reserves, a week without billing is acceptable during this interruption to normal business. Pre-planning was realized by having an alternate work area ready for the personnel and having the customer service department handle the billing department’s calls during the transition to temporary office space. *With the execution of the plan, there was no material interruption to the company’s business or its ability to provide services to its customers—indicating a successful implementation of the business continuity plan.*
 
 ## Disaster Recovery (DR)
 
