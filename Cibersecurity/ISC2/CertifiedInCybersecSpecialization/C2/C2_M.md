@@ -97,16 +97,16 @@ What does incident response in cybersecurity look like? No 911 calls have report
 ### The Goal of Incident Response
 Every organization must be prepared for incidents. Despite the best efforts of an organization’s management and security teams to avoid or prevent problems, it is inevitable that adverse events will happen that have the potential to affect the business mission or objectives.
 
-The priority of any incident response is to protect life, health and safety. When any decision related to priorities is to be made, **always choose safety first**.
+The priority of any incident response is to **protect life, health and safety**. When any decision related to priorities is to be made, **always choose safety first**.
 
 The primary goal of incident management is to be prepared. **Preparation requires having a policy and a response plan that will lead the organization through the crisis**. Some organizations use the term “crisis management” to describe this process, so you might hear this term as well.
 
-An event is any measurable occurrence, and most events are harmless. However, **if the event has the potential to disrupt the business’s mission, then it is called an incident**. Every organization must have an incident response plan that will help preserve business viability and survival.
+An event is any measurable occurrence, and most events are harmless. However, **if the event has the potential to disrupt the business’s mission, then it is called an incident**. Every organization **must have an incident response plan** that will help preserve business viability and survival.
 
-The incident response process is aimed at reducing the impact of an incident so the organization can resume the interrupted operations as soon as possible. Note that incident response planning is a subset of the greater discipline of business continuity management (BCM), which we will cover shortly.
+The incident response process is aimed at **reducing the impact of an incident** so the organization can **resume the interrupted operations as soon as possible**. Note that incident response planning is a subset of the greater discipline of **business continuity management (BCM)**, which we will cover shortly.
 
 ### Components of the Incident Response Plan
-The incident response policy should reference an incident response plan that **all employees will follow, depending on their role in the process**. The plan may contain several procedures and standards related to incident response. It is a living representation of an organization’s incident response policy.
+The incident response policy should reference an incident response plan that **all employees will follow, depending on their role in the process**. The plan may contain several procedures and standards related to incident response. It is **a living representation of an organization’s incident response policy**.
 
 The organization’s vision, **strategy and mission should shape the incident response process**. Procedures to implement the plan should define the technical processes, techniques, checklists and other tools that teams will use when responding to an incident.
 
@@ -118,14 +118,14 @@ To prepare for incidents, here are the components commonly found in an incident 
    - Train staff on incident response.
    - Implement an incident response team. (covered in subsequent topic)
    - Practice Incident Identification. (First Response)
-   - Identify Roles and Responsibilities.
-   - Plan the coordination of communication between stakeholders.
+   - Identify **Roles and Responsibilities**.
+   - Plan the **coordination of communication between stakeholders**.
       - Consider the possibility that a primary method of communication may not be available.
 2. Detection and Analysis
-   - Monitor all possible attack vectors.
+   - **Monitor all possible attack vectors**.
    - Analyze incident using known data and threat intelligence.
    - Prioritize incident response.
-   - Standardize incident documentation.
+   - Standardize **incident documentation**.
 3. Containment, Eradication and Recovery
    - Gather evidence.
    - Choose an appropriate containment strategy.
@@ -145,15 +145,18 @@ NIST Computer Security Incident Handling Lifecycle. NIST SP 800-61 Rev. 2
 
 ### Self Check: Incident Response Terms
 
+![alt text](image.png) 
+
+![alt text](image-1.png)
 ### Incident Response Team
 
-Along with the organizational need to establish a Security Operations Center (SOC) is the need to create a suitable incident response team. A properly staffed and trained incident response team can be leveraged, dedicated or a combination of the two, depending on the requirements of the organization. 
+Along with the organizational need to establish a **Security Operations Center (SOC)** is the need to **create a suitable incident response team**. A properly staffed and trained incident response team can be leveraged, dedicated or a combination of the two, depending on the requirements of the organization. 
 
-Many IT professionals are classified as first responders for incidents. They are the first ones on the scene and know how to differentiate typical IT problems from security incidents. They are similar to medical first responders who have the skills and knowledge to provide medical assistance at accident scenes and help get the patients to medical facilities when necessary. The medical first responders have specific training to help them determine the difference between minor and major injuries. Further, they know what to do when they come across a major injury. 
+Many IT professionals are classified as first responders for incidents. They are the first ones on the scene and know **how to differentiate typical IT problems from security incidents**. They are similar to medical first responders who have the skills and knowledge to provide medical assistance at accident scenes and help get the patients to medical facilities when necessary. The medical first responders have specific training to help them determine the difference between minor and major injuries. Further, they know what to do when they come across a major injury. 
 
-Similarly, IT professionals need specific training so they can determine the difference between a typical problem that needs troubleshooting and a security incident that they need to report and address at a higher level. 
+Similarly, IT professionals need specific training so they can **determine the difference between a typical problem that needs troubleshooting and a security incident that they need to report and address at a higher level**. 
 
-A typical incident response team is a cross-functional group of individuals who represent the management, technical and functional areas of responsibility most directly impacted by a security incident. Potential team members include the following:
+A typical incident response team is a **cross-functional group** of individuals who represent the **management, technical and functional areas** of responsibility most directly impacted by a security incident. Potential team members include the following:
 
 - Representative(s) of senior management
 - Information security professionals
@@ -163,17 +166,46 @@ A typical incident response team is a cross-functional group of individuals who 
 
 Team members should have training on incident response and the organization’s incident response plan. Typically, team members assist with investigating the incident, assessing the damage, collecting evidence, reporting the incident and initiating recovery procedures. They would also participate in the remediation and lessons learned stages and help with root cause analysis.
 
-Many organizations now have a dedicated team responsible for investigating any computer security incidents that take place. These teams are commonly known as computer incident response teams (CIRTs) or computer security incident response teams (CSIRTs). When an incident occurs, the response team has four primary responsibilities:
+Many organizations now have **a dedicated team responsible for investigating any computer security incidents that take place**. These teams are commonly known as computer incident response teams (CIRTs) or computer security incident response teams (CSIRTs). When an incident occurs, the response team has four primary responsibilities:
 
-- Determine the amount and scope of damage caused by the incident.
-- Determine whether any confidential information was compromised during the incident.
-- Implement any necessary recovery procedures to restore security and recover from incident-related damage.
-- Supervise the implementation of any additional security measures necessary to improve security and prevent recurrence of the incident.
+- Determine the **amount and scope of damage caused by the incident**.
+- Determine **whether any confidential information was compromised** during the incident.
+- Implement any necessary **recovery procedures to restore security** and recover from incident-related damage.
+- Supervise the **implementation** of any additional **security measures** necessary to improve security and prevent recurrence of the incident.
 
 
 ## Business Continuity (BC)
 
+- **Goal of Business Continuity**: Sustain business operations while recovering from a significant disruption (NIST SP800-34).
+  - Determine which element of business need to continue or which can be paused (depends of the type of company i.e. health, finance etc).
+  - Identify controls and teams 
+- **Business Continuity Plan**
+  - It documents set of procedures that describe how a mission and business processes will be sustained.
+  - To know when to invoke
+  - Controls: ways to continue the business. 
+    - Alternate site or energy supply.
+  - Is describes People, communication and authority involved
+  - Testing the plan to ensure it is appropiate.
+- In Pandemic:
+  - Problems:
+    - Supply chain problemas
+    - Shortages of people and commodities.
+  - Invoking the plan:
+    - VPNs and remote working
+    - Spaling up 
+    - Effect communication
+    - Remote working
 ### The Goal of Business Continuity
+- **​Business continuity** refers to **enabling the critical aspects of ​the organization to function**. 
+  - ​Perhaps at a reduced capacity during a disruption caused by any form of ​disturbance, attack, infrastructure failure, or natural disaster. 
+    - ​Most incidents are minor and can be handled easily with minimal impact. ​A system requires a reboot for example, but ​after a few minutes the system is back in operation and the incident is over. ​
+    - But once in a while, a major incident will interrupt business for an unacceptable ​length of time, and the organization cannot just follow an incident plan, but ​must move toward business continuity. 
+- ​Business continuity **includes planning, preparation, response and ​recovery operations**, but it does not generally include activities to ​support full restoration of all business activities and services. ​
+- It **focuses on the critical products and services that the organization provides**, ​and ensures those important areas can continue to operate, ​even at a reduced level of performance, until business returns to normal. 
+
+- ​Developing a business continuity plan requires a significant organizational ​commitment, in terms of both **personnel and financial resources**. ​
+  - To gain this commitment, organizational support for business continuity planning ​efforts, must be provided by Executive Management, or an Executive sponsor. ​
+  - Without the proper support, ​business continuity planning efforts have little chance of success. 
 
 ### Components of a Business Continuity Plan
 Business continuity planning (BCP) is the proactive development of procedures to restore business operations after a disaster or other significant disruption to the organization. Members from across the organization should participate in creating the BCP to ensure all systems, processes and operations are accounted for in the plan.
