@@ -36,15 +36,17 @@
 ## Module 1
 
 ### V - Course Introduction
-​Hello and welcome to Chapter 3 of our entry-level course. ​Chapter 3 builds neatly ​on what we've covered in Chapter 1 and Chapter 2 already. ​Chapter 1, we had a really good introduction ​to the fundamentals of cybersecurity. ​We looked at risk and a risk-based approach to security. ​We said that in order to manage risk to ​assets, we use controls. ​Controls are something that interact with the real-world. ​In Chapter 2, ​we looked at the use of controls in incident response, ​business continuity and disaster recovery. 
+- in order to manage risk to ​assets, we use controls. 
+- ​Controls are something that interact with the real-world. ​In Chapter 2, ​we looked at the use of controls in **incident response, ​business continuity and disaster recovery**. 
 
-​Here, we have an entire chapter ​looking at the different types ​and categories of controls and how we can use them. ​We'll remind ourselves of that link to risk as well. ​Really important that we ​understand why we're using controls ​and why it's important to ​check that they're functioning correctly. ​Our chapter agenda has five modules, ​some key concepts, administrative controls, ​physical controls and logical controls. ​That grouping of three control types is ​present in our documentation security frameworks. ​It's the fairly typical grouping ​that we would expect to see, ​and we finish with Module 5, our chapter review. 
+- ​Our chapter agenda has five modules, ​some key concepts, administrative controls, ​physical controls and logical controls. ​That grouping of three control types is ​present in our documentation security frameworks. ​It's the fairly typical grouping ​that we would expect to see, ​and we finish with Module 5, our chapter review. 
 
 Agenda:
 - Key Concepts
-- Administrative Controls
-- Physical Controls
-- Logical Controls
+- Control types
+  - Administrative Controls
+  - Physical Controls
+  - Logical Controls
 - Controls Review
 
 ## Module 2
