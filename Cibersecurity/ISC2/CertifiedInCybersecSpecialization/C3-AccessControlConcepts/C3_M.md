@@ -39,8 +39,6 @@
 - in order to manage risk to ​assets, we use controls. 
 - ​Controls are something that interact with the real-world. ​In Chapter 2, ​we looked at the use of controls in **incident response, ​business continuity and disaster recovery**. 
 
-- ​Our chapter agenda has five modules, ​some key concepts, administrative controls, ​physical controls and logical controls. ​That grouping of three control types is ​present in our documentation security frameworks. ​It's the fairly typical grouping ​that we would expect to see, ​and we finish with Module 5, our chapter review. 
-
 Agenda:
 - Key Concepts
 - Control types
