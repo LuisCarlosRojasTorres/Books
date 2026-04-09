@@ -2,6 +2,7 @@
   - [V - Course Introduction](#v---course-introduction)
 - [Module 2](#module-2)
   - [V - What is a Control?](#v---what-is-a-control)
+    - [control assessment](#control-assessment)
   - [R - Controls Overview](#r---controls-overview)
   - [V - Defense in Depth](#v---defense-in-depth)
   - [R - Defense in Depth](#r---defense-in-depth)
@@ -50,86 +51,90 @@ Agenda:
 ## Module 2
 
 ### V - What is a Control?
-​We want to examine that link between controls and risk. ​Why are we using controls? ​How do they relate to our risk? ​Very common to hear us talking about ​risk-based approach to security, ​we will look at some control frameworks. ​We'll look at the importance, ​the need for control assessments, ​and then we'll look at some concepts or defense in depth, ​least privilege before moving on ​to use a lifecycle management. ​Related to user Lifecycle Management, ​we have some users that have more capabilities, ​more power than others. ​These are our privileged accounts. 
 
-​They too need a set of processes ​for management and control. ​Privileged Access Management, ​often referred to as PAM as an acronym. ​We will also look at segregation of duties. ​This is quite a big introductory module. ​When we want to talk about controls. ​Really helpful to start with a definition and from ​NIST Computer Security Resource Center, great resource. ​You guys can Google this or ​just use that QR code on the screen there ​if you have a smart phone handy to visit, ​it has lots of definitions, ​not just for a control, ​it has an entire glossary. 
+- "A safeguard or countermeasure... designed to protect the confidentiality, integrity and availability of its information and to meet a set of defined security requirements"
 
-​Really useful resource, something that I still use today. ​But the definition it offers for a control is ​some safeguard or countermeasure ​designed to protect the C, I, and A of its information ​and to meet a set of defined security requirements. ​This is taken from NIST, ​but there are other definitions available ​and they all amount to the same thing, ​something which affects an outcome. ​When we think about controls in the real-world, ​think about the remote control for your television. ​You press a button and it affects that equipment. ​The volume goes up, the volume goes down, ​the channel changes and this is what we're doing. ​We're using a control to affect an outcome, ​usually to improve the confidentiality, ​integrity, availability of ultimately information. 
+- how does this relate to risk? ​Well, control is an important part of risk mitigation. 
+- four management responses to risk. ​The four management responses to risk are:
+  - to try ​and share the risk, ​sometimes called risk transfer. ​An example of that might be insurance for example, ​we try and share the risk with another party. ​
+  - to accept the risk. ​We know what the risk profile is if the risk level of ​risk is within our risk tolerance or our risk appetite, ​then we can choose to accept it. ​We can continue to operate. ​We know what the risk is, we are informed. 
+  - not to operate. ​We could choose to cease operations to avoid the risk. ​Now this is a fairly drastic response and for example, ​with information security, one way we ​can manage this is by turning computers off. ​Logically that will remove the risk, ​creates different risks and actually removes the service. ​
+  - to reduce the risk, ​sometimes called risk mitigation. ​The more modern terminology is risk reduction. ​The reason we say risk reduction is because ​usually we are not mitigating it completely. ​Mitigation sounds a little bit optimistic. ​The risk is going away. ​Instead, what we're doing is managing the risk down. ​What we're trying to do is to use controls to influence ​the risk level downwards until the remaining ​or residual risk is within our risk appetite. 
 
-​Now I talk about information. ​It can be other asset types, ​but they are usually indirectly protecting information. ​If we think about offense, protecting a building ​and the building with a locked door, ​protecting a server room, ​with information stored on an encrypted disk, ​lots of controls there. ​Encrypted disks, physical barriers, ​all protecting what's stored on the server. ​The information usually is ​what ultimately what we're protecting. ​Controls, how does this relate to risk? ​Well, control is an important part of risk mitigation. 
-
-​If you think back to Chapter 1, ​we mentioned are untreated risk ​and we have four management responses to risk. ​The four management responses to risk are to try ​and share the risk, ​sometimes called risk transfer. ​An example of that might be insurance for example, ​we try and share the risk with another party. ​We can choose to accept the risk. ​We know what the risk profile is if the risk level of ​risk is within our risk tolerance or our risk appetite, ​then we can choose to accept it. ​We can continue to operate. ​We know what the risk is, we are informed. 
-
-​Usually our board would make this decision. ​One of our C-level officers would make this decision. ​We could choose not to operate. ​We could choose to cease operations to avoid the risk. ​Now this is a fairly drastic response and for example, ​with information security, one way we ​can manage this is by turning computers off. ​Logically that will remove the risk, ​creates different risks and actually removes the service. ​Sometimes that's just not viable. 
-
-​The fourth risk management response ​is to reduce the risk, ​sometimes called risk mitigation. ​The more modern terminology is risk reduction. ​The reason we say risk reduction is because ​usually we are not mitigating it completely. ​Mitigation sounds a little bit optimistic. ​The risk is going away. ​Instead, what we're doing is managing the risk down. ​What we're trying to do is to use controls to influence ​the risk level downwards until the remaining ​or residual risk is within our risk appetite. 
-
-​You can see that on the right-hand column ​that we have a reduced level of risk ​and the difference between the lower risk in ​the colored green block and ​the blue block is the impact of control. ​That's the benefit that the control is giving us. ​This tells us why it's important. ​We need to check that the risks ​or that the controls are operating correctly. ​If we implement something like ​a firewall to manage the risk down, ​to manage the risk of a network-based attack, ​for instance, ​downwards until the risk level is acceptable. ​What happens if the firewall stopped working correctly, ​the firewall ceases to function. ​What then? 
-
-​This is why it's important that ​we check our controls are still effective. ​We have to review the risks, ​the threats, the vulnerabilities, ​and we have to review the impact of ​the control to make sure it's still working. ​It's not working correctly we may be closer to ​the blue column on the left ​than the green column on the right. ​In fact, some controls when they don't operate correctly, ​may not just remove the benefit, ​they may increase the risk. ​Just think about an unpatched firewall ​that has lots of vulnerabilities. ​Instead of conferring a benefit, ​might actually create a further vulnerability. ​It might reduce our protection rather than increase it. 
-
-​We have the idea of a control assessment. ​Risk reduction. ​Risk reduction is typically ​dependent upon the effective function of the control. ​Lots of things change. ​This is why we assess controls like anything ​else this review should be structured. ​If there's no structure how do we know ​when it will happen? ​What will happen? 
-
-​How do we know what will be ​included or excluded, the scope? ​We need to document this. ​What is the frequency of our control assessment? ​Usually is a reasonable minimum. ​We're talking annually, ​but it might be more frequent than that. ​The scope which controls are we including, ​which are we scoping in and which are we ​scoping out? What's our plan? 
-
-​How are we going to undertake this control assessment? ​How do we get a level of confidence or ​assurance that things are working as they should? ​This is a really good example of ​a set of processes that are ongoing. ​Quite often as human beings, ​we like to implement something and move on ​to the next exciting project. ​Insecurity, as we talked about in the last chapter, ​when we looked at incident response, ​business continuity, disaster recovery, ​we looked at sets of processes that are cyclical. ​They have a start, ​they have an end for that particular cycle. ​But we looked at the lessons learned ​which fed forward into the next cycle of activity. 
-
-​Lots of things insecurity follow this pattern. ​It's not something we do want ​some forget about risk management, ​control assessments, incident response, ​disaster recovery, business continuity, ​all things that need continual vigilance, ​partly because of this changing environment. 
+#### control assessment
+- ​Risk reduction. ​Risk reduction is typically ​dependent upon the effective function of the control. ​
+- Changing environments
+- What if the control is impaired or ineffective
+- Security control assessments
+  - Frequency
+  - Scope
+  - Plan
 
 ### R - Controls Overview
 
-It can be argued that access controls are the heart of an information security program. Earlier in this course we looked at security principles through foundations of risk management, governance, incident response, business continuity and disaster recovery. But in the end, security all comes down to, “who can get access to organizational assets (buildings, data, systems, etc.) and what can they do when they get access?”
+- access controls are **the heart of an information security program**.
+- In the end, security all comes down to, **“who can get access to organizational assets (buildings, data, systems, etc.) and what can they do when they get access?”**
 
-Access controls are not just about restricting access to information systems and data, but also about allowing access. It is about granting the appropriate level of access to authorized personnel and processes and denying access to unauthorized functions or individuals.
+- Access controls are **not just about restricting access to information systems and data**, but **also about allowing access**. 
+  - It is about **granting the appropriate level of access to authorized personnel and processes** and denying access to unauthorized functions or individuals.
 
 Access is based on three elements:  
 
 **Subjects**
-A subject can be defined as any entity that requests access to our assets. The entity requesting access may be a user, a client, a process or a program, for example. A subject is the initiator of a request for service; therefore, a subject is referred to as “active.”
+- A subject can be defined as any **entity that requests access to our assets**. The entity requesting access may be a user, a client, a process or a program, for example. A subject is **the initiator of a request for service**; therefore, a subject is referred to as **“active.”**
 
 A subject:
 
 - Is a user, a process, a procedure, a client (or a server), a program, a device such as an endpoint, workstation, smartphone or removable storage device with onboard firmware.
 - Is active: It initiates a request for access to resources or services.
-- Requests a service from an object.
+- **Requests a service** from an object.
 - Should have a level of clearance (permissions) that relates to its ability to successfully access services or resources.
 
 **Objects**
-By definition, anything that a subject attempts to access is referred to as an object. An object is a device, process, person, user, program, server, client or other entity that responds to a request for service. Whereas a subject is active in that it initiates a request for a service, an object is passive in that it takes no action until called upon by a subject. When requested, an object will respond to the request it receives, and if the request is wrong, the response will probably not be what the subject really wanted either.
+- By definition,** anything that a subject attempts to access** is referred to as an object. 
+- An object is a **device, process, person, user, program, server, client** or other entity that responds to a request for service. 
+- Whereas a subject is active in that it initiates a request for a service, an object is **passive** in that **it takes no action until called upon by a subject**. 
+- When requested, an object will respond to the request it receives, and if the request is wrong, the response will probably not be what the subject really wanted either.
 
-Note that by definition, objects do not contain their own access control logic. Objects are passive, not active (in access control terms), and must be protected from unauthorized access by some other layers of functionality in the system, such as the integrated identity and access management system. An object has an owner, and the owner has the right to determine who or what should be allowed access to their object. Quite often the rules of access are recorded in a rule base or access control list.
+Note that by definition, **objects do not contain their own access control logic**. Objects are passive, not active (in access control terms), and must be protected from unauthorized access by some other layers of functionality in the system, such as the integrated identity and access management system. 
+
+- An object has an owner, and the owner has the right to determine who or what should be allowed access to their object. 
+   - Quite often the rules of access are recorded in a rule base or access control list.
 
 An object:
 
 - Is a building, a computer, a file, a database, a printer or scanner, a server, a communications resource, a block of memory, an input/output port, a person, a software task, thread or process.
-- Is anything that provides service to a user.
-- Is passive.
+- Is **anything that provides service to a user**.
+- Is **passive**.
 - Responds to a request.
 - May have a classification.
 
 **Rules**
-An access rule is an instruction developed to allow or deny access to an object by comparing the validated identity of the subject to an access control list. One example of a rule is a firewall access control list. By default, firewalls deny access from any address to any address, on any port. For a firewall to be useful, however, it needs more rules. A rule might be added to allow access from the inside network to the outside network. Here we are describing a rule that allows access to the object “outside network” by the subject having the address “inside network.” In another example, when a user (subject) attempts to access a file (object), a rule validates the level of access, if any, the user should have to that file. To do this, the rule will contain or reference a set of attributes that define what level of access has been determined to be appropriate.
+- An access rule is an **instruction developed to allow or deny access to an object** by comparing the validated identity of the subject to an access control list. 
+- One example of a rule is a firewall access control list. By default, firewalls deny access from any address to any address, on any port. 
+- For a firewall to be useful, however, **it needs more rules**. A rule might be added to allow access from the inside network to the outside network. Here we are describing a rule that allows access to the object “outside network” by the subject having the address “inside network.” 
+- In another example, when a user (subject) attempts to access a file (object), a rule validates the level of access, if any, the user should have to that file. To do this, the rule will contain or reference a set of attributes that define what level of access has been determined to be appropriate.
 
 A rule can:
 - Compare multiple attributes to determine appropriate access.
-- Allow access to an object.
+- **Allow access to an object**.
 - Define how much access is allowed.
 - Deny access to an object.
 - Apply time-based access.
 
 ### V - Defense in Depth
+- A single control type may not afford sufficient protection.
+- Layering of protections is what we're talking about with defense in depth. ​
+  - Layering controls from different levels means that if one control is compromised, another may be in place to provide protection.
+  - Training is a kind of control.
+    
+![alt text](image-2.png)
 
-​[MUSIC] Let's look at the idea of defense in depth ​then. ​Defense in depth is a move away from the historic position when we first started to ​connect our networks together we had the idea of maintaining a strong perimeter. ​And conceptually this is very similar to the perimeter of a medieval castle. ​Just think about a medieval castle. ​One big wall around the outside protecting what's on the inside. ​And right up until about 2000 the year 2000 that was a very common ​model that we saw. ​Is that an appropriate model? 
 
-​Yeah, absolutely not. ​And we can almost instinctively understand why. ​Is everybody inside our network trusted? ​And if they are trusted, how trustworthy are they? ​Is there any possibility of an insider threat? ​What if somebody breaches the perimeter? ​Should they have access to everything? 
-
-​Or should we try to create security zones, different layers of protection? ​And this layering of protections is what we're talking about with defense in depth. ​So around 2005 this became something that was popularized. ​And defense in depth looks at layering different controls but ​also different types of control to protect our assets. ​And one of the important benefits that defense in depth recognized was the idea ​of training as a control. ​Now in the last chapter we looked at the definition of a zero day threat. ​Our technology may not be able to detect zero day threats. 
-
-​A human being might be able to. ​It's not a guarantee, but a user typically is the entry point for ​malicious software, something like ransomware. ​And if that user is a point of weakness of vulnerability, we may have a problem. ​If we can improve that situation and get them towards being a strength, ​they might report things for us. ​Help us combat zero day threats as one example. ​So training becomes really important. ​How can we expect people to behave according to our policies and ​procedures unless we train them? 
-
-​So at the heart, what we're protecting is our assets. ​And here we have a model that looks a little bit more like an onion ​than a medieval castle. ​We have lots of layers of controls. ​We see administrative controls and ​these are the three control types that we talked about at the start of the chapter. ​Administrative control is telling people what to do. ​Very hard to manage people's behavior and complain about them not doing what they ​should if we haven't documented what good looks like, what they should be doing. ​And these are our policies, procedures, standards, guidelines and so on. 
-
-​We have logical also known as technical controls, things like antivirus, ​firewalls, all of these are examples of logical or technical controls. ​And then we have physical controls. ​Physical controls typically are controlling access to something, ​some sort of gap in a perimeter, a physical perimeter, ​a locked cupboard, a filing cabinet with a lock, a wall, a fence. ​All examples of some kind of physical control. ​And by using different types of physical logical and administrative controls, ​we layer all of these different control types, we gain strength. ​If we had just key based locks protecting our buildings, ​any lock picker could break into our building. ​If we have some key based locks, some swipe locks, ​some fingerprint, biometric based locks. 
+- ​So at the heart, what we're protecting is our assets. ​And here we have a model that looks a little bit more like an onion ​than a medieval castle. ​We have lots of layers of controls. 
+- ​**Administrative control** is telling people what to do. ​Very hard to manage people's behavior and complain about them not doing what they ​should if we haven't documented what good looks like, what they should be doing. ​And these are our policies, procedures, standards, guidelines and so on. 
+- ​We have logical also known as **technical controls**, things like antivirus, ​firewalls, all of these are examples of logical or technical controls. 
+- ​And then we have **physical controls**. ​Physical controls typically are controlling access to something, ​some sort of gap in a perimeter, a physical perimeter, ​a locked cupboard, a filing cabinet with a lock, a wall, a fence. ​All examples of some kind of physical control. ​
 
 ​All of those different control types are complementing now an attacker doesn't just ​need the skill set of a lock picker, they need all these different skills as well. ​If we combine that with administrative controls, reminding people to secure ​areas to report suspicious activity, visitors without ID badges and so on. ​All of this improves our security posture. ​We're relying on no single control, ​we're relying on this combination this layering of controls. ​Rings of protection. ​When we do give our users those people that were trusting access to systems and ​services once they authenticated should they have access to everything? ​Absolutely not, we should minimize access to what is needed. 
 
