@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="app-container">
       <h1>Welcome to S2 Fundamentos</h1>
-      <p>Test generico só pra utilizar o tag.</p>
+      <p>Este é um parágrafo de teste.</p>
     </div>
   )
 }
@@ -24,7 +24,7 @@ export default App
 
 Para criar componentes:
 - Dentro de `src` criar nova pasta `components`
-- Criar novo arquivo `NewComponent.js`
+- Criar novo arquivo `NewComponent.jsx`
 
 ``` js 
 const FirstComponent = () => {
@@ -41,7 +41,27 @@ export default FirstComponent
 ```
 
 ## V025 Importando components
+- Para reutilizar um componente importamos ele.
+- Sintaxis: `import X from './<path-to-file>'`
+- Para colocar o componente utilizamos: `<FirstComponent/>`
 
+``` js
+import FirstComponent from "./components/NewComponent"
+import './App.css'
+
+function App() {
+
+  return (
+    <div className="app-container">
+      <h1>Welcome to S2 Fundamentos</h1>
+      <p>Este é um parágrafo de teste.</p>
+      <FirstComponent />
+    </div>
+  )
+}
+
+export default App
+```
 ## V026
 
 ## V027
