@@ -60,4 +60,7 @@ npm run dev
 
 Instalar extensao `ES7+React/Redux/React-Native` snippets
 
-## V012 Emmet
+## V013 Emmet
+
+1. File > Settings
+2. Item: `javascript` e value: `javascriptreact`
