@@ -91,8 +91,58 @@ function App() {
 
 export default App
 ```
-## V028
+## V028 Template expressions
+- É o recurso que permite executar JS no JSX e também interpolar variáveis.
+- Sintaxis: `{ some code here }`
+  - Tudo o que fica entre chaves é executado como javascript
 
+1. Criamos o novo arquivo `TemplateExpressions.jsx`
+2. Chamamos no `App.jsx`
+``` js
+// File: TemplateExpressions.jsx
+const TemplateExpressions = () => {
+  const name = "DummyName";
+  const data = { age: 25, city: "DummyCity" };
+
+  // Variaveis
+  // Variaveis de um map
+  // ainda um console.log para inspect
+  return (
+    <div>
+      <h2>Template Expressions</h2>
+      <p>Olá, {name}!</p>
+      <p>Idade: {data.age}</p>
+      <p>Cidade: {data.city}</p>
+      <p> {console.log("Log: Rendering TemplateExpressions component")}</p>
+    </div>
+  )
+}
+
+export default TemplateExpressions;
+```
+
+``` js
+// File: App.jsx
+import FirstComponent from "./components/NewComponent"
+import TemplateExpressions from "./components/TemplateExpressions"
+import './App.css'
+
+
+function App() {
+  // Comentario para o componente App
+  return (
+    <div className="app-container">
+      <h1>Welcome to S2 Fundamentos</h1>
+      <p>Este é um parágrafo de teste.</p>
+      {/** Aqui podemos adicionar comentários dentro do JSX */}
+      <FirstComponent />
+      <TemplateExpressions />
+    </div>
+  )
+}
+
+export default App
+```
 ## V029
 
 ## V030
