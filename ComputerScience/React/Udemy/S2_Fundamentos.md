@@ -68,8 +68,29 @@ export default App
 - Tudo o que estiver dentro do `return( here )` é JSX
 - Pode ter apenas um elemento pai.
 - Sempre tem que estar dentro de um `<div></div>`
-## V027
+## V027 Comentarios
+- `//` Comentario dentro da função
+- Dentro do JSX `{/* Dummy Comment*/}`
+  - As chaves permitem executar javascript dentro do JSX
 
+``` js
+import FirstComponent from "./components/NewComponent"
+import './App.css'
+
+function App() {
+  // Comentario para o componente App
+  return (
+    <div className="app-container">
+      <h1>Welcome to S2 Fundamentos</h1>
+      <p>Este é um parágrafo de teste.</p>
+      {/** Aqui podemos adicionar comentários dentro do JSX */}
+      <FirstComponent />
+    </div>
+  )
+}
+
+export default App
+```
 ## V028
 
 ## V029
