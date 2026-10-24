@@ -14,3 +14,22 @@ cd <name_of_project>
 npm start
 ```
 
+![alt text](image.png)
+
+- src: codigo principal
+  - App.js: Tem a aplicação. Utiliza tags similares ao html.
+
+``` js
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello, Rufo!</h1>
+    </div>
+  );
+}
+
+export default App;
+```
