@@ -143,7 +143,11 @@ function App() {
 
 export default App
 ```
-## V029
+## V029 Hierarquia de Componentes
+- Os componentes que criamos podem ser chamados em outros componentes.
+- Chamando um componente dentro de outro se cria uma jerarquia.
+  - App é um componente que chamou o componente `FirstComponent` e `TemplateExpressions`
+- Podemos criar o componente `ReusedComponent` e chamar ele em `FirstComponent`, `TemplateExpressions` e `App`
 
 ## V030
 
