@@ -149,7 +149,32 @@ export default App
   - App é um componente que chamou o componente `FirstComponent` e `TemplateExpressions`
 - Podemos criar o componente `ReusedComponent` e chamar ele em `FirstComponent`, `TemplateExpressions` e `App`
 
-## V030
+## V030 Eventos
+- Eventos são essenciais no `frontend`
+  - O evento de `click` é muito utilizado 
+- No React tem lib pra isso, a função `onClick`
+  - As funções tem a sintaxis: `handleSomething`
+
+- Ao criar o arquivo `EventoClick.jsx` e chamar no `App.jsx`, temos um evento pronto para ser chamado.
+
+``` js
+// File: EventoClick.jsx
+const EventoClick = () => {
+  const handleClick = (e) => {
+    console.log(e)
+    console.log("Botão clicado!");
+  }
+
+  return (
+    <div>
+      <h2>Eventos</h2>
+      <button onClick={handleClick}>Clique aqui</button>
+    </div>
+  )
+}
+
+export default EventoClick;
+```
 
 ## V031
 
