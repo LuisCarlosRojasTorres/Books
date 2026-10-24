@@ -47,3 +47,17 @@ Depois roda utilizando:
 #Dentro da pasta de projeto
 npm run dev
 ```
+
+## V011 Estrutura base
+
+- `node_modules`: dependencias aqui.
+- `public`: Assets estáticos e HTML de inicialização
+- `src`: codigo fonte
+- `src/index.js`: Arquivo de inicialização do React
+- `src/App.js`: Componente principal da applicação
+
+## V012 Extensao
+
+Instalar extensao `ES7+React/Redux/React-Native` snippets
+
+## V012 Emmet
