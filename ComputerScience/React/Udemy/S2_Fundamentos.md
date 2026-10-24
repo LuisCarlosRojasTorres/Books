@@ -62,8 +62,12 @@ function App() {
 
 export default App
 ```
-## V026
-
+## V026 Conhecendo o JSX
+- JSX é o HTML do React
+  - Tem uma diferença: `class` agora é `className`
+- Tudo o que estiver dentro do `return( here )` é JSX
+- Pode ter apenas um elemento pai.
+- Sempre tem que estar dentro de um `<div></div>`
 ## V027
 
 ## V028
