@@ -1,4 +1,3 @@
-
 ## V009 Hello World React
 
 Dentro da pasta que vc se encontra abrir o powershell  e:
@@ -32,4 +31,19 @@ function App() {
 }
 
 export default App;
+```
+
+## V010 Criação com Vite
+
+``` bash
+npm create vite@latest 
+# Select React
+# Select js
+# Follow instructions
+```
+
+Depois roda utilizando:
+``` bash
+#Dentro da pasta de projeto
+npm run dev
 ```
