@@ -258,6 +258,37 @@ export default ConditionalTernario;
 ```
 
 ## V044 Introdução as props
+- Permite passar valores de um componente pai para um componente filho.
+  - Bom para carregar dados da DB
+  - As props vem em um objeto no argumento da função do componente.
+
+``` jsx
+//Filename: PropsExample.jsx
+const PropsExample = ({ name, age }) => {
+  return (
+    <div>
+      <p>Name: {name}</p>
+      <p>Age: {age}</p>
+    </div>
+  );
+};
+
+export default PropsExample;
+
+//Filename: App.jsx
+import "./App.css"
+import PropsExample from "./components/PropsExample"
+
+function App() {
+  return (
+    <div>
+      <PropsExample name="Rufa" age={18} />      
+    </div>
+  )
+}
+
+export default App
+```
 ## V045 Destructuring em props
 ## V046 Reaproveitamento de componentes
 ## V047 Renderização de lista em componente
