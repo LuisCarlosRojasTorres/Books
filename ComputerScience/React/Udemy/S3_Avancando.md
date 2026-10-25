@@ -229,14 +229,43 @@ const ConditionalRender = () => {
 
 export default ConditionalRender;
 ```
-## V043
-## V044
-## V045
-## V046
-## V047
-## V048
-## V049
-## V050
+## V043 If e else no JSX
+- Podese utilizar if ternario `condition? bloco1 : bloco2`
+
+``` jsx
+
+import { useState } from "react";
+
+const ConditionalTernario = () => {
+    
+    const [value, setValue] = useState(false);
+
+  return (
+    <div>
+        <div>
+            Conditional Render Component
+            <p>Value {value.toString()}</p>          
+            {/* Conditional rendering example */}
+            <button onClick={() => setValue(!value)}> Change Value </button>      
+            {value ? <p>The value is true!</p> : <p>The value is false!</p>}
+        </div>      
+        
+    </div>
+  );
+};
+
+export default ConditionalTernario;
+```
+
+## V044 Introdução as props
+## V045 Destructuring em props
+## V046 Reaproveitamento de componentes
+## V047 Renderização de lista em componente
+## V048 Fragments
+## V049 A prop children
+## V050 Função como prop
+## V051 State lift 
+
 
 
 
