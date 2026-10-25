@@ -187,7 +187,39 @@ export default EventoClick;
 // Função implementada dentro do evento
 <button onClick={() => console.log("Função no evento")}>Clique funcao no evento</button>
 ```
-## V032
+## V032 Funçoes de Renderização
+
+- Funções que retornam SX
+- Para criar situações que **dependem de certas confições**
+- O JSX a ser renderizado vai depender de algum condição lógica.
 
 
+``` jsx
+const FuncaoRender = () => {
 
+    // Função que renderiza uma mensagem simples
+    const renderMessage = () => {
+        return <p>Esta é uma mensagem renderizada pela função.</p>
+    }
+
+    // Função que renderiza condicionalmente com base no valor de x
+    const renderConditional = (x) => {
+        if (x) {
+            return <p>O valor de x é verdadeiro.</p>
+        } else {
+            return <p>O valor de x é falso.</p>
+        }        
+    }
+
+  return (
+    <div>
+      <h2>Função de Render</h2>
+      {renderMessage()}
+      {renderConditional(true)}
+      {renderConditional(false)}
+    </div>
+  )
+}
+
+export default FuncaoRender;
+```
