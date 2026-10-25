@@ -88,7 +88,34 @@ export default ManageData;
 ```
 - O primeiro botão nao faz nada. Nao atualiza o valor.
 - O segundo sim.
-## V039
+
+## V039 Renderização de listas
+- Renderizar listas de dados no template
+- Utiliza dados do tipo array
+- Muito util é o `map`
+- Logicamente vai ter iteração para mostrar os dados.
+
+### Index dummy
+
+``` js
+const ListRender = () => {
+    const items = ["Item 1", "Item 2", "Item 3"];
+  return (
+    <div>
+        <div>
+            <h2>ListRender</h2>
+            <ul>
+                {items.map((item, index) => (
+                <li key={index}>{item}</li>
+                ))}
+            </ul>
+        </div>
+    </div>
+  )
+}
+
+export default ListRender
+```
 ## V040
 ## V041
 ## V042
