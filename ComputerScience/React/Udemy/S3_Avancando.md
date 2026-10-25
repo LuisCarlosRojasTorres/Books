@@ -157,7 +157,48 @@ const ListRender = () => {
 
 export default ListRender
 ```
-## V041
+## V041 Previous state
+- Permite pegar o dado em seu valor original dentro de um set de dado.
+- Utilizado para modificar listas,
+- O primeiro argumento de um set sempre será o previous state.
+- `prevUser` na verdade é o estado atual, porém ao chamar na função passa a ser o previo.
+
+``` jsx
+import { useState } from "react"
+
+const PrevStateExample = () => {    
+
+    const [users, setUsers] = useState([
+        { id: 1, name: "User 1", age: 25 },
+        { id: 2, name: "User 2", age: 30 },
+        { id: 3, name: "User 3", age: 35 }
+    ])
+
+    const deleteRandom = () => {
+        const randomIndex = Math.floor(Math.random() * (users.length +1) );
+        
+        setUsers((prevUsers) => {
+            console.log(prevUsers)
+            return prevUsers.filter((user) =>  randomIndex !== user.id);
+        });
+    }
+  return (
+    <div>        
+        <div>
+            <h2>PrevStateExample</h2>
+            <ul>
+                {users.map((user) => (
+                <li key={user.id}>{user.name} - {user.age} years old</li>
+                ))}
+            </ul>
+            <button onClick={deleteRandom}>Delete Random User</button>
+        </div>
+    </div>
+  )
+}
+
+export default PrevStateExample
+```
 ## V042
 ## V043
 ## V044
