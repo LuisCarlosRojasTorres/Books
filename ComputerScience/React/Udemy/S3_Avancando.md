@@ -40,7 +40,14 @@ function App() {
 
 export default App
 ```
-## V037
+## V037 Hooks
+- São recursos do react para realizar diversas funções
+  - Salvar e alterar estado de algum dado na applicação.
+- Sintaxis: `useSomething` e.g. `useState`
+- Podem ser feitos custom hook, ou seja implementados pela gente.
+- precisam ser importados.
+- Muito úteis
+
 ## V038
 ## V039
 ## V040
