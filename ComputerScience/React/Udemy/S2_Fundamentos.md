@@ -176,8 +176,17 @@ const EventoClick = () => {
 export default EventoClick;
 ```
 
-## V031
+## V031 Funções nos eventos
+- A função pode estar dentro do proprio evento.
+  - Apenas para coisas simples
 
+``` js
+// Referencia a função
+<button onClick={handleClick}>Clique aqui</button>
+
+// Função implementada dentro do evento
+<button onClick={() => console.log("Função no evento")}>Clique funcao no evento</button>
+```
 ## V032
 
 
