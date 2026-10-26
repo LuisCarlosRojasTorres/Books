@@ -332,10 +332,35 @@ export default DesestructuringPropsExample;
 ```
 
 ## V046 Reaproveitamento de componentes
+- Com `props` a `reutilização de componentes` começa a fazer muito sentido.
+
+``` jsx
+import "./App.css"
+import DesestructuringPropsExample from "./components/DesestructuringPropsExample"
+
+function App() {
+
+  return (
+    <div>      
+      <DesestructuringPropsExample brand="Dummy1" model="Model1" year={2020} />
+      <DesestructuringPropsExample brand="Dummy2" model="Model2" year={2021} />
+      <DesestructuringPropsExample brand="Dummy3" model="Model3" year={2022} />
+      <DesestructuringPropsExample brand="Dummy4" model="Model4" year={2023} />
+    </div>
+  )
+}
+
+export default App
+```
+
 ## V047 Renderização de lista em componente
+
 ## V048 Fragments
+
 ## V049 A prop children
+
 ## V050 Função como prop
+
 ## V051 State lift 
 
 
