@@ -290,6 +290,47 @@ function App() {
 export default App
 ```
 ## V045 Destructuring em props
+- Utilizado para passar mais de uma `prop` no componente
+-  Para passar `name` e `age` utilizamos `MyComponent({name, age})`
+  
+### Usando objetos 
+
+``` jsx
+// Obj
+const DesestructuringPropsExample = ({ train }) => {
+  return (
+    <div>
+      <p>Marca: {train.brand}</p>
+      <p>Modelo: {train.model}</p>
+      <p>Año: {train.year}</p>      
+    </div>
+  );
+};
+
+export default DesestructuringPropsExample;
+
+// App
+<DesestructuringPropsExample train={{ brand: "Siemens", model: "Velaro", year: 2020 }} />
+```
+
+### Usando desestructing
+
+``` js
+const DesestructuringPropsExample = ({ brand, model, year }) => {
+  return (
+    <div>
+      <p>Marca: {brand}</p>
+      <p>Modelo: {model}</p>
+      <p>Año: {year}</p>      
+    </div>
+  );
+};
+
+export default DesestructuringPropsExample;
+// App
+<DesestructuringPropsExample brand="Siemens" model="Velaro" year={2020} />
+```
+
 ## V046 Reaproveitamento de componentes
 ## V047 Renderização de lista em componente
 ## V048 Fragments
