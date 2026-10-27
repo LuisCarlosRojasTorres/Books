@@ -426,6 +426,34 @@ function App() {
 ![alt text](image-2.png)
 
 ## V049 A prop children
+- Utilizado quando um componente precisa ter codigo JSX dentro dele
+  - Porém esse JSX vem do componente pai.
+- O componente age como um container
+  - E children é considerada uma prop do componente.
+
+``` jsx
+const ChildrenPropExample = ({children, value}) => {
+  return (
+    <div>
+      <h1>Children Prop Example</h1>
+      {children}
+      <p>Value prop: {value}</p>
+    </div>
+  )
+}
+
+export default ChildrenPropExample
+
+// No App.jsx seria chamado como
+// É um componente com código JSX dentro dele.
+<ChildrenPropExample value="This is a value prop">
+  <p>This is a child element passed to ChildrenPropExample</p>
+</ChildrenPropExample> 
+```
+
+Tendo como resultado:
+
+![alt text](image-3.png)
 
 ## V050 Função como prop
 
