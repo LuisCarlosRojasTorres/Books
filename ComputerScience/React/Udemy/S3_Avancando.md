@@ -483,6 +483,66 @@ export default FunctionAsPropExample
 ![alt text](image-5.png)  
 
 ## V051 State lift 
+- StateLift: quando um value é levado do componente filho para o componente pai.
+  - Geralmente temos um componente que usa o state e outro que o altera.
+  - Passamos a alteração para o componente pai, e esse passa para o componente que usa o state.
+
+``` jsx
+// No App.jsx
+function App() {
+  
+  const [message, setMessage] = useState("")
+  // Func para modificar o prop.
+  const handleMessage = (msg) => {
+    setMessage(msg)
+  }
+
+  return (
+    <div>
+      {/* Apresenta o prop*/}  
+      <StateLiftExample msg={message} />
+      {/* Modifica o prop*/}  
+      <StateLiftModifierExample modifyState={handleMessage} />
+    </div>
+  )
+}
+
+export default App
+
+// StateLiftExample.jsx
+const StateLiftExample = ({msg}) => {
+  return (
+    <div>
+      A mensagem é: {msg}
+    </div>
+  )
+}
+
+export default StateLiftExample
+
+// StateLiftModifierExample.jsx
+const StateLiftModifierExample = ({modifyState}) => {
+  // Chama a função que edita o prop e seta com um valor interno.
+  const msgs = ["Message 1", "Message 2", "Message 3"]
+
+  return (
+    <div>
+      <button onClick={() => modifyState(msgs[0])}>1</button>
+      <button onClick={() => modifyState(msgs[1])}>2</button>
+      <button onClick={() => modifyState(msgs[2])}>3</button>
+    </div>
+  )
+}
+
+export default StateLiftModifierExample
+```
+
+- No inicio:  
+![alt text](image-6.png)  
+- Ao clicar em botão 1  
+![alt text](image-7.png)
+
+
 
 
 
