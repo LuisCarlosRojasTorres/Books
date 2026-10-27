@@ -456,6 +456,31 @@ Tendo como resultado:
 ![alt text](image-3.png)
 
 ## V050 Função como prop
+- As funções podem ser passadas para as props normalmente.
+  - Ao criar uma função no componente pai e enviar como prop para o componente.
+  - No componente filho, a função pode ser chamada por um evento.
+
+``` jsx
+const FunctionAsPropExample = ({myFunc}) => {
+  return (
+    <div>
+      <h2>FunctionAsPropExample</h2>
+      <button onClick={myFunc}>Show Message</button>
+    </div>
+  )
+}
+
+export default FunctionAsPropExample
+
+// No App.jsx
+<FunctionAsPropExample myFunc={showMessage} /> 
+
+```
+
+- UI  
+![alt text](image-4.png)  
+- Result  
+![alt text](image-5.png)  
 
 ## V051 State lift 
 
