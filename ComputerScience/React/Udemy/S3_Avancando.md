@@ -390,6 +390,40 @@ function App() {
 export default App
 ```
 ## V048 Fragments
+- Para quando precisa-se mais de um elemento pai em um componente. i.e. Um nivel de div é removido.
+- Cria-se uma tag cazia: `<> ... <>`
+  - Isso serve como elemento pai, nao alterando a estrutura do HTML com uma div.
+
+``` jsx
+import React from "react"
+
+const FragmentExample = ({propFragment}) => {
+  return (
+    {/* NAO TEM DIV*/}
+    <>
+      <h1>Fragment Example</h1>
+      <h2>Fragment Example2</h2>
+      <h3>{propFragment}</h3>
+    </>
+  )
+}
+
+export default FragmentExample
+
+//Filename: App.jsx
+function App() {
+ 
+  return (
+    <div> 
+      <FragmentExample propFragment="This is a prop passed to FragmentExample" />
+    </div>
+  )
+}
+```
+
+- O componente aparece dentro do div do App
+
+![alt text](image-2.png)
 
 ## V049 A prop children
 
