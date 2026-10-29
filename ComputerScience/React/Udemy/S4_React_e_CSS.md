@@ -91,3 +91,49 @@ h1{
 ## V060 Classes dinamicos
 
 ## V061 CSS Modules
+- Recurso scoped
+- Sintaxis: `<ComponentName.module.css>`
+
+``` css
+// File: CssModuleExample.module.css
+.css_module_example {
+    color: orange;
+    font-size: 24px;
+}
+```
+
+``` jsx
+// File: CssModuleExample.jsx
+import styles from './CssModuleExample.module.css'
+
+const CssModuleExample = () => {
+  return (
+    <h1 className={styles['css_module_example']}>CssModuleExample</h1>
+  )
+}
+
+export default CssModuleExample
+```
+
+``` jsx
+import './App.css'
+import CssComponentExample from './components/CssComponentExample'
+import CssModuleExample from './components/CssModuleExample'
+
+function App() {
+  
+  return (
+    <div className="App">
+      <h1>Hello, World!</h1>
+      <CssComponentExample />
+      <CssModuleExample />
+      {/*Aqui nao vai a ter css do CssModuleExample*/}
+      <h1 className="css_module_example">CssModuleExample2</h1>
+    </div>
+  )
+}
+
+export default App
+```
+
+![alt text](image-9.png)
