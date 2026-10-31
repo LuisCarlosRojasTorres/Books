@@ -113,8 +113,10 @@ const LabelEnvolventeExample = () => {
 export default LabelEnvolventeExample
 ```
 
-- Agora com uma função que atualiza o valor:
-
+## V067 Alteração de state inline
+- Simplifica manipulação
+- Se cria uma função inline no onChange que altera o valor do state com o método set.
+  
 ``` jsx
 import { useState } from 'react'
 
@@ -145,8 +147,6 @@ export default LabelEnvolventeExample
 ```
 - Output: 
 ![alt text](image-10.png)
-
-## V067 Alteração de state inline
 
 ## V068 Envio de form
 
