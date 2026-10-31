@@ -38,6 +38,44 @@ select {
 ```
 
 ## V065 Label envolvendo input
+- É comum ver o tag `label` envolvendo o input.
+- Assim o atributo `for` vira opcional.
+  - Isto simplifica a estrutura do html
+
+``` jsx
+// Filename: LabelEnvolventeExample.jsx
+const LabelEnvolventeExample = () => {
+  return (
+    <div>
+      <form> 
+        <label>            
+            <span>Some text inside the label</span>
+            <input type="text" name="name" placeholder="Digite o seu value da label"/>
+        </label>        
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  )
+}
+
+export default LabelEnvolventeExample
+
+// Filename: App.jsx
+import './App.css'
+import LabelEnvolventeExample from './components/LabelEnvolventeExample'
+
+function App() {
+
+  return (
+    <>
+      Lobo      
+      <LabelEnvolventeExample />
+    </>
+  )
+}
+
+export default App
+```
 
 ## V066 Gerenciamento de dados de input
 
