@@ -121,14 +121,22 @@ export default LabelEnvolventeExample
 import { useState } from 'react'
 
 const LabelEnvolventeExample = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  const [name, setName] = useState()
+  const [email, setEmail] = useState()
 
-  console.log({ name, email })
+  const handleSubmit = (e) => {
+    // Evita re-renderizar depois de clicar no botao, deletando os inputs
+    e.preventDefault();
+    console.log({ name, email })
+    console.log("Submitting")
+  }
+  
+  
+
 
   return (
     <div>
-      <form> 
+      <form onSubmit={handleSubmit}> 
         <label>            
             <span>Some text inside the label</span>            
             <input type="text" name="name" placeholder="Digite o seu value da label" value={name} onChange={(e) => setName(e.target.value)}/>
@@ -149,6 +157,11 @@ export default LabelEnvolventeExample
 ![alt text](image-10.png)
 
 ## V068 Envio de form
+- evento `onSubmit`
+  - Chama uma função, e nesta devemos lembrar de parar a submissção com o `preventDefault`
+  - Podemos realizar validaciones, envio de form para o server, reset do form etc.
+
+![alt text](image-11.png)
 
 ## V069 Controlled inputs
 
